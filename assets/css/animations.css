@@ -1,0 +1,1052 @@
+/* =========================================================
+   ANIMATIONS - PURE CSS (no HTML / JS changes)
+   Works on every page. Paste this at the END of the css file.
+   - scroll reveal (cards, titles, images, split layouts, timeline)
+   - page-load entrance (header, hero)
+   - card hover lift + amber glow
+   - button pulse + arrow motion
+   - smooth light/dark theme change
+   - respects "reduce motion" settings
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ---------- KEYFRAMES ---------- */
+@keyframes anRevealUp {
+    from {
+        opacity: 0;
+        transform: translateY(48px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes anRevealLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-70px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes anRevealRight {
+    from {
+        opacity: 0;
+        transform: translateX(70px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes anPop {
+    from {
+        opacity: 0;
+        transform: scale(.4);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes anImgSettle {
+    from {
+        opacity: .55;
+        transform: scale(1.16);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes anHeroIn {
+    from {
+        opacity: 0;
+        transform: translateY(36px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes anHeaderIn {
+    from {
+        opacity: 0;
+        transform: translateY(-26px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes anFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes anPulseBlue {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, .45);
+    }
+
+    70%,
+    100% {
+        box-shadow: 0 0 0 16px rgba(37, 99, 235, 0);
+    }
+}
+
+/* ---------- PAGE LOAD: header + hero ---------- */
+
+html body :is(.hero-section, .premium-hero, .ft-hero, .pp-hero, .about-hero, .coverage-hero, .fitting-hero) :is(h1, .hero-label, .hero-badge) {
+    animation: anHeroIn .9s cubic-bezier(.2, .7, .2, 1) .10s both;
+}
+
+html body :is(.hero-section, .premium-hero, .ft-hero, .pp-hero, .about-hero, .coverage-hero, .fitting-hero) :is(p, .premium-lead) {
+    animation: anHeroIn .9s cubic-bezier(.2, .7, .2, 1) .28s both;
+}
+
+html body :is(.hero-section, .premium-hero, .ft-hero, .pp-hero, .about-hero, .coverage-hero, .fitting-hero) :is(.hero-buttons, .premium-actions, .ft-cta, .hero-actions) {
+    animation: anHeroIn .9s cubic-bezier(.2, .7, .2, 1) .46s both;
+}
+
+html body :is(.hero-section, .premium-hero, .ft-hero, .pp-hero, .about-hero, .coverage-hero, .fitting-hero) :is(.hero-features, .hero-stats) {
+    animation: anHeroIn .9s cubic-bezier(.2, .7, .2, 1) .62s both;
+}
+
+/* booking page: form fades in group by group */
+html body .booking-page :is(.booking-brand, .booking-intro) {
+    animation: anHeroIn .8s cubic-bezier(.2, .7, .2, 1) backwards;
+}
+
+html body .booking-page .booking-intro {
+    animation-delay: .12s;
+}
+
+html body .booking-page .form-group {
+    animation: anHeroIn .7s cubic-bezier(.2, .7, .2, 1) backwards;
+}
+
+html body .booking-page .form-group:nth-child(1) {
+    animation-delay: .25s;
+}
+
+html body .booking-page .form-group:nth-child(2) {
+    animation-delay: .32s;
+}
+
+html body .booking-page .form-group:nth-child(3) {
+    animation-delay: .39s;
+}
+
+html body .booking-page .form-group:nth-child(4) {
+    animation-delay: .46s;
+}
+
+html body .booking-page .form-group:nth-child(5) {
+    animation-delay: .53s;
+}
+
+html body .booking-page .form-group:nth-child(6) {
+    animation-delay: .60s;
+}
+
+html body .booking-page .form-group:nth-child(7) {
+    animation-delay: .67s;
+}
+
+html body .booking-page .form-group:nth-child(8) {
+    animation-delay: .74s;
+}
+
+html body .booking-page .form-submit {
+    animation: anHeroIn .7s cubic-bezier(.2, .7, .2, 1) .85s backwards;
+}
+
+/* ---------- SCROLL REVEAL (Chrome / Edge) ---------- */
+@supports (animation-timeline: view()) {
+
+    /* cards rise in */
+    html body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card, .claims-cta,
+        .pp-card, .mx-card, .mx-feat, .step, .acc, .bs, .cmp, .tcard,
+        .ft-card, .ft-step, .ft-team, .ft-summary, .mx-tour figure,
+        .about-expert-card, .about-panel, .ph-card, .ph-step, .ph-panel, .ph-quote, .ph-stats div) {
+        animation: anRevealUp ease-out backwards;
+        animation-timeline: view();
+        animation-range: entry 0% entry 55%;
+    }
+
+    /* stagger across a row */
+    html body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card, .claims-cta,
+        .pp-card, .mx-card, .mx-feat, .step, .acc, .bs, .cmp, .tcard,
+        .ft-card, .ft-step, .ft-team, .ft-summary, .mx-tour figure,
+        .about-expert-card, .about-panel, .ph-card, .ph-step, .ph-panel, .ph-quote, .ph-stats div):nth-child(3n + 2) {
+        animation-range: entry 8% entry 63%;
+    }
+
+    html body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card, .claims-cta,
+        .pp-card, .mx-card, .mx-feat, .step, .acc, .bs, .cmp, .tcard,
+        .ft-card, .ft-step, .ft-team, .ft-summary, .mx-tour figure,
+        .about-expert-card, .about-panel, .ph-card, .ph-step, .ph-panel, .ph-quote, .ph-stats div):nth-child(3n + 3) {
+        animation-range: entry 16% entry 71%;
+    }
+
+    /* titles */
+    html body :is(.ft-head, .mx-head, .pp-sec-head, .pp-cat-head, .ph-head,
+        :is(.foot-health-section, .why-arthro-section, .product-showcase-section,
+            .fitting-section, .claims-section) h2) {
+        animation: anRevealUp ease-out backwards;
+        animation-timeline: view();
+        animation-range: entry 0% entry 50%;
+    }
+
+    /* images settle (no hover zoom is used) */
+    html body :is(.product-image img, .foot-health-image img, .pp-thumb img, .mx-img img,
+        .mx-tour img, .ft-photo img, .about-doctor-image, .acc-img img) {
+        animation: anImgSettle ease-out backwards;
+        animation-timeline: view();
+        animation-range: entry 0% entry 80%;
+    }
+
+    /* two-column layouts: left side from left, right side from right */
+    html body :is(.mx-two, .about-story, .in-two, .ph-split, .fitting-container)> :first-child {
+        animation: anRevealLeft ease-out backwards;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+    }
+
+    html body :is(.mx-two, .about-story, .in-two, .ph-split, .fitting-container)> :last-child {
+        animation: anRevealRight ease-out backwards;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+    }
+
+    /* About timeline: cards from the sides, year bubble pops */
+    html body .about-timeline-item:nth-child(odd) .about-timeline-card {
+        animation: anRevealLeft ease-out backwards;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+    }
+
+    html body .about-timeline-item:nth-child(even) .about-timeline-card {
+        animation: anRevealRight ease-out backwards;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+    }
+
+    html body .about-timeline-year {
+        animation: anPop ease-out backwards;
+        animation-timeline: view();
+        animation-range: entry 10% entry 60%;
+    }
+
+    /* footer columns */
+    html body :is(.footer-column, .footer-brand-block) {
+        animation: anRevealUp ease-out backwards;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+    }
+}
+
+/* ---------- CARD HOVER: lift + amber glow ---------- */
+html body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card, .claims-cta,
+    .pp-card, .mx-card, .mx-feat, .step, .acc, .bs, .cmp, .tcard,
+    .ft-card, .ft-step, .ft-team, .ft-summary, .mx-tour figure,
+    .about-expert-card, .about-panel, .ph-card, .ph-step, .ph-panel, .ph-quote, .ph-stats div) {
+    transition: transform .35s cubic-bezier(.2, .7, .2, 1), box-shadow .35s ease, border-color .3s ease;
+}
+
+html body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card, .claims-cta,
+    .pp-card, .mx-card, .mx-feat, .step, .acc, .bs, .cmp, .tcard,
+    .ft-card, .ft-step, .ft-team, .ft-summary, .mx-tour figure,
+    .about-expert-card, .about-panel, .ph-card, .ph-step, .ph-panel, .ph-quote, .ph-stats div):hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 42px rgba(180, 83, 9, .18);
+}
+
+html[data-theme="dark"] body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card, .claims-cta,
+    .pp-card, .mx-card, .mx-feat, .step, .acc, .bs, .cmp, .tcard,
+    .ft-card, .ft-step, .ft-team, .ft-summary, .mx-tour figure,
+    .about-expert-card, .about-panel, .ph-card, .ph-step, .ph-panel, .ph-quote, .ph-stats div):hover {
+    box-shadow: 0 20px 44px rgba(251, 191, 36, .16);
+}
+
+/* icons wiggle when the card is hovered */
+html body :is(.why-arthro-icon, .mx-ic, .step i, .about-expert-icon, .ph-card > i,
+    .ph-step > i, .fitting-badge-icon) {
+    transition: transform .35s cubic-bezier(.2, .7, .2, 1);
+}
+
+html body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card, .claims-cta,
+    .pp-card, .mx-card, .mx-feat, .step, .acc, .bs, .cmp, .tcard,
+    .ft-card, .ft-step, .ft-team, .ft-summary, .mx-tour figure,
+    .about-expert-card, .about-panel, .ph-card, .ph-step, .ph-panel, .ph-quote, .ph-stats div):hover :is(.why-arthro-icon, .mx-ic, .step i, .about-expert-icon, .ph-card > i,
+    .ph-step > i, .fitting-badge-icon) {
+    transform: translateY(-4px) rotate(-6deg) scale(1.08);
+}
+
+/* list rows slide a little on hover */
+html body :is(.mx-list li, .in-list li, .mx-links li) {
+    transition: transform .25s ease;
+}
+
+html body :is(.mx-list li, .in-list li, .mx-links li):hover {
+    transform: translateX(5px);
+}
+
+html[dir="rtl"] body :is(.mx-list li, .in-list li, .mx-links li):hover {
+    transform: translateX(-5px);
+}
+
+/* ---------- BUTTONS: pulse + arrow motion ---------- */
+html body :is(.header-cta, .primary-button, .premium-primary, .request-btn) {
+    animation: anPulseBlue 2.8s ease-out infinite;
+}
+
+html body :is(.header-cta, .primary-button, .premium-primary, .request-btn):hover {
+    animation: none;
+}
+
+html body :is(.header-cta, .primary-button, .product-button, .fitting-button, .claims-button,
+    .visit-primary-button, .footer-book-button, .request-btn, .premium-primary,
+    .ft-submit, .view-all-products, .health-card-link, .mx-link) :is(svg, i) {
+    transition: transform .25s ease;
+}
+
+html body :is(.header-cta, .primary-button, .product-button, .fitting-button, .claims-button,
+    .visit-primary-button, .footer-book-button, .request-btn, .premium-primary,
+    .ft-submit, .view-all-products, .health-card-link, .mx-link):hover :is(svg, i) {
+    transform: translateX(6px);
+}
+
+html[dir="rtl"] body :is(.header-cta, .primary-button, .product-button, .fitting-button, .claims-button,
+    .visit-primary-button, .footer-book-button, .request-btn, .premium-primary,
+    .ft-submit, .view-all-products, .health-card-link, .mx-link):hover :is(svg, i) {
+    transform: translateX(-6px);
+}
+
+/* ---------- FLOATING BADGES ---------- */
+html body :is(.fitting-badge, .about-doctor-badge) {
+    animation: anFloat 4.5s ease-in-out infinite;
+}
+
+/* ---------- SMOOTH LIGHT / DARK SWITCH ---------- */
+html body,
+html body :is(header, footer, main, section) {
+    transition: background-color .4s ease, color .4s ease, border-color .4s ease;
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* =========================================================
+   HERO SECTION ANIMATIONS - one unique intro per page
+   (pure CSS - only transform / opacity / filter / clip-path,
+    so no text, colour or layout is changed)
+   HOME      : focus-pull + Ken-Burns zoom + spring buttons
+   ABOUT     : cinematic curtain wipe + slow image pan
+   PRODUCTS  : 3D flip-up text + zoom-out image
+   COVERAGE  : stamp-impact title + drawing frame + side buttons
+   CONTACT   : split reveal - text from left, photo card from right
+   (header, footer and scroll animations are NOT touched here)
+========================================================= */
+
+html {
+    --hd: 1;
+}
+
+html[dir="rtl"] {
+    --hd: -1;
+}
+
+/* =========================================================
+   1) HOME  -  "Focus Pull"
+========================================================= */
+@keyframes hxHomeBg {
+    0% {
+        transform: scale(1.32);
+    }
+
+    9% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1.2) translate(calc(-2% * var(--hd)), 1.5%);
+    }
+}
+
+@keyframes hxHomeBadge {
+    from {
+        opacity: 0;
+        clip-path: inset(0 50% 0 50% round 999px);
+        transform: scale(.7);
+    }
+
+    to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0 round 999px);
+        transform: none;
+    }
+}
+
+@keyframes hxHomeTitle {
+    from {
+        opacity: 0;
+        filter: blur(18px);
+        transform: translateY(46px) scale(1.14);
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: none;
+    }
+}
+
+@keyframes hxHomeText {
+    from {
+        opacity: 0;
+        filter: blur(8px);
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: none;
+    }
+}
+
+@keyframes hxHomeBtnL {
+    0% {
+        opacity: 0;
+        transform: translateX(calc(-90px * var(--hd))) scale(.6);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateX(calc(8px * var(--hd))) scale(1.06);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes hxHomeBtnR {
+    0% {
+        opacity: 0;
+        transform: translateX(calc(90px * var(--hd))) scale(.6);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateX(calc(-8px * var(--hd))) scale(1.06);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes hxHomeFeat {
+    from {
+        opacity: 0;
+        transform: translateY(34px) scale(.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes hxHomeTick {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-270deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.25) rotate(12deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+html body .hero-section.hx-home.hx-home::before {
+    transform-origin: 50% 50%;
+    will-change: transform;
+    animation: hxHomeBg 30s cubic-bezier(.2, .6, .2, 1) forwards;
+}
+
+html body .hero-section.hx-home.hx-home .hero-badge {
+    animation: hxHomeBadge .9s cubic-bezier(.2, .8, .2, 1) .1s backwards;
+}
+
+html body .hero-section.hx-home.hx-home .hero-title {
+    animation: hxHomeTitle 1.15s cubic-bezier(.2, .8, .2, 1) .35s backwards;
+}
+
+html body .hero-section.hx-home.hx-home .hero-description {
+    animation: hxHomeText .9s ease-out .85s backwards;
+}
+
+html body .hero-section.hx-home.hx-home .hero-buttons {
+    animation: none;
+}
+
+html body .hero-section.hx-home.hx-home .hero-buttons .primary-button {
+    animation: hxHomeBtnL 1s cubic-bezier(.2, .8, .2, 1) 1.1s backwards,
+        anPulseBlue 2.8s ease-out 2.4s infinite;
+}
+
+html body .hero-section.hx-home.hx-home .hero-buttons .secondary-button {
+    animation: hxHomeBtnR 1s cubic-bezier(.2, .8, .2, 1) 1.2s backwards;
+}
+
+html body .hero-section.hx-home.hx-home .hero-buttons .primary-button:hover {
+    animation: hxHomeBtnL 1s cubic-bezier(.2, .8, .2, 1) 1.1s backwards;
+}
+
+html body .hero-section.hx-home.hx-home .hero-features {
+    animation: none;
+}
+
+html body .hero-section.hx-home.hx-home .hero-feature {
+    animation: hxHomeFeat .8s cubic-bezier(.2, .8, .2, 1) backwards;
+}
+
+html body .hero-section.hx-home.hx-home .hero-feature:nth-child(1) {
+    animation-delay: 1.5s;
+}
+
+html body .hero-section.hx-home.hx-home .hero-feature:nth-child(2) {
+    animation-delay: 1.7s;
+}
+
+html body .hero-section.hx-home.hx-home .hero-feature:nth-child(3) {
+    animation-delay: 1.9s;
+}
+
+html body .hero-section.hx-home.hx-home .hero-feature>span {
+    animation: hxHomeTick .8s cubic-bezier(.2, .8, .2, 1) backwards;
+}
+
+html body .hero-section.hx-home.hx-home .hero-feature:nth-child(1)>span {
+    animation-delay: 1.8s;
+}
+
+html body .hero-section.hx-home.hx-home .hero-feature:nth-child(2)>span {
+    animation-delay: 2s;
+}
+
+html body .hero-section.hx-home.hx-home .hero-feature:nth-child(3)>span {
+    animation-delay: 2.2s;
+}
+
+html body .hero-section.hx-home.hx-home .hero-feature p {
+    animation: none;
+}
+
+/* =========================================================
+   2) ABOUT  -  "Cinematic Curtain"
+========================================================= */
+@keyframes hxAboutCurtain {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes hxAboutPan {
+    from {
+        transform: scale(1.2) translateX(calc(3.5% * var(--hd)));
+    }
+
+    to {
+        transform: scale(1.2) translateX(calc(-3.5% * var(--hd)));
+    }
+}
+
+@keyframes hxAboutBadge {
+    from {
+        opacity: 0;
+        transform: translateX(calc(-80px * var(--hd))) skewX(-22deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes hxAboutWipe {
+    from {
+        opacity: 0;
+        clip-path: inset(0 100% 0 0);
+        transform: translateX(calc(-40px * var(--hd)));
+    }
+
+    to {
+        opacity: 1;
+        clip-path: inset(-10% -2% -10% -2%);
+        transform: none;
+    }
+}
+
+@keyframes hxAboutSlide {
+    from {
+        opacity: 0;
+        transform: translateX(calc(-60px * var(--hd))) skewX(-8deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes hxAboutRise {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scaleX(.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+html body .ft-hero.about-hero.about-hero::before {
+    transform-origin: 50% 50%;
+    will-change: transform, clip-path;
+    animation: hxAboutCurtain 1.5s cubic-bezier(.75, 0, .2, 1) backwards,
+        hxAboutPan 24s ease-in-out infinite alternate;
+}
+
+html body .ft-hero.about-hero.about-hero .hero-badge {
+    animation: hxAboutBadge .8s cubic-bezier(.2, .8, .2, 1) .5s backwards;
+}
+
+html body .ft-hero.about-hero.about-hero h1 {
+    animation: hxAboutWipe 1s cubic-bezier(.65, 0, .2, 1) .8s backwards;
+}
+
+html body .ft-hero.about-hero.about-hero p {
+    animation: hxAboutSlide .9s cubic-bezier(.2, .8, .2, 1) 1.3s backwards;
+}
+
+html body .ft-hero.about-hero.about-hero .ft-hero-btns {
+    animation: hxAboutRise .8s cubic-bezier(.2, .8, .2, 1) 1.6s backwards;
+}
+
+/* =========================================================
+   3) PRODUCTS  -  "3D Flip-Up"
+========================================================= */
+@keyframes hxProdBg {
+    from {
+        transform: scale(1.4) rotate(-2.5deg);
+    }
+
+    to {
+        transform: scale(1.06) rotate(0deg);
+    }
+}
+
+@keyframes hxProdBlur {
+    from {
+        filter: blur(12px);
+    }
+
+    to {
+        filter: blur(0);
+    }
+}
+
+@keyframes hxProdBadge {
+    from {
+        opacity: 0;
+        transform: perspective(600px) rotateX(-95deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(600px) rotateX(0);
+    }
+}
+
+@keyframes hxProdTitle {
+    from {
+        opacity: 0;
+        transform: perspective(900px) rotateX(70deg) translateY(50px) scale(.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: perspective(900px) rotateX(0) translateY(0) scale(1);
+    }
+}
+
+@keyframes hxProdText {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+        transform: perspective(700px) rotateX(-35deg) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: perspective(700px) rotateX(0) translateY(0);
+    }
+}
+
+html body .pp-hero.pp-hero::before {
+    transform-origin: 50% 50%;
+    will-change: transform, filter;
+    animation: hxProdBg 2.6s cubic-bezier(.2, .7, .2, 1) backwards,
+        hxProdBlur 1.6s ease-out backwards;
+}
+
+html body .pp-hero.pp-hero .hero-badge {
+    transform-origin: 50% 0;
+    animation: hxProdBadge .9s cubic-bezier(.2, .8, .2, 1) .3s backwards;
+}
+
+html body .pp-hero.pp-hero h1 {
+    transform-origin: 50% 100%;
+    animation: hxProdTitle 1.1s cubic-bezier(.2, .8, .2, 1) .65s backwards;
+}
+
+html body .pp-hero.pp-hero p {
+    transform-origin: 50% 0;
+    animation: hxProdText 1s cubic-bezier(.2, .8, .2, 1) 1.15s backwards;
+}
+
+/* =========================================================
+   4) COVERAGE  -  "Stamp Impact"
+========================================================= */
+@keyframes hxCovFrame {
+    0% {
+        clip-path: inset(50% 50% 50% 50% round 34px);
+        opacity: 0;
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0 round 34px);
+        opacity: 1;
+    }
+}
+
+@keyframes hxCovBreath {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.018);
+    }
+}
+
+@keyframes hxCovBadge {
+    from {
+        opacity: 0;
+        clip-path: inset(0 50% 0 50% round 999px);
+        transform: translateY(-24px);
+    }
+
+    to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0 round 999px);
+        transform: none;
+    }
+}
+
+@keyframes hxCovStamp {
+    0% {
+        opacity: 0;
+        transform: scale(1.7) rotate(calc(-3deg * var(--hd)));
+        filter: blur(6px);
+    }
+
+    55% {
+        opacity: 1;
+        transform: scale(.94) rotate(calc(.6deg * var(--hd)));
+        filter: blur(0);
+    }
+
+    75% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+        filter: blur(0);
+    }
+}
+
+@keyframes hxCovText {
+    from {
+        opacity: 0;
+        filter: blur(8px);
+        transform: translateY(26px) scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: none;
+    }
+}
+
+@keyframes hxCovBtnL {
+    0% {
+        opacity: 0;
+        transform: translateX(calc(-120px * var(--hd))) rotate(calc(-8deg * var(--hd)));
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateX(calc(10px * var(--hd))) rotate(calc(1deg * var(--hd)));
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes hxCovBtnR {
+    0% {
+        opacity: 0;
+        transform: translateX(calc(120px * var(--hd))) rotate(calc(8deg * var(--hd)));
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateX(calc(-10px * var(--hd))) rotate(calc(-1deg * var(--hd)));
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+html body .ft-hero.coverage-hero.coverage-hero::after {
+    animation: hxCovFrame 1.4s cubic-bezier(.65, 0, .2, 1) .2s backwards,
+        hxCovBreath 6s ease-in-out 1.6s infinite alternate;
+}
+
+html body .ft-hero.coverage-hero.coverage-hero .hero-badge {
+    animation: hxCovBadge .9s cubic-bezier(.2, .8, .2, 1) .8s backwards;
+}
+
+html body .ft-hero.coverage-hero.coverage-hero h1 {
+    animation: hxCovStamp 1.1s cubic-bezier(.3, .7, .3, 1) 1.1s backwards;
+}
+
+html body .ft-hero.coverage-hero.coverage-hero p {
+    animation: hxCovText .9s ease-out 1.8s backwards;
+}
+
+html body .ft-hero.coverage-hero.coverage-hero .ft-hero-btns {
+    animation: none;
+}
+
+html body .ft-hero.coverage-hero.coverage-hero .ft-hero-btns .primary-button {
+    animation: hxCovBtnL .9s cubic-bezier(.2, .8, .2, 1) 2.1s backwards,
+        anPulseBlue 2.8s ease-out 3.2s infinite;
+}
+
+html body .ft-hero.coverage-hero.coverage-hero .ft-hero-btns .primary-button:hover {
+    animation: hxCovBtnL .9s cubic-bezier(.2, .8, .2, 1) 2.1s backwards;
+}
+
+html body .ft-hero.coverage-hero.coverage-hero .ft-hero-btns .secondary-button {
+    animation: hxCovBtnR .9s cubic-bezier(.2, .8, .2, 1) 2.2s backwards;
+}
+
+/* =========================================================
+   5) CONTACT  -  "Split Reveal"
+========================================================= */
+@keyframes hxConLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(-70px * var(--hd)));
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes hxConUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes hxConCard {
+    from {
+        opacity: 0;
+        clip-path: inset(0 0 0 100% round 28px);
+        transform: perspective(1200px) translateX(calc(90px * var(--hd))) rotateY(calc(-22deg * var(--hd)));
+    }
+
+    to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0 round 28px);
+        transform: perspective(1200px) translateX(0) rotateY(0);
+    }
+}
+
+@keyframes hxConImg {
+    from {
+        transform: scale(1.35);
+    }
+
+    to {
+        transform: scale(1.01);
+    }
+}
+
+@keyframes hxConFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes hxConTag {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(.6);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(-6px) scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes hxConDot {
+    0% {
+        box-shadow: 0 0 0 0 rgba(245, 151, 10, .55);
+    }
+
+    70%,
+    100% {
+        box-shadow: 0 0 0 12px rgba(245, 151, 10, 0);
+    }
+}
+
+html body .contact-hero-new.contact-hero-new .contact-kicker {
+    animation: hxConLeft .8s cubic-bezier(.2, .8, .2, 1) .15s backwards;
+}
+
+html body .contact-hero-new.contact-hero-new h1 {
+    animation: hxConLeft 1s cubic-bezier(.2, .8, .2, 1) .35s backwards;
+}
+
+html body .contact-hero-new.contact-hero-new .contact-hero-copy>p {
+    animation: hxConUp .9s ease-out .7s backwards;
+}
+
+html body .contact-hero-new.contact-hero-new .contact-hero-actions {
+    animation: hxConUp .9s ease-out .95s backwards;
+}
+
+html body .contact-hero-new.contact-hero-new .contact-mini-info {
+    animation: hxConUp .9s ease-out 1.2s backwards;
+}
+
+html body .contact-hero-new.contact-hero-new .contact-hero-visual {
+    animation: hxConFloat 6s ease-in-out 2.2s infinite;
+}
+
+html body .contact-hero-new.contact-hero-new .contact-image-frame {
+    animation: hxConCard 1.3s cubic-bezier(.2, .8, .2, 1) .4s backwards;
+}
+
+html body .contact-hero-new.contact-hero-new .contact-image-frame img {
+    animation: hxConImg 2.2s cubic-bezier(.2, .7, .2, 1) .4s backwards;
+}
+
+html body .contact-hero-new.contact-hero-new .contact-image-tag {
+    animation: hxConTag .9s cubic-bezier(.2, .8, .2, 1) 1.5s backwards;
+}
+
+html body .contact-hero-new.contact-hero-new .contact-tag-dot {
+    animation: hxConDot 2s ease-out 2.4s infinite;
+}

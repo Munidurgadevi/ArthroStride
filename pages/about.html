@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        /* Apply saved theme / direction before first paint (no flash, same on every page) */
+        (function () {
+            try {
+                var d = document.documentElement;
+                d.setAttribute('data-theme', localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+                d.setAttribute('dir', localStorage.getItem('rtl') === 'true' ? 'rtl' : 'ltr');
+                d.style.colorScheme = d.getAttribute('data-theme');
+            } catch (e) { }
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description"
+        content="Learn about ArthroStride: our story, mission and the podiatry-informed team behind our orthopedic and comfort footwear.">
+    <title>About Us | ArthroStride</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/fitting-consultation.css">
+    <link rel="stylesheet" href="../assets/css/info.css">
+    <link rel="stylesheet" href="../assets/css/about.css">
+    <link rel="stylesheet" href="../assets/css/more.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="icon" type="image/png" href="../assets/images/arthrostride-logo-light.png">
+    <link rel="apple-touch-icon" href="../assets/images/arthrostride-logo-light.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script>
+        (function () { try { var t = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'; var u = t === 'dark' ? '../assets/images/arthrostride-logo-dark.png' : '../assets/images/arthrostride-logo-light.png'; document.documentElement.setAttribute('data-theme', t); document.querySelectorAll('link[rel="icon"],link[rel="apple-touch-icon"]').forEach(function (l) { l.href = u }); } catch (e) { } })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body class="about-page">
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="brand">
+                <div class="brand-logo">
+                    <img src="../assets/images/arthrostride-logo-light.png" alt="ArthroStride Logo">
+                </div>
+                <div class="brand-text">
+
+                    <div class="brand-name">
+                        Arthro<span>Stride</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 NAVIGATION
+            ================================================== -->
+
+            <nav id="main-navigation" class="main-navigation" aria-label="Main Navigation">
+
+                <div class="home-dropdown">
+                    <button type="button" class="nav-link home-dropdown-toggle" aria-expanded="false">
+                        Home
+                        <span class="home-chevron" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-caret-down-fill" viewBox="0 0 16 16" focusable="false">
+                                <path
+                                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="home-dropdown-menu">
+                        <a href="../index.html" class="home-dropdown-link">Home 1</a>
+                        <a href="../home-2.html" class="home-dropdown-link">Home 2</a>
+                    </div>
+                </div>
+
+
+                <a href="about.html" class="nav-link active" aria-current="page">
+
+                    About
+
+                </a>
+
+                <a href="products.html" class="nav-link">
+
+                    Products
+
+                </a>
+
+
+                <a href="fitting-consultation.html" class="nav-link">
+
+                    Fitting
+
+                </a>
+
+
+                <a href="insurance-prescription.html" class="nav-link">
+
+                    Coverage
+
+                </a>
+
+
+                <a href="contact.html" class="nav-link">
+
+                    Contact
+
+                </a>
+
+                <a href="booking.html" class="nav-drawer-cta">Visit Booking</a>
+            </nav>
+
+
+            <!-- =================================================
+                 HEADER ACTIONS
+            ================================================== -->
+
+            <div class="header-actions">
+
+                <!-- CSS-only Dark / Light Mode -->
+                <input class="theme-control-input" type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+                <label class="header-icon-btn theme-control-label" for="theme-toggle" title="Toggle dark mode"
+                    aria-label="Toggle dark mode">
+                    <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+                        <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"
+                            fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+                    </svg>
+                </label>
+
+                <!-- CSS-only RTL / LTR -->
+                <input class="theme-control-input" type="checkbox" id="rtl-toggle" aria-label="Toggle RTL">
+                <label class="header-icon-btn theme-control-label" for="rtl-toggle" title="Toggle RTL / LTR"
+                    aria-label="Toggle RTL / LTR">
+                    <span class="rtl-label-on">RTL</span><span class="rtl-label-off">LTR</span>
+                </label>
+
+                <!-- Visit Booking -->
+                <a href="booking.html" class="header-cta">
+                    Visit Booking
+                </a>
+                <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="main-navigation"><span></span><span></span><span></span></button>
+
+            </div>
+
+        </div>
+
+    </header>
+    <main id="main">
+        <section class="ft-hero about-hero">
+            <div class="ft-in"><span class="hero-badge">★ ABOUT ARTHROSTRIDE</span>
+                <h1>Footwear Built Around <span>Your Movement</span></h1>
+                <p>We help people walk with less pain and more confidence through supportive orthopedic and comfort
+                    footwear, backed by personal fitting.</p>
+                <div class="ft-hero-btns"><a href="fitting-consultation.html#book" class="primary-button">Book a Fitting
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                        </svg></a><a href="products.html" class="secondary-button">Browse Products</a></div>
+            </div>
+        </section>
+
+        <section class="ft-sec">
+            <div class="about-story">
+                <div>
+                    <span class="section-label">OUR STORY</span>
+                    <h2>Comfort Should Never Be <span>a Compromise</span></h2>
+                    <p>ArthroStride began with a simple observation: many people live with foot, knee and back
+                        discomfort because everyday shoes were never designed for their feet.</p>
+                    <p>We bring together arch support, cushioning and width options, and we take time to fit each
+                        customer properly, so the right pair feels right from the first step.</p>
+                </div>
+                <div class="about-panel">
+                    <h3>Our Mission</h3>
+                    <p>To make supportive footwear easy to understand, easy to choose and comfortable to wear all day.
+                    </p>
+                    <ul>
+                        <li>Honest guidance, no pressure to buy</li>
+                        <li>Fit first, style second, never one without the other</li>
+                        <li>Clear help with prescriptions and insurance paperwork</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="ft-sec ft-alt">
+            <div class="ft-head"><span class="section-label">WHAT WE STAND FOR</span>
+                <h2>Our <span>Values</span></h2>
+            </div>
+            <div class="ft-cards">
+                <article class="ft-card"><span><svg viewBox="0 0 16 16" width="26" height="26" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="M7.6 1C5.6 1 4.6 2.9 4.6 4.9c0 1.6.7 2.7.7 4.4 0 1.5-.7 2.2-.7 3.4 0 1.3 1.1 2.3 2.5 2.3S9.6 14 9.6 12.7c0-1.3-.6-1.9-.6-3.4 0-2 1.6-3 1.6-5C10.6 2.6 9.5 1 7.6 1z" />
+                        </svg></span>
+                    <h3>Fit First</h3>
+                    <p>Every recommendation starts with a detailed foot scan and a walking check.</p>
+                </article>
+                <article class="ft-card"><span><svg viewBox="0 0 16 16" width="26" height="26" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2">
+                            </path>
+                            <path
+                                d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9 9 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.4 10.4 0 0 1-.524 2.318l-.003.011a11 11 0 0 1-.244.637c-.079.186.074.394.273.362a22 22 0 0 0 .693-.125m.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6-3.004 6-7 6a8 8 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a11 11 0 0 0 .398-2">
+                            </path>
+                        </svg></span>
+                    <h3>Honest Advice</h3>
+                    <p>We explain what a shoe can and cannot do for your specific foot condition.</p>
+                </article>
+                <article class="ft-card"><span><svg viewBox="0 0 16 16" width="26" height="26" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5z">
+                            </path>
+                            <path
+                                d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5z">
+                            </path>
+                            <path
+                                d="M9.979 5.356a.5.5 0 0 0-.968.04L7.92 10.49l-.94-3.135a.5.5 0 0 0-.926-.08L4.69 10H4.5a.5.5 0 0 0 0 1H5a.5.5 0 0 0 .447-.276l.936-1.873 1.138 3.793a.5.5 0 0 0 .968-.04L9.58 7.51l.94 3.135A.5.5 0 0 0 11 11h.5a.5.5 0 0 0 0-1h-.128z">
+                            </path>
+                        </svg></span>
+                    <h3>Podiatry Informed</h3>
+                    <p>Designs guided by common needs like heel pain, flat feet and bunions.</p>
+                </article>
+                <article class="ft-card"><span><svg viewBox="0 0 16 16" width="26" height="26" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15">
+                            </path>
+                        </svg></span>
+                    <h3>Care After Purchase</h3>
+                    <p>Exchanges, adjustments and follow-up advice when you need them.</p>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             FOOT-CARE EXPERTS
+             New section added only for the About page.
+        ========================================================== -->
+        <section class="ft-sec about-experts-section">
+            <div class="ft-head">
+                <span class="section-label">MEET THE CARE TEAM</span>
+                <h2>Guidance From People <span>Who Understand Foot Health</span></h2>
+                <p>Meet our care team and learn how their fitting-focused guidance supports a more comfortable footwear
+                    experience.</p>
+            </div>
+
+            <div class="about-experts-grid">
+                <article class="about-expert-card">
+                    <div class="about-doctor-image-wrap">
+                        <img class="about-doctor-image"
+                            src="https://i.pinimg.com/736x/c5/a3/90/c5a3904b38eb241dd03dd30889599dc4.jpg"
+                            alt="Dr. Ananya Rao">
+                        <span class="about-doctor-badge">CARE TEAM</span>
+                    </div>
+                    <div class="about-expert-number">01</div>
+                    <div class="about-expert-content">
+                        <span class="about-doctor-role">FOOT &amp; COMFORT GUIDANCE</span>
+                        <h3>Dr. Ananya Rao</h3>
+                        <p>Focuses on everyday foot comfort, support needs and helping customers understand footwear
+                            features before choosing a pair.</p>
+                        <div class="about-expert-tags"><span>Foot Comfort</span><span>Support</span></div>
+                    </div>
+                </article>
+
+                <article class="about-expert-card">
+                    <div class="about-doctor-image-wrap">
+                        <img class="about-doctor-image"
+                            src="https://i.pinimg.com/736x/fe/88/34/fe883458a1fc4528ba2721c0215e9ebb.jpg"
+                            alt="Dr. Meera Shah">
+                        <span class="about-doctor-badge">FITTING TEAM</span>
+                    </div>
+                    <div class="about-expert-number">02</div>
+                    <div class="about-expert-content">
+                        <span class="about-doctor-role">PERSONALISED FITTING</span>
+                        <h3>Dr. Meera Shah</h3>
+                        <p>Focuses on fit, width, arch support and walking comfort so footwear recommendations feel
+                            practical for everyday routines.</p>
+                        <div class="about-expert-tags"><span>Arch Support</span><span>Fit Check</span></div>
+                    </div>
+                </article>
+
+                <article class="about-expert-card">
+                    <div class="about-doctor-image-wrap">
+                        <img class="about-doctor-image"
+                            src="https://i.pinimg.com/1200x/99/12/c6/9912c62e3a0de89f497088b8c41d32ed.jpg"
+                            alt="Dr. Kiran Patel">
+                        <span class="about-doctor-badge">CUSTOMER CARE</span>
+                    </div>
+                    <div class="about-expert-number">03</div>
+                    <div class="about-expert-content">
+                        <span class="about-doctor-role">AFTER-PURCHASE SUPPORT</span>
+                        <h3>Dr. Kiran Patel</h3>
+                        <p>Provides practical guidance around footwear adjustments, product questions and ongoing
+                            comfort after purchase.</p>
+                        <div class="about-expert-tags"><span>Follow-up</span><span>Care Advice</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             OUR HISTORY
+             New interactive timeline section.
+        ========================================================== -->
+        <section class="ft-sec ft-alt about-history-section">
+            <div class="ft-head">
+                <span class="section-label">OUR HISTORY</span>
+                <h2>From a Simple Idea <span>to a More Personal Fit</span></h2>
+                <p>A short look at the journey behind the ArthroStride approach.</p>
+            </div>
+
+            <div class="about-timeline">
+                <article class="about-timeline-item">
+                    <div class="about-timeline-year">01</div>
+                    <div class="about-timeline-dot"></div>
+                    <div class="about-timeline-card">
+                        <span>THE BEGINNING</span>
+                        <h3>A Better Way to Choose Footwear</h3>
+                        <p>ArthroStride started with a simple idea: people should not have to choose between supportive
+                            footwear and a comfortable everyday experience.</p>
+                    </div>
+                </article>
+
+                <article class="about-timeline-item">
+                    <div class="about-timeline-year">02</div>
+                    <div class="about-timeline-dot"></div>
+                    <div class="about-timeline-card">
+                        <span>THE APPROACH</span>
+                        <h3>Fit Became the Starting Point</h3>
+                        <p>The focus grew from simply showing shoes to understanding width, arch support, cushioning,
+                            heel comfort and the way each person walks.</p>
+                    </div>
+                </article>
+
+                <article class="about-timeline-item">
+                    <div class="about-timeline-year">03</div>
+                    <div class="about-timeline-dot"></div>
+                    <div class="about-timeline-card">
+                        <span>TODAY</span>
+                        <h3>Support Beyond the Pair</h3>
+                        <p>Today, the experience connects product guidance, fitting consultations and practical
+                            after-purchase support in one place.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="ft-sec">
+            <div class="ft-head"><span class="section-label">ARTHROSTRIDE AT A GLANCE</span>
+                <h2>Where We Stand <span>Today</span></h2>
+            </div>
+            <div class="ft-strip">
+                <div><b>Hyderabad</b><span>Our home store</span></div>
+                <div><b>Mon–Sat</b><span>9 AM – 7 PM</span></div>
+                <div><b>Free</b><span>Fitting consultation</span></div>
+                <div><b>Walk-ins</b><span>Always welcome</span></div>
+            </div>
+        </section>
+
+        <section class="ft-sec ft-alt">
+            <div class="ft-head"><span class="section-label">READY WHEN YOU ARE</span>
+                <h2>Come Meet <span>the Team</span></h2>
+                <p>Visit our Hyderabad store or book a free fitting and we will take it from there.</p>
+            </div>
+            <div class="about-cta"><a href="fitting-consultation.html#book" class="primary-button">Book a Fitting <svg
+                        width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                    </svg></a><a href="contact.html" class="secondary-button">Contact Us</a></div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-brand-link">
+                        <div class="footer-brand-logo">
+                            <img src="../assets/images/arthrostride-logo-light.png" alt="ArthroStride Logo">
+                        </div>
+                        <div class="footer-brand-text">
+                            <div class="footer-brand-name">
+                                Arthro<span>Stride</span>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="footer-description">
+                        Supportive orthopedic and comfort footwear designed
+                        around foot health, everyday movement, and a
+                        comfortable fit.
+                    </p>
+
+                    <div class="footer-socials">
+                        <a href="#" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>
+                        Quick Links
+                    </h3>
+                    <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="products.html">Products</a>
+                    <a href="fitting-consultation.html">Fitting</a>
+                    <a href="insurance-prescription.html">Coverage</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="booking.html">Visit Booking</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>
+                        Our Footwear
+                    </h3>
+                    <a href="products.html#plantar-fasciitis">
+                        Plantar Fasciitis
+                    </a>
+                    <a href="products.html#diabetic-footwear">
+                        Diabetic Footwear
+                    </a>
+                    <a href="products.html#wide-fit">
+                        Wide Fit
+                    </a>
+                    <a href="products.html#arch-support">
+                        Arch Support
+                    </a>
+                    <a href="products.html#everyday-comfort">
+                        Everyday Comfort
+                    </a>
+                    <a href="products.html#heel-cushioning">
+                        Heel &amp; Cushioning
+                    </a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>
+                        Information
+                    </h3>
+                    <a href="fitting-consultation.html">
+                        Personalized Fitting
+                    </a>
+                    <a href="insurance-prescription.html">
+                        Insurance Support
+                    </a>
+                    <a href="insurance-prescription.html">
+                        Prescription Guidance
+                    </a>
+                    <a href="products.html">
+                        Footwear Guide
+                    </a>
+                    <a href="contact.html">
+                        Store Information
+                    </a>
+                </div>
+
+                <div class="footer-column footer-contact">
+                    <h3>
+                        Get In Touch
+                    </h3>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </span>
+                        Hyderabad, India
+                    </p>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </span>
+                        +91 98765 43210
+                    </p>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        support@arthrostride.com
+                    </p>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </span>
+                        Mon - Sat: 9 AM - 7 PM
+                    </p>
+                    <a href="fitting-consultation.html" class="footer-book-button">
+                        Book a Consultation
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-container">
+                    <p>
+                        &copy; 2026
+                        <span>ArthroStride</span>.
+                        All Rights Reserved.
+                    </p>
+                    <div class="footer-legal">
+                        <a href="#">
+                            Privacy Policy
+                        </a>
+                        <a href="#">
+                            Terms &amp; Conditions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

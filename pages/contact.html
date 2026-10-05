@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        /* Apply saved theme / direction before first paint (no flash, same on every page) */
+        (function () {
+            try {
+                var d = document.documentElement;
+                d.setAttribute('data-theme', localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+                d.setAttribute('dir', localStorage.getItem('rtl') === 'true' ? 'rtl' : 'ltr');
+                d.style.colorScheme = d.getAttribute('data-theme');
+            } catch (e) { }
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Contact ArthroStride or visit our orthopedic footwear store.">
+    <title>Contact | ArthroStride</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/fitting-consultation.css">
+    <link rel="stylesheet" href="../assets/css/info.css">
+    <link rel="stylesheet" href="../assets/css/more.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="stylesheet" href="../assets/css/contact.css">
+    <link rel="icon" type="image/png" href="../assets/images/arthrostride-logo-light.png">
+    <link rel="apple-touch-icon" href="../assets/images/arthrostride-logo-light.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script>
+        (function () { try { var t = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'; var u = t === 'dark' ? '../assets/images/arthrostride-logo-dark.png' : '../assets/images/arthrostride-logo-light.png'; document.documentElement.setAttribute('data-theme', t); document.querySelectorAll('link[rel="icon"],link[rel="apple-touch-icon"]').forEach(function (l) { l.href = u }); } catch (e) { } })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body class="contact-page">
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="brand">
+                <div class="brand-logo">
+                    <img src="../assets/images/arthrostride-logo-light.png" alt="ArthroStride Logo">
+                </div>
+                <div class="brand-text">
+
+                    <div class="brand-name">
+                        Arthro<span>Stride</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 NAVIGATION
+            ================================================== -->
+
+            <nav id="main-navigation" class="main-navigation" aria-label="Main Navigation">
+
+                <div class="home-dropdown">
+                    <button type="button" class="nav-link home-dropdown-toggle" aria-expanded="false">
+                        Home
+                        <span class="home-chevron" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-caret-down-fill" viewBox="0 0 16 16" focusable="false">
+                                <path
+                                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="home-dropdown-menu">
+                        <a href="../index.html" class="home-dropdown-link">Home 1</a>
+                        <a href="../home-2.html" class="home-dropdown-link">Home 2</a>
+                    </div>
+                </div>
+
+
+                <a href="about.html" class="nav-link">
+
+                    About
+
+                </a>
+
+                <a href="products.html" class="nav-link">
+
+                    Products
+
+                </a>
+
+
+                <a href="fitting-consultation.html" class="nav-link">
+
+                    Fitting
+
+                </a>
+
+
+                <a href="insurance-prescription.html" class="nav-link">
+
+                    Coverage
+
+                </a>
+
+
+                <a href="contact.html" class="nav-link active" aria-current="page">
+
+                    Contact
+
+                </a>
+
+                <a href="booking.html" class="nav-drawer-cta">Visit Booking</a>
+            </nav>
+
+
+            <!-- =================================================
+                 HEADER ACTIONS
+            ================================================== -->
+
+            <div class="header-actions">
+
+                <!-- CSS-only Dark / Light Mode -->
+                <input class="theme-control-input" type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+                <label class="header-icon-btn theme-control-label" for="theme-toggle" title="Toggle dark mode"
+                    aria-label="Toggle dark mode">
+                    <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+                        <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"
+                            fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+                    </svg>
+                </label>
+
+                <!-- CSS-only RTL / LTR -->
+                <input class="theme-control-input" type="checkbox" id="rtl-toggle" aria-label="Toggle RTL">
+                <label class="header-icon-btn theme-control-label" for="rtl-toggle" title="Toggle RTL / LTR"
+                    aria-label="Toggle RTL / LTR">
+                    <span class="rtl-label-on">RTL</span><span class="rtl-label-off">LTR</span>
+                </label>
+
+                <!-- Visit Booking -->
+                <a href="booking.html" class="header-cta">
+                    Visit Booking
+                </a>
+                <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="main-navigation"><span></span><span></span><span></span></button>
+
+            </div>
+
+        </div>
+
+    </header>
+    <main id="main">
+        <section class="ft-hero contact-hero contact-hero-new">
+            <div class="contact-hero-wrap">
+                <div class="contact-hero-copy">
+                    <span class="contact-kicker">CONTACT ARTHROSTRIDE</span>
+                    <h1>Let's make your<br><span>next step easier.</span></h1>
+                    <p>Questions about fit, products or claims? Call, message or visit our store. Our team is ready to
+                        help you find the right support.</p>
+                    <div class="contact-hero-actions">
+                        <a href="fitting-consultation.html#book" class="primary-button">Book a Fitting
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                            </svg>
+                        </a>
+                        <a href="#message" class="secondary-button">Send a Message</a>
+                    </div>
+                    <div class="contact-mini-info">
+                        <span><b>Store</b> Hyderabad, Telangana</span>
+                        <span><b>Hours</b> Mon–Sat · 9 AM–7 PM</span>
+                    </div>
+                </div>
+                <div class="contact-hero-visual">
+                    <div class="contact-image-frame">
+                        <img src="https://i.pinimg.com/1200x/13/8f/b7/138fb764a994b10a7e20c3e871c438ba.jpg" alt="ArthroStride customer support">
+                        <div class="contact-image-tag">
+                            <span class="contact-tag-dot"></span>
+                            <div><strong>We're here to help</strong><small>Quick answers &amp; personal guidance</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mx-sec ct-reach-sec">
+            <div>
+                <div class="mx-head"><span class="section-label">GET IN TOUCH</span>
+                    <h2>Ways to <span>Reach Us</span></h2>
+                </div>
+                <div class="ct-bar">
+                    <div class="ct-bar-item">
+                        <span class="ct-bar-ic"><svg viewBox="0 0 16 16" width="24" height="24" fill="currentColor"
+                                aria-hidden="true">
+                                <path
+                                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10">
+                                </path>
+                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path>
+                            </svg></span>
+                        <h3>Visit Us</h3>
+                        <p>ArthroStride Store<br>Hyderabad, Telangana, India</p>
+                    </div>
+                    <div class="ct-bar-item">
+                        <span class="ct-bar-ic"><svg viewBox="0 0 16 16" width="24" height="24" fill="currentColor"
+                                aria-hidden="true">
+                                <path
+                                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z">
+                                </path>
+                            </svg></span>
+                        <h3>Call Us</h3>
+                        <p>Mon–Sat, 9 AM – 7 PM</p>
+                        <span class="ct-bar-text">+91 98765 43210</span>
+                    </div>
+                    <div class="ct-bar-item">
+                        <span class="ct-bar-ic"><svg viewBox="0 0 16 16" width="24" height="24" fill="currentColor"
+                                aria-hidden="true">
+                                <path
+                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z">
+                                </path>
+                            </svg></span>
+                        <h3>Email</h3>
+                        <p>We reply within 1 working day</p>
+                        <span class="ct-bar-text">support@arthrostride.com</span>
+                    </div>
+                    <div class="ct-bar-item">
+                        <span class="ct-bar-ic"><svg viewBox="0 0 16 16" width="24" height="24" fill="currentColor"
+                                aria-hidden="true">
+                                <path
+                                    d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232">
+                                </path>
+                            </svg></span>
+                        <h3>WhatsApp</h3>
+                        <p>Quick questions &amp; bookings</p>
+                        <span class="ct-bar-text">Chat with us</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ft-sec ft-alt" id="message">
+            <div class="in-two">
+                <div><span class="section-label">SEND A MESSAGE</span>
+                    <h2 class="in-h2">We'll Get <span>Back to You</span></h2>
+                    <form class="in-form in-flat" action="#sent" method="get">
+                        <div class="ft-fields"><label>Full name<input type="text" name="name" autocomplete="name"
+                                    required></label><label>Phone<input type="tel" name="phone" autocomplete="tel"
+                                    pattern="[+0-9 ]{10,15}" required></label>
+                            <label>Email<input type="email" name="email"
+                                    autocomplete="email"></label><label>Subject<select name="subject">
+                                    <option>Product question</option>
+                                    <option>Fitting appointment</option>
+                                    <option>Insurance &amp; prescription</option>
+                                    <option>Order / exchange</option>
+                                    <option>Other</option>
+                                </select></label>
+                            <label class="full">Message<textarea name="msg" rows="5" required></textarea></label>
+                        </div><label class="ft-check"><input type="checkbox" required> I agree to be contacted about my
+                            message.</label><button class="ft-submit" type="submit">Send Message <svg width="16"
+                                height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                            </svg></button>
+                    </form>
+                </div>
+                <div><span class="section-label">STORE HOURS</span>
+                    <h2 class="in-h2">Opening <span>Times</span></h2>
+                    <table class="in-table in-hours">
+                        <tbody>
+                            <tr>
+                                <th scope='row'>Monday - Friday</th>
+                                <td>9:00 AM - 7:00 PM</td>
+                            </tr>
+                            <tr>
+                                <th scope='row'>Saturday</th>
+                                <td>9:00 AM - 7:00 PM</td>
+                            </tr>
+                            <tr>
+                                <th scope='row'>Sunday</th>
+                                <td>Closed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3 class="in-h3">Store &amp; accessibility</h3>
+                    <ul class="in-list">
+                        <li>Step-free entrance and seating area for comfortable trials</li>
+                        <li>Fitting rooms with support rails</li>
+                        <li>Nearby parking available</li>
+                        <li>Free consultation, walk-ins welcome</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="mx-sec ct-help-sec">
+            <div>
+                <div class="mx-head"><span class="section-label">QUICK HELP</span>
+                    <h2>Find What You <span>Need Faster</span></h2>
+                </div>
+                <div class="ct-bento">
+                    <a class="ct-tile ct-tile-main" href="fitting-consultation.html#book">
+                        <span class="ct-tile-ic"><svg viewBox="0 0 16 16" width="26" height="26" fill="currentColor"
+                                aria-hidden="true">
+                                <path
+                                    d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0">
+                                </path>
+                                <path
+                                    d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z">
+                                </path>
+                            </svg></span>
+                        <h3>Fitting appointment</h3>
+                        <p>Book a free 30–45 minute consultation and get matched with the right support.</p>
+                        <span class="ct-tile-go">Book Now <svg width="16" height="16" fill="currentColor"
+                                viewBox="0 0 16 16" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                            </svg></span>
+                    </a>
+                    <a class="ct-tile" href="products.html">
+                        <span class="ct-tile-ic"><svg viewBox="0 0 16 16" width="26" height="26" fill="currentColor"
+                                aria-hidden="true">
+                                <path
+                                    d="M1 12.5V8.4c0-.4.3-.8.7-.9l2.4-.6 1.1-2.2c.2-.4.7-.6 1.1-.4l.9.4c.7 1.3 1.8 2.2 3.3 2.6l2.3.6c.8.2 1.4.9 1.4 1.8v2.8H1zm0 1h14v1.2H1V13.5z" />
+                            </svg></span>
+                        <div>
+                            <h3>Choosing footwear</h3>
+                            <p>Browse by foot condition and compare styles.</p>
+                            <span class="ct-tile-go">Shop Products <svg width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span>
+                        </div>
+                    </a>
+                    <a class="ct-tile" href="insurance-prescription.html">
+                        <span class="ct-tile-ic"><svg viewBox="0 0 16 16" width="26" height="26" fill="currentColor"
+                                aria-hidden="true">
+                                <path
+                                    d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27m.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0z">
+                                </path>
+                                <path
+                                    d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5">
+                                </path>
+                            </svg></span>
+                        <div>
+                            <h3>Claims &amp; prescription</h3>
+                            <p>Get help with documents and claim steps.</p>
+                            <span class="ct-tile-go">Learn More <svg width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="mx-sec mx-alt ct-expect-sec">
+            <div>
+                <div class="mx-head"><span class="section-label">WHAT TO EXPECT</span>
+                    <h2>Your Visit, <span>Step by Step</span></h2>
+                </div>
+                <ol class="ct-steps">
+                    <li>
+                        <span class="ct-step-dot">1</span>
+                        <h3>Walk in or book</h3>
+                        <p>No appointment needed. Booking a fitting just means a shorter wait.</p>
+                    </li>
+                    <li>
+                        <span class="ct-step-dot">2</span>
+                        <h3>Gentle foot assessment</h3>
+                        <p>Our team checks your foot shape, arch and comfort needs. Bring your doctor's prescription if
+                            you have one.</p>
+                    </li>
+                    <li>
+                        <span class="ct-step-dot">3</span>
+                        <h3>Try, compare, decide</h3>
+                        <p>Try different styles in a seated area with support rails, with no pressure to buy.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+        <section class="ct-map-full" id="find-us" aria-label="Store location">
+            <iframe class="ct-map-frame" title="Store location map"
+                src="https://www.google.com/maps?q=Hyderabad,Telangana&z=13&output=embed" loading="lazy"
+                allowfullscreen></iframe>
+
+            <div class="ct-map-card">
+                <h2>Store <span>Location</span></h2>
+                <ul class="ct-map-list">
+                    <li>
+                        <i aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z" />
+                                <circle cx="12" cy="10" r="2.5" />
+                            </svg></i>
+                        <div><b>ArthroStride Store</b><span>Hyderabad, Telangana, India</span></div>
+                    </li>
+                    <li>
+                        <i aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" />
+                            </svg></i>
+                        <div><b>Call us</b><a href="tel:+919876543210">+91 98765 43210</a></div>
+                    </li>
+                    <li>
+                        <i aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="5" width="18" height="14" rx="2" />
+                                <path d="m3 7 9 6 9-6" />
+                            </svg></i>
+                        <div><b>Email us</b><a href="mailto:support@arthrostride.com">support@arthrostride.com</a></div>
+                    </li>
+                </ul>
+                <div class="ct-map-actions">
+                    <a href="fitting-consultation.html#book" class="primary-button">Book a Visit
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                        </svg>
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=Hyderabad,Telangana" class="ct-map-dir"
+                        target="_blank" rel="noopener">Directions</a>
+                </div>
+            </div>
+        </section>
+        <div class="ft-done" id="sent" role="dialog" aria-label="Confirmation">
+            <div><span class="ft-tick">✓</span>
+                <h3>Message Sent</h3>
+                <p>Thank you! We will reply within one working day.</p><a href="#main" class="primary-button">Done</a>
+            </div>
+        </div>
+        <footer class="site-footer">
+            <div class="footer-container">
+
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-brand-link">
+                        <div class="footer-brand-logo">
+                            <img src="../assets/images/arthrostride-logo-light.png" alt="ArthroStride Logo">
+                        </div>
+                        <div class="footer-brand-text">
+                            <div class="footer-brand-name">
+                                Arthro<span>Stride</span>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="footer-description">
+                        Supportive orthopedic and comfort footwear designed
+                        around foot health, everyday movement, and a
+                        comfortable fit.
+                    </p>
+
+                    <div class="footer-socials">
+                        <a href="#" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>
+                        Quick Links
+                    </h3>
+                    <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="products.html">Products</a>
+                    <a href="fitting-consultation.html">Fitting</a>
+                    <a href="insurance-prescription.html">Coverage</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="booking.html">Visit Booking</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>
+                        Our Footwear
+                    </h3>
+                    <a href="products.html#plantar-fasciitis">
+                        Plantar Fasciitis
+                    </a>
+                    <a href="products.html#diabetic-footwear">
+                        Diabetic Footwear
+                    </a>
+                    <a href="products.html#wide-fit">
+                        Wide Fit
+                    </a>
+                    <a href="products.html#arch-support">
+                        Arch Support
+                    </a>
+                    <a href="products.html#everyday-comfort">
+                        Everyday Comfort
+                    </a>
+                    <a href="products.html#heel-cushioning">
+                        Heel &amp; Cushioning
+                    </a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>
+                        Information
+                    </h3>
+                    <a href="fitting-consultation.html">
+                        Personalized Fitting
+                    </a>
+                    <a href="insurance-prescription.html">
+                        Insurance Support
+                    </a>
+                    <a href="insurance-prescription.html">
+                        Prescription Guidance
+                    </a>
+                    <a href="products.html">
+                        Footwear Guide
+                    </a>
+                    <a href="contact.html">
+                        Store Information
+                    </a>
+                </div>
+
+                <div class="footer-column footer-contact">
+                    <h3>
+                        Get In Touch
+                    </h3>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </span>
+                        Hyderabad, India
+                    </p>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </span>
+                        +91 98765 43210
+                    </p>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        support@arthrostride.com
+                    </p>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </span>
+                        Mon - Sat: 9 AM - 7 PM
+                    </p>
+                    <a href="fitting-consultation.html" class="footer-book-button">
+                        Book a Consultation
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-container">
+                    <p>
+                        &copy; 2026
+                        <span>ArthroStride</span>.
+                        All Rights Reserved.
+                    </p>
+                    <div class="footer-legal">
+                        <a href="#">
+                            Privacy Policy
+                        </a>
+                        <a href="#">
+                            Terms &amp; Conditions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

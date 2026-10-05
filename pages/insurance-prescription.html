@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        /* Apply saved theme / direction before first paint (no flash, same on every page) */
+        (function () {
+            try {
+                var d = document.documentElement;
+                d.setAttribute('data-theme', localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+                d.setAttribute('dir', localStorage.getItem('rtl') === 'true' ? 'rtl' : 'ltr');
+                d.style.colorScheme = d.getAttribute('data-theme');
+            } catch (e) { }
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Understand prescriptions and insurance claim documents for orthopedic footwear.">
+    <title>Insurance & Prescription | ArthroStride</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/fitting-consultation.css">
+    <link rel="stylesheet" href="../assets/css/info.css">
+    <link rel="stylesheet" href="../assets/css/more.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="icon" type="image/png" href="../assets/images/arthrostride-logo-light.png">
+    <link rel="apple-touch-icon" href="../assets/images/arthrostride-logo-light.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script>
+        (function () { try { var t = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'; var u = t === 'dark' ? '../assets/images/arthrostride-logo-dark.png' : '../assets/images/arthrostride-logo-light.png'; document.documentElement.setAttribute('data-theme', t); document.querySelectorAll('link[rel="icon"],link[rel="apple-touch-icon"]').forEach(function (l) { l.href = u }); } catch (e) { } })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body class="coverage-page">
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="brand">
+                <div class="brand-logo">
+                    <img src="../assets/images/arthrostride-logo-light.png" alt="ArthroStride Logo">
+                </div>
+                <div class="brand-text">
+
+                    <div class="brand-name">
+                        Arthro<span>Stride</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 NAVIGATION
+            ================================================== -->
+
+            <nav id="main-navigation" class="main-navigation" aria-label="Main Navigation">
+
+                <div class="home-dropdown">
+                    <button type="button" class="nav-link home-dropdown-toggle" aria-expanded="false">
+                        Home
+                        <span class="home-chevron" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-caret-down-fill" viewBox="0 0 16 16" focusable="false">
+                                <path
+                                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="home-dropdown-menu">
+                        <a href="../index.html" class="home-dropdown-link">Home 1</a>
+                        <a href="../home-2.html" class="home-dropdown-link">Home 2</a>
+                    </div>
+                </div>
+
+
+                <a href="about.html" class="nav-link">
+
+                    About
+
+                </a>
+
+                <a href="products.html" class="nav-link">
+
+                    Products
+
+                </a>
+
+
+                <a href="fitting-consultation.html" class="nav-link">
+
+                    Fitting
+
+                </a>
+
+
+                <a href="insurance-prescription.html" class="nav-link active" aria-current="page">
+
+                    Coverage
+
+                </a>
+
+
+                <a href="contact.html" class="nav-link">
+
+                    Contact
+
+                </a>
+
+                <a href="booking.html" class="nav-drawer-cta">Visit Booking</a>
+            </nav>
+
+
+            <!-- =================================================
+                 HEADER ACTIONS
+            ================================================== -->
+
+            <div class="header-actions">
+
+                <!-- CSS-only Dark / Light Mode -->
+                <input class="theme-control-input" type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+                <label class="header-icon-btn theme-control-label" for="theme-toggle" title="Toggle dark mode"
+                    aria-label="Toggle dark mode">
+                    <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+                        <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"
+                            fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+                    </svg>
+                </label>
+
+                <!-- CSS-only RTL / LTR -->
+                <input class="theme-control-input" type="checkbox" id="rtl-toggle" aria-label="Toggle RTL">
+                <label class="header-icon-btn theme-control-label" for="rtl-toggle" title="Toggle RTL / LTR"
+                    aria-label="Toggle RTL / LTR">
+                    <span class="rtl-label-on">RTL</span><span class="rtl-label-off">LTR</span>
+                </label>
+
+                <!-- Visit Booking -->
+                <a href="booking.html" class="header-cta">
+                    Visit Booking
+                </a>
+                <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="main-navigation"><span></span><span></span><span></span></button>
+
+            </div>
+
+        </div>
+
+    </header>
+    <main id="main">
+        <section class="ft-hero coverage-hero">
+            <div class="ft-in"><span class="hero-badge">★ CLAIMS &amp; PRESCRIPTION GUIDANCE</span>
+                <h1>Support Beyond <span>the Store</span></h1>
+                <p>Orthopedic and therapeutic footwear may qualify for reimbursement depending on your plan. We help you
+                    organise the documents you may need.</p>
+                <div class="ft-hero-btns"><a href="#request" class="primary-button">Request Claim Help <svg width="16"
+                            height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                        </svg></a><a href="tel:+919876543210" class="secondary-button">Call +91 98765 43210</a></div>
+            </div>
+        </section>
+        <section class="ft-sec">
+            <div class="ft-head"><span class="section-label">HOW IT WORKS</span>
+                <h2>Your Claim <span>in 4 Steps</span></h2>
+            </div>
+            <div class="ft-steps">
+                <div class="ft-step"><i>1</i>
+                    <h3>Consultation</h3>
+                    <p>Visit us for a free fitting so we can note your foot needs.</p>
+                </div>
+                <div class="ft-step"><i>2</i>
+                    <h3>Prescription</h3>
+                    <p>Get a prescription from your doctor if footwear is advised.</p>
+                </div>
+                <div class="ft-step"><i>3</i>
+                    <h3>Documents</h3>
+                    <p>We prepare itemised bills and product details for your claim.</p>
+                </div>
+                <div class="ft-step"><i>4</i>
+                    <h3>Submit Claim</h3>
+                    <p>Send documents to your insurer or employer for review.</p>
+                </div>
+            </div>
+        </section>
+        <section class="ft-sec ft-alt coverage-types-section">
+            <div class="coverage-types-head">
+                <div>
+                    <span class="section-label">CLAIM TYPES</span>
+                    <h2>Ways You May <span>Be Covered</span></h2>
+                </div>
+                <p>Coverage depends on your policy. Always confirm with your insurer.</p>
+            </div>
+
+            <div class="coverage-types-grid">
+
+                <article class="coverage-type coverage-type-1">
+                    <div class="coverage-type-media">
+                        <img src="https://i.pinimg.com/236x/db/4f/74/db4f7449206c33f4bd561d7c2093dddc.jpg"
+                            alt="Reimbursement claim invoice" loading="lazy">
+                    </div>
+                    <div class="coverage-type-body">
+                        <span class="coverage-type-label">SELF CLAIM</span>
+                        <h3>Reimbursement</h3>
+                        <p>Pay first, then claim from your insurer using our detailed itemised invoice.</p>
+                    </div>
+                    <div class="coverage-type-footer">
+                        <span>PAY → CLAIM</span>
+                        <span class="coverage-type-arrow">↗</span>
+                    </div>
+                </article>
+
+                <article class="coverage-type coverage-type-2">
+                    <div class="coverage-type-media">
+                        <img src="https://i.pinimg.com/236x/45/3e/88/453e8879ead7d3c3921a8dc98215f76d.jpg"
+                            alt="Cashless direct settlement" loading="lazy">
+                    </div>
+                    <div class="coverage-type-body">
+                        <span class="coverage-type-label">DIRECT SETTLEMENT</span>
+                        <h3>Cashless</h3>
+                        <p>Some plans support direct settlement. Check with your insurer first.</p>
+                    </div>
+                    <div class="coverage-type-footer">
+                        <span>DIRECT SUPPORT</span>
+                        <span class="coverage-type-arrow">↗</span>
+                    </div>
+                </article>
+
+                <article class="coverage-type coverage-type-3">
+                    <div class="coverage-type-media">
+                        <img src="https://i.pinimg.com/736x/04/56/2e/04562e0ac5d0d1bfe66a2edb6c018338.jpg"
+                            alt="Employer wellness benefits" loading="lazy">
+                    </div>
+                    <div class="coverage-type-body">
+                        <span class="coverage-type-label">WORKPLACE SUPPORT</span>
+                        <h3>Employer Benefits</h3>
+                        <p>Some employers may reimburse eligible medical or wellness shoe purchases.</p>
+                    </div>
+                    <div class="coverage-type-footer">
+                        <span>EMPLOYER PLAN</span>
+                        <span class="coverage-type-arrow">↗</span>
+                    </div>
+                </article>
+
+                <article class="coverage-type coverage-type-4">
+                    <div class="coverage-type-media">
+                        <img src="https://i.pinimg.com/1200x/2f/d6/e6/2fd6e62c846c602a27a19128a1c2a797.jpg"
+                            alt="Other insurance schemes" loading="lazy">
+                    </div>
+                    <div class="coverage-type-body">
+                        <span class="coverage-type-label">OTHER OPTIONS</span>
+                        <h3>Other Schemes</h3>
+                        <p>Eligibility differs by scheme. Please ask us and we will guide you.</p>
+                    </div>
+                    <div class="coverage-type-footer">
+                        <span>CHECK ELIGIBILITY</span>
+                        <span class="coverage-type-arrow">↗</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+        <section class="ft-sec cf-sec">
+            <div class="ft-head"><span class="section-label">CLAIM PATH FINDER</span>
+                <h2>Find Your Path <span>in 10 Seconds</span></h2>
+            </div>
+
+            <svg class="cf-defs" width="0" height="0" aria-hidden="true" focusable="false">
+                <defs>
+                    <g id="cf-shoe">
+                        <path class="a-card a-stroke"
+                            d="M6 70 C6 46 22 36 40 32 L66 8 C72 2 82 2 88 8 L102 22 C122 30 150 34 170 44 C182 50 186 64 180 70 Z" />
+                        <path class="a-line" stroke-width="3" d="M62 30 L78 20 M74 38 L90 28 M86 46 L102 36" />
+                        <path class="a-fill" d="M2 70 H184 V80 C184 86 180 90 174 90 H12 C6 90 2 86 2 80 Z" />
+                        <path class="a-dash" d="M10 82 H176" />
+                    </g>
+                </defs>
+            </svg>
+            <div class="cf">
+                <div class="cf-pick" role="radiogroup" aria-labelledby="cf-legend">
+                    <span class="cf-label" id="cf-legend">1 &middot; Choose your situation</span>
+                    <label class="cf-opt">
+                        <input type="radio" name="cf-situation" id="cf-1" checked>
+                        <span class="cf-opt-icon" aria-hidden="true"><i class="fa-solid fa-droplet"></i></span>
+                        <span class="cf-opt-text"><strong>Diabetic footwear</strong><small>Medical
+                                footwear</small></span>
+                        <span class="cf-opt-arrow" aria-hidden="true"></span>
+                    </label>
+                    <label class="cf-opt">
+                        <input type="radio" name="cf-situation" id="cf-2">
+                        <span class="cf-opt-icon" aria-hidden="true"><i class="fa-solid fa-shoe-prints"></i></span>
+                        <span class="cf-opt-text"><strong>Heel pain / plantar fasciitis</strong><small>Heel &amp;
+                                support needs</small></span>
+                        <span class="cf-opt-arrow" aria-hidden="true"></span>
+                    </label>
+                    <label class="cf-opt">
+                        <input type="radio" name="cf-situation" id="cf-3">
+                        <span class="cf-opt-icon" aria-hidden="true"><i class="fa-solid fa-person-walking"></i></span>
+                        <span class="cf-opt-text"><strong>Severe flat feet / arch problems</strong><small>Arch support
+                                needs</small></span>
+                        <span class="cf-opt-arrow" aria-hidden="true"></span>
+                    </label>
+                    <label class="cf-opt">
+                        <input type="radio" name="cf-situation" id="cf-4">
+                        <span class="cf-opt-icon" aria-hidden="true"><i class="fa-solid fa-crutch"></i></span>
+                        <span class="cf-opt-text"><strong>Post-surgery / injury recovery</strong><small>Recovery
+                                footwear</small></span>
+                        <span class="cf-opt-arrow" aria-hidden="true"></span>
+                    </label>
+                    <label class="cf-opt">
+                        <input type="radio" name="cf-situation" id="cf-5">
+                        <span class="cf-opt-icon" aria-hidden="true"><i class="fa-solid fa-heart"></i></span>
+                        <span class="cf-opt-text"><strong>Everyday comfort shoes</strong><small>Non-medical
+                                footwear</small></span>
+                        <span class="cf-opt-arrow" aria-hidden="true"></span>
+                    </label>
+                </div>
+
+                <div class="cf-result">
+                    <span class="cf-label">2 &middot; Your path</span>
+                    <div class="cf-panels" aria-live="polite">
+                        <div class="cf-panel cf-p1 cf-high">
+                            <div class="cf-top">
+                                <div class="cf-intro"><span class="cf-pill">Often requested</span>
+                                    <h3>Usually supported by a doctor's prescription</h3>
+                                    <p>Diabetic footwear is one of the most commonly accepted medical footwear claims.
+                                        Keep these ready before you submit.</p>
+                                </div>
+                                <figure class="cf-art" role="img"
+                                    aria-label="Illustration of an orthopedic shoe with a blood-sugar drop badge"><svg
+                                        viewBox="0 0 220 176" focusable="false" aria-hidden="true">
+                                        <circle class="a-ring" cx="110" cy="92" r="74" />
+                                        <circle class="a-ring2" cx="110" cy="92" r="52" />
+                                        <use href="#cf-shoe" transform="translate(27 66) scale(.88)" />
+                                        <g class="a-float">
+                                            <circle class="a-high" cx="170" cy="40" r="22" />
+                                            <path class="a-white"
+                                                d="M170 26 C163 35 160 39 160 44 a10 10 0 0 0 20 0 c0-5-3-9-10-18z" />
+                                        </g>
+                                    </svg>
+                                    <picture class="cf-photo"><img src="../assets/images/coverage/diabetic.jpg" alt=""
+                                            loading="lazy" decoding="async" onerror="this.parentNode.remove()">
+                                    </picture>
+                                </figure>
+                            </div>
+                            <div class="cf-ready">
+                                <span class="cf-label">Keep these ready</span>
+                                <span class="cf-count">0 of 4 ready</span>
+                            </div>
+                            <div class="cf-bar" aria-hidden="true"><i></i></div>
+                            <div class="cf-docs">
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Doctor's prescription</span></label>
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Itemised bill / invoice</span></label>
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Insurance policy / ID card</span></label>
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Claim form from your insurer</span></label>
+                            </div>
+                            <div class="cf-actions">
+                                <a class="cf-btn cf-btn-main" href="#request">Get help with this claim</a>
+                                <a class="cf-btn cf-btn-ghost" href="#rx-guide">See a good prescription</a>
+                            </div>
+                        </div>
+                        <div class="cf-panel cf-p2 cf-mid">
+                            <div class="cf-top">
+                                <div class="cf-intro"><span class="cf-pill">Varies by plan</span>
+                                    <h3>Plan rules differ, so check first</h3>
+                                    <p>Some plans cover heel support and some do not. A prescription or medical note
+                                        makes your case much clearer.</p>
+                                </div>
+                                <figure class="cf-art" role="img"
+                                    aria-label="Illustration of a shoe with the heel area highlighted"><svg
+                                        viewBox="0 0 220 176" focusable="false" aria-hidden="true">
+                                        <circle class="a-ring" cx="110" cy="92" r="74" />
+                                        <circle class="a-ring2" cx="110" cy="92" r="52" />
+                                        <use href="#cf-shoe" transform="translate(27 66) scale(.88)" />
+                                        <circle class="a-pulse a-mid-ring" cx="48" cy="118" r="16" />
+                                        <circle class="a-pulse a-mid-ring p2" cx="48" cy="118" r="28" />
+                                        <circle class="a-mid" cx="48" cy="118" r="7" />
+                                    </svg>
+                                    <picture class="cf-photo"><img src="../assets/images/coverage/heel-pain.jpg" alt=""
+                                            loading="lazy" decoding="async" onerror="this.parentNode.remove()">
+                                    </picture>
+                                </figure>
+                            </div>
+                            <div class="cf-ready">
+                                <span class="cf-label">Keep these ready</span>
+                                <span class="cf-count">0 of 4 ready</span>
+                            </div>
+                            <div class="cf-bar" aria-hidden="true"><i></i></div>
+                            <div class="cf-docs">
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Prescription or medical note</span></label>
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Itemised bill / invoice</span></label>
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Product model &amp; size details</span></label>
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Insurance policy / ID card</span></label>
+                            </div>
+                            <div class="cf-actions">
+                                <a class="cf-btn cf-btn-main" href="#request">Get help with this claim</a>
+                                <a class="cf-btn cf-btn-ghost" href="#rx-guide">See a good prescription</a>
+                            </div>
+                        </div>
+                        <div class="cf-panel cf-p3 cf-mid">
+                            <div class="cf-top">
+                                <div class="cf-intro"><span class="cf-pill">Varies by plan</span>
+                                    <h3>Needs orthopedic advice on paper</h3>
+                                    <p>For severe flat feet or arch problems, insurers usually look for a written
+                                        recommendation from an orthopedic doctor.</p>
+                                </div>
+                                <figure class="cf-art" role="img"
+                                    aria-label="Illustration of a foot arch lifted by an arch support insert"><svg
+                                        viewBox="0 0 220 176" focusable="false" aria-hidden="true">
+                                        <circle class="a-ring" cx="110" cy="92" r="74" />
+                                        <circle class="a-ring2" cx="110" cy="92" r="52" />
+                                        <path class="a-line" stroke-width="7" d="M42 132 C62 70 152 70 178 132" />
+                                        <path class="a-soft2" d="M42 132 C62 70 152 70 178 132 Z" />
+                                        <path class="a-fill" d="M72 132 C92 106 128 106 148 132 Z" />
+                                        <path class="a-line" stroke-width="4" d="M36 134 H184" />
+                                        <g class="a-float">
+                                            <path class="a-line" stroke-width="4"
+                                                d="M110 62 V44 M101 52 L110 43 L119 52" />
+                                        </g>
+                                    </svg>
+                                    <picture class="cf-photo"><img src="../assets/images/coverage/flat-feet.jpg" alt=""
+                                            loading="lazy" decoding="async" onerror="this.parentNode.remove()">
+                                    </picture>
+                                </figure>
+                            </div>
+                            <div class="cf-ready">
+                                <span class="cf-label">Keep these ready</span>
+                                <span class="cf-count">0 of 4 ready</span>
+                            </div>
+                            <div class="cf-bar" aria-hidden="true"><i></i></div>
+                            <div class="cf-docs">
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Orthopedic doctor's written
+                                        advice</span></label>
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Itemised bill / invoice</span></label>
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Product model &amp; size details</span></label>
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Insurance policy / ID card</span></label>
+                            </div>
+                            <div class="cf-actions">
+                                <a class="cf-btn cf-btn-main" href="#request">Get help with this claim</a>
+                                <a class="cf-btn cf-btn-ghost" href="#rx-guide">See a good prescription</a>
+                            </div>
+                        </div>
+                        <div class="cf-panel cf-p4 cf-mid">
+                            <div class="cf-top">
+                                <div class="cf-intro"><span class="cf-pill">Varies by plan</span>
+                                    <h3>Recovery notes carry the claim</h3>
+                                    <p>After surgery or an injury, a discharge summary or doctor's note showing why
+                                        supportive footwear is needed is what insurers look for.</p>
+                                </div>
+                                <figure class="cf-art" role="img"
+                                    aria-label="Illustration of a surgical recovery boot with a crutch"><svg
+                                        viewBox="0 0 220 176" focusable="false" aria-hidden="true">
+                                        <circle class="a-ring" cx="110" cy="92" r="74" />
+                                        <circle class="a-ring2" cx="110" cy="92" r="52" />
+                                        <path class="a-line" stroke-width="7" d="M52 36 L82 140" />
+                                        <path class="a-line" stroke-width="7" d="M42 44 H66" />
+                                        <path class="a-card a-stroke"
+                                            d="M96 58 H138 L140 104 L180 114 C190 117 192 132 180 134 H92 Z" />
+                                        <path class="a-line" stroke-width="4" d="M100 74 H134 M100 90 H136" />
+                                        <path class="a-fill" d="M90 134 H186 V142 H90 Z" />
+                                        <g class="a-float">
+                                            <circle class="a-mid" cx="170" cy="46" r="20" />
+                                            <path class="a-white" d="M164 41 h12 M170 35 v12" stroke="#fff"
+                                                stroke-width="5" stroke-linecap="round" />
+                                        </g>
+                                    </svg>
+                                    <picture class="cf-photo"><img src="../assets/images/coverage/post-surgery.jpg"
+                                            alt="" loading="lazy" decoding="async" onerror="this.parentNode.remove()">
+                                    </picture>
+                                </figure>
+                            </div>
+                            <div class="cf-ready">
+                                <span class="cf-label">Keep these ready</span>
+                                <span class="cf-count">0 of 4 ready</span>
+                            </div>
+                            <div class="cf-bar" aria-hidden="true"><i></i></div>
+                            <div class="cf-docs">
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Discharge summary or doctor's
+                                        note</span></label>
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Itemised bill / invoice</span></label>
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Product model &amp; size details</span></label>
+                                <label class="cf-doc"><input type="checkbox"><span class="cf-box"
+                                        aria-hidden="true"></span><span>Claim form from your insurer</span></label>
+                            </div>
+                            <div class="cf-actions">
+                                <a class="cf-btn cf-btn-main" href="#request">Get help with this claim</a>
+                                <a class="cf-btn cf-btn-ghost" href="#rx-guide">See a good prescription</a>
+                            </div>
+                        </div>
+                        <div class="cf-panel cf-p5 cf-low">
+                            <div class="cf-top">
+                                <div class="cf-intro"><span class="cf-pill">Not typically claimable</span>
+                                    <h3>Usually outside medical cover</h3>
+                                    <p>Comfort shoes without a medical need are generally not reimbursed. If a doctor
+                                        has advised support footwear for a condition, pick that condition on the left
+                                        instead.</p>
+                                </div>
+                                <figure class="cf-art" role="img"
+                                    aria-label="Illustration of an everyday comfort sneaker with a heart badge"><svg
+                                        viewBox="0 0 220 176" focusable="false" aria-hidden="true">
+                                        <circle class="a-ring" cx="110" cy="92" r="74" />
+                                        <circle class="a-ring2" cx="110" cy="92" r="52" />
+                                        <use href="#cf-shoe" transform="translate(27 66) scale(.88)" />
+                                        <g class="a-float">
+                                            <circle class="a-low" cx="170" cy="40" r="22" />
+                                            <path class="a-white"
+                                                d="M170 52 C158 44 156 36 160 32 C164 28 169 30 170 34 C171 30 176 28 180 32 C184 36 182 44 170 52z" />
+                                        </g>
+                                    </svg>
+                                    <picture class="cf-photo"><img src="../assets/images/coverage/comfort.jpg" alt=""
+                                            loading="lazy" decoding="async" onerror="this.parentNode.remove()">
+                                    </picture>
+                                </figure>
+                            </div>
+                            <div class="cf-tip"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+                                <span>Not sure which group you fall in? Tell us about your feet and we will point you to
+                                    the right one.</span>
+                            </div>
+                            <div class="cf-actions">
+                                <a class="cf-btn cf-btn-main" href="#request">Talk to our team</a>
+                                <a class="cf-btn cf-btn-ghost" href="fitting-consultation.html">Book a fitting</a>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="cf-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i>General guidance only.
+                        Your insurer makes the final decision.</p>
+                </div>
+            </div>
+            <script>
+                (function () {
+                    document.querySelectorAll('.cf-panel').forEach(function (panel) {
+                        var boxes = panel.querySelectorAll('.cf-doc input');
+                        if (!boxes.length) return;
+                        var out = panel.querySelector('.cf-count');
+                        var bar = panel.querySelector('.cf-bar i');
+                        function update() {
+                            var n = 0;
+                            boxes.forEach(function (b) { if (b.checked) n++; });
+                            out.textContent = n === boxes.length ? 'All ready' : n + ' of ' + boxes.length + ' ready';
+                            bar.style.width = (n / boxes.length * 100) + '%';
+                            panel.classList.toggle('cf-all', n === boxes.length);
+                        }
+                        boxes.forEach(function (b) { b.addEventListener('change', update); });
+                    });
+                })();
+            </script>
+        </section>
+
+        <section class="mx-sec mx-alt rxg-sec" id="rx-guide">
+            <div class="rxg-wrap">
+                <div class="rxg-head">
+                    <span class="section-label">PRESCRIPTION EXPLAINED</span>
+                    <h2>What a Good Prescription <span>Looks Like</span></h2>
+                    <p>Four parts make a prescription easy for insurers to accept. Hover or tap a part to see where it
+                        sits on the sheet.</p>
+                </div>
+
+                <div class="rxg">
+
+                    <!-- Sample prescription sheet -->
+                    <div class="rxg-sheet" role="img" aria-label="Sample prescription layout with four numbered parts">
+                        <div class="rxg-letterhead">
+                            <span class="rxg-logo" aria-hidden="true"><i class="fa-solid fa-staff-snake"></i></span>
+                            <div class="rxg-clinic">
+                                <strong>Clinic / Hospital name</strong>
+                                <small>Address · Phone</small>
+                            </div>
+                            <span class="rxg-date"><small>DATE</small>__ / __ / ____</span>
+                        </div>
+
+                        <div class="rxg-patient">
+                            <i class="fa-solid fa-user" aria-hidden="true"></i>
+                            <span><b>Patient:</b> Full name, age</span>
+                        </div>
+
+                        <div class="rxg-part" data-n="1">
+                            <span class="rxg-badge">1</span>
+                            <p><b>Diagnosis:</b> e.g. diabetic neuropathy</p>
+                        </div>
+                        <div class="rxg-part" data-n="2">
+                            <span class="rxg-badge">2</span>
+                            <p><b>Advice:</b> therapeutic / orthopedic footwear with extra depth</p>
+                        </div>
+                        <div class="rxg-part" data-n="3">
+                            <span class="rxg-badge">3</span>
+                            <p><b>Details:</b> width, insoles or special features if needed</p>
+                        </div>
+
+                        <div class="rxg-part rxg-sign" data-n="4">
+                            <span class="rxg-badge">4</span>
+                            <div class="rxg-sign-body">
+                                <svg class="rxg-scribble" viewBox="0 0 160 40" aria-hidden="true">
+                                    <path
+                                        d="M4 28 C16 6 26 6 24 24 C22 36 34 8 44 20 C52 30 56 12 66 18 C78 26 84 14 96 20 C108 26 116 22 128 16 C136 12 146 20 156 14"
+                                        fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                                </svg>
+                                <span>Doctor's signature · Registration no.</span>
+                            </div>
+                            <span class="rxg-stamp" aria-hidden="true">REG<br>NO.</span>
+                        </div>
+                    </div>
+
+                    <!-- Explanation -->
+                    <div class="rxg-why">
+                        <h3>Why each part matters</h3>
+
+                        <ol class="rxg-steps">
+                            <li class="rxg-step" data-n="1" tabindex="0">
+                                <span class="rxg-step-no">1</span>
+                                <div><strong>Diagnosis</strong>
+                                    <p>Tells the insurer the medical reason.</p>
+                                </div>
+                                <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+                            </li>
+                            <li class="rxg-step" data-n="2" tabindex="0">
+                                <span class="rxg-step-no">2</span>
+                                <div><strong>Advice</strong>
+                                    <p>Should say footwear is recommended, not just "shoes".</p>
+                                </div>
+                                <i class="fa-solid fa-shoe-prints" aria-hidden="true"></i>
+                            </li>
+                            <li class="rxg-step" data-n="3" tabindex="0">
+                                <span class="rxg-step-no">3</span>
+                                <div><strong>Details</strong>
+                                    <p>Help us choose a matching product.</p>
+                                </div>
+                                <i class="fa-solid fa-ruler-combined" aria-hidden="true"></i>
+                            </li>
+                            <li class="rxg-step" data-n="4" tabindex="0">
+                                <span class="rxg-step-no">4</span>
+                                <div><strong>Signature &amp; registration</strong>
+                                    <p>Make the document valid.</p>
+                                </div>
+                                <i class="fa-solid fa-signature" aria-hidden="true"></i>
+                            </li>
+                        </ol>
+
+                        <p class="rxg-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i>Illustration only.
+                            Your doctor decides what to write.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="ft-sec ft-alt" id="request">
+            <div class="ft-head"><span class="section-label">CLAIM SUPPORT</span>
+                <h2>Ask Our <span>Team</span></h2>
+                <p>Tell us about your plan and we will call you back.</p>
+            </div>
+            <form class="in-form" action="#sent" method="get">
+                <div class="ft-fields"><label>Full name<input type="text" name="name" autocomplete="name"
+                            required></label><label>Phone<input type="tel" name="phone" autocomplete="tel"
+                            pattern="[+0-9 ]{10,15}" required></label>
+                    <label>Insurer / employer<input type="text" name="insurer"
+                            placeholder="e.g. your insurance company"></label><label>Do you have a prescription?<select
+                            name="rx">
+                            <option>Yes</option>
+                            <option>Not yet</option>
+                            <option>Not sure</option>
+                        </select></label>
+                    <label class="full">Your question<textarea name="q" rows="4"></textarea></label>
+                </div>
+                <label class="ft-check"><input type="checkbox" required> I agree to be contacted about my
+                    request.</label><button class="ft-submit" type="submit">Send Request <svg width="16" height="16"
+                        fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                    </svg></button>
+            </form>
+        </section>
+        <div class="ft-done" id="sent" role="dialog" aria-label="Confirmation">
+            <div><span class="ft-tick">✓</span>
+                <h3>Request Received</h3>
+                <p>Thank you! Our team will call you shortly.</p><a href="#main" class="primary-button">Done</a>
+            </div>
+        </div>
+        <footer class="site-footer">
+            <div class="footer-container">
+
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-brand-link">
+                        <div class="footer-brand-logo">
+                            <img src="../assets/images/arthrostride-logo-light.png" alt="ArthroStride Logo">
+                        </div>
+                        <div class="footer-brand-text">
+                            <div class="footer-brand-name">
+                                Arthro<span>Stride</span>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="footer-description">
+                        Supportive orthopedic and comfort footwear designed
+                        around foot health, everyday movement, and a
+                        comfortable fit.
+                    </p>
+
+                    <div class="footer-socials">
+                        <a href="#" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>
+                        Quick Links
+                    </h3>
+                    <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="products.html">Products</a>
+                    <a href="fitting-consultation.html">Fitting</a>
+                    <a href="insurance-prescription.html">Coverage</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="booking.html">Visit Booking</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>
+                        Our Footwear
+                    </h3>
+                    <a href="products.html#plantar-fasciitis">
+                        Plantar Fasciitis
+                    </a>
+                    <a href="products.html#diabetic-footwear">
+                        Diabetic Footwear
+                    </a>
+                    <a href="products.html#wide-fit">
+                        Wide Fit
+                    </a>
+                    <a href="products.html#arch-support">
+                        Arch Support
+                    </a>
+                    <a href="products.html#everyday-comfort">
+                        Everyday Comfort
+                    </a>
+                    <a href="products.html#heel-cushioning">
+                        Heel &amp; Cushioning
+                    </a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>
+                        Information
+                    </h3>
+                    <a href="fitting-consultation.html">
+                        Personalized Fitting
+                    </a>
+                    <a href="insurance-prescription.html">
+                        Insurance Support
+                    </a>
+                    <a href="insurance-prescription.html">
+                        Prescription Guidance
+                    </a>
+                    <a href="products.html">
+                        Footwear Guide
+                    </a>
+                    <a href="contact.html">
+                        Store Information
+                    </a>
+                </div>
+
+                <div class="footer-column footer-contact">
+                    <h3>
+                        Get In Touch
+                    </h3>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </span>
+                        Hyderabad, India
+                    </p>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </span>
+                        +91 98765 43210
+                    </p>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        support@arthrostride.com
+                    </p>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </span>
+                        Mon - Sat: 9 AM - 7 PM
+                    </p>
+                    <a href="fitting-consultation.html" class="footer-book-button">
+                        Book a Consultation
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-container">
+                    <p>
+                        &copy; 2026
+                        <span>ArthroStride</span>.
+                        All Rights Reserved.
+                    </p>
+                    <div class="footer-legal">
+                        <a href="#">
+                            Privacy Policy
+                        </a>
+                        <a href="#">
+                            Terms &amp; Conditions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script>
+        /* Insurance page theme control: keep checkbox, data-theme and logos in sync. */
+        (function () {
+            try {
+                var root = document.documentElement;
+                var toggle = document.getElementById("theme-toggle");
+                if (!toggle) return;
+
+                function applyTheme(isDark) {
+                    var theme = isDark ? "dark" : "light";
+                    root.setAttribute("data-theme", theme);
+                    root.style.colorScheme = theme;
+                    localStorage.setItem("theme", theme);
+
+                    var logo = isDark
+                        ? "../assets/images/arthrostride-logo-dark.png"
+                        : "../assets/images/arthrostride-logo-light.png";
+
+                    document.querySelectorAll(".brand-logo img, .footer-brand-logo img").forEach(function (img) {
+                        img.src = logo;
+                    });
+                    document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"]').forEach(function (link) {
+                        link.href = logo;
+                    });
+                }
+
+                toggle.checked = root.getAttribute("data-theme") === "dark";
+                toggle.addEventListener("change", function () {
+                    applyTheme(toggle.checked);
+                });
+            } catch (e) { }
+        })();
+    </script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

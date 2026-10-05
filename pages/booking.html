@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>
+    /* Apply saved theme / direction before first paint (no flash, same on every page) */
+    (function () {
+      try {
+        var d = document.documentElement;
+        d.setAttribute('data-theme', localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+        d.setAttribute('dir', localStorage.getItem('rtl') === 'true' ? 'rtl' : 'ltr');
+        d.style.colorScheme = d.getAttribute('data-theme');
+      } catch (e) { }
+    })();
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <title>Book a Visit | ArthroStride</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="../assets/css/booking.css?v=3">
+  <link rel="icon" type="image/png" href="../assets/images/arthrostride-logo-light.png">
+  <link rel="apple-touch-icon" href="../assets/images/arthrostride-logo-light.png">
+  <script>
+    (function () { try { var t = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'; var u = t === 'dark' ? '../assets/images/arthrostride-logo-dark.png' : '../assets/images/arthrostride-logo-light.png'; document.documentElement.setAttribute('data-theme', t); document.querySelectorAll('link[rel="icon"],link[rel="apple-touch-icon"]').forEach(function (l) { l.href = u }); } catch (e) { } })();
+  </script>
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body>
+
+  <!-- TOP RIGHT CONTROLS -->
+  <div class="page-controls">
+
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <button type="button" id="rtl-toggle" class="rtl-toggle">
+      RTL
+    </button>
+
+  </div>
+
+
+  <!-- BOOKING PAGE -->
+  <main class="booking-page">
+
+    <!-- FORM SECTION -->
+    <section class="booking-section">
+
+      <div class="booking-container">
+
+        <!-- LOGO + NAME -->
+        <a href="../index.html" class="booking-brand" aria-label="ArthroStride Home">
+
+          <div class="booking-logo">
+            <img src="../assets/images/arthrostride-logo-light.png" alt="ArthroStride Logo">
+          </div>
+
+          <div class="booking-brand-name">
+            Arthro<span>Stride</span>
+          </div>
+
+        </a>
+
+
+        <div class="booking-intro">
+
+          <span class="booking-label">
+            REQUEST A VISIT
+          </span>
+
+          <h2>
+            Let’s arrange your visit
+          </h2>
+
+          <p>
+            Share your details and visit preferences.
+            Our team will use this information to
+            coordinate your appointment.
+          </p>
+
+        </div>
+
+
+        <form class="booking-form" id="booking-form">
+
+          <!-- FULL NAME -->
+          <div class="form-group">
+
+            <label for="full-name">
+              Full Name
+            </label>
+
+            <input type="text" id="full-name" name="full_name" placeholder="Enter your full name" required>
+
+          </div>
+
+
+          <!-- PHONE -->
+          <div class="form-group">
+
+            <label for="phone">
+              Phone Number
+            </label>
+
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+          </div>
+
+
+          <!-- EMAIL -->
+          <div class="form-group">
+
+            <label for="email">
+              Email Address
+            </label>
+
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+          </div>
+
+
+          <!-- SERVICE -->
+          <div class="form-group">
+
+            <label for="service">
+              Service Required
+            </label>
+
+            <select id="service" name="service" required>
+
+              <option value="">
+                Select a service
+              </option>
+
+              <option value="orthopedic-footwear">
+                Orthopedic Footwear
+              </option>
+
+              <option value="fitting-consultation">
+                Fitting Consultation
+              </option>
+
+              <option value="diabetic-footwear">
+                Diabetic Footwear
+              </option>
+
+              <option value="plantar-fasciitis">
+                Plantar Fasciitis Support
+              </option>
+
+              <option value="wide-fit">
+                Wide-Fit Footwear
+              </option>
+
+              <option value="home-visit">
+                Home Visit
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- DATE -->
+          <div class="form-group">
+
+            <label for="preferred-date">
+              Preferred Date
+            </label>
+
+            <div class="date-input-wrapper">
+
+              <input type="date" id="preferred-date" name="preferred_date" required>
+
+              <button type="button" id="calendar-btn" class="calendar-btn" aria-label="Open calendar">
+                <i class="fa-regular fa-calendar"></i>
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- TIME -->
+          <div class="form-group">
+
+            <label for="preferred-time">
+              Preferred Time
+            </label>
+
+            <select id="preferred-time" name="preferred_time" required>
+
+              <option value="">
+                Select a preferred time
+              </option>
+
+              <option value="09:00">09:00 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="13:00">01:00 PM</option>
+              <option value="14:00">02:00 PM</option>
+              <option value="15:00">03:00 PM</option>
+              <option value="16:00">04:00 PM</option>
+              <option value="17:00">05:00 PM</option>
+              <option value="18:00">06:00 PM</option>
+
+            </select>
+
+          </div>
+
+
+          <!-- LOCATION -->
+          <div class="form-group full-width">
+
+            <label for="apartment-location">
+              Apartment Location
+            </label>
+
+            <input type="text" id="apartment-location" name="apartment_location"
+              placeholder="Apartment / building, area, city" required>
+
+          </div>
+
+
+          <!-- ABOUT -->
+          <div class="form-group full-width">
+
+            <label for="about-apartment">
+              About Your Apartment
+            </label>
+
+            <textarea id="about-apartment" name="about_apartment" rows="6"
+              placeholder="Tell us about your apartment, access details, floor, parking, or anything we should know before the visit."></textarea>
+
+          </div>
+
+
+          <!-- SUBMIT -->
+          <div class="form-submit full-width">
+
+            <button type="submit" class="request-btn">
+              Request a Visit
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script src="../assets/js/main.js"></script>
+
+  <script>
+    /* keep the logo in sync with the theme (tries several folder paths) */
+    (function () {
+      var img = document.querySelector('.booking-logo img');
+      if (!img) return;
+      var bases = ['../assets/images/', '../../assets/images/', 'assets/images/'];
+      function setLogo() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        var file = dark ? 'arthrostride-logo-dark.png' : 'arthrostride-logo-light.png';
+        var i = 0;
+        img.onerror = function () {
+          i++;
+          if (i < bases.length) { img.src = bases[i] + file; } else { img.onerror = null; }
+        };
+        img.src = bases[0] + file;
+      }
+      setLogo();
+      new MutationObserver(setLogo).observe(document.documentElement,
+        { attributes: true, attributeFilter: ['data-theme'] });
+    })();
+  </script>
+
+</body>
+
+</html>

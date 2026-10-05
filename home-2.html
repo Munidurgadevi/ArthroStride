@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        (function () {
+            try {
+                var d = document.documentElement;
+                d.setAttribute('data-theme', localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+                d.setAttribute('dir', localStorage.getItem('rtl') === 'true' ? 'rtl' : 'ltr');
+                d.style.colorScheme = d.getAttribute('data-theme');
+            } catch (e) { }
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description"
+        content="ArthroStride orthopedic and comfort footwear designed for supportive everyday movement.">
+    <title>ArthroStride | Home 2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="stylesheet" href="assets/css/home-2.css">
+    <link rel="icon" type="image/png" href="assets/images/arthrostride-logo-light.png">
+    <link rel="apple-touch-icon" href="assets/images/arthrostride-logo-light.png">
+    <script>
+        (function () { try { var t = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'; var u = t === 'dark' ? 'assets/images/arthrostride-logo-dark.png' : 'assets/images/arthrostride-logo-light.png'; document.documentElement.setAttribute('data-theme', t); document.querySelectorAll('link[rel="icon"],link[rel="apple-touch-icon"]').forEach(function (l) { l.href = u }); } catch (e) { } })();
+    </script>
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="brand">
+                <div class="brand-logo">
+                    <img src="assets/images/arthrostride-logo-light.png" alt="ArthroStride Logo">
+                </div>
+                <div class="brand-text">
+                    <div class="brand-name">
+                        Arthro<span>Stride</span>
+                    </div>
+                </div>
+            </a>
+            <nav id="main-navigation" class="main-navigation" aria-label="Main Navigation">
+                <div class="home-dropdown">
+                    <button type="button" class="nav-link home-dropdown-toggle active" aria-current="page"
+                        aria-expanded="false">
+                        Home
+                        <span class="home-chevron" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-caret-down-fill" viewBox="0 0 16 16" focusable="false">
+                                <path
+                                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="home-dropdown-menu">
+                        <a href="index.html" class="home-dropdown-link">
+                            Home 1
+                        </a>
+                        <a href="home-2.html" class="home-dropdown-link active" aria-current="page">
+                            Home 2
+                        </a>
+                    </div>
+                </div>
+                <a href="pages/about.html" class="nav-link">
+                    About
+                </a>
+                <a href="pages/products.html" class="nav-link">
+                    Products
+                </a>
+                <a href="pages/fitting-consultation.html" class="nav-link">
+                    Fitting
+                </a>
+                <a href="pages/insurance-prescription.html" class="nav-link">
+                    Coverage
+                </a>
+                <a href="pages/contact.html" class="nav-link">
+                    Contact
+                </a>
+                <a href="pages/booking.html" class="nav-drawer-cta">Visit Booking</a>
+            </nav>
+            <div class="header-actions">
+                <input class="theme-control-input" type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+                <label class="header-icon-btn theme-control-label" for="theme-toggle" title="Toggle dark mode"
+                    aria-label="Toggle dark mode">
+                    <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+                        <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"
+                            fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+                    </svg>
+                </label>
+                <input class="theme-control-input" type="checkbox" id="rtl-toggle" aria-label="Toggle RTL">
+                <label class="header-icon-btn theme-control-label" for="rtl-toggle" title="Toggle RTL / LTR"
+                    aria-label="Toggle RTL / LTR">
+                    <span class="rtl-label-on">RTL</span>
+                    <span class="rtl-label-off">LTR</span>
+                </label>
+                <a href="pages/booking.html" class="header-cta">
+                    Visit Booking
+                </a>
+                <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="main-navigation"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+    <main class="premium-home">
+        <section class="premium-hero">
+            <span class="orb orb-1" aria-hidden="true"></span>
+            <span class="orb orb-2" aria-hidden="true"></span>
+            <div class="premium-hero-copy">
+                <span class="premium-kicker"><i class="fa-solid fa-shield-heart"></i> Orthopedic &amp; comfort
+                    footwear</span>
+                <h1>Comfort that moves <em>with you.</em></h1>
+                <p>Thoughtfully selected footwear for plantar fasciitis, diabetic care, wide feet and everyday support,
+                    fitted around how you actually walk.</p>
+                <div class="premium-actions">
+                    <a href="pages/products.html" class="premium-primary">Explore Footwear <span>→</span></a>
+                    <a href="pages/fitting-consultation.html" class="premium-text-link">Find Your Fit <span>→</span></a>
+                </div>
+                <div class="premium-proof">
+                    <div><strong>01</strong><span>Supportive Fit</span></div>
+                    <div><strong>02</strong><span>Everyday Comfort</span></div>
+                    <div><strong>03</strong><span>Thoughtful Design</span></div>
+                </div>
+            </div>
+            <div class="premium-hero-visual">
+                <span class="hero-ring" aria-hidden="true"></span>
+                <div class="premium-image-frame">
+                    <!-- hero-stage: shoe image + shatter intro animation (HTML + CSS only).
+                         To change the shoe, update BOTH the img src and --hero-shoe below. -->
+                    <div class="hero-stage"
+                        style="--hero-shoe:url('https://i.ibb.co/sdRPLGwQ/Chat-GPT-Image-Sep-28-2026-02-50-13-PM.png')">
+                        <img src="https://i.ibb.co/sdRPLGwQ/Chat-GPT-Image-Sep-28-2026-02-50-13-PM.png"
+                            alt="ArthroStride orthopedic comfort footwear" loading="eager">
+                        <div class="hero-shards" aria-hidden="true">
+                            <i style="--tx:-16%;--ty:-12%;--r:-7deg;--n:0"></i>
+                            <i style="--tx:2%;--ty:-22%;--r:5deg;--n:1"></i>
+                            <i style="--tx:18%;--ty:-14%;--r:8deg;--n:2"></i>
+                            <i style="--tx:20%;--ty:14%;--r:-6deg;--n:3"></i>
+                            <i style="--tx:2%;--ty:22%;--r:6deg;--n:4"></i>
+                            <i style="--tx:-18%;--ty:15%;--r:-8deg;--n:5"></i>
+                        </div>
+                    </div>
+                    <span class="shine" aria-hidden="true"></span>
+                </div>
+                <div class="premium-float-card">
+                    <span>Comfort first</span>
+                    <p>Footwear selected around support, comfort and your everyday movement.</p>
+                </div>
+                <div class="hero-badge"><i class="fa-solid fa-star"></i><b>4.9</b><small>Happy walkers</small></div>
+            </div>
+        </section>
+        <div class="ph-marquee" aria-hidden="true">
+            <div class="ph-marquee-track">
+                <span><i class="fa-solid fa-shoe-prints"></i> Arch support</span>
+                <span><i class="fa-solid fa-heart-pulse"></i> Diabetic friendly</span>
+                <span><i class="fa-solid fa-arrows-left-right"></i> Wide fit</span>
+                <span><i class="fa-solid fa-cloud"></i> Heel cushioning</span>
+                <span><i class="fa-solid fa-user-doctor"></i> Prescription guidance</span>
+                <span><i class="fa-solid fa-shoe-prints"></i> Arch support</span>
+                <span><i class="fa-solid fa-heart-pulse"></i> Diabetic friendly</span>
+                <span><i class="fa-solid fa-arrows-left-right"></i> Wide fit</span>
+                <span><i class="fa-solid fa-cloud"></i> Heel cushioning</span>
+                <span><i class="fa-solid fa-user-doctor"></i> Prescription guidance</span>
+            </div>
+        </div>
+        <section class="ph-section bsl-section" id="best-sellers">
+            <div class="ph-head reveal">
+                <h2>Best sellers, <span>chosen for healthier steps</span></h2>
+                <p>The pairs our customers come back for. Pick a foot need to see what works best.</p>
+            </div>
+            <div class="bsl-chips reveal" role="group" aria-label="Filter by foot need">
+                <button type="button" class="bsl-chip is-on" data-f="all" aria-pressed="true">All</button>
+                <button type="button" class="bsl-chip" data-f="heel" aria-pressed="false">Heel pain</button>
+                <button type="button" class="bsl-chip" data-f="diabetic" aria-pressed="false">Diabetic care</button>
+                <button type="button" class="bsl-chip" data-f="wide" aria-pressed="false">Wide fit</button>
+                <button type="button" class="bsl-chip" data-f="everyday" aria-pressed="false">Everyday comfort</button>
+            </div>
+            <div class="bsl-grid reveal">
+                <article class="bsl-spot" id="bsl-spot" aria-live="polite"></article>
+                <ul class="bsl-list" id="bsl-list"></ul>
+            </div>
+            <script>
+                (function () {
+                    /* EDIT: replace names, prices, ratings, images and links with your real best sellers */
+                    var P = [
+                        {
+                            id: 'heel', need: 'Heel pain', name: 'Heel Relief Walker', price: 3499, old: 4299, rate: 4.9, rev: 1240, img: 'https://i.pinimg.com/1200x/99/48/64/994864fc8df87464a35474e29fb6e75e.jpg', href: 'pages/products.html#plantar-fasciitis', svc: 'plantar-fasciitis',
+                            why: ['Deep heel cup holds the heel steady', 'Firm arch contour eases morning heel pain', 'Shock-absorbing sole for hard floors']
+                        },
+                        {
+                            id: 'diabetic', need: 'Diabetic care', name: 'Diabetic Care Comfort', price: 3999, old: 4799, rate: 4.8, rev: 860, img: 'https://i.pinimg.com/1200x/2c/51/cb/2c51cbd3a8c2dae006b1ca93285c48de.jpg', href: 'pages/products.html#diabetic-footwear', svc: 'diabetic-footwear',
+                            why: ['Seam-free interior reduces pressure points', 'Roomy toe box, no rubbing', 'Removable insole for custom orthotics']
+                        },
+                        {
+                            id: 'wide', need: 'Wide fit', name: 'WideFit Flex', price: 3299, old: 3899, rate: 4.9, rev: 970, img: 'https://i.pinimg.com/736x/a8/4b/de/a84bde0abb16bf8fe9512dececa9ad84.jpg', href: 'pages/products.html#wide-fit', svc: 'wide-fit',
+                            why: ['Extra width and depth for broad feet', 'Soft stretch upper for bunions and swelling', 'Light enough for 10-hour shifts']
+                        },
+                        {
+                            id: 'everyday', need: 'Everyday comfort', name: 'CloudStep Daily', price: 2799, old: 3399, rate: 4.7, rev: 1530, img: 'https://i.ibb.co/FLGYtmMB/Screenshot-2026-10-04-200902.png', href: 'pages/products.html#everyday-comfort', svc: 'orthopedic-footwear',
+                            why: ['Light, flexible and breathable', 'Cushioned sole for long walks', 'Looks good enough for work']
+                        },
+                        {
+                            id: 'heel', need: 'Heel pain', name: 'ArchSupport Pro', price: 3699, old: 4399, rate: 4.8, rev: 710, img: 'https://i.pinimg.com/1200x/ae/d9/58/aed95874a6d8d4b2463e07fae97ac43b.jpg', href: 'pages/products.html#arch-support', svc: 'plantar-fasciitis',
+                            why: ['Structured insole spreads weight evenly', 'Stable heel counter', 'Made for flat and low arches']
+                        }
+                    ];
+                    var spot = document.getElementById('bsl-spot'), list = document.getElementById('bsl-list'), chips = document.querySelectorAll('.bsl-chip');
+                    var cur = P.slice(), sel = 0;
+                    function inr(n) { return '\u20B9' + n.toLocaleString('en-IN'); }
+                    function stars(r) { return '\u2605\u2605\u2605\u2605\u2605'.slice(0, Math.round(r)); }
+                    function render() {
+                        var p = cur[sel];
+                        var off = Math.round((1 - p.price / p.old) * 100);
+                        spot.classList.remove('swap'); void spot.offsetWidth; spot.classList.add('swap');
+                        spot.innerHTML =
+                            '<div class="bsl-photo"><span class="bsl-badge">Best seller</span><img src="' + p.img + '" alt="' + p.name + '" loading="lazy"></div>' +
+                            '<div class="bsl-info"><span class="bsl-need">' + p.need + '</span><h3>' + p.name + '</h3>' +
+                            '<p class="bsl-rate"><span aria-hidden="true">' + stars(p.rate) + '</span> <b>' + p.rate + '</b> from ' + p.rev.toLocaleString('en-IN') + ' walkers</p>' +
+                            '<ul>' + p.why.map(function (w) { return '<li><i class="fa-solid fa-circle-check"></i> ' + w + '</li>'; }).join('') + '</ul>' +
+                            '<p class="bsl-price"><b>' + inr(p.price) + '</b> <s>' + inr(p.old) + '</s> <em>' + off + '% off</em></p>' +
+                            '<div class="bsl-actions"><a class="premium-primary" href="' + p.href + '">View product <span>\u2192</span></a>' +
+                            '<a class="ph-book-btn" href="pages/booking.html?service=' + p.svc + '"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Visit Booking</a></div></div>';
+                        list.innerHTML = cur.map(function (q, i) {
+                            return '<li><button type="button" class="bsl-item' + (i === sel ? ' is-on' : '') + '" data-i="' + i + '" aria-pressed="' + (i === sel) + '">' +
+                                '<img src="' + q.img + '" alt="" loading="lazy">' +
+                                '<span><b>' + q.name + '</b><small>' + q.need + ' \u00B7 ' + q.rate + ' <span class="bsl-star">\u2605</span></small></span><strong>' + inr(q.price) + '</strong></button></li>';
+                        }).join('');
+                    }
+                    list.addEventListener('click', function (e) {
+                        var b = e.target.closest('.bsl-item'); if (!b) return;
+                        sel = +b.dataset.i; render();
+                        var again = list.querySelector('.is-on'); if (again) again.focus();
+                    });
+                    chips.forEach(function (c) {
+                        c.addEventListener('click', function () {
+                            chips.forEach(function (x) { var on = x === c; x.classList.toggle('is-on', on); x.setAttribute('aria-pressed', on); });
+                            cur = c.dataset.f === 'all' ? P.slice() : P.filter(function (p) { return p.id === c.dataset.f; });
+                            sel = 0; render();
+                        });
+                    });
+                    render();
+                })();
+            </script>
+        </section>
+        <section class="ph-section fp-section" id="pressure-map">
+            <div class="ph-head reveal">
+                <h2>See the pressure <span>your feet carry</span></h2>
+                <p>Drag the handle to compare an ordinary shoe with ArthroStride support.</p>
+            </div>
+            <div class="fp-grid reveal">
+                <div class="fp-stage" id="fp-stage">
+                    <svg class="fp-defs" width="0" height="0" aria-hidden="true" focusable="false">
+                        <defs>
+                            <clipPath id="fp-ft">
+                                <path
+                                    d="M50 238C34 238 26 224 26 206C26 190 33 178 36 162C38 150 40 138 38 124C36 110 24 98 20 80C17 64 20 50 30 46C42 40 60 38 72 46C82 52 82 70 80 86C78 104 74 116 72 130C71 146 74 160 72 176C70 196 72 214 68 224C64 234 58 238 50 238Z" />
+                                <ellipse cx="31" cy="28" rx="10" ry="12" />
+                                <ellipse cx="46" cy="19" rx="6.5" ry="8.5" />
+                                <ellipse cx="58" cy="21" rx="6" ry="8" />
+                                <ellipse cx="68" cy="28" rx="5.2" ry="7" />
+                                <ellipse cx="77" cy="38" rx="4.5" ry="6" />
+                            </clipPath>
+                            <filter id="fp-blur" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur stdDeviation="3.5" />
+                            </filter>
+                            <g id="fp-ord" filter="url(#fp-blur)">
+                                <circle cx="49" cy="208" r="23" fill="#ef4444" opacity="0.95" />
+                                <circle cx="32" cy="66" r="17" fill="#ef4444" opacity="0.9" />
+                                <circle cx="66" cy="66" r="12" fill="#f97316" opacity="0.85" />
+                                <circle cx="31" cy="28" r="9" fill="#f97316" opacity="0.9" />
+                                <circle cx="70" cy="125" r="7" fill="#fde68a" opacity="0.45" />
+                            </g>
+                            <g id="fp-art" filter="url(#fp-blur)">
+                                <circle cx="49" cy="206" r="27" fill="#34d399" opacity="0.75" />
+                                <circle cx="49" cy="208" r="10" fill="#fbbf24" opacity="0.5" />
+                                <circle cx="50" cy="66" r="31" fill="#2dd4bf" opacity="0.7" />
+                                <circle cx="50" cy="66" r="12" fill="#fbbf24" opacity="0.45" />
+                                <circle cx="50" cy="24" r="25" fill="#34d399" opacity="0.5" />
+                                <circle cx="62" cy="130" r="16" fill="#fbbf24" opacity="0.55" />
+                            </g>
+                        </defs>
+                    </svg>
+                    <div class="fp-layer fp-base">
+                        <svg viewBox="0 0 400 250" aria-hidden="true" focusable="false">
+                            <g transform="translate(215 5)">
+                                <g class="fp-foot fp-foot-o" stroke-width="1">
+                                    <path
+                                        d="M50 238C34 238 26 224 26 206C26 190 33 178 36 162C38 150 40 138 38 124C36 110 24 98 20 80C17 64 20 50 30 46C42 40 60 38 72 46C82 52 82 70 80 86C78 104 74 116 72 130C71 146 74 160 72 176C70 196 72 214 68 224C64 234 58 238 50 238Z" />
+                                    <ellipse cx="31" cy="28" rx="10" ry="12" />
+                                    <ellipse cx="46" cy="19" rx="6.5" ry="8.5" />
+                                    <ellipse cx="58" cy="21" rx="6" ry="8" />
+                                    <ellipse cx="68" cy="28" rx="5.2" ry="7" />
+                                    <ellipse cx="77" cy="38" rx="4.5" ry="6" />
+                                </g>
+                            </g>
+                            <g transform="translate(185 5) scale(-1 1)">
+                                <g class="fp-foot fp-foot-o" stroke-width="1">
+                                    <path
+                                        d="M50 238C34 238 26 224 26 206C26 190 33 178 36 162C38 150 40 138 38 124C36 110 24 98 20 80C17 64 20 50 30 46C42 40 60 38 72 46C82 52 82 70 80 86C78 104 74 116 72 130C71 146 74 160 72 176C70 196 72 214 68 224C64 234 58 238 50 238Z" />
+                                    <ellipse cx="31" cy="28" rx="10" ry="12" />
+                                    <ellipse cx="46" cy="19" rx="6.5" ry="8.5" />
+                                    <ellipse cx="58" cy="21" rx="6" ry="8" />
+                                    <ellipse cx="68" cy="28" rx="5.2" ry="7" />
+                                    <ellipse cx="77" cy="38" rx="4.5" ry="6" />
+                                </g>
+                            </g>
+                            <g transform="translate(215 5)">
+                                <g clip-path="url(#fp-ft)">
+                                    <use href="#fp-ord" />
+                                </g>
+                            </g>
+                            <g transform="translate(185 5) scale(-1 1)">
+                                <g clip-path="url(#fp-ft)">
+                                    <use href="#fp-ord" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="fp-layer fp-top">
+                        <svg viewBox="0 0 400 250" aria-hidden="true" focusable="false">
+                            <rect class="fp-bg-a" width="400" height="250" />
+                            <g transform="translate(215 5)">
+                                <g class="fp-foot fp-foot-a" stroke-width="1">
+                                    <path
+                                        d="M50 238C34 238 26 224 26 206C26 190 33 178 36 162C38 150 40 138 38 124C36 110 24 98 20 80C17 64 20 50 30 46C42 40 60 38 72 46C82 52 82 70 80 86C78 104 74 116 72 130C71 146 74 160 72 176C70 196 72 214 68 224C64 234 58 238 50 238Z" />
+                                    <ellipse cx="31" cy="28" rx="10" ry="12" />
+                                    <ellipse cx="46" cy="19" rx="6.5" ry="8.5" />
+                                    <ellipse cx="58" cy="21" rx="6" ry="8" />
+                                    <ellipse cx="68" cy="28" rx="5.2" ry="7" />
+                                    <ellipse cx="77" cy="38" rx="4.5" ry="6" />
+                                </g>
+                            </g>
+                            <g transform="translate(185 5) scale(-1 1)">
+                                <g class="fp-foot fp-foot-a" stroke-width="1">
+                                    <path
+                                        d="M50 238C34 238 26 224 26 206C26 190 33 178 36 162C38 150 40 138 38 124C36 110 24 98 20 80C17 64 20 50 30 46C42 40 60 38 72 46C82 52 82 70 80 86C78 104 74 116 72 130C71 146 74 160 72 176C70 196 72 214 68 224C64 234 58 238 50 238Z" />
+                                    <ellipse cx="31" cy="28" rx="10" ry="12" />
+                                    <ellipse cx="46" cy="19" rx="6.5" ry="8.5" />
+                                    <ellipse cx="58" cy="21" rx="6" ry="8" />
+                                    <ellipse cx="68" cy="28" rx="5.2" ry="7" />
+                                    <ellipse cx="77" cy="38" rx="4.5" ry="6" />
+                                </g>
+                            </g>
+                            <g transform="translate(215 5)">
+                                <g clip-path="url(#fp-ft)">
+                                    <use href="#fp-art" />
+                                </g>
+                            </g>
+                            <g transform="translate(185 5) scale(-1 1)">
+                                <g clip-path="url(#fp-ft)">
+                                    <use href="#fp-art" />
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="fp-tag fp-tag-a">ArthroStride</span>
+                    <span class="fp-tag fp-tag-o">Ordinary shoe</span>
+                    <span class="fp-line" aria-hidden="true"><i class="fa-solid fa-arrows-left-right"></i></span>
+                    <input type="range" id="fp-range" min="0" max="100" value="0"
+                        aria-label="Compare ordinary shoe and ArthroStride">
+                </div>
+                <div class="fp-side">
+                    <h3 id="fp-verdict">Ordinary shoe</h3>
+                    <div class="fp-bars">
+                        <div><span>Heel</span>
+                            <div class="fp-track"><i data-bar="0"></i></div><b data-val="0"></b>
+                        </div>
+                        <div><span>Forefoot</span>
+                            <div class="fp-track"><i data-bar="1"></i></div><b data-val="1"></b>
+                        </div>
+                        <div><span>Toes</span>
+                            <div class="fp-track"><i data-bar="2"></i></div><b data-val="2"></b>
+                        </div>
+                    </div>
+                    <ul class="ph-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Deep heel cup and cushioned sole soften the landing
+                        </li>
+                        <li><i class="fa-solid fa-circle-check"></i> Arch contour shares weight across the whole foot
+                        </li>
+                        <li><i class="fa-solid fa-circle-check"></i> Roomy toe box removes pinch points</li>
+                    </ul>
+                    <div class="fp-actions">
+                        <a href="pages/products.html" class="premium-primary">Shop best sellers <span>→</span></a>
+                        <a href="pages/booking.html" class="ph-book-btn"><i class="fa-regular fa-calendar-check"
+                                aria-hidden="true"></i> Visit Booking</a>
+                    </div>
+                    <p class="fp-note">Illustration of how support spreads load. Not clinical data.</p>
+                </div>
+            </div>
+            <script>
+                (function () {
+                    var stage = document.getElementById('fp-stage'), range = document.getElementById('fp-range');
+                    var bars = document.querySelectorAll('[data-bar]'), vals = document.querySelectorAll('[data-val]'), verdict = document.getElementById('fp-verdict');
+                    var from = [92, 86, 78], to = [46, 52, 40];
+                    function set(a) {
+                        stage.style.setProperty('--a', a + '%');
+                        range.value = a;
+                        bars.forEach(function (b, i) {
+                            var v = Math.round(from[i] + (to[i] - from[i]) * a / 100);
+                            b.style.width = v + '%';
+                            b.style.background = 'hsl(' + Math.round(6 + 140 * a / 100) + ',78%,52%)';
+                            vals[i].textContent = v + '%';
+                        });
+                        verdict.textContent = a < 34 ? 'Ordinary shoe: pressure piles up' : a < 67 ? 'Support starts to spread the load' : 'ArthroStride: pressure shared evenly';
+                    }
+                    range.addEventListener('input', function () { done = true; set(+range.value); });
+                    var done = false;
+                    set(0);
+                    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { set(60); return; }
+                    var io = new IntersectionObserver(function (e) {
+                        if (!e[0].isIntersecting) return; io.disconnect();
+                        var t0 = null;
+                        (function step(ts) {
+                            if (done) return; t0 = t0 || ts;
+                            var p = Math.min((ts - t0 - 600) / 2600, 1);
+                            if (p > 0) set(Math.round(100 * (1 - Math.pow(1 - p, 3))));
+                            if (p < 1) requestAnimationFrame(step);
+                        })(performance.now());
+                    }, { threshold: .5 });
+                    io.observe(stage);
+                })();
+            </script>
+        </section>
+        <section class="ph-section ph-alt">
+            <div class="ph-split">
+                <div class="reveal">
+                    <h2>Built around <span>foot health, not trends</span></h2>
+                    <p class="ph-lead">We choose each pair for support first, then check that it still looks good enough
+                        to wear every day.</p>
+                    <ul class="ph-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Cushioned, shock-absorbing soles</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Removable insoles for custom orthotics</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Breathable, soft, seam-free materials</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Sizes and widths for real feet</li>
+                    </ul>
+                </div>
+                <div class="ph-stats reveal">
+                    <div><b data-count="12000">0</b><span>Pairs fitted</span></div>
+                    <div><b data-count="40">0</b><span>Footwear styles</span></div>
+                    <div><b data-count="98">0</b><span>% would recommend</span></div>
+                    <div><b data-count="10">0</b><span>Years of experience</span></div>
+                </div>
+            </div>
+        </section>
+        <section class="ph-section">
+            <div class="ph-head reveal">
+                <h2>Your fitting, <span>step by step</span></h2>
+                <p>A short, unhurried visit. You walk out in shoes that fit.</p>
+            </div>
+            <div class="ph-steps">
+                <div class="ph-step reveal"><b>1</b>
+                    <h3>Tell us about your feet</h3>
+                    <p>Pain points, daily routine and any prescription.</p>
+                </div>
+                <div class="ph-step reveal"><b>2</b>
+                    <h3>Measure and assess</h3>
+                    <p>Length, width, arch type and how you stand.</p>
+                </div>
+                <div class="ph-step reveal"><b>3</b>
+                    <h3>Try matched pairs</h3>
+                    <p>Walk in a short list carefully chosen for your needs.</p>
+                </div>
+                <div class="ph-step reveal"><b>4</b>
+                    <h3>Walk out comfortable</h3>
+                    <p>Final adjustments and care advice included.</p>
+                </div>
+            </div>
+            <div class="ph-center reveal"><a href="pages/fitting-consultation.html" class="premium-primary">Book a
+                    fitting <span>→</span></a></div>
+        </section>
+        <section class="ph-section ph-alt">
+            <div class="ph-split">
+                <div class="ph-panel reveal">
+                    <i class="fa-solid fa-file-medical"></i>
+                    <h3>Prescription guidance</h3>
+                    <p>Bring your doctor's note and we will match it to footwear that follows the recommendation.</p>
+                </div>
+                <div class="reveal">
+                    <h2>Insurance and prescriptions, <span>made simple</span></h2>
+                    <p class="ph-lead">We explain what documents you need and help you prepare claim paperwork, so
+                        support does not cost you extra effort.</p>
+                    <ul class="ph-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Guidance on required documents</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Itemized bills for claims</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Doctor-recommended footwear matching</li>
+                    </ul>
+                    <a href="pages/insurance-prescription.html" class="premium-text-link">Learn how it works
+                        <span>→</span></a>
+                </div>
+            </div>
+        </section>
+        <section class="ph-section">
+            <div class="ph-head reveal">
+                <h2>Walking pain-free, <span>in their words</span></h2>
+            </div>
+            <div class="ph-grid ph-cols-3">
+                <figure class="ph-quote reveal">
+                    <div class="stars">★★★★★</div>
+                    <blockquote> My heel pain eased within two weeks. The fitting team listened.</blockquote>
+                    <figcaption><b>Lakshmi R.</b><span>Plantar fasciitis</span></figcaption>
+                </figure>
+                <figure class="ph-quote reveal">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>Finally a diabetic shoe that does not look clinical. Roomy and soft.</blockquote>
+                    <figcaption><b>Venkat S.</b><span>Diabetic footwear</span></figcaption>
+                </figure>
+                <figure class="ph-quote reveal">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>Wide fit that is truly wide. I wear them on 10-hour shifts.</blockquote>
+                    <figcaption><b>Farhana K.</b><span>Wide fit</span></figcaption>
+                </figure>
+            </div>
+        </section>
+        <section class="ph-section">
+            <div class="ph-cta reveal">
+                <div>
+                    <h2>Visit the store, try before you choose</h2>
+                    <p><i class="fa-solid fa-location-dot"></i> Hyderabad, India &nbsp; <i
+                            class="fa-solid fa-clock"></i> Mon - Sat, 9 AM - 7 PM</p>
+                </div>
+                <div class="ph-cta-actions">
+                    <a href="pages/booking.html" class="ph-cta-btn">Visit Booking</a>
+                    <a href="pages/contact.html" class="ph-cta-link">Store information</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        (function () {
+            var d = document.documentElement; d.classList.add('js-anim');
+            var els = document.querySelectorAll('.reveal');
+            var io = new IntersectionObserver(function (es) {
+                es.forEach(function (e) {
+                    if (!e.isIntersecting) return;
+                    e.target.classList.add('in'); io.unobserve(e.target);
+                    e.target.querySelectorAll('[data-count]').forEach(count);
+                    if (e.target.hasAttribute('data-count')) count(e.target);
+                });
+            }, { threshold: 0.15 });
+            els.forEach(function (el, i) { el.style.transitionDelay = (i % 3) * 90 + 'ms'; io.observe(el); });
+            function count(n) {
+                var t = +n.dataset.count, s = null;
+                (function step(ts) {
+                    s = s || ts; var p = Math.min((ts - s) / 1400, 1);
+                    n.textContent = Math.floor(t * (1 - Math.pow(1 - p, 3))).toLocaleString('en-IN') + (p === 1 && t >= 1000 ? '+' : '');
+                    if (p < 1) requestAnimationFrame(step);
+                })(performance.now());
+            }
+            var v = document.querySelector('.premium-hero-visual'), f = document.querySelector('.premium-image-frame');
+            if (v && f && matchMedia('(hover:hover)').matches) {
+                v.addEventListener('mousemove', function (e) {
+                    var r = v.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+                    f.style.transform = 'perspective(900px) rotateY(' + x * 8 + 'deg) rotateX(' + -y * 8 + 'deg)';
+                });
+                v.addEventListener('mouseleave', function () { f.style.transform = ''; });
+            }
+        })();
+    </script>
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <a href="index.html" class="footer-brand-link">
+                    <div class="footer-brand-logo">
+                        <img src="assets/images/arthrostride-logo-light.png" alt="ArthroStride Logo">
+                    </div>
+                    <div class="footer-brand-text">
+                        <div class="footer-brand-name">
+                            Arthro<span>Stride</span>
+                        </div>
+                    </div>
+                </a>
+                <p class="footer-description">
+                    Supportive orthopedic and comfort footwear designed
+                    around foot health, everyday movement, and a
+                    comfortable fit.
+                </p>
+
+                <div class="footer-socials">
+                    <a href="#" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Twitter X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>
+                    Quick Links
+                </h3>
+                <a href="index.html">Home</a>
+                <a href="pages/about.html">About</a>
+                <a href="pages/products.html">Products</a>
+                <a href="pages/fitting-consultation.html">Fitting</a>
+                <a href="pages/insurance-prescription.html">Coverage</a>
+                <a href="pages/contact.html">Contact</a>
+                <a href="pages/booking.html">Visit Booking</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>
+                    Our Footwear
+                </h3>
+                <a href="pages/products.html#plantar-fasciitis">
+                    Plantar Fasciitis
+                </a>
+                <a href="pages/products.html#diabetic-footwear">
+                    Diabetic Footwear
+                </a>
+                <a href="pages/products.html#wide-fit">
+                    Wide Fit
+                </a>
+                <a href="pages/products.html#arch-support">
+                    Arch Support
+                </a>
+                <a href="pages/products.html#everyday-comfort">
+                    Everyday Comfort
+                </a>
+                <a href="pages/products.html#heel-cushioning">
+                    Heel &amp; Cushioning
+                </a>
+            </div>
+
+            <div class="footer-column">
+                <h3>
+                    Information
+                </h3>
+                <a href="pages/fitting-consultation.html">
+                    Personalized Fitting
+                </a>
+                <a href="pages/insurance-prescription.html">
+                    Insurance Support
+                </a>
+                <a href="pages/insurance-prescription.html">
+                    Prescription Guidance
+                </a>
+                <a href="pages/products.html">
+                    Footwear Guide
+                </a>
+                <a href="pages/contact.html">
+                    Store Information
+                </a>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h3>
+                    Get In Touch
+                </h3>
+                <p>
+                    <span class="footer-contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+                    Hyderabad, India
+                </p>
+                <p>
+                    <span class="footer-contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </span>
+                    +91 98765 43210
+                </p>
+                <p>
+                    <span class="footer-contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                    support@arthrostride.com
+                </p>
+                <p>
+                    <span class="footer-contact-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </span>
+                    Mon - Sat: 9 AM - 7 PM
+                </p>
+                <a href="pages/fitting-consultation.html" class="footer-book-button">
+                    Book a Consultation
+                    <span>↗</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>
+                    &copy; 2026
+                    <span>ArthroStride</span>.
+                    All Rights Reserved.
+                </p>
+                <div class="footer-legal">
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+                    <a href="#">
+                        Terms &amp; Conditions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

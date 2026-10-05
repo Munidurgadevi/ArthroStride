@@ -1,0 +1,1837 @@
+/* =========================================================
+   BRAND TITLE COLOURS  (Royal Blue + Amber)
+   h2-h6 headings use the brand colours in both modes.
+   (h1 is handled separately below: black in light, white in dark.)
+   Loaded last on every page, so it wins over page CSS.
+========================================================= */
+@import url("animations.css");
+
+:root {
+    --title-1: #2563eb;
+    --title-2: #b45309;
+    --title-accent: #b45309;
+    --title-on-dark-1: #60a5fa;
+    --title-on-dark-2: #fbbf24;
+}
+
+/* ---------- LIGHT MODE ---------- */
+html body h2,
+html body .brand-name,
+html body .booking-brand-name {
+    color: var(--title-1) !important;
+}
+
+html body h3,
+html body h4,
+html body h5,
+html body h6 {
+    color: var(--theme-dark-bg) !important;
+}
+
+html body h2 span,
+html body h3 span,
+html body .brand-name span,
+html body .footer-brand-name span,
+html body .booking-brand-name span {
+    color: var(--title-accent) !important;
+}
+
+/* ---------- DARK MODE ---------- */
+html:root[data-theme="dark"] body h2,
+html:root[data-theme="dark"] body .brand-name,
+html:root[data-theme="dark"] body .booking-brand-name {
+    color: var(--title-on-dark-1) !important;
+}
+
+html:root[data-theme="dark"] body h3,
+html:root[data-theme="dark"] body h4,
+html:root[data-theme="dark"] body h5,
+html:root[data-theme="dark"] body h6,
+html:root[data-theme="dark"] body h2 span,
+html:root[data-theme="dark"] body h3 span,
+html:root[data-theme="dark"] body .brand-name span,
+html:root[data-theme="dark"] body .footer-brand-name span,
+html:root[data-theme="dark"] body .booking-brand-name span {
+    color: var(--title-on-dark-2) !important;
+}
+
+/* =========================================================
+   H1 RULE (all pages)
+   Light mode -> black   |   Dark mode -> white
+   Applies to every <h1> and anything inside it (span, em, br...)
+========================================================= */
+:root {
+    --h1-light: #000000;
+    --h1-dark: #ffffff;
+}
+
+html body h1,
+html body h1 :is(span, em, strong, b) {
+    color: var(--h1-light) !important;
+    -webkit-text-fill-color: var(--h1-light) !important;
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+}
+
+html:root[data-theme="dark"] body h1,
+html:root[data-theme="dark"] body h1 :is(span, em, strong, b) {
+    color: var(--h1-dark) !important;
+    -webkit-text-fill-color: var(--h1-dark) !important;
+}
+
+/* Exception: hero banners that sit on a dark photo in BOTH modes.
+   Black text would be invisible there, so h1 stays white. */
+html body :is(.hero-section, .ft-hero, .pp-hero, .about-hero, .coverage-hero, .fitting-hero) h1,
+html body :is(.hero-section, .ft-hero, .pp-hero, .about-hero, .coverage-hero, .fitting-hero) h1 :is(span, em, strong, b),
+html:root[data-theme="dark"] body :is(.hero-section, .ft-hero, .pp-hero, .about-hero, .coverage-hero, .fitting-hero) h1,
+html:root[data-theme="dark"] body :is(.hero-section, .ft-hero, .pp-hero, .about-hero, .coverage-hero, .fitting-hero) h1 :is(span, em, strong, b) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Footer: light surface in light mode, dark surface in dark mode */
+html body .site-footer h3,
+html body .site-footer h4 {
+    color: #363b48 !important;
+}
+
+html body .footer-brand-name {
+    color: var(--title-1) !important;
+}
+
+html:root[data-theme="dark"] body .site-footer h3,
+html:root[data-theme="dark"] body .site-footer h4 {
+    color: var(--theme-light-bg) !important;
+}
+
+html:root[data-theme="dark"] body .footer-brand-name {
+    color: var(--title-on-dark-1) !important;
+}
+
+/* Visit banner sits on a dark photo in BOTH modes */
+html body .visit-arthro-section h2,
+html:root[data-theme="dark"] body .visit-arthro-section h2 {
+    color: #93c5fd !important;
+}
+
+html body .visit-arthro-section h2 span,
+html:root[data-theme="dark"] body .visit-arthro-section h2 span {
+    color: #fbbf24 !important;
+}
+
+
+/* ===== BUTTON HOVER: blue -> amber (light + dark) ===== */
+:root {
+    --btn-hover-bg: #b45309;
+    --btn-hover-text: #ffffff;
+    --btn-hover-bg-dark: #fbbf24;
+    --btn-hover-text-dark: #1a1200;
+}
+
+/* light mode */
+html body :is(.header-cta, .primary-button, .product-button, .fitting-button,
+    .claims-button, .visit-primary-button, .footer-book-button,
+    .ft-submit, .pp-news button, .view-all-products) {
+    transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+html body :is(.header-cta, .primary-button, .product-button, .fitting-button,
+    .claims-button, .visit-primary-button, .footer-book-button,
+    .ft-submit, .pp-news button, .view-all-products):hover {
+    background: var(--btn-hover-bg) !important;
+    border-color: var(--btn-hover-bg) !important;
+    color: var(--btn-hover-text) !important;
+}
+
+/* dark mode */
+html:root[data-theme="dark"] body :is(.header-cta, .primary-button, .product-button,
+    .fitting-button, .claims-button, .visit-primary-button, .footer-book-button,
+    .ft-submit, .pp-news button, .view-all-products, .ph-cta-btn):hover {
+    background: var(--btn-hover-bg-dark) !important;
+    border-color: var(--btn-hover-bg-dark) !important;
+    color: var(--btn-hover-text-dark) !important;
+}
+
+
+/* ===== EXTRA BUTTONS: blue -> amber (same format) ===== */
+html:root body :is(.pm-btn, .pp-info .pp-faq-cta, .main-navigation .nav-drawer-cta) {
+    background: #2563eb !important;
+    border-color: #2563eb !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 24px rgba(37, 99, 235, .30);
+    transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+html:root[data-theme="dark"] body :is(.pm-btn, .pp-info .pp-faq-cta, .main-navigation .nav-drawer-cta) {
+    background: #1a54d0 !important;
+    border-color: #1a54d0 !important;
+}
+
+html:root body :is(.pm-btn, .pp-info .pp-faq-cta, .main-navigation .nav-drawer-cta):hover {
+    background: var(--btn-hover-bg) !important;
+    border-color: var(--btn-hover-bg) !important;
+    color: var(--btn-hover-text) !important;
+    box-shadow: 0 14px 30px rgba(180, 83, 9, .35);
+}
+
+html:root[data-theme="dark"] body :is(.pm-btn, .pp-info .pp-faq-cta, .main-navigation .nav-drawer-cta):hover {
+    background: var(--btn-hover-bg-dark) !important;
+    border-color: var(--btn-hover-bg-dark) !important;
+    color: var(--btn-hover-text-dark) !important;
+}
+
+/* THE PRESSURE LAB buttons = same behaviour as "Visit Booking" (header-cta) */
+html:root body .pm-actions .pm-btn {
+    justify-content: center;
+    font-weight: 700;
+    animation: anPulseBlue 2.8s ease-out infinite;
+}
+
+html:root body .pm-actions .pm-btn:hover {
+    animation: none;
+    transform: translateY(-1px);
+}
+
+/* mobile menu CTA ni button laga chupinchadaniki */
+html:root body .main-navigation .nav-drawer-cta {
+    justify-content: center;
+    width: fit-content;
+    margin: 18px 22px 0;
+    padding: 14px 26px;
+    border-radius: 999px;
+}
+
+/* Fitting calendar icon: booking page tho same amber hover */
+html:root body .ft-calendar-btn:hover {
+    background: rgba(180, 83, 9, .12);
+    color: #b45309;
+}
+
+html:root[data-theme="dark"] body .ft-calendar-btn:hover {
+    background: rgba(251, 191, 36, .14);
+    color: #fbbf24;
+}
+
+/* =========================================================
+   HOME 1 (index.html) SECTION HEADINGS
+   Light mode -> black   |   Dark mode -> white
+   - Footwear Designed Around Your Needs      (.foot-health-section)
+   - Why ArthroStride Stands Apart            (.why-arthro-section)
+   - Comfort, Designed for Every Step         (.product-showcase-section)
+   - Find the Fit That Feels Right            (.fitting-section)
+   - Support Beyond the Store                 (.claims-section)
+   - Have questions about your coverage...    (.claims-cta h3)
+   Includes the coloured <span> words inside each heading.
+========================================================= */
+html body :is(.foot-health-section, .why-arthro-section, .product-showcase-section,
+    .fitting-section, .claims-section) h2,
+html body :is(.foot-health-section, .why-arthro-section, .product-showcase-section,
+    .fitting-section, .claims-section) h2 :is(span, em, strong, b),
+html body .claims-cta h3 {
+    color: var(--h1-light) !important;
+    -webkit-text-fill-color: var(--h1-light) !important;
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+}
+
+html:root[data-theme="dark"] body :is(.foot-health-section, .why-arthro-section, .product-showcase-section,
+    .fitting-section, .claims-section) h2,
+html:root[data-theme="dark"] body :is(.foot-health-section, .why-arthro-section, .product-showcase-section,
+    .fitting-section, .claims-section) h2 :is(span, em, strong, b),
+html:root[data-theme="dark"] body .claims-cta h3 {
+    color: var(--h1-dark) !important;
+    -webkit-text-fill-color: var(--h1-dark) !important;
+}
+
+
+/* =========================================================
+   HOME 1 - FOOT HEALTH CARDS (compact, centred, 3 cols x 2 rows)
+   Smaller width + height, image shows more of the picture
+   (less zoom / less crop), whole grid centred in the section.
+========================================================= */
+html body .foot-health-grid {
+    width: 100%;
+    max-width: 1020px;
+    /* smaller overall width */
+    margin: 0 auto;
+    /* centred in the middle */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* 3 columns -> 6 cards = 2 rows */
+    gap: 22px;
+    justify-content: center;
+}
+
+html body .foot-health-card {
+    min-height: 0;
+    /* no forced tall card */
+    padding: 18px;
+    border-radius: 16px;
+}
+
+html body .foot-health-card .foot-health-image {
+    width: calc(100% + 36px);
+    height: auto;
+    aspect-ratio: 3 / 2;
+    /* shorter image, shows more of the photo */
+    margin: -18px -18px 18px;
+    border-radius: 15px 15px 0 0;
+}
+
+html body .foot-health-card .foot-health-image img {
+    object-fit: cover !important;
+    object-position: center;
+}
+
+/* hover zoom off so the image never looks cropped/zoomed */
+html body .foot-health-card:hover .foot-health-image img {
+    transform: none;
+}
+
+html body .foot-health-card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+html body .foot-health-card h3 span {
+    font-size: 14px;
+}
+
+html body .foot-health-card p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+html body .health-card-link {
+    padding-top: 18px;
+    font-size: 13px;
+}
+
+html body .health-card-link::after {
+    border-radius: 16px;
+}
+
+@media (max-width: 900px) {
+    html body .foot-health-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 680px;
+    }
+}
+
+@media (max-width: 560px) {
+    html body .foot-health-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+    }
+}
+
+
+/* =========================================================
+   HOME 1 - ALL OTHER CARDS (same compact + centred treatment)
+   - Why ArthroStride cards   (.why-arthro-card)    2 x 2
+   - Product cards            (.product-card)       3 x 2
+   - Claims step cards        (.claims-card)        4 in a row
+========================================================= */
+
+/* ---------- WHY ARTHROSTRIDE (left: heading + vertical cards | right: visual) ---------- */
+html body .why-arthro-container.why-arthro-split {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 44px;
+    max-width: 1100px;
+}
+
+html body .why-arthro-content {
+    flex: 1 1 54%;
+    min-width: 0;
+}
+
+html body .why-arthro-content .why-arthro-heading {
+    max-width: none;
+    margin: 0 0 26px;
+    text-align: left;
+}
+
+html body .why-arthro-section {
+    padding: 72px 0 76px;
+}
+
+html body .why-arthro-content .why-arthro-heading h2 {
+    font-size: clamp(30px, 3vw, 38px);
+    letter-spacing: -1.2px;
+}
+
+html body .why-arthro-content .why-arthro-heading .why-arthro-label {
+    margin-bottom: 14px;
+    font-size: 12.5px;
+}
+
+html body .why-arthro-content .why-arthro-heading p {
+    margin: 14px 0 0;
+    max-width: 520px;
+    font-size: 15.5px;
+    line-height: 1.6;
+}
+
+/* cards: stacked vertically with flex */
+html body .why-arthro-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: none;
+    margin: 0;
+}
+
+/* each card: icon on the left, text on the right */
+html body .why-arthro-card {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: start;
+    min-height: 0;
+    padding: 16px 20px;
+    border-radius: 14px;
+    text-align: left;
+}
+
+html body .why-arthro-icon {
+    grid-row: 1 / span 2;
+    width: 46px;
+    height: 46px;
+    margin: 0;
+    border-radius: 12px;
+}
+
+html body .why-arthro-icon svg {
+    width: 23px;
+    height: 23px;
+}
+
+html body .why-arthro-card h3 {
+    font-size: 17px;
+    margin: 1px 0 4px;
+}
+
+html body .why-arthro-card p {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* right visual */
+html body .why-arthro-visual {
+    position: sticky;
+    top: 100px;
+    flex: 1 1 38%;
+    min-width: 0;
+    align-self: stretch;
+    display: flex;
+}
+
+html body .why-arthro-media {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+    border-radius: 22px;
+    border: 1px solid #2563eb;
+    background: #eef1f7;
+    box-shadow: 0 24px 60px rgba(37, 99, 235, .18);
+}
+
+html:root[data-theme="dark"] body .why-arthro-media {
+    border-color: #3b64c4;
+    background: #14171e;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .55);
+}
+
+html body .why-arthro-tag {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-width: calc(100% - 40px);
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .94);
+    color: #161922;
+    border: 1px solid #dfe2e9;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, .16);
+}
+
+html body .why-arthro-tag strong {
+    font-size: 14px;
+}
+
+html body .why-arthro-tag span {
+    font-size: 12px;
+    color: #5e6575;
+}
+
+html:root[data-theme="dark"] body .why-arthro-tag {
+    background: rgba(30, 33, 42, .94);
+    color: #edf0f7;
+    border-color: #363b48;
+}
+
+html:root[data-theme="dark"] body .why-arthro-tag span {
+    color: #acb2bf;
+}
+
+@media (max-width: 960px) {
+    html body .why-arthro-container.why-arthro-split {
+        flex-direction: column;
+        gap: 36px;
+    }
+
+    html body .why-arthro-content,
+    html body .why-arthro-visual {
+        flex: none;
+        width: 100%;
+    }
+
+    html body .why-arthro-visual {
+        position: relative;
+        top: 0;
+    }
+
+    html body .why-arthro-media {
+        min-height: 0;
+        aspect-ratio: 16 / 10;
+    }
+}
+
+@media (max-width: 560px) {
+    html body .why-arthro-card {
+        grid-template-columns: 40px minmax(0, 1fr);
+        column-gap: 12px;
+        padding: 14px;
+    }
+
+    html body .why-arthro-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ---------- PRODUCT CARDS (6 cards -> 3 x 2) ---------- */
+html body .product-showcase-grid {
+    max-width: 1020px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+html body .product-card {
+    border-radius: 16px;
+}
+
+html body .product-showcase-section .product-image {
+    height: auto;
+    aspect-ratio: 3 / 2;
+}
+
+html body .product-card:hover .product-image img {
+    transform: none;
+}
+
+html body .product-content {
+    padding: 18px 18px 20px;
+}
+
+html body .product-card h3 {
+    font-size: 18px;
+    margin-bottom: 9px;
+}
+
+html body .product-card p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ---------- CLAIMS STEP CARDS (4 in a row) ---------- */
+html body .claims-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+html body .claims-card {
+    min-height: 0;
+    padding: 24px 20px;
+    border-radius: 16px;
+}
+
+html body .claims-card h3 {
+    font-size: 18px;
+    margin-bottom: 9px;
+}
+
+html body .claims-card p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+    html body .product-showcase-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 680px;
+    }
+
+    html body .claims-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 680px;
+    }
+}
+
+@media (max-width: 560px) {
+
+    html body .why-arthro-grid,
+    html body .product-showcase-grid,
+    html body .claims-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+    }
+}
+
+/* =========================================================
+   CARD TITLES ONLY
+   Light mode -> black   |   Dark mode -> white
+   Section headings (h2 / outside cards) are NOT affected.
+========================================================= */
+
+/* ---------- LIGHT MODE ---------- */
+html body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card) h3,
+html body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card) h3 :is(span, em, strong, b) {
+    color: var(--h1-light) !important;
+    -webkit-text-fill-color: var(--h1-light) !important;
+}
+
+/* ---------- DARK MODE ---------- */
+html:root[data-theme="dark"] body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card) h3,
+html:root[data-theme="dark"] body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card) h3 :is(span, em, strong, b) {
+    color: var(--h1-dark) !important;
+    -webkit-text-fill-color: var(--h1-dark) !important;
+}
+
+/* =========================================================
+   FITTING FEATURE TITLES
+   Light mode -> black   |   Dark mode -> white
+========================================================= */
+
+/* ---------- LIGHT MODE ---------- */
+html body .fitting-feature h3,
+html body .fitting-feature h3 :is(span, em, strong, b) {
+    color: var(--h1-light) !important;
+    -webkit-text-fill-color: var(--h1-light) !important;
+}
+
+/* ---------- DARK MODE ---------- */
+html:root[data-theme="dark"] body .fitting-feature h3,
+html:root[data-theme="dark"] body .fitting-feature h3 :is(span, em, strong, b) {
+    color: var(--h1-dark) !important;
+    -webkit-text-fill-color: var(--h1-dark) !important;
+}
+
+/* =========================================================
+   ABOUT PAGE TITLES
+   Light mode -> black   |   Dark mode -> white
+   (hero h1 is handled separately, footer is excluded)
+========================================================= */
+
+/* ---------- LIGHT MODE ---------- */
+html body :is(.about-hero)~* :is(h2, h3, h4),
+html body main :is(h2, h3, h4),
+html body main :is(h2, h3, h4) :is(span, em, strong, b) {
+    color: var(--h1-light) !important;
+    -webkit-text-fill-color: var(--h1-light) !important;
+}
+
+/* ---------- DARK MODE ---------- */
+html:root[data-theme="dark"] body :is(.about-hero)~* :is(h2, h3, h4),
+html:root[data-theme="dark"] body main :is(h2, h3, h4),
+html:root[data-theme="dark"] body main :is(h2, h3, h4) :is(span, em, strong, b) {
+    color: var(--h1-dark) !important;
+    -webkit-text-fill-color: var(--h1-dark) !important;
+}
+
+/* keep the dark-photo banners readable (Visit banner etc.) */
+html body main .visit-arthro-section :is(h2, h3, h4),
+html:root[data-theme="dark"] body main .visit-arthro-section :is(h2, h3, h4) {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* =========================================================
+   PRODUCTS PAGE - "Know What Your Feet Need" cards
+   Title + body text stay black / white (already set).
+   Small headings + link get colour.
+========================================================= */
+
+/* "Look for" -> blue / light blue */
+html:root body main .mx-card.mx-card h4:first-of-type {
+    color: #2563eb !important;
+    -webkit-text-fill-color: #2563eb !important;
+}
+
+html:root[data-theme="dark"] body main .mx-card.mx-card h4:first-of-type {
+    color: #60a5fa !important;
+    -webkit-text-fill-color: #60a5fa !important;
+}
+
+/* "Better to avoid" -> amber */
+html:root body main .mx-card.mx-card h4:last-of-type {
+    color: #b45309 !important;
+    -webkit-text-fill-color: #b45309 !important;
+}
+
+html:root[data-theme="dark"] body main .mx-card.mx-card h4:last-of-type {
+    color: #fbbf24 !important;
+    -webkit-text-fill-color: #fbbf24 !important;
+}
+
+/* "Shop ..." link -> blue / light blue, amber on hover */
+html:root body main .mx-card.mx-card .mx-link {
+    color: #2563eb !important;
+}
+
+html:root[data-theme="dark"] body main .mx-card.mx-card .mx-link {
+    color: #60a5fa !important;
+}
+
+html:root body main .mx-card.mx-card .mx-link:hover {
+    color: #b45309 !important;
+}
+
+html:root[data-theme="dark"] body main .mx-card.mx-card .mx-link:hover {
+    color: #fbbf24 !important;
+}
+
+/* =========================================================
+   PRODUCTS PAGE - COMPACT, CENTRED CARDS
+   Know What Your Feet Need, all 6 categories, Three Steps,
+   Complete Your Foot Care, What Makes a Shoe Supportive,
+   Find a Pair in Your Range
+========================================================= */
+
+/* ---------- Section spacing ---------- */
+html:root body .pp-sec {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+html:root body .pp-sec-head {
+    margin-bottom: 34px;
+}
+
+/* ---------- Know What Your Feet Need + Find a Pair in Your Range ---------- */
+html:root body .mx-grid3 {
+    max-width: 1020px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+html:root body .mx-card {
+    padding: 18px;
+    border-radius: 16px;
+}
+
+html:root body .mx-card .mx-img {
+    aspect-ratio: 3 / 2;
+    margin-bottom: 14px;
+    border-radius: 12px;
+}
+
+html:root body .mx-card h3 {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+html:root body .mx-card p,
+html:root body .mx-card .mx-list li,
+html:root body .mx-links li {
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+html:root body .mx-card h4 {
+    font-size: 12.5px;
+    margin: 14px 0 6px;
+}
+
+/* ---------- 6 product categories (Plantar Fasciitis ... Heel & Cushioning) ---------- */
+html:root body .pp-cat {
+    max-width: 1020px;
+    /* heading + cards line up */
+    padding: 44px 0 10px;
+}
+
+html:root body .pp-cat-head {
+    margin-bottom: 24px;
+}
+
+html:root body .pp-cat-head h2 {
+    font-size: clamp(26px, 2.6vw, 34px);
+}
+
+html:root body .pp-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+html:root body .pp-card {
+    border-radius: 16px;
+}
+
+html:root body .pp-card:hover {
+    transform: translateY(-3px);
+}
+
+html:root body .pp-thumb {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    /* shows more of the shoe, less zoom */
+}
+
+html:root body .pp-card:hover .pp-thumb img {
+    transform: none;
+}
+
+html:root body .pp-body {
+    padding: 16px 18px 20px;
+}
+
+html:root body .pp-body h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+html:root body .pp-body p {
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 44px;
+}
+
+html:root body .pp-badge {
+    top: 12px;
+    left: 12px;
+    padding: 5px 10px;
+    font-size: 11px;
+}
+
+/* ---------- Three Steps to the Right Pair ---------- */
+html:root body .steps {
+    max-width: 1020px;
+    gap: 22px;
+}
+
+html:root body .step {
+    padding: 26px 24px;
+    border-radius: 16px;
+}
+
+html:root body .step i {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 14px;
+    font-size: 19px;
+    border-radius: 12px;
+}
+
+html:root body .step h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+html:root body .step p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ---------- Complete Your Foot Care ---------- */
+html:root body .acc-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+html:root body .acc {
+    padding: 14px 14px 18px;
+    border-radius: 16px;
+}
+
+html:root body .acc-img {
+    height: 140px;
+    margin-bottom: 12px;
+}
+
+html:root body .acc h3 {
+    font-size: 17px;
+}
+
+html:root body .acc p {
+    font-size: 13.5px;
+    min-height: 44px;
+}
+
+/* ---------- What Makes a Shoe Supportive (5 items, centred) ---------- */
+html:root body .mx-anat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+html:root body .mx-feat {
+    flex: 0 1 calc(33.333% - 12px);
+    min-width: 260px;
+    padding: 18px 20px;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+
+html:root body .mx-feat i {
+    width: 38px;
+    height: 38px;
+    font-size: 17px;
+}
+
+html:root body .mx-feat h3 {
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+html:root body .mx-feat p {
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+
+    html:root body .mx-grid3,
+    html:root body .pp-grid,
+    html:root body .steps,
+    html:root body .acc-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-width: 680px;
+    }
+
+    html:root body .pp-cat {
+        max-width: 680px;
+    }
+
+    html:root body .mx-feat {
+        flex-basis: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 560px) {
+
+    html:root body .mx-grid3,
+    html:root body .pp-grid,
+    html:root body .steps,
+    html:root body .acc-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+    }
+
+    html:root body .pp-cat {
+        max-width: 380px;
+    }
+
+    html:root body .mx-feat {
+        flex-basis: 100%;
+    }
+}
+
+/* =========================================================
+   PRODUCT CARDS - REMOVE EXTRA EMPTY SPACE
+   (Home 1 / Home 2 / Products page)
+   Description no longer reserves a fixed tall height.
+   Cards in a row stay equal height, price row sits at the bottom.
+========================================================= */
+
+/* remove the fixed min-height on descriptions */
+html:root body .product-card p,
+html:root body .pp-body p {
+    min-height: 0;
+}
+
+/* cards stretch equally, content stacks top to bottom */
+html:root body .product-card,
+html:root body .pp-card {
+    display: flex;
+    flex-direction: column;
+}
+
+html:root body .product-card .product-content,
+html:root body .pp-card .pp-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* price + button row always pinned to the bottom, tight gap above */
+html:root body .product-card .product-bottom,
+html:root body .pp-card .product-bottom {
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+/* small gap between description and the row above the price */
+html:root body .product-card p,
+html:root body .pp-body p {
+    margin-bottom: 16px;
+}
+
+/* =========================================================
+   SECTION SPACING - ALL PAGES
+   Home 1, Home 2, About, Products, Fitting, Coverage,
+   Contact, Booking. Hero banners are NOT touched.
+   Change --section-space to make it tighter or looser.
+========================================================= */
+
+:root {
+    --section-space: 56px;
+}
+
+/* About / Contact / Fitting / Coverage / Products */
+html:root body .ft-sec,
+html:root body .mx-sec,
+html:root body .pp-sec {
+    padding-top: var(--section-space);
+    padding-bottom: var(--section-space);
+}
+
+/* Home 1 */
+html:root body :is(.foot-health-section, .why-arthro-section,
+    .product-showcase-section, .fitting-section, .claims-section) {
+    padding-top: var(--section-space);
+    padding-bottom: var(--section-space);
+}
+
+/* Home 2 (keeps its left/right padding) */
+html:root body .ph-section {
+    padding-top: var(--section-space);
+    padding-bottom: var(--section-space);
+}
+
+/* Booking page form section */
+html:root body .booking-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+}
+
+/* gap between a section title and its content */
+html:root body .ft-head,
+html:root body .mx-head,
+html:root body .pp-sec-head {
+    margin-bottom: 32px !important;
+}
+
+html:root body .ph-head {
+    margin-bottom: 36px;
+}
+
+/* footer */
+html:root body .footer-container {
+    padding-top: 44px;
+    padding-bottom: 36px;
+}
+
+/* mobile: even tighter */
+@media (max-width: 700px) {
+    :root {
+        --section-space: 40px;
+    }
+
+    html:root body .booking-section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+/* =========================================================
+   CARD BORDERS  ->  brand amber (instead of blue)
+   Light mode -> brown / amber   |   Dark mode -> amber
+   Same colours as the card / section titles.
+   Change the two values below to change it everywhere.
+========================================================= */
+
+:root {
+    --card-line: #b45309;
+    /* light mode: brown-amber */
+}
+
+:root[data-theme="dark"] {
+    --card-line: #fbbf24;
+    /* dark mode: amber */
+}
+
+/* ---------- Home 1 ---------- */
+html body :is(.foot-health-card, .why-arthro-card,
+    .product-showcase-section .product-card, .claims-card, .claims-cta),
+html body :is(.foot-health-card, .why-arthro-card,
+    .product-showcase-section .product-card, .claims-card, .claims-cta):hover {
+    border-color: var(--card-line) !important;
+}
+
+/* ---------- Home 2 ---------- */
+html body .premium-home :is(.ph-card, .ph-stats div, .ph-quote) {
+    border-color: var(--card-line) !important;
+}
+
+/* ---------- Products / Fitting / Coverage / Contact / About ---------- */
+html body :is(.bs, .mx-card, .pp-card, .step, .cmp, .acc, .mx-feat, .tcard,
+    .ft-step, .ft-card, .ft-team, .ft-summary, .mx-chips span,
+    .mx-tour figure),
+html body :is(.bs, .mx-card, .pp-card, .step, .cmp, .acc, .mx-feat, .tcard,
+    .ft-step, .ft-card, .ft-team, .ft-summary, .mx-chips span,
+    .mx-tour figure):hover {
+    border-color: var(--card-line) !important;
+}
+
+/* ---------- About page cards ---------- */
+html body :is(.about-expert-card, .about-timeline-card, .about-panel),
+html body :is(.about-expert-card, .about-timeline-card, .about-panel):hover {
+    border-color: var(--card-line) !important;
+}
+
+/* =========================================================
+   LOGO - FULL EMBLEM, CENTRED INSIDE THE CIRCLE
+   Header + footer logo on every page.
+   Tune if needed:
+     --logo-zoom    : 1.2 fills the circle; lower = smaller emblem
+     --logo-shift-x : moves the emblem left (-) / right (+)
+     --logo-shift-y : moves the emblem up (-) / down (+)
+========================================================= */
+html body :is(.brand-logo, .footer-brand-logo) {
+    --logo-zoom: 1.2;
+    --logo-shift-x: -1.8%;
+    --logo-shift-y: 0%;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    border-color: transparent !important;
+}
+
+html body :is(.brand-logo, .footer-brand-logo) img {
+    object-fit: contain !important;
+    object-position: center;
+    transform: translate(var(--logo-shift-x), var(--logo-shift-y)) scale(var(--logo-zoom)) !important;
+    transform-origin: center;
+}
+
+:root {
+    --hero-accent-light: #b45309;
+    --hero-accent-dark: #fbbf24;
+}
+
+/* shared look (both modes): gradient / box / shadow anni remove */
+html:root:root:root body :is(.hero-section, .ft-hero, .pp-hero) h1 :is(span, em),
+html:root:root:root body .premium-hero h1 em {
+    background: none !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+/* LIGHT MODE: #b45309 */
+html:root:root:root:not([data-theme="dark"]) body :is(.hero-section, .ft-hero, .pp-hero) h1 :is(span, em),
+html:root:root:root:not([data-theme="dark"]) body .premium-hero h1 em {
+    color: var(--hero-accent-light) !important;
+    -webkit-text-fill-color: var(--hero-accent-light) !important;
+}
+
+/* contact h1: black on light hero */
+html:root:root:not([data-theme="dark"]) body .contact-hero h1 {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+}
+
+/* DARK MODE: #fbbf24 */
+html:root:root:root[data-theme="dark"] body :is(.hero-section, .ft-hero, .pp-hero) h1 :is(span, em),
+html:root:root:root[data-theme="dark"] body .premium-hero h1 em {
+    color: var(--hero-accent-dark) !important;
+    -webkit-text-fill-color: var(--hero-accent-dark) !important;
+}
+
+:root {
+    --hero-wash-top: rgba(255, 255, 255, .62);
+    --hero-wash-bottom: rgba(255, 255, 255, .78);
+    --hero-light-bg: #eef2fb;
+    --hero-light-text: #000000;
+    --hero-light-sub: #1f2937;
+}
+
+/* ---- 1) backgrounds ---- */
+/* index */
+html:root:root:root:not([data-theme="dark"]) body .hero-section.hx-home::after {
+    background: linear-gradient(180deg, var(--hero-wash-top) 0%, var(--hero-wash-bottom) 100%) !important;
+}
+
+/* about + products */
+html:root:root:root:not([data-theme="dark"]) .about-hero {
+    --about-hero-gradient: linear-gradient(180deg, var(--hero-wash-top) 0%, var(--hero-wash-bottom) 100%);
+}
+
+html:root:root:root:not([data-theme="dark"]) .pp-hero {
+    --pp-hero-gradient: linear-gradient(180deg, var(--hero-wash-top) 0%, var(--hero-wash-bottom) 100%);
+}
+
+/* fitting */
+html:root:root:root:not([data-theme="dark"]) body .fitting-hero {
+    background: var(--hero-light-bg) !important;
+}
+
+html:root:root:root:not([data-theme="dark"]) body .fitting-hero::before {
+    background-image:
+        linear-gradient(90deg, var(--hero-light-bg) 0%, rgba(238, 242, 251, .88) 10%, rgba(255, 255, 255, .45) 72%, rgba(255, 255, 255, .30) 100%),
+        url("https://i.ibb.co/60Tj40ps/Chat-GPT-Image-Sep-29-2026-08-51-51-AM.png") !important;
+}
+
+/* coverage */
+html:root:root:root:not([data-theme="dark"]) body .coverage-hero {
+    background: var(--hero-light-bg) !important;
+}
+
+html:root:root:root:not([data-theme="dark"]) body .coverage-hero::before {
+    background-image:
+        linear-gradient(180deg, var(--hero-wash-top), var(--hero-wash-bottom)),
+        url("https://i.ibb.co/1tdBXcVb/Chat-GPT-Image-Sep-29-2026-08-56-49-AM.png") !important;
+}
+
+html:root:root:root:not([data-theme="dark"]) body .coverage-hero::after {
+    border-color: rgba(0, 0, 0, .14) !important;
+}
+
+/* ---- 2) text colours (light mode) ---- */
+html:root:root:root:not([data-theme="dark"]) body :is(.hero-section.hx-home, .about-hero, .pp-hero, .fitting-hero, .coverage-hero) h1 {
+    color: var(--hero-light-text) !important;
+    -webkit-text-fill-color: var(--hero-light-text) !important;
+    text-shadow: none !important;
+}
+
+html:root:root:root:not([data-theme="dark"]) body :is(.hero-section.hx-home, .about-hero, .pp-hero, .fitting-hero, .coverage-hero) :is(p, .hero-description, .hero-feature, .hero-feature span, .hero-feature p) {
+    color: var(--hero-light-sub) !important;
+    -webkit-text-fill-color: var(--hero-light-sub) !important;
+    text-shadow: none !important;
+}
+
+html:root:root:root:not([data-theme="dark"]) body :is(.hero-section.hx-home, .about-hero, .pp-hero, .fitting-hero, .coverage-hero) .hero-badge {
+    color: #1d4ed8 !important;
+    -webkit-text-fill-color: #1d4ed8 !important;
+}
+
+html:root:root:root:not([data-theme="dark"]) body :is(.about-hero, .pp-hero, .fitting-hero, .coverage-hero) .secondary-button {
+    color: var(--hero-light-text) !important;
+    -webkit-text-fill-color: var(--hero-light-text) !important;
+    background: rgba(255, 255, 255, .65) !important;
+    border-color: rgba(0, 0, 0, .35) !important;
+}
+
+html:root:root body .about-hero .ft-in,
+html:root:root body .pp-hero .pp-hero-in {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* title */
+html:root:root body :is(.about-hero .ft-in, .pp-hero .pp-hero-in) h1 {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* paragraph */
+html:root:root body :is(.about-hero .ft-in, .pp-hero .pp-hero-in) p {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* badge + buttons */
+html:root:root body :is(.about-hero .ft-in, .pp-hero .pp-hero-in) .hero-badge {
+    display: inline-block;
+}
+
+html:root:root body .about-hero .ft-hero-btns {
+    justify-content: center;
+}
+
+html:root:root body .ft-sec .ft-strip {
+    margin-top: 32px;
+}
+
+:root {
+    --header-h: 68px;
+}
+
+html:root:root body .about-hero {
+    height: calc(100vh - var(--header-h));
+    height: calc(100svh - var(--header-h));
+    min-height: 520px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+:root {
+    --acc-img-ratio: 4 / 3;
+}
+
+html:root:root body .acc-img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: var(--acc-img-ratio);
+    margin: 0 0 14px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+html:root:root body .acc-img img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+    object-position: center;
+    display: block;
+}
+
+/* =========================================================
+   PRODUCTS PAGE - TIGHTER SPACE INSIDE CARDS
+========================================================= */
+
+/* ---------- product cards (Plantar Fasciitis, Diabetic ... ) ---------- */
+html:root body .pp-thumb {
+    aspect-ratio: 16 / 10;
+    /* image a little shorter */
+}
+
+html:root body .pp-body {
+    padding: 14px 18px 16px;
+}
+
+html:root body .pp-body .product-rating {
+    margin-bottom: 6px;
+}
+
+html:root body .pp-body h3 {
+    margin: 0 0 4px;
+    font-size: 18px;
+}
+
+html:root body .pp-body p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+html:root body .pp-stock {
+    margin: 8px 0 12px;
+    /* gap above the divider line */
+}
+
+html:root body .pp-body .product-bottom {
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+/* ---------- accessories cards (Orthotic Insole, Socks, Gel Cups, Care Kit) ---------- */
+html:root body .acc {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 12px 14px;
+}
+
+html:root body .acc-img {
+    margin-bottom: 10px;
+    aspect-ratio: 16 / 10;
+}
+
+html:root body .acc h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+html:root body .acc p {
+    min-height: 0;
+    /* no fixed tall space */
+    padding: 3px 6px 0;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+html:root body .acc-b {
+    margin-top: auto;
+    /* price row stays at the bottom */
+    padding: 10px 6px 0;
+}
+
+/* =========================================================
+   PRESSURE LAB — LIGHT / DARK MODE FIX
+========================================================= */
+
+/* ---------- LIGHT MODE ---------- */
+:root:not([data-theme="dark"]) .pm-section {
+    color: #161922;
+    background:
+        radial-gradient(900px 500px at 85% 20%, rgba(37, 99, 235, .10), transparent 70%),
+        radial-gradient(700px 420px at 5% 95%, rgba(255, 60, 60, .06), transparent 70%),
+        linear-gradient(180deg, #ffffff, #f5f7fb);
+}
+
+:root:not([data-theme="dark"]) .pm-section::before {
+    background-image:
+        linear-gradient(rgba(20, 30, 50, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 30, 50, .035) 1px, transparent 1px);
+}
+
+:root:not([data-theme="dark"]) .pm-label {
+    color: #2563eb;
+}
+
+:root:not([data-theme="dark"]) .pm-copy h2 {
+    color: #111827;
+}
+
+:root:not([data-theme="dark"]) .pm-copy h2 em {
+    background: linear-gradient(90deg, #e5342f, #d97706);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+:root:not([data-theme="dark"]) .pm-count {
+    color: #111827;
+}
+
+:root:not([data-theme="dark"]) .pm-stat span {
+    color: #4b5563;
+}
+
+:root:not([data-theme="dark"]) .pm-note {
+    color: #6b7280;
+}
+
+:root:not([data-theme="dark"]) .pm-tab {
+    color: #374151;
+    background: #ffffff;
+    border-color: #d7dce5;
+}
+
+:root:not([data-theme="dark"]) .pm-tab:hover {
+    background: #f1f5f9;
+    border-color: #b8c2d1;
+}
+
+:root:not([data-theme="dark"]) .pm-read h3 {
+    color: #111827;
+}
+
+:root:not([data-theme="dark"]) .pm-read p {
+    color: #4b5563;
+}
+
+:root:not([data-theme="dark"]) .pm-meter {
+    color: #5b6475;
+}
+
+:root:not([data-theme="dark"]) .pm-meter i {
+    background: #dfe4ec;
+}
+
+:root:not([data-theme="dark"]) .pm-stage {
+    border-color: rgba(37, 99, 235, .22);
+    background:
+        radial-gradient(circle at 50% 45%, rgba(37, 99, 235, .12), rgba(255, 255, 255, .75) 70%);
+    box-shadow:
+        0 30px 70px rgba(30, 45, 80, .12),
+        inset 0 0 70px rgba(37, 99, 235, .06);
+}
+
+
+/* ---------- DARK MODE ---------- */
+:root[data-theme="dark"] .pm-section {
+    color: #ffffff;
+    background:
+        radial-gradient(900px 500px at 85% 20%, rgba(37, 99, 235, .28), transparent 70%),
+        radial-gradient(700px 420px at 5% 95%, rgba(255, 60, 60, .14), transparent 70%),
+        linear-gradient(180deg, #060913, #0b1226);
+}
+
+:root[data-theme="dark"] .pm-label {
+    color: #6ea2ff;
+}
+
+:root[data-theme="dark"] .pm-copy h2 {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff;
+}
+
+:root[data-theme="dark"] .pm-copy h2 em {
+    background: linear-gradient(90deg, #ff4d4d, #ffa51f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+:root[data-theme="dark"] .pm-count {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .pm-stat span {
+    color: #b8c2dc;
+}
+
+:root[data-theme="dark"] .pm-note {
+    color: #7f8aa8;
+}
+
+:root[data-theme="dark"] .pm-tab {
+    color: #cfd8ee;
+    background: rgba(255, 255, 255, .05);
+    border-color: rgba(255, 255, 255, .18);
+}
+
+:root[data-theme="dark"] .pm-tab:hover {
+    background: rgba(255, 255, 255, .12);
+}
+
+:root[data-theme="dark"] .pm-read h3 {
+    color: #ffffff !important;
+}
+
+:root[data-theme="dark"] .pm-read p {
+    color: #b8c2dc !important;
+}
+
+:root[data-theme="dark"] .pm-meter {
+    color: #9aa6c4;
+}
+
+:root[data-theme="dark"] .pm-meter i {
+    background: rgba(255, 255, 255, .1);
+}
+
+:root[data-theme="dark"] .pm-stage {
+    border-color: rgba(110, 162, 255, .3);
+    background:
+        radial-gradient(circle at 50% 45%, rgba(37, 99, 235, .22), rgba(6, 9, 19, .6) 70%);
+    box-shadow:
+        0 40px 90px rgba(0, 0, 0, .5),
+        inset 0 0 80px rgba(37, 99, 235, .12);
+}
+
+/* =========================================================
+   HEADING ACCENT RULE (same as hero): solid colour, no gradient
+   light = #b45309 | dark = #fbbf24
+   Applies to: Footwear Designed Around Your Needs, Why ArthroStride
+   Stands Apart, Every step hits your feet like a hammer, Find the Fit
+   That Feels Right, Offers for Healthier Steps, Support Beyond the
+   Store
+========================================================= */
+:root {
+    --h2-accent-light: #b45309;
+    --h2-accent-dark: #fbbf24;
+}
+
+/* shared look (both modes): remove gradient / clip */
+html:root:root:root body :is(.foot-health-section, .why-arthro-section, .fitting-section, .offers-section, .claims-section) h2 span,
+html:root:root:root body .pm-copy h2 em {
+    background: none !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+/* LIGHT MODE */
+html:root:root:root:not([data-theme="dark"]) body :is(.foot-health-section, .why-arthro-section, .fitting-section, .offers-section, .claims-section) h2 span,
+html:root:root:root:not([data-theme="dark"]) body .pm-copy h2 em {
+    color: var(--h2-accent-light) !important;
+    -webkit-text-fill-color: var(--h2-accent-light) !important;
+}
+
+/* DARK MODE */
+html:root:root:root[data-theme="dark"] body :is(.foot-health-section, .why-arthro-section, .fitting-section, .offers-section, .claims-section) h2 span,
+html:root:root:root[data-theme="dark"] body .pm-copy h2 em {
+    color: var(--h2-accent-dark) !important;
+    -webkit-text-fill-color: var(--h2-accent-dark) !important;
+}
+
+/* =========================================================
+   LIGHT / DARK FIXES - contrast + missing theme rules
+========================================================= */
+
+/* ---- DARK: blue text too dark on dark surfaces -> lighter blue ---- */
+html:root[data-theme="dark"] body :is(.section-label, .fitting-label, .claims-label, .product-category,
+    .about-doctor-role, .premium-kicker, .premium-text-link span,
+    .premium-float-card > span, .about-timeline-card > span,
+    .rs-p > span, .ft-opt em, .ft-time input:checked + span,
+    .footer-bottom p span) {
+    color: #7aa7ff !important;
+}
+
+/* DARK: number badges (white text) need a deeper blue */
+html:root[data-theme="dark"] body :is(.rxg-badge, .rxg-step-no) {
+    background: #1a54d0 !important;
+    color: #ffffff !important;
+}
+
+/* DARK: product stock / old price */
+html:root[data-theme="dark"] body :is(.pp-stock, em.off) {
+    color: #fbbf24 !important;
+}
+
+html:root[data-theme="dark"] body del {
+    color: #aab2c0 !important;
+}
+
+/* ---- LIGHT: faint grey / amber text -> readable ---- */
+html:root:not([data-theme="dark"]) body :is(.pp-stock, em.off) {
+    color: #b45309 !important;
+}
+
+html:root:not([data-theme="dark"]) body :is(del, .product-price small, .product-rating small) {
+    color: #5e6575 !important;
+}
+
+html:root:not([data-theme="dark"]) body .pp-news p {
+    color: #4b5563 !important;
+}
+
+/* LIGHT: About "Contact Us" button was white text on grey.
+   Same outline format as the other blue buttons, amber on hover. */
+html:root:not([data-theme="dark"]) body .about-cta .secondary-button {
+    background: transparent !important;
+    color: #2563eb !important;
+    border: 1px solid #2563eb !important;
+}
+
+html:root:not([data-theme="dark"]) body .about-cta .secondary-button:hover {
+    background: var(--btn-hover-bg) !important;
+    border-color: var(--btn-hover-bg) !important;
+    color: var(--btn-hover-text) !important;
+}
+
+/* DARK: products FAQ / Size Guide label (products.css had a darker blue with higher specificity) */
+html:root:root:root[data-theme="dark"] body.products-page .pp-info .section-label {
+    color: #7aa7ff !important;
+    -webkit-text-fill-color: #7aa7ff !important;
+}
+
+/* LIGHT: small grey / amber helper text */
+html:root:not([data-theme="dark"]) body :is(.tcard small, .ft-summary small, .ft-time small) {
+    color: #5e6575 !important;
+}
+
+html:root:not([data-theme="dark"]) body .tl-n b,
+html:root:not([data-theme="dark"]) body .ft-time input:checked+span,
+html:root:not([data-theme="dark"]) body .ft-summary .sm-free b {
+    color: #1d4ed8 !important;
+}
+
+html:root:not([data-theme="dark"]) body .ft-opt em {
+    color: #1d4ed8 !important;
+}
+
+/* About expert numbers (01 / 02 / 03) a bit stronger in both modes */
+html:root:not([data-theme="dark"]) body .about-expert-number {
+    color: #6b7280 !important;
+}
+
+html:root[data-theme="dark"] body .about-expert-number {
+    color: #9aa3b5 !important;
+}
+
+/* LIGHT: amber step numbers in Fitting nav / FAQ summary */
+html:root:not([data-theme="dark"]) body :is(.wf-nav label b, .c3 summary b) {
+    color: #b45309 !important;
+}
+
+/* DARK: same normal blue for every blue button */
+html:root[data-theme="dark"] body :is(.footer-book-button, .ft-submit) {
+    background: #1a54d0;
+}
+
+/* =========================================================
+   HOME HERO "Find Your Fit": amber outline (same as Call / Browse buttons
+   on the other pages) - light + dark
+========================================================= */
+html:root:root:root:root:not([data-theme="dark"]) body .hero-section.hx-home .hero-buttons .secondary-button {
+    background: rgba(255, 255, 255, .65) !important;
+    color: #b45309 !important;
+    -webkit-text-fill-color: #b45309 !important;
+    border: 1.5px solid #b45309 !important;
+    transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+html:root:root:root:root:not([data-theme="dark"]) body .hero-section.hx-home .hero-buttons .secondary-button:hover,
+html:root:root:root:root:not([data-theme="dark"]) body .hero-section.hx-home .hero-buttons .secondary-button:focus-visible {
+    background: #b45309 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: #b45309 !important;
+    box-shadow: 0 14px 30px rgba(180, 83, 9, .30);
+}
+
+html:root:root:root:root[data-theme="dark"] body .hero-section.hx-home .hero-buttons .secondary-button {
+    background: transparent !important;
+    color: #fbbf24 !important;
+    -webkit-text-fill-color: #fbbf24 !important;
+    border: 1.5px solid #fbbf24 !important;
+    transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+html:root:root:root:root[data-theme="dark"] body .hero-section.hx-home .hero-buttons .secondary-button:hover,
+html:root:root:root:root[data-theme="dark"] body .hero-section.hx-home .hero-buttons .secondary-button:focus-visible {
+    background: #fbbf24 !important;
+    color: #1a1200 !important;
+    -webkit-text-fill-color: #1a1200 !important;
+    border-color: #fbbf24 !important;
+    box-shadow: 0 14px 30px rgba(251, 191, 36, .28);
+}
+
+/* =========================================================
+   HOME: "Explore Footwear" (Pressure Lab) + "Contact Us" (Visit section)
+   = same amber outline format as the hero "Find Your Fit" button
+========================================================= */
+html:root:root:root:root:not([data-theme="dark"]) body :is(.pm-actions .pm-btn:not(.pm-btn-main), .visit-arthro-buttons .visit-secondary-button) {
+    background: rgba(255, 255, 255, .65) !important;
+    color: #b45309 !important;
+    -webkit-text-fill-color: #b45309 !important;
+    border: 1.5px solid #b45309 !important;
+    box-shadow: none;
+    animation: none;
+    transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+html:root:root:root:root:not([data-theme="dark"]) body :is(.pm-actions .pm-btn:not(.pm-btn-main), .visit-arthro-buttons .visit-secondary-button):hover,
+html:root:root:root:root:not([data-theme="dark"]) body :is(.pm-actions .pm-btn:not(.pm-btn-main), .visit-arthro-buttons .visit-secondary-button):focus-visible {
+    background: #b45309 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: #b45309 !important;
+    box-shadow: 0 14px 30px rgba(180, 83, 9, .30);
+}
+
+html:root:root:root:root[data-theme="dark"] body :is(.pm-actions .pm-btn:not(.pm-btn-main), .visit-arthro-buttons .visit-secondary-button) {
+    background: transparent !important;
+    color: #fbbf24 !important;
+    -webkit-text-fill-color: #fbbf24 !important;
+    border: 1.5px solid #fbbf24 !important;
+    box-shadow: none;
+    animation: none;
+    transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+html:root:root:root:root[data-theme="dark"] body :is(.pm-actions .pm-btn:not(.pm-btn-main), .visit-arthro-buttons .visit-secondary-button):hover,
+html:root:root:root:root[data-theme="dark"] body :is(.pm-actions .pm-btn:not(.pm-btn-main), .visit-arthro-buttons .visit-secondary-button):focus-visible {
+    background: #fbbf24 !important;
+    color: #1a1200 !important;
+    -webkit-text-fill-color: #1a1200 !important;
+    border-color: #fbbf24 !important;
+    box-shadow: 0 14px 30px rgba(251, 191, 36, .28);
+}
+
+/* =========================================================
+   HOME HERO "Find Your Fit": amber outline
+========================================================= */
+html:root:root:root:root:not([data-theme="dark"]) body .hero-section.hx-home .hero-buttons .secondary-button {
+    background: rgba(255, 255, 255, .65) !important;
+    color: #b45309 !important;
+    -webkit-text-fill-color: #b45309 !important;
+    border: 1.5px solid #b45309 !important;
+    transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+html:root:root:root:root:not([data-theme="dark"]) body .hero-section.hx-home .hero-buttons .secondary-button:hover,
+html:root:root:root:root:not([data-theme="dark"]) body .hero-section.hx-home .hero-buttons .secondary-button:focus-visible {
+    background: #b45309 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: #b45309 !important;
+    box-shadow: 0 14px 30px rgba(180, 83, 9, .30);
+}
+
+html:root:root:root:root[data-theme="dark"] body .hero-section.hx-home .hero-buttons .secondary-button {
+    background: transparent !important;
+    color: #fbbf24 !important;
+    -webkit-text-fill-color: #fbbf24 !important;
+    border: 1.5px solid #fbbf24 !important;
+    transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+html:root:root:root:root[data-theme="dark"] body .hero-section.hx-home .hero-buttons .secondary-button:hover,
+html:root:root:root:root[data-theme="dark"] body .hero-section.hx-home .hero-buttons .secondary-button:focus-visible {
+    background: #fbbf24 !important;
+    color: #1a1200 !important;
+    -webkit-text-fill-color: #1a1200 !important;
+    border-color: #fbbf24 !important;
+    box-shadow: 0 14px 30px rgba(251, 191, 36, .28);
+}
+
+/* =========================================================
+   HOME: "Explore Footwear" (Pressure Lab) + "Contact Us" (Visit section)
+========================================================= */
+html:root:root:root:root:not([data-theme="dark"]) body :is(.pm-actions .pm-btn:not(.pm-btn-main), .visit-arthro-buttons .visit-secondary-button) {
+    background: rgba(255, 255, 255, .65) !important;
+    color: #b45309 !important;
+    -webkit-text-fill-color: #b45309 !important;
+    border: 1.5px solid #b45309 !important;
+    box-shadow: none;
+    animation: none;
+    transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+html:root:root:root:root:not([data-theme="dark"]) body :is(.pm-actions .pm-btn:not(.pm-btn-main), .visit-arthro-buttons .visit-secondary-button):hover,
+html:root:root:root:root:not([data-theme="dark"]) body :is(.pm-actions .pm-btn:not(.pm-btn-main), .visit-arthro-buttons .visit-secondary-button):focus-visible {
+    background: #b45309 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: #b45309 !important;
+    box-shadow: 0 14px 30px rgba(180, 83, 9, .30);
+}
+
+html:root:root:root:root[data-theme="dark"] body :is(.pm-actions .pm-btn:not(.pm-btn-main), .visit-arthro-buttons .visit-secondary-button) {
+    background: transparent !important;
+    color: #fbbf24 !important;
+    -webkit-text-fill-color: #fbbf24 !important;
+    border: 1.5px solid #fbbf24 !important;
+    box-shadow: none;
+    animation: none;
+    transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+html:root:root:root:root[data-theme="dark"] body :is(.pm-actions .pm-btn:not(.pm-btn-main), .visit-arthro-buttons .visit-secondary-button):hover,
+html:root:root:root:root[data-theme="dark"] body :is(.pm-actions .pm-btn:not(.pm-btn-main), .visit-arthro-buttons .visit-secondary-button):focus-visible {
+    background: #fbbf24 !important;
+    color: #1a1200 !important;
+    -webkit-text-fill-color: #1a1200 !important;
+    border-color: #fbbf24 !important;
+    box-shadow: 0 14px 30px rgba(251, 191, 36, .28);
+}

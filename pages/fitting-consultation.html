@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        /* Apply saved theme / direction before first paint (no flash, same on every page) */
+        (function () {
+            try {
+                var d = document.documentElement;
+                d.setAttribute('data-theme', localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+                d.setAttribute('dir', localStorage.getItem('rtl') === 'true' ? 'rtl' : 'ltr');
+                d.style.colorScheme = d.getAttribute('data-theme');
+            } catch (e) { }
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description"
+        content="Book a free personalised orthopedic footwear fitting consultation at ArthroStride.">
+    <title>Fitting Consultation | ArthroStride</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/fitting-consultation.css">
+    <link rel="stylesheet" href="../assets/css/more.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/dark-mode.css">
+    <link rel="stylesheet" href="../assets/css/rtl.css">
+    <link rel="icon" type="image/png" href="../assets/images/arthrostride-logo-light.png">
+    <link rel="apple-touch-icon" href="../assets/images/arthrostride-logo-light.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script>
+        (function () { try { var t = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'; var u = t === 'dark' ? '../assets/images/arthrostride-logo-dark.png' : '../assets/images/arthrostride-logo-light.png'; document.documentElement.setAttribute('data-theme', t); document.querySelectorAll('link[rel="icon"],link[rel="apple-touch-icon"]').forEach(function (l) { l.href = u }); } catch (e) { } })();
+    </script>
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+
+<body class="fitting-page">
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="brand">
+                <div class="brand-logo">
+                    <img src="../assets/images/arthrostride-logo-light.png" alt="ArthroStride Logo">
+                </div>
+                <div class="brand-text">
+
+                    <div class="brand-name">
+                        Arthro<span>Stride</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- =================================================
+                 NAVIGATION
+            ================================================== -->
+
+            <nav id="main-navigation" class="main-navigation" aria-label="Main Navigation">
+
+                <div class="home-dropdown">
+                    <button type="button" class="nav-link home-dropdown-toggle" aria-expanded="false">
+                        Home
+                        <span class="home-chevron" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-caret-down-fill" viewBox="0 0 16 16" focusable="false">
+                                <path
+                                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="home-dropdown-menu">
+                        <a href="../index.html" class="home-dropdown-link">Home 1</a>
+                        <a href="../home-2.html" class="home-dropdown-link">Home 2</a>
+                    </div>
+                </div>
+
+
+                <a href="about.html" class="nav-link">
+
+                    About
+
+                </a>
+
+                <a href="products.html" class="nav-link">
+
+                    Products
+
+                </a>
+
+
+                <a href="fitting-consultation.html" class="nav-link active" aria-current="page">
+
+                    Fitting
+
+                </a>
+
+
+                <a href="insurance-prescription.html" class="nav-link">
+
+                    Coverage
+
+                </a>
+
+
+                <a href="contact.html" class="nav-link">
+
+                    Contact
+
+                </a>
+
+                <a href="booking.html" class="nav-drawer-cta">Visit Booking</a>
+            </nav>
+
+
+            <!-- =================================================
+                 HEADER ACTIONS
+            ================================================== -->
+
+            <div class="header-actions">
+
+                <!-- CSS-only Dark / Light Mode -->
+                <input class="theme-control-input" type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+                <label class="header-icon-btn theme-control-label" for="theme-toggle" title="Toggle dark mode"
+                    aria-label="Toggle dark mode">
+                    <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+                        <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"
+                            fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+                    </svg>
+                </label>
+
+                <!-- CSS-only RTL / LTR -->
+                <input class="theme-control-input" type="checkbox" id="rtl-toggle" aria-label="Toggle RTL">
+                <label class="header-icon-btn theme-control-label" for="rtl-toggle" title="Toggle RTL / LTR"
+                    aria-label="Toggle RTL / LTR">
+                    <span class="rtl-label-on">RTL</span><span class="rtl-label-off">LTR</span>
+                </label>
+
+                <!-- Visit Booking -->
+                <a href="booking.html" class="header-cta">
+                    Visit Booking
+                </a>
+                <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="main-navigation"><span></span><span></span><span></span></button>
+
+            </div>
+
+        </div>
+
+    </header>
+    <main>
+        <section class="ft-hero fitting-hero">
+            <div class="ft-in"><span class="hero-badge"><svg class="ic ic-star" width="1em" height="1em"
+                        viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor"
+                        stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M12 2.5l2.95 6.1 6.7.9-4.9 4.65 1.2 6.65L12 17.6l-5.95 3.2 1.2-6.65-4.9-4.65 6.7-.9z" />
+                    </svg> FREE PERSONALISED FITTING</span>
+                <h1>Find the Fit That <span>Feels Right</span></h1>
+                <p>Every foot is different. Book a free consultation and let our fitters match you with supportive
+                    footwear for your arches, width and daily routine.</p>
+                <div class="ft-hero-btns"><a href="#book" class="primary-button">Book Appointment <svg width="16"
+                            height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                        </svg></a><a href="tel:+919876543210" class="secondary-button">Call +91 98765 43210</a></div>
+            </div>
+        </section>
+        <section class="ft-sec">
+            <div class="ft-head"><span class="section-label">WHAT TO EXPECT</span>
+                <h2>Your Fitting <span>in 4 Steps</span></h2>
+            </div>
+            <ol class="tl">
+                <li><span class="tl-n">01</span>
+                    <div class="tl-t">
+                        <h3>Foot Scan</h3>
+                        <p>A quick digital scan maps your arch, length and width, helping us understand your unique foot
+                            shape.</p>
+                    </div>
+                    <div class="tl-i"><img
+                            src="https://le-de.cdn-website.com/7be48bc000c6474196ba80d8cae70ed0/dms3rep/multi/opt/Design-sans-titre--281-29-96d70b8e-640w.png"
+                            alt="3D foot scan for measuring foot shape and arch" loading="lazy"></div>
+                </li>
+                <li><span class="tl-n">02</span>
+                    <div class="tl-t">
+                        <h3>Walking Check</h3>
+                        <p>We watch how you walk to see pressure and alignment and identify areas that may need extra
+                            support.</p>
+                    </div>
+                    <div class="tl-i"><img src="https://i.ibb.co/7xfSH7z1/Screenshot-2026-10-04-211028.png"
+                            alt="Walking check with comfortable clinical footwear" loading="lazy"></div>
+                </li>
+                <li><span class="tl-n">03</span>
+                    <div class="tl-t">
+                        <h3>Fit Matching</h3>
+                        <p>Compare widths, cushioning and support levels for your everyday walking comfort and
+                            individual comfort needs.</p>
+                    </div>
+                    <div class="tl-i"><img
+                            src="https://a.mktgcdn.com/p/iBQ1WZIf0N4M0sbOvPmXFVmmp_BEFFwEpVnD5NRqmfw/784x588.jpg"
+                            alt="Personalised shoe fitting and support matching" loading="lazy"></div>
+                </li>
+                <li><span class="tl-n">04</span>
+                    <div class="tl-t">
+                        <h3>Trial & Advice</h3>
+                        <p>Try shoes on and get friendly, personalized expert care and fully customized orthotic
+                            guidance.</p>
+                    </div>
+                    <div class="tl-i"><img
+                            src="https://www.cosyfeet.com/media/amasty/blog/cache/F/i/681/681/Fitting_Expert_1000x1000_2_.jpg"
+                            alt="Trying on footwear with fitting advice" loading="lazy"></div>
+                </li>
+            </ol>
+        </section>
+        <section class="ft-sec ft-alt" id="book">
+            <div class="ft-head"><span class="section-label">BOOK YOUR VISIT</span>
+                <h2>Schedule <span>a Consultation</span></h2>
+                <p>Choose a service, date and time. Your summary updates instantly.</p>
+            </div>
+            <div class="ft-book">
+                <form class="ft-form" action="#confirmed" method="get">
+                    <h3> Choose Service</h3>
+                    <div class="ft-opts"><label class="ft-opt"><input type="radio" name="type" value="Full Foot Fitting"
+                                id="ty-0" checked><span><b>Full Foot Fitting</b><small>Foot scan, arch & width
+                                    check</small><em>45 min</em></span></label><label class="ft-opt"><input type="radio"
+                                name="type" value="Diabetic Foot Care" id="ty-1"><span><b>Diabetic Foot
+                                    Care</b><small>Pressure-point & seamless-fit review</small><em>45
+                                    min</em></span></label><label class="ft-opt"><input type="radio" name="type"
+                                value="Wide-Fit &amp; Bunion" id="ty-2"><span><b>Wide-Fit & Bunion</b><small>Toe-box
+                                    space and width matching</small><em>30 min</em></span></label><label
+                            class="ft-opt"><input type="radio" name="type" value="Prescription Fitting"
+                                id="ty-3"><span><b>Prescription Fitting</b><small>Fit shoes to your doctor's
+                                    prescription</small><em>40 min</em></span></label></div>
+                    <h3> Pick a Date</h3>
+                    <div class="ft-date">
+                        <label for="ft-date" class="ft-date-label">Preferred Date</label>
+                        <div class="ft-date-wrap">
+                            <input type="date" id="ft-date" name="date" required>
+                            <button type="button" id="ft-calendar-btn" class="ft-calendar-btn"
+                                aria-label="Open calendar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                    class="bi bi-calendar-event" viewBox="0 0 16 16" aria-hidden="true"
+                                    focusable="false">
+                                    <path
+                                        d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+                                    <path
+                                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="ft-date-note" id="ft-date-note">Open Monday to Saturday. Closed on Sundays.</p>
+                    </div>
+                    <h3> Select a Time</h3>
+                    <div class="ft-times"><label class="ft-time"><input type="radio" name="time" value="9:00 AM"
+                                id="tm-0"><span>9:00 AM</span></label><label class="ft-time"><input type="radio"
+                                name="time" value="10:00 AM" id="tm-1" disabled><span>10:00
+                                AM<small>Booked</small></span></label><label class="ft-time"><input type="radio"
+                                name="time" value="11:00 AM" id="tm-2" checked><span>11:00 AM</span></label><label
+                            class="ft-time"><input type="radio" name="time" value="12:00 PM" id="tm-3"><span>12:00
+                                PM</span></label><label class="ft-time"><input type="radio" name="time" value="2:00 PM"
+                                id="tm-4" disabled><span>2:00 PM<small>Booked</small></span></label><label
+                            class="ft-time"><input type="radio" name="time" value="3:00 PM" id="tm-5"><span>3:00
+                                PM</span></label><label class="ft-time"><input type="radio" name="time" value="4:00 PM"
+                                id="tm-6"><span>4:00 PM</span></label><label class="ft-time"><input type="radio"
+                                name="time" value="5:00 PM" id="tm-7" disabled><span>5:00
+                                PM<small>Booked</small></span></label><label class="ft-time"><input type="radio"
+                                name="time" value="6:00 PM" id="tm-8"><span>6:00 PM</span></label></div>
+                    <h3> Your Details</h3>
+                    <div class="ft-fields"><label>Full name<input type="text" name="name" placeholder="Your name"
+                                required></label>
+                        <label>Phone<input type="tel" name="phone" placeholder="+91 98765 43210"
+                                pattern="[+0-9 ]{10,15}" required></label>
+                        <label>Email<input type="email" name="email" placeholder="you@email.com"></label>
+                        <label>Main foot concern<select name="concern">
+                                <option>Plantar fasciitis</option>
+                                <option>Diabetic foot care</option>
+                                <option>Bunions / wide feet</option>
+                                <option>Flat feet / arch pain</option>
+                                <option>Heel pain</option>
+                                <option>General comfort</option>
+                            </select></label>
+                        <label class="full">Notes (optional)<textarea name="notes" rows="3"
+                                placeholder="Anything we should know?"></textarea></label>
+                    </div>
+                    <label class="ft-check"><input type="checkbox" required> I agree to be contacted about my
+                        appointment.</label>
+                    <button type="submit" class="ft-submit">Confirm Appointment <svg width="16" height="16"
+                            fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                        </svg></button>
+                </form>
+                <div class="ft-side">
+                    <aside class="ft-summary">
+                        <h3>Your Appointment</h3>
+                        <div class="sm-row"><small>Service</small>
+                            <div><span class="sm-ty-0">Full Foot Fitting</span><span class="sm-ty-1">Diabetic Foot
+                                    Care</span><span class="sm-ty-2">Wide-Fit &amp; Bunion</span><span
+                                    class="sm-ty-3">Prescription Fitting</span></div>
+                        </div>
+                        <div class="sm-row"><small>Date</small>
+                            <div><span class="sm-date-val" id="sm-date">Select a date</span></div>
+                        </div>
+                        <div class="sm-row"><small>Time</small>
+                            <div><span class="sm-tm-0">9:00 AM</span><span class="sm-tm-1">10:00 AM</span><span
+                                    class="sm-tm-2">11:00 AM</span><span class="sm-tm-3">12:00 PM</span><span
+                                    class="sm-tm-4">2:00 PM</span><span class="sm-tm-5">3:00 PM</span><span
+                                    class="sm-tm-6">4:00 PM</span><span class="sm-tm-7">5:00 PM</span><span
+                                    class="sm-tm-8">6:00 PM</span></div>
+                        </div>
+                        <div class="sm-row"><small>Location</small>
+                            <div class="on">ArthroStride Store, Hyderabad</div>
+                        </div>
+                        <div class="sm-free"><b>Free</b> consultation <svg class="ic ic-dot" width="1em" height="1em"
+                                viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
+                                <circle cx="12" cy="12" r="7" />
+                            </svg> no obligation</div>
+                    </aside>
+                    <aside class="ft-summary ft-info">
+                        <h3>What to Bring</h3>
+                        <ul class="ft-info-list">
+                            <li>Your current everyday shoes</li>
+                            <li>Doctor's prescription or X-ray (if any)</li>
+                            <li>Insurance card, if you plan to claim</li>
+                        </ul>
+                    </aside>
+                    <aside class="ft-summary ft-info ft-help">
+                        <h3>Need Help?</h3>
+                        <p>Questions before you book? Our fitters are happy to help.</p>
+                        <a href="tel:+919876543210" class="ft-help-btn">Call +91 98765 43210</a>
+                    </aside>
+                    <figure class="ft-photo">
+                        <img src="../assets/images/fitting-visit.jpg" alt="ArthroStride arch-support comfort shoe"
+                            loading="lazy"
+                            onerror="var t=this.dataset.t;if(t===undefined)t='jpeg,png,webp,jfif,avif';var a=t?t.split(','):[];if(a.length){var n=a.shift();this.dataset.t=a.join(',');this.src='../assets/images/fitting-visit.'+n}else{this.style.display='none'}">
+                        <figcaption>
+                            <strong>Arch support, built into every pair</strong>
+                            <span>Find the fit that suits your stride</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="mx-sec mx-alt">
+            <div>
+                <div class="mx-head"><span class="section-label">WHO WE FIT</span>
+                    <h2>Footwear for <span>Every Routine</span></h2>
+                </div>
+                <div class="wf"><input type="radio" name="wf" id="wf1" checked><input type="radio" name="wf"
+                        id="wf2"><input type="radio" name="wf" id="wf3"><input type="radio" name="wf" id="wf4"><input
+                        type="radio" name="wf" id="wf5"><input type="radio" name="wf" id="wf6">
+                    <ul class="wf-nav">
+                        <li><label for="wf1"><b>01</b>Senior Comfort</label></li>
+                        <li><label for="wf2"><b>02</b>Diabetic Care</label></li>
+                        <li><label for="wf3"><b>03</b>Long Shifts</label></li>
+                        <li><label for="wf4"><b>04</b>Daily Walkers</label></li>
+                        <li><label for="wf5"><b>05</b>Swelling & Pregnancy</label></li>
+                        <li><label for="wf6"><b>06</b>Active Recovery</label></li>
+                    </ul>
+                    <div class="wf-stage">
+                        <figure class="wf-1">
+                            <div class="wf-img"><img class="bg"
+                                    src="https://i.ibb.co/1GGqjgLY/Backyard-Smile-with-Arthro-Stride-Sneakers.png"
+                                    alt="" aria-hidden="true"><img class="fg"
+                                    src="https://i.ibb.co/1GGqjgLY/Backyard-Smile-with-Arthro-Stride-Sneakers.png"
+                                    alt="Orthopedic comfort shoes for seniors" loading="lazy"></div>
+                            <figcaption>
+                                <h3>Senior Comfort</h3>
+                                <p>Shoes that reduce strain and support balance.</p><a href="#book">Book a fitting for
+                                    this &rarr;</a>
+                            </figcaption>
+                        </figure>
+                        <figure class="wf-2">
+                            <div class="wf-img"><img class="bg"
+                                    src="https://i.ibb.co/Xr9yGQZK/Screenshot-2026-10-04-211506.png" alt=""
+                                    aria-hidden="true"><img class="fg"
+                                    src="https://i.ibb.co/Xr9yGQZK/Screenshot-2026-10-04-211506.png"
+                                    alt="Adjustable diabetic footwear" loading="lazy"></div>
+                            <figcaption>
+                                <h3>Diabetic Care</h3>
+                                <p>Protective fits with seamless interiors for comfort.</p><a href="#book">Book a
+                                    fitting for this &rarr;</a>
+                            </figcaption>
+                        </figure>
+                        <figure class="wf-3">
+                            <div class="wf-img"><img class="bg"
+                                    src="https://i.pinimg.com/1200x/85/59/b9/8559b9079ca29242f05248bd9aa33c57.jpg"
+                                    alt="" aria-hidden="true"><img class="fg"
+                                    src="https://i.pinimg.com/1200x/85/59/b9/8559b9079ca29242f05248bd9aa33c57.jpg"
+                                    alt="Comfortable footwear for long shifts" loading="lazy"></div>
+                            <figcaption>
+                                <h3>Long Shifts</h3>
+                                <p>For nurses, teachers and retail staff who stand all day.</p><a href="#book">Book a
+                                    fitting for this &rarr;</a>
+                            </figcaption>
+                        </figure>
+                        <figure class="wf-4">
+                            <div class="wf-img"><img class="bg"
+                                    src="https://i.pinimg.com/1200x/76/8f/22/768f2221d426427e77aca5aaceb02aad.jpg"
+                                    alt="" aria-hidden="true"><img class="fg"
+                                    src="https://i.pinimg.com/1200x/76/8f/22/768f2221d426427e77aca5aaceb02aad.jpg"
+                                    alt="Cushioned shoes for daily walking" loading="lazy"></div>
+                            <figcaption>
+                                <h3>Daily Walkers</h3>
+                                <p>Cushioned support for morning walks and errands.</p><a href="#book">Book a fitting
+                                    for this &rarr;</a>
+                            </figcaption>
+                        </figure>
+                        <figure class="wf-5">
+                            <div class="wf-img"><img class="bg"
+                                    src="https://i.pinimg.com/736x/6f/8f/3d/6f8f3da4c59a4b1ff6da8bc961ea5c8c.jpg" alt=""
+                                    aria-hidden="true"><img class="fg"
+                                    src="https://i.pinimg.com/736x/6f/8f/3d/6f8f3da4c59a4b1ff6da8bc961ea5c8c.jpg"
+                                    alt="Adjustable footwear for swollen feet" loading="lazy"></div>
+                            <figcaption>
+                                <h3>Swelling & Pregnancy</h3>
+                                <p>Cushioned support for morning walks and errands.</p><a href="#book">Book a fitting
+                                    for this &rarr;</a>
+                            </figcaption>
+                        </figure>
+                        <figure class="wf-6">
+                            <div class="wf-img"><img class="bg"
+                                    src="https://i.pinimg.com/736x/8d/fd/44/8dfd44e9ad18287a27bc2e7ab0160f3b.jpg" alt=""
+                                    aria-hidden="true"><img class="fg"
+                                    src="https://i.pinimg.com/736x/8d/fd/44/8dfd44e9ad18287a27bc2e7ab0160f3b.jpg"
+                                    alt="Supportive trainers for active recovery" loading="lazy"></div>
+                            <figcaption>
+                                <h3>Active Recovery</h3>
+                                <p>Supportive trainers while managing heel or arch pain.</p><a href="#book">Book a
+                                    fitting for this &rarr;</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section class="ft-sec">
+            <div class="ft-head"><span class="section-label">BE PREPARED</span>
+                <h2>What to <span>Bring</span></h2>
+            </div>
+            <div class="pk">
+                <div class="pk-h"><span>PACK LIST</span><b>Tick it off before you arrive</b><span
+                        class="pk-d">Everything here helps our fitter get it right the first time.</span><em
+                        class="pk-ok">&#10003; You&rsquo;re all set</em></div>
+                <ul>
+                    <li><label><input type="checkbox"><i class="pk-x"></i><i class="pk-ic fa-solid fa-file-medical"
+                                aria-hidden="true"></i><span>
+                                <h3>Doctor's Prescription</h3>
+                                <p>If you have one, bring it so we can match requirements.</p>
+                            </span></label></li>
+                    <li><label><input type="checkbox"><i class="pk-x"></i><i class="pk-ic fa-solid fa-shoe-prints"
+                                aria-hidden="true"></i><span>
+                                <h3>Your Current Shoes</h3>
+                                <p>Wear or bring your most-used pair to check wear patterns.</p>
+                            </span></label></li>
+                    <li><label><input type="checkbox"><i class="pk-x"></i><i class="pk-ic fa-solid fa-socks"
+                                aria-hidden="true"></i><span>
+                                <h3>Usual Socks</h3>
+                                <p>Bring the socks you normally wear for an accurate fit.</p>
+                            </span></label></li>
+                    <li><label><input type="checkbox"><i class="pk-x"></i><i
+                                class="pk-ic fa-solid fa-hand-holding-medical" aria-hidden="true"></i><span>
+                                <h3>Existing Orthotics</h3>
+                                <p>Bring insoles or orthotics so we can fit them in new shoes.</p>
+                            </span></label></li>
+                </ul>
+            </div>
+        </section>
+        <section class="ft-sec ft-alt">
+            <div class="ft-head"><span class="section-label">OUR EXPERTS</span>
+                <h2>Meet <span>Your Fitters</span></h2>
+            </div>
+            <div class="rs">
+                <article class="rs-p">
+                    <div class="rs-ph"><img src="https://i.ibb.co/RTszDFzs/Chat-GPT-Image-Sep-29-2026-10-35-45-AM.png"
+                            alt="Dr. Anil Reddy" loading="lazy"></div>
+                    <h3>Dr. Anil Reddy</h3><span>Podiatry Consultant</span>
+                    <p>12 years of expert diabetic and heel-pain footwear care.</p>
+                </article>
+                <article class="rs-p">
+                    <div class="rs-ph"><img src="https://i.ibb.co/N2GPWF8s/Chat-GPT-Image-Sep-29-2026-10-53-11-AM.png"
+                            alt="Meera Sharma" loading="lazy"></div>
+                    <h3>Meera Sharma</h3><span>Senior Fitting Specialist</span>
+                    <p>Expert in wide-fit, bunion and arch-support matching.</p>
+                </article>
+                <article class="rs-p">
+                    <div class="rs-ph"><img src="https://i.ibb.co/svBSxPkN/Chat-GPT-Image-Sep-29-2026-10-54-27-AM.png"
+                            alt="Kiran Rao" loading="lazy">
+                    </div>
+                    <h3>Kiran Rao</h3><span>Gait & Orthotics Fitter</span>
+                    <p>Focuses on walking analysis and custom insole fitting.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="fq-sec" id="faq">
+            <div class="fq">
+                <aside class="fq-side"><span class="section-label">FAQ</span>
+                    <h2>Ask Us Anything.<br><em>We Answer Straight.</em></h2>
+                    <p>No jargon, no sales pitch. Pick a topic and tap a question.</p>
+                    <div class="fq-q" aria-hidden="true">?</div>
+                    <div class="fq-live"><i></i> Fitters online &middot; Mon&ndash;Sat 9&ndash;7</div>
+                    <a href="tel:+919876543210" class="primary-button">Ask a Fitter Now</a>
+                </aside>
+                <div class="fq-main">
+                    <div class="fq-tabs"><input type="radio" name="fq" id="fq-0" checked><label
+                            for="fq-0">All</label><input type="radio" name="fq" id="fq-1"><label
+                            for="fq-1">Booking</label><input type="radio" name="fq" id="fq-2"><label
+                            for="fq-2">Fitting</label><input type="radio" name="fq" id="fq-3"><label
+                            for="fq-3">Coverage</label></div>
+                    <div class="fq-list">
+                        <details class="c1">
+                            <summary><b>01</b>Is the consultation really free?<i></i></summary>
+                            <p>Yes. Fitting and advice are free, with zero obligation to buy anything.</p>
+                        </details>
+                        <details class="c3">
+                            <summary><b>02</b>Do I need a prescription?<i></i></summary>
+                            <p>Not for a general fitting. For diabetic or therapeutic footwear insurance claims, bring
+                                your doctor's prescription.</p>
+                        </details>
+                        <details class="c1">
+                            <summary><b>03</b>Can I walk in without booking?<i></i></summary>
+                            <p>Walk-ins are welcome, but booked slots are seen first, so booking saves you the wait.</p>
+                        </details>
+                        <details class="c1">
+                            <summary><b>04</b>Can I reschedule?<i></i></summary>
+                            <p>Yes. Call +91 98765 43210 at least 3 hours before your slot.</p>
+                        </details>
+                        <details class="c2">
+                            <summary><b>05</b>How long does a fitting take?<i></i></summary>
+                            <p>30 to 45 minutes: scan, walking check, matching and trial. No rushing.</p>
+                        </details>
+                        <details class="c2">
+                            <summary><b>06</b>Will you fit my existing orthotics?<i></i></summary>
+                            <p>Yes. Bring them and we test them inside every pair you try.</p>
+                        </details>
+                        <details class="c3">
+                            <summary><b>07</b>Can I use health insurance?<i></i></summary>
+                            <p>Many plans cover therapeutic footwear with a prescription. Bring your policy details and
+                                we will guide the paperwork.</p>
+                        </details>
+                        <details class="c2">
+                            <summary><b>08</b>What if nothing fits well?<i></i></summary>
+                            <p>Then we say so. You leave with advice, not a pair that is wrong for your feet.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="ft-done" id="confirmed">
+            <div><span class="ft-tick"><svg class="ic ic-check ic-s" width="1em" height="1em" viewBox="0 0 24 24"
+                        aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12.5l4.5 4.5L19 7.5" />
+                    </svg></span>
+                <h3>Appointment Request Received</h3>
+                <p>Thank you! Our team will call to confirm your slot shortly.</p><a href="fitting-consultation.html"
+                    class="primary-button">Done</a>
+            </div>
+        </div>
+        <footer class="site-footer">
+            <div class="footer-container">
+
+                <div class="footer-brand">
+                    <a href="../index.html" class="footer-brand-link">
+                        <div class="footer-brand-logo">
+                            <img src="../assets/images/arthrostride-logo-light.png" alt="ArthroStride Logo">
+                        </div>
+                        <div class="footer-brand-text">
+                            <div class="footer-brand-name">
+                                Arthro<span>Stride</span>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="footer-description">
+                        Supportive orthopedic and comfort footwear designed
+                        around foot health, everyday movement, and a
+                        comfortable fit.
+                    </p>
+
+                    <div class="footer-socials">
+                        <a href="#" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>
+                        Quick Links
+                    </h3>
+                    <a href="../index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="products.html">Products</a>
+                    <a href="fitting-consultation.html">Fitting</a>
+                    <a href="insurance-prescription.html">Coverage</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="booking.html">Visit Booking</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>
+                        Our Footwear
+                    </h3>
+                    <a href="products.html#plantar-fasciitis">
+                        Plantar Fasciitis
+                    </a>
+                    <a href="products.html#diabetic-footwear">
+                        Diabetic Footwear
+                    </a>
+                    <a href="products.html#wide-fit">
+                        Wide Fit
+                    </a>
+                    <a href="products.html#arch-support">
+                        Arch Support
+                    </a>
+                    <a href="products.html#everyday-comfort">
+                        Everyday Comfort
+                    </a>
+                    <a href="products.html#heel-cushioning">
+                        Heel &amp; Cushioning
+                    </a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>
+                        Information
+                    </h3>
+                    <a href="fitting-consultation.html">
+                        Personalized Fitting
+                    </a>
+                    <a href="insurance-prescription.html">
+                        Insurance Support
+                    </a>
+                    <a href="insurance-prescription.html">
+                        Prescription Guidance
+                    </a>
+                    <a href="products.html">
+                        Footwear Guide
+                    </a>
+                    <a href="contact.html">
+                        Store Information
+                    </a>
+                </div>
+
+                <div class="footer-column footer-contact">
+                    <h3>
+                        Get In Touch
+                    </h3>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </span>
+                        Hyderabad, India
+                    </p>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </span>
+                        +91 98765 43210
+                    </p>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        support@arthrostride.com
+                    </p>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </span>
+                        Mon - Sat: 9 AM - 7 PM
+                    </p>
+                    <a href="fitting-consultation.html" class="footer-book-button">
+                        Book a Consultation
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-container">
+                    <p>
+                        &copy; 2026
+                        <span>ArthroStride</span>.
+                        All Rights Reserved.
+                    </p>
+                    <div class="footer-legal">
+                        <a href="#">
+                            Privacy Policy
+                        </a>
+                        <a href="#">
+                            Terms &amp; Conditions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

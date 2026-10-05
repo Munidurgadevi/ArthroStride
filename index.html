@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        (function () {
+            try {
+                var d = document.documentElement;
+                d.setAttribute('data-theme', localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+                d.setAttribute('dir', localStorage.getItem('rtl') === 'true' ? 'rtl' : 'ltr');
+                d.style.colorScheme = d.getAttribute('data-theme');
+            } catch (e) { }
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Orthopedic and comfort footwear designed for supportive everyday movement.">
+    <title>ArthroStride | Orthopedic & Comfort Footwear</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="icon" type="image/png" href="assets/images/arthrostride-logo-light.png">
+    <link rel="apple-touch-icon" href="assets/images/arthrostride-logo-light.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script>
+        (function () { try { var t = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'; var u = t === 'dark' ? 'assets/images/arthrostride-logo-dark.png' : 'assets/images/arthrostride-logo-light.png'; document.documentElement.setAttribute('data-theme', t); document.querySelectorAll('link[rel="icon"],link[rel="apple-touch-icon"]').forEach(function (l) { l.href = u }); } catch (e) { } })();
+    </script>
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="brand">
+                <div class="brand-logo">
+                    <img src="assets/images/arthrostride-logo-light.png" alt="ArthroStride Logo">
+                </div>
+                <div class="brand-text">
+                    <div class="brand-name">
+                        Arthro<span>Stride</span>
+                    </div>
+                </div>
+            </a>
+            <nav id="main-navigation" class="main-navigation" aria-label="Main Navigation">
+                <div class="home-dropdown">
+                    <button type="button" class="nav-link home-dropdown-toggle active" aria-current="page"
+                        aria-expanded="false">
+                        Home
+                        <span class="home-chevron" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-caret-down-fill" viewBox="0 0 16 16" focusable="false">
+                                <path
+                                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="home-dropdown-menu">
+                        <a href="index.html" class="home-dropdown-link active" aria-current="page">Home 1</a>
+                        <a href="home-2.html" class="home-dropdown-link">Home 2</a>
+                    </div>
+                </div>
+                <a href="pages/about.html" class="nav-link">
+                    About
+                </a>
+                <a href="pages/products.html" class="nav-link">
+                    Products
+                </a>
+                <a href="pages/fitting-consultation.html" class="nav-link">
+                    Fitting
+                </a>
+                <a href="pages/insurance-prescription.html" class="nav-link">
+                    Coverage
+                </a>
+                <a href="pages/contact.html" class="nav-link">
+                    Contact
+                </a>
+                <a href="pages/booking.html" class="nav-drawer-cta">Visit Booking</a>
+            </nav>
+            <div class="header-actions">
+
+                <input class="theme-control-input" type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+                <label class="header-icon-btn theme-control-label" for="theme-toggle" title="Toggle dark mode"
+                    aria-label="Toggle dark mode">
+                    <svg class="theme-moon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <svg class="theme-sun" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+                        <path
+                            d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"
+                            fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+                    </svg>
+                </label>
+
+                <input class="theme-control-input" type="checkbox" id="rtl-toggle" aria-label="Toggle RTL">
+                <label class="header-icon-btn theme-control-label" for="rtl-toggle" title="Toggle RTL / LTR"
+                    aria-label="Toggle RTL / LTR">
+                    <span class="rtl-label-on">RTL</span><span class="rtl-label-off">LTR</span>
+                </label>
+
+                <a href="pages/booking.html" class="header-cta">
+                    Visit Booking
+                </a>
+                <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="main-navigation"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero-section hx hx-home">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="hero-badge-icon" aria-hidden="true"></span>
+                        COMFORT • SUPPORT • EVERY STEP
+                    </div>
+                    <h1 class="hero-title">
+                        Comfort That
+                        <span>
+                            Moves With You
+                        </span>
+                    </h1>
+                    <p class="hero-description">
+                        Discover thoughtfully designed orthopedic and
+                        comfort footwear made to support your everyday
+                        movement and help you find the right fit.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="pages/products.html" class="primary-button">
+                            Explore Footwear
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span>
+                        </a>
+                        <a href="pages/fitting-consultation.html" class="secondary-button">
+                            Find Your Fit
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span>
+                        </a>
+                    </div>
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <span><svg class="hx-ic" width="20" height="20" viewBox="0 0 16 16" fill="currentColor"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                </svg></span>
+                            <p>
+                                Orthopedic Support
+                            </p>
+                        </div>
+                        <div class="hero-feature">
+                            <span><svg class="hx-ic" width="20" height="20" viewBox="0 0 16 16" fill="currentColor"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                </svg></span>
+                            <p>
+                                Comfort Focused
+                            </p>
+                        </div>
+                        <div class="hero-feature">
+                            <span><svg class="hx-ic" width="20" height="20" viewBox="0 0 16 16" fill="currentColor"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                </svg></span>
+                            <p>
+                                Expert Fitting
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="foot-health-section">
+            <div class="foot-health-container">
+                <div class="foot-health-heading">
+                    <span class="section-label">
+                        TARGETED FOOT HEALTH
+                    </span>
+                    <h2>
+                        Footwear Designed
+                        <span>Around Your Needs</span>
+                    </h2>
+                    <p>
+                        Whether managing chronic heel pain, sensitive
+                        diabetic nerves, or requiring an anatomical wide
+                        toe box, each footwear option is thoughtfully
+                        designed around comfort, support, and everyday
+                        movement.
+                    </p>
+                </div>
+                <div class="foot-health-grid">
+
+                    <article class="foot-health-card">
+                        <div class="foot-health-image">
+                            <img src="https://i.ibb.co/BH3rB4Wr/01-plantar-fasciitis.png"
+                                alt="Plantar fasciitis supportive footwear">
+                        </div>
+                        <h3>
+                            Plantar Fasciitis
+                        </h3>
+                        <p>
+                            Deep heel cups and anatomical arch support
+                            designed to provide comfortable support for
+                            everyday movement.
+                        </p>
+                        <a href="pages/products.html#plantar-fasciitis" class="health-card-link">
+                            Explore Collection
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span>
+                        </a>
+                    </article>
+
+                    <article class="foot-health-card">
+                        <div class="foot-health-image">
+                            <img src="https://i.pinimg.com/1200x/cd/f6/f3/cdf6f399e6dd778a52c3a6f7b16cdbef.jpg"
+                                alt="Diabetic comfort footwear">
+                        </div>
+                        <h3>
+                            Diabetic Footwear
+                        </h3>
+                        <p>
+                            Seamless interior linings and soft materials
+                            designed to minimize friction, pressure,
+                            and irritation.
+                        </p>
+                        <a href="pages/products.html#diabetic-footwear" class="health-card-link">
+                            Explore Collection
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span>
+                        </a>
+                    </article>
+
+                    <article class="foot-health-card">
+                        <div class="foot-health-image">
+                            <img src="https://i.pinimg.com/736x/65/ba/7b/65ba7b185099d7c183883890b4c68ed7.jpg"
+                                alt="Wide fit comfort footwear">
+                        </div>
+                        <h3>
+                            Wide Fit
+                            <span>(2E / 4E)</span>
+                        </h3>
+                        <p>
+                            Roomy anatomical toe boxes designed to provide additional space and maximum everyday comfort
+                            and natural movement.
+                        </p>
+                        <a href="pages/products.html#wide-fit" class="health-card-link">
+                            Explore Collection
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span>
+                        </a>
+                    </article>
+
+                    <article class="foot-health-card">
+                        <div class="foot-health-image">
+                            <img src="https://i.ibb.co/7NJXLB6N/04-arch-support.png" alt="Arch support footwear">
+                        </div>
+                        <h3>
+                            Arch Support
+                        </h3>
+                        <p>
+                            Supportive orthopedic footbeds designed for
+                            different arch profiles and balanced everyday
+                            walking comfort.
+                        </p>
+                        <a href="pages/products.html#arch-support" class="health-card-link">
+                            Explore Collection
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span>
+                        </a>
+                    </article>
+
+                    <article class="foot-health-card">
+                        <div class="foot-health-image">
+                            <img src="https://i.ibb.co/JWLCC9bD/Screenshot-2026-10-04-194906.png"
+                                alt="Everyday comfort footwear">
+                        </div>
+                        <h3>
+                            Everyday Comfort
+                        </h3>
+                        <p>
+                            Lightweight cushioning and supportive midsoles designed for smooth, comfortable everyday
+                            movement.
+                        </p>
+                        <a href="pages/products.html#everyday-comfort" class="health-card-link">
+                            Explore Collection
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span>
+                        </a>
+                    </article>
+
+                    <article class="foot-health-card">
+                        <div class="foot-health-image">
+                            <img src="https://i.pinimg.com/1200x/51/63/3d/51633d4c392a599f2f06c2d6052a4056.jpg"
+                                alt="Heel cushioning comfort footwear">
+                        </div>
+                        <h3>
+                            Heel &amp; Cushioning
+                        </h3>
+                        <p>
+                            Shock-absorbing cushioning and supportive heel design
+                            created for comfortable walking and reduced everyday impact.
+                        </p>
+                        <a href="pages/products.html#heel-cushioning" class="health-card-link">
+                            Explore Collection
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="why-arthro-section">
+            <div class="why-arthro-container why-arthro-split">
+
+                <div class="why-arthro-content">
+
+                    <div class="why-arthro-heading">
+                        <span class="why-arthro-label">
+                            BIOMECHANICAL INTEGRITY
+                        </span>
+                        <h2>
+                            Why ArthroStride
+                            <span>Stands Apart</span>
+                        </h2>
+                        <p>
+                            Footwear engineered at the intersection of medical
+                            orthotics and contemporary styling, delivering
+                            thoughtful support and comfort with every stride.
+                        </p>
+                    </div>
+
+                    <div class="why-arthro-grid">
+
+                        <article class="why-arthro-card">
+                            <div class="why-arthro-icon">
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M3 12h4l2-7 4 14 2-7h6" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3>
+                                Orthopedic Support
+                            </h3>
+                            <p>
+                                Anatomically supportive footbeds designed to
+                                promote balanced foot positioning and comfortable
+                                everyday movement.
+                            </p>
+                        </article>
+
+                        <article class="why-arthro-card">
+                            <div class="why-arthro-icon">
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M12 3v18" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                    </path>
+                                    <path d="M17 7.5c0-1.5-2.2-2.5-5-2.5
+                               s-5 1-5 3 2.2 3 5 3 5 1 5 3
+                               -2.2 3-5 3-5-1-5-2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3>
+                                All-Day Comfort
+                            </h3>
+                            <p>
+                                Cushioning & supportive midsoles designed to
+                                provide lasting comfort through everyday walking,
+                                standing, & active routines.
+                            </p>
+                        </article>
+
+                        <article class="why-arthro-card">
+                            <div class="why-arthro-icon">
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2">
+                                    </circle>
+                                    <path d="M19.4 15a1.7 1.7 0 0 0
+                               .34 1.88l.06.06-1.7 1.7-.06-.06
+                               a1.7 1.7 0 0 0-1.88-.34
+                               1.7 1.7 0 0 0-1.03 1.56V22h-2.4
+                               v-.2a1.7 1.7 0 0 0-1.03-1.56
+                               1.7 1.7 0 0 0-1.88.34l-.06.06
+                               -1.7-1.7.06-.06A1.7 1.7 0 0 0
+                               8.46 15a1.7 1.7 0 0 0-1.56-1.03H6.7
+                               v-2.4h.2A1.7 1.7 0 0 0 8.46
+                               10a1.7 1.7 0 0 0-.34-1.88l-.06-.06
+                               1.7-1.7.06.06a1.7 1.7 0 0 0
+                               1.88.34A1.7 1.7 0 0 0 12.73 5.2V5h2.4
+                               v.2a1.7 1.7 0 0 0 1.03 1.56
+                               1.7 1.7 0 0 0 1.88-.34l.06-.06
+                               1.7 1.7-.06.06A1.7 1.7 0 0 0
+                               19.4 10c.2.62.78 1.03 1.43 1.03h.2
+                               v2.4h-.2A1.7 1.7 0 0 0 19.4 15Z" stroke="currentColor" stroke-width="1.5"
+                                        stroke-linejoin="round">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3>
+                                Expert Fitting
+                            </h3>
+                            <p>
+                                Personalized fitting guidance helps you identify
+                                suitable footwear based on your comfort needs,
+                                foot shape, and everyday routine.
+                            </p>
+                        </article>
+
+                        <article class="why-arthro-card">
+                            <div class="why-arthro-icon">
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                    <path d="M12 3l8 3v5c0 5-3.4 8.5-8 10
+                               -4.6-1.5-8-5-8-10V6l8-3Z" stroke="currentColor" stroke-width="2"
+                                        stroke-linejoin="round">
+                                    </path>
+                                    <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3>
+                                Quality Materials
+                            </h3>
+                            <p>
+                                Carefully selected footwear materials and
+                                supportive construction designed for durability,
+                                breathability, and everyday comfort.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+
+                <aside class="why-arthro-visual" aria-label="ArthroStride footwear">
+                    <video class="why-arthro-media" autoplay muted loop playsinline preload="metadata"
+                        aria-label="ArthroStride orthopedic comfort shoe">
+                        <source src="c:\Users\DELL\OneDrive\Desktop\shoe\shoe\assets\videos\home.mp4" type="video/mp4">
+                    </video>
+                    <div class="why-arthro-tag">
+                        <strong>Built for every stride</strong>
+                        <span>Support, comfort and fit in one pair</span>
+                    </div>
+                </aside>
+
+            </div>
+        </section>
+        <section class="pm-section" id="pressure-lab">
+            <div class="pm-container">
+                <input class="pm-radio" type="radio" name="pm" id="pm-a" checked>
+                <input class="pm-radio" type="radio" name="pm" id="pm-b">
+                <input class="pm-radio" type="radio" name="pm" id="pm-c">
+
+                <div class="pm-copy">
+                    <span class="pm-label">THE PRESSURE LAB</span>
+                    <h2>Every step hits your feet like <em>a hammer.</em></h2>
+                    <div class="pm-stat"><b class="pm-count" aria-label="670"></b><span>tonnes of force pass through
+                            your feet every single day.</span></div>
+                    <small class="pm-note">Estimate: 8,000 steps × 1.2× body weight, 70 kg adult.</small>
+
+                    <div class="pm-tabs" role="tablist" aria-label="Choose what you walk in">
+                        <label for="pm-a" class="pm-tab pm-tab-a">Barefoot / worn-out</label>
+                        <label for="pm-b" class="pm-tab pm-tab-b">Regular shoe</label>
+                        <label for="pm-c" class="pm-tab pm-tab-c">ArthroStride</label>
+                    </div>
+
+                    <div class="pm-read pm-read-a">
+                        <h3>Pressure piles up</h3>
+                        <p>Load slams into the heel and ball of the foot, the exact spots where people with heel pain
+                            and plantar fasciitis feel it first.</p>
+                        <div class="pm-meter"><span>Heel load</span><i style="--w:94%"></i></div>
+                        <div class="pm-meter"><span>Forefoot load</span><i style="--w:88%"></i></div>
+                        <div class="pm-meter"><span>End-of-day fatigue</span><i style="--w:92%"></i></div>
+                    </div>
+                    <div class="pm-read pm-read-b">
+                        <h3>Some relief, still uneven</h3>
+                        <p>Basic cushioning softens the hit, but with little arch support the load still lands unevenly.
+                        </p>
+                        <div class="pm-meter"><span>Heel load</span><i style="--w:62%"></i></div>
+                        <div class="pm-meter"><span>Forefoot load</span><i style="--w:66%"></i></div>
+                        <div class="pm-meter"><span>End-of-day fatigue</span><i style="--w:60%"></i></div>
+                    </div>
+                    <div class="pm-read pm-read-c">
+                        <h3>Load spread across the whole foot</h3>
+                        <p>A deep heel cup, arch bridge and cushioned forefoot share the work, so no single spot takes
+                            the beating.</p>
+                        <div class="pm-meter"><span>Heel load</span><i style="--w:28%"></i></div>
+                        <div class="pm-meter"><span>Forefoot load</span><i style="--w:30%"></i></div>
+                        <div class="pm-meter"><span>End-of-day fatigue</span><i style="--w:24%"></i></div>
+                    </div>
+                    <small class="pm-note">Illustrative visual, not a clinical measurement. Consult a podiatrist for
+                        medical advice.</small>
+
+                    <div class="pm-actions">
+                        <a href="pages/fitting-consultation.html" class="pm-btn pm-btn-main">Find Your Fit →</a>
+                        <a href="pages/products.html" class="pm-btn">Explore Footwear</a>
+                    </div>
+                </div>
+
+                <div class="pm-stage">
+                    <div class="pm-foot">
+                        <svg viewBox="0 0 240 520" aria-label="Foot pressure heat map" role="img">
+                            <defs>
+                                <radialGradient id="pmHot">
+                                    <stop offset="0" stop-color="#ff1f1f" />
+                                    <stop offset=".45" stop-color="#ff7a1a" stop-opacity=".75" />
+                                    <stop offset="1" stop-color="#ff7a1a" stop-opacity="0" />
+                                </radialGradient>
+                                <radialGradient id="pmWarm">
+                                    <stop offset="0" stop-color="#ffc43d" />
+                                    <stop offset=".5" stop-color="#ffa51f" stop-opacity=".6" />
+                                    <stop offset="1" stop-color="#ffa51f" stop-opacity="0" />
+                                </radialGradient>
+                                <radialGradient id="pmCool">
+                                    <stop offset="0" stop-color="#2fe0b5" />
+                                    <stop offset=".5" stop-color="#3b82f6" stop-opacity=".55" />
+                                    <stop offset="1" stop-color="#3b82f6" stop-opacity="0" />
+                                </radialGradient>
+                                <clipPath id="pmClip">
+                                    <path id="pmFoot"
+                                        d="M95 60C118 28 168 36 178 90C186 130 190 170 184 215C178 260 166 290 164 330C162 380 176 430 168 470C160 505 132 512 108 508C80 504 66 480 68 440C70 400 64 360 58 320C52 280 36 240 36 190C36 130 60 90 95 60Z" />
+                                    <ellipse cx="74" cy="46" rx="21" ry="26" />
+                                    <ellipse cx="116" cy="30" rx="13" ry="17" />
+                                    <ellipse cx="146" cy="34" rx="11" ry="15" />
+                                    <ellipse cx="168" cy="50" rx="10" ry="13" />
+                                    <ellipse cx="184" cy="72" rx="8" ry="11" />
+                                </clipPath>
+                            </defs>
+                            <g clip-path="url(#pmClip)">
+                                <rect width="240" height="520" fill="#0b1226" />
+                                <g class="pm-layer pm-layer-a" style="--beat:.9s">
+                                    <circle cx="118" cy="450" r="74" fill="url(#pmHot)" />
+                                    <circle cx="90" cy="165" r="62" fill="url(#pmHot)" />
+                                    <circle cx="148" cy="172" r="54" fill="url(#pmHot)" />
+                                    <circle cx="74" cy="48" r="32" fill="url(#pmWarm)" />
+                                </g>
+                                <g class="pm-layer pm-layer-b" style="--beat:2s">
+                                    <circle cx="118" cy="450" r="66" fill="url(#pmWarm)" />
+                                    <circle cx="118" cy="455" r="30" fill="url(#pmHot)" />
+                                    <circle cx="90" cy="165" r="56" fill="url(#pmWarm)" />
+                                    <circle cx="148" cy="172" r="46" fill="url(#pmWarm)" />
+                                    <circle cx="82" cy="300" r="30" fill="url(#pmCool)" />
+                                </g>
+                                <g class="pm-layer pm-layer-c" style="--beat:4.2s">
+                                    <circle cx="118" cy="450" r="64" fill="url(#pmCool)" />
+                                    <circle cx="84" cy="300" r="52" fill="url(#pmCool)" />
+                                    <circle cx="92" cy="165" r="58" fill="url(#pmCool)" />
+                                    <circle cx="148" cy="172" r="50" fill="url(#pmCool)" />
+                                    <circle cx="110" cy="48" r="52" fill="url(#pmCool)" />
+                                </g>
+                            </g>
+                            <use href="#pmFoot" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.6" />
+                        </svg>
+
+                        <span class="pm-spot" tabindex="0" style="left:49%;top:86%"><i></i><em><b>Heel</b>Deep heel cup
+                                + cushioning for heel pain.</em></span>
+                        <span class="pm-spot" tabindex="0" style="left:33%;top:58%"><i></i><em><b>Arch</b>Dynamic arch
+                                bridge to ease plantar fascia tension.</em></span>
+                        <span class="pm-spot" tabindex="0" style="left:50%;top:32%"><i></i><em><b>Ball of
+                                    foot</b>Cushioned forefoot that softens every push-off.</em></span>
+                        <span class="pm-spot" tabindex="0" style="left:42%;top:9%"><i></i><em><b>Toes</b>Wide toe box,
+                                so nothing is squeezed.</em></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="fitting-section">
+            <div class="fitting-container">
+
+                <div class="fitting-visual">
+                    <img src="https://i.ibb.co/cc0YzGdk/Personalised-Footwear-Fitting-Consultation.png"
+                        alt="Personalized orthopedic footwear fitting consultation">
+                    <div class="fitting-badge">
+                        <div class="fitting-badge-icon">
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2">
+                                </circle>
+                                <path d="m8 12 2.5 2.5L16 9" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>
+                                Certified Fitting
+                            </strong>
+                            <span>
+                                Personalized Footwear Guidance
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fitting-content">
+                    <span class="fitting-label">
+                        PERSONALIZED FITTING
+                    </span>
+                    <h2>
+                        Find the Fit That
+                        <span>Feels Right</span>
+                    </h2>
+                    <p class="fitting-intro">
+                        Every foot is anatomically distinct. Our fitting
+                        consultation helps you identify footwear designed
+                        around your foot shape, comfort needs, and everyday
+                        movement.
+                    </p>
+
+                    <div class="fitting-feature">
+                        <div class="fitting-check">
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="m7 12 3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>
+                                Foot Shape &amp; Arch Assessment
+                            </h3>
+                            <p>
+                                Understand your arch profile, toe-box
+                                requirements, and everyday comfort needs
+                                before selecting your footwear.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="fitting-feature">
+                        <div class="fitting-check">
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="m7 12 3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>
+                                Walking &amp; Comfort Evaluation
+                            </h3>
+                            <p>
+                                Review everyday walking patterns and
+                                identify footwear characteristics that
+                                support comfortable movement.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="fitting-feature">
+                        <div class="fitting-check">
+                            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="m7 12 3 3 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>
+                                Width &amp; Support Selection
+                            </h3>
+                            <p>
+                                Compare suitable widths, cushioning levels,
+                                arch support, and footwear construction for
+                                your preferred fit.
+                            </p>
+                        </div>
+                    </div>
+
+                    <a href="pages/fitting-consultation.html" class="fitting-button">
+                        Book a Consultation
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                            </svg></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="offers-section" id="offers">
+            <div class="ofr-container">
+                <div class="ofr-heading">
+                    <span class="ofr-label">
+                        OFFERS &amp; SAVINGS
+                    </span>
+                    <h2>
+                        Offers for
+                        <span>Healthier Steps</span>
+                    </h2>
+                    <p>
+                        Good foot care should not feel expensive. Ask our team
+                        which of these offers apply to you when you visit the
+                        store or book a fitting.
+                    </p>
+                </div>
+                <div class="ofr-grid">
+                    <article class="ofr-feature">
+                        <span class="ofr-badge">Welcome offer</span>
+                        <div class="ofr-big">Free</div>
+                        <h3>Your first fitting consultation</h3>
+                        <p>
+                            Share your foot concerns, get measured, and try
+                            matched pairs with no consultation charge on your
+                            first visit.
+                        </p>
+                        <a href="pages/fitting-consultation.html" class="ofr-btn">
+                            Book a Consultation
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    viewBox="0 0 16 16" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span>
+                        </a>
+                    </article>
+                    <div class="ofr-list">
+                        <article class="ofr-ticket">
+                            <div class="ofr-value">10%<small>off</small></div>
+                            <div class="ofr-body">
+                                <h3>Senior citizen savings</h3>
+                                <p>For customers aged 60 and above on orthopedic footwear. Please bring a photo ID.</p>
+                            </div>
+                        </article>
+                        <article class="ofr-ticket">
+                            <div class="ofr-value">&#8377;500<small>off</small></div>
+                            <div class="ofr-body">
+                                <h3>Diabetic care bundle</h3>
+                                <p>Pair therapeutic footwear with a custom insole and save on the combined purchase.</p>
+                            </div>
+                        </article>
+                        <article class="ofr-ticket">
+                            <div class="ofr-value">Free<small>help</small></div>
+                            <div class="ofr-body">
+                                <h3>Claim-ready paperwork</h3>
+                                <p>Itemized bills and documentation guidance for your insurance or reimbursement claim.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <p class="ofr-note">Offers may change and cannot be combined. Ask our team for current terms.</p>
+            </div>
+        </section>
+        <section class="claims-section">
+            <div class="claims-container">
+
+                <div class="claims-heading">
+                    <span class="claims-label">
+                        MEDICAL CLAIMS &amp; GUIDANCE
+                    </span>
+                    <h2>
+                        Support
+                        <span>Beyond the Store</span>
+                    </h2>
+                    <p>
+                        Orthopedic and therapeutic footwear may qualify for
+                        reimbursement or insurance support depending on your
+                        plan and applicable requirements. We help organize the
+                        documentation needed for your claim process.
+                    </p>
+                </div>
+
+                <div class="claims-grid">
+
+                    <article class="claims-card">
+                        <div class="claims-number">
+                            01
+                        </div>
+                        <h3>
+                            Consultation
+                        </h3>
+                        <p>
+                            Schedule a fitting consultation to discuss your
+                            footwear requirements, comfort concerns, and
+                            available options with our team.
+                        </p>
+                    </article>
+
+                    <article class="claims-card">
+                        <div class="claims-number">
+                            02
+                        </div>
+                        <h3>
+                            Prescription
+                        </h3>
+                        <p>
+                            Provide your doctor's prescription or relevant
+                            medical documentation when therapeutic footwear
+                            or orthotic support is recommended.
+                        </p>
+                    </article>
+
+                    <article class="claims-card">
+                        <div class="claims-number">
+                            03
+                        </div>
+                        <h3>
+                            Documentation
+                        </h3>
+                        <p>
+                            We help organize itemized receipts and supporting
+                            documents that may be required for your insurance
+                            or reimbursement submission.
+                        </p>
+                    </article>
+
+                    <article class="claims-card">
+                        <div class="claims-number">
+                            04
+                        </div>
+                        <h3>
+                            Selection
+                        </h3>
+                        <p>
+                            Choose suitable footwear based on your fitting,
+                            prescription requirements, comfort preferences,
+                            and available product options.
+                        </p>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+        <section class="visit-arthro-section">
+            <div class="visit-arthro-overlay">
+                <div class="visit-arthro-content">
+                    <span class="visit-arthro-label">
+                        VISIT US IN PERSON
+                    </span>
+                    <h2>
+                        Visit ArthroStride
+                    </h2>
+                    <p>
+                        Experience comfort and personalized fitting in person
+                        at our orthopedic footwear store. Discover supportive
+                        footwear designed around your everyday movement.
+                    </p>
+                    <div class="visit-arthro-buttons">
+                        <a href="pages/fitting-consultation.html" class="visit-primary-button">
+                            Visit Our Store
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span>
+                        </a>
+                        <a href="pages/contact.html" class="visit-secondary-button">
+                            Contact Us
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                </svg></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="site-footer">
+            <div class="footer-container">
+
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-brand-link">
+                        <div class="footer-brand-logo">
+                            <img src="assets/images/arthrostride-logo-light.png" alt="ArthroStride Logo">
+                        </div>
+                        <div class="footer-brand-text">
+                            <div class="footer-brand-name">
+                                Arthro<span>Stride</span>
+                            </div>
+                        </div>
+                    </a>
+                    <p class="footer-description">
+                        Supportive orthopedic and comfort footwear designed
+                        around foot health, everyday movement, and a
+                        comfortable fit.
+                    </p>
+
+                    <div class="footer-socials">
+                        <a href="#" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter X">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>
+                        Quick Links
+                    </h3>
+                    <a href="index.html">Home</a>
+                    <a href="pages/about.html">About</a>
+                    <a href="pages/products.html">Products</a>
+                    <a href="pages/fitting-consultation.html">Fitting</a>
+                    <a href="pages/insurance-prescription.html">Coverage</a>
+                    <a href="pages/contact.html">Contact</a>
+                    <a href="pages/booking.html">Visit Booking</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>
+                        Our Footwear
+                    </h3>
+                    <a href="pages/products.html#plantar-fasciitis">
+                        Plantar Fasciitis
+                    </a>
+                    <a href="pages/products.html#diabetic-footwear">
+                        Diabetic Footwear
+                    </a>
+                    <a href="pages/products.html#wide-fit">
+                        Wide Fit
+                    </a>
+                    <a href="pages/products.html#arch-support">
+                        Arch Support
+                    </a>
+                    <a href="pages/products.html#everyday-comfort">
+                        Everyday Comfort
+                    </a>
+                    <a href="pages/products.html#heel-cushioning">
+                        Heel &amp; Cushioning
+                    </a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>
+                        Information
+                    </h3>
+                    <a href="pages/fitting-consultation.html">
+                        Personalized Fitting
+                    </a>
+                    <a href="pages/insurance-prescription.html">
+                        Insurance Support
+                    </a>
+                    <a href="pages/insurance-prescription.html">
+                        Prescription Guidance
+                    </a>
+                    <a href="pages/products.html">
+                        Footwear Guide
+                    </a>
+                    <a href="pages/contact.html">
+                        Store Information
+                    </a>
+                </div>
+
+                <div class="footer-column footer-contact">
+                    <h3>
+                        Get In Touch
+                    </h3>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </span>
+                        Hyderabad, India
+                    </p>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </span>
+                        +91 98765 43210
+                    </p>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        support@arthrostride.com
+                    </p>
+                    <p>
+                        <span class="footer-contact-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </span>
+                        Mon - Sat: 9 AM - 7 PM
+                    </p>
+                    <a href="pages/fitting-consultation.html" class="footer-book-button">
+                        Book a Consultation
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-container">
+                    <p>
+                        &copy; 2026
+                        <span>ArthroStride</span>.
+                        All Rights Reserved.
+                    </p>
+                    <div class="footer-legal">
+                        <a href="#">
+                            Privacy Policy
+                        </a>
+                        <a href="#">
+                            Terms &amp; Conditions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

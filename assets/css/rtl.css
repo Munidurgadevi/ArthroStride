@@ -1,0 +1,41 @@
+/* =========================================================
+   RTL EXTENSION
+   Booking-specific RTL rules are scoped in booking.css.
+   Global RTL rules remain in theme.css.
+========================================================= */
+
+/* =========================================================
+   FITTING PAGE - "Meet Your Fitters" + FAQ in RTL
+   (physical left/right values mirrored when dir="rtl")
+========================================================= */
+
+/* fitter columns: vertical divider sits on the correct side */
+@media (min-width: 601px) {
+    html[dir="rtl"]:root:root body .rs-p {
+        border-left: 0;
+        border-right: 1px solid #c6cddd;
+    }
+
+    html[dir="rtl"]:root:root body .rs-p:first-child {
+        border-right: 0;
+    }
+}
+
+/* FAQ: "+" icon goes to the far end, answer text indents from the right */
+html[dir="rtl"]:root:root body .fq-list summary i {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+html[dir="rtl"]:root:root body .fq-list details p {
+    padding: 0 66px 24px 24px;
+}
+
+/* English sentences keep their full-stop / question mark at the end in RTL */
+html[dir="rtl"] body :is(.rs-p p, .fq-side h2, .fq-side p, .fq-list details p) {
+    unicode-bidi: plaintext;
+}
+
+html[dir="rtl"] body :is(.fq-side h2, .fq-side p, .fq-list details p) {
+    text-align: right;
+}

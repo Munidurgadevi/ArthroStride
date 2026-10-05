@@ -1,0 +1,1151 @@
+@import url("animations.css");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family:
+    "Playfair Display", serif;
+
+  background: #f8f9fb;
+
+  color: #1d2434;
+}
+
+.page-controls {
+  position: fixed;
+
+  top: 28px;
+  right: 32px;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.theme-toggle,
+.rtl-toggle {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dfe2eb;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #1d2434;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+.theme-toggle {
+  font-size: 20px;
+}
+
+
+.theme-toggle:hover,
+.rtl-toggle:hover {
+  border-color: #1c5be3;
+
+  color: #1c5be3;
+}
+
+
+.booking-hero {
+  width: 100%;
+
+  min-height: 530px;
+
+  padding: 120px 30px 90px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  background:
+    radial-gradient(circle at 95% 5%,
+      rgba(28, 91, 227, 0.13),
+      transparent 260px),
+    linear-gradient(135deg,
+      #ffffff,
+      #f1f5fd);
+
+  border-bottom: 1px solid #e0e5f0;
+}
+
+
+.booking-hero-inner {
+  width: 100%;
+
+  max-width: 950px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* ================================
+   BRAND
+================================ */
+
+.booking-brand {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 0 auto 40px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.booking-logo {
+  width: 76px;
+  height: 76px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe2eb;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+.booking-logo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: scale(1.5);
+
+  border-radius: 50%;
+
+  display: block;
+}
+
+
+.booking-brand-name {
+  color: #1d2434;
+
+  font-size: 27px;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+
+.booking-brand-name span {
+  color: #1c5be3;
+}
+
+
+/* ================================
+   BOOK A VISIT
+   PLAIN TEXT
+================================ */
+
+.booking-title {
+  margin: 0;
+
+  color: #1d2434;
+
+  font-size: 30px;
+
+  font-weight: 800;
+
+  line-height: 1.05;
+
+  letter-spacing: -3px;
+
+  text-align: center;
+
+  cursor: default;
+}
+
+
+.booking-title:hover,
+.booking-title:focus,
+.booking-title:active {
+  color: #1d2434;
+
+  text-decoration: none;
+}
+
+
+.booking-hero-text {
+  max-width: 760px;
+
+  margin: 28px auto 0;
+
+  color: #677084;
+
+  font-size: 20px;
+
+  line-height: 1.7;
+
+  text-align: center;
+}
+
+
+/* ================================
+   FORM SECTION
+================================ */
+
+.booking-section {
+  width: 100%;
+
+  padding: 120px 30px 110px;
+
+  background: #ffffff;
+}
+
+
+.booking-container {
+  width: 100%;
+
+  max-width: 1000px;
+
+  margin: 0 auto;
+}
+
+
+/* ================================
+   INTRO
+================================ */
+
+.booking-intro {
+  width: 100%;
+
+  max-width: 760px;
+
+  margin: 0 auto 48px;
+
+  text-align: center;
+}
+
+
+.booking-label {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: #1c5be3;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.booking-intro h2 {
+  margin: 0 0 18px;
+
+  color: #1d2434;
+
+  font-size: 25px;
+
+  line-height: 1.15;
+
+  letter-spacing: -1.5px;
+}
+
+
+.booking-intro p {
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  color: #6e7688;
+
+  font-size: 17px;
+
+  line-height: 1.75;
+}
+
+
+/* ================================
+   FORM
+================================ */
+
+.booking-form {
+  width: 100%;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 28px;
+}
+
+
+.form-group {
+  width: 100%;
+}
+
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #1d2434;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  border: 1px solid #dbdfe8;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  color: #1d2434;
+
+  font-family: inherit;
+
+  font-size: 17px;
+
+  outline: none;
+}
+
+
+.form-group input,
+.form-group select {
+  height: 66px;
+
+  padding: 0 20px;
+}
+
+
+.form-group textarea {
+  min-height: 165px;
+
+  padding: 18px 20px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #8a91a2;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #1c5be3;
+
+  box-shadow:
+    0 0 0 3px rgba(28, 91, 227, 0.10);
+}
+
+
+/* ================================
+   DATE
+================================ */
+
+.date-input-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+
+.date-input-wrapper input[type="date"] {
+  width: 100%;
+
+  padding-right: 60px;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  -moz-appearance: none;
+}
+
+
+.date-input-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+
+  opacity: 0;
+
+  width: 0;
+
+  height: 0;
+
+  pointer-events: none;
+}
+
+
+.date-input-wrapper input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+
+.date-input-wrapper input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+
+/* ================================
+   CUSTOM CALENDAR
+================================ */
+
+.calendar-btn {
+  position: absolute;
+
+  top: 50%;
+  right: 15px;
+
+  transform: translateY(-50%);
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #1c5be3;
+
+  font-size: 21px;
+
+  cursor: pointer;
+}
+
+
+.calendar-btn:hover {
+  background: rgba(28, 91, 227, 0.10);
+
+  color: #1c5be3;
+}
+
+
+/* ================================
+   SUBMIT
+================================ */
+
+.form-submit {
+  grid-column: 1 / -1;
+
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 10px;
+}
+
+
+.request-btn {
+  min-width: 230px;
+
+  height: 60px;
+
+  padding: 0 30px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: #1c5be3;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.request-btn:hover {
+  background: #1a56d6;
+}
+
+
+/* ================================
+   DARK MODE
+================================ */
+
+html[data-theme="dark"] body {
+  background: #0c0f17;
+
+  color: #f4f6fb;
+}
+
+
+html[data-theme="dark"] .booking-hero {
+  background:
+    radial-gradient(circle at 95% 5%,
+      rgba(85, 133, 237, 0.15),
+      transparent 260px),
+    linear-gradient(135deg,
+      #10141d,
+      #161a24);
+
+  border-color: #303541;
+}
+
+
+html[data-theme="dark"] .booking-brand-name {
+  color: #ffffff;
+}
+
+
+html[data-theme="dark"] .booking-brand-name span {
+  color: #638fef;
+}
+
+
+html[data-theme="dark"] .booking-logo {
+  background: #1a1f2b;
+
+  border-color: #3c424f;
+}
+
+
+html[data-theme="dark"] .booking-title {
+  color: #ffffff;
+}
+
+
+html[data-theme="dark"] .booking-title:hover,
+html[data-theme="dark"] .booking-title:focus,
+html[data-theme="dark"] .booking-title:active {
+  color: #ffffff;
+}
+
+
+html[data-theme="dark"] .booking-hero-text {
+  color: #bbc0cc;
+}
+
+
+html[data-theme="dark"] .booking-section {
+  background: #12161f;
+}
+
+
+html[data-theme="dark"] .booking-intro h2 {
+  color: #ffffff;
+}
+
+
+html[data-theme="dark"] .booking-intro p {
+  color: #b2b8c6;
+}
+
+
+html[data-theme="dark"] .form-group label {
+  color: #ffffff;
+}
+
+
+html[data-theme="dark"] .form-group input,
+
+html[data-theme="dark"] .form-group select,
+
+html[data-theme="dark"] .form-group textarea {
+  background: #161a24;
+
+  border-color: #3c424f;
+
+  color: #ffffff;
+}
+
+
+html[data-theme="dark"] .form-group input::placeholder,
+
+html[data-theme="dark"] .form-group textarea::placeholder {
+  color: #8a90a0;
+}
+
+
+html[data-theme="dark"] .theme-toggle,
+html[data-theme="dark"] .rtl-toggle {
+  background: #1a1f2b;
+
+  border-color: #3c424f;
+
+  color: #ffffff;
+}
+
+
+html[data-theme="dark"] .calendar-btn {
+  color: #638fef;
+}
+
+
+/* ================================
+   RTL
+================================ */
+
+html[dir="rtl"] .page-controls {
+  right: auto;
+
+  left: 32px;
+}
+
+
+html[dir="rtl"] .booking-form {
+  direction: rtl;
+}
+
+
+html[dir="rtl"] .form-group {
+  text-align: right;
+}
+
+
+html[dir="rtl"] .date-input-wrapper input[type="date"] {
+  padding-right: 20px;
+
+  padding-left: 60px;
+}
+
+
+html[dir="rtl"] .calendar-btn {
+  right: auto;
+
+  left: 15px;
+}
+
+
+html[dir="rtl"] .request-btn i {
+  transform: rotate(180deg);
+}
+
+/* Theme-matched logo: blend into the booking page surface. */
+.booking-logo {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.booking-logo img {
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  object-fit: contain !important;
+}
+
+.form-group label {
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  height: 54px;
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  padding: 13px 15px;
+  font-size: 14px;
+}
+
+.booking-form {
+  gap: 18px;
+}
+
+/* ===== BUTTON HOVER: blue -> amber ===== */
+.request-btn {
+  transition: background .2s ease, color .2s ease;
+}
+
+.request-btn:hover {
+  background: #b45309;
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .request-btn:hover {
+  background: #fbbf24;
+  color: #1a1200;
+}
+
+
+/* =========================================================
+   BOOKING PAGE - MATCH MAIN SITE THEME
+   Brand colours, toggle icons, form fields, borders
+========================================================= */
+
+html {
+  --bk-line: #b45309;
+  --bk-text: #161922;
+  --bk-muted: #5e6575;
+  --bk-field-bg: #ffffff;
+  --bk-placeholder: #8a91a2;
+  --bk-border: #d3d8e2;
+  /* normal border (not focused) */
+}
+
+html[data-theme="dark"] {
+  --bk-line: #fbbf24;
+  --bk-text: #f1f4fc;
+  --bk-muted: #acb2bf;
+  --bk-field-bg: #1e212a;
+  --bk-placeholder: #8d94a3;
+  --bk-border: #3c424f;
+  /* normal border (not focused) */
+}
+
+/* ---------- page background ---------- */
+html body {
+  background: #ffffff;
+  color: var(--bk-text);
+}
+
+html[data-theme="dark"] body {
+  background: #0d0f15;
+}
+
+html body .booking-section {
+  background: transparent;
+}
+
+/* ---------- brand name: Arthro = blue, Stride = amber ---------- */
+html body .booking-brand-name {
+  color: #2563eb !important;
+}
+
+html body .booking-brand-name span {
+  color: #b45309 !important;
+}
+
+html[data-theme="dark"] body .booking-brand-name {
+  color: #60a5fa !important;
+}
+
+html[data-theme="dark"] body .booking-brand-name span {
+  color: #fbbf24 !important;
+}
+
+/* ---------- headings / text ---------- */
+html body .booking-intro h2 {
+  color: var(--bk-text);
+}
+
+html body .booking-intro p {
+  color: var(--bk-muted);
+}
+
+html body .booking-label {
+  color: #b45309;
+}
+
+html[data-theme="dark"] body .booking-label {
+  color: #fbbf24;
+}
+
+html body .form-group label {
+  color: var(--bk-text);
+  font-weight: 600;
+}
+
+/* ---------- theme / RTL buttons ---------- */
+html body .theme-toggle,
+html body .rtl-toggle {
+  background: #ffffff;
+  border: 1px solid #dfe2e9;
+  color: #161922;
+}
+
+html[data-theme="dark"] body .theme-toggle,
+html[data-theme="dark"] body .rtl-toggle {
+  background: #14171e;
+  border-color: #363b48;
+  color: #f1f4fc;
+}
+
+html body .theme-toggle:hover,
+html body .rtl-toggle:hover {
+  border-color: #b45309;
+  color: #b45309;
+}
+
+html[data-theme="dark"] body .theme-toggle:hover,
+html[data-theme="dark"] body .rtl-toggle:hover {
+  border-color: #fbbf24;
+  color: #fbbf24;
+}
+
+/* moon in light mode, sun in dark mode (own icon, ignores old one) */
+html body .theme-toggle>* {
+  display: none !important;
+}
+
+html body .theme-toggle::before {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 22px;
+  background-color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+html[data-theme="dark"] body .theme-toggle::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='4' fill='none' stroke='black' stroke-width='1.8'/%3E%3Cpath d='M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='4' fill='none' stroke='black' stroke-width='1.8'/%3E%3Cpath d='M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* ---------- form fields (light + dark) ---------- */
+html body .form-group input,
+html body .form-group select,
+html body .form-group textarea {
+  background: var(--bk-field-bg);
+  color: var(--bk-text);
+  border: 1px solid var(--bk-border);
+  border-radius: 12px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+html body .form-group input::placeholder,
+html body .form-group textarea::placeholder {
+  color: var(--bk-placeholder);
+}
+
+html body .form-group input:focus,
+html body .form-group select:focus,
+html body .form-group textarea:focus {
+  border-color: var(--bk-line);
+  box-shadow: 0 0 0 3px rgba(180, 83, 9, .18);
+}
+
+html[data-theme="dark"] body .form-group input:focus,
+html[data-theme="dark"] body .form-group select:focus,
+html[data-theme="dark"] body .form-group textarea:focus {
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, .22);
+}
+
+html[data-theme="dark"] body .form-group select option {
+  background: #1e212a;
+  color: #f1f4fc;
+}
+
+html[data-theme="dark"] body .form-group input[type="date"] {
+  color-scheme: dark;
+}
+
+html body .form-group input:-webkit-autofill {
+  -webkit-text-fill-color: var(--bk-text);
+  -webkit-box-shadow: 0 0 0 1000px var(--bk-field-bg) inset;
+}
+
+/* calendar icon */
+html body .calendar-btn {
+  color: #b45309;
+}
+
+html[data-theme="dark"] body .calendar-btn {
+  color: #fbbf24;
+}
+
+html body .calendar-btn:hover {
+  background: rgba(180, 83, 9, .12);
+}
+
+html[data-theme="dark"] body .calendar-btn:hover {
+  background: rgba(251, 191, 36, .14);
+}
+
+/* submit button */
+html body .request-btn {
+  background: #2563eb;
+}
+
+html[data-theme="dark"] body .request-btn {
+  background: #1a54d0;
+  color: #ffffff;
+}
+
+html body .request-btn:hover {
+  background: #b45309;
+  color: #ffffff;
+}
+
+html[data-theme="dark"] body .request-btn:hover {
+  background: #fbbf24;
+  color: #1a1200;
+}
+
+
+/* =========================================================
+   BOOKING LOGO - full emblem, centred inside the circle
+   Tune if needed:
+     --logo-zoom    : 1.2 fills the circle; lower = smaller emblem
+     --logo-shift-x : moves the emblem left (-) / right (+)
+     --logo-shift-y : moves the emblem up (-) / down (+)
+========================================================= */
+html body .booking-logo {
+  --logo-zoom: 1;
+  --logo-shift-x: 0%;
+  --logo-shift-y: 0%;
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html body .booking-logo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain !important;
+  object-position: center;
+  transform: translate(var(--logo-shift-x), var(--logo-shift-y)) scale(var(--logo-zoom)) !important;
+  transform-origin: center;
+}
+
+
+/* =========================================================
+   THEME / RTL BUTTONS
+   - scroll away with the page (not fixed on screen)
+   - smaller size
+========================================================= */
+html body .page-controls {
+  position: absolute;
+  /* was fixed */
+  top: 20px;
+  right: 28px;
+  gap: 12px;
+  z-index: 10;
+}
+
+html body .theme-toggle,
+html body .rtl-toggle {
+  width: 38px;
+  /* same as the header buttons on every other page */
+  height: 38px;
+  flex: 0 0 38px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+html body .theme-toggle::before {
+  width: 18px;
+  height: 18px;
+}
+
+html[dir="rtl"] body .page-controls {
+  right: auto;
+  left: 28px;
+}
+
+@media (max-width: 560px) {
+  html body .page-controls {
+    top: 14px;
+    right: 14px;
+  }
+
+  html[dir="rtl"] body .page-controls {
+    right: auto;
+    left: 14px;
+  }
+}
+
+
+/* =========================================================
+   FIELD BORDERS
+   Normal  -> neutral grey (light + dark)
+   Click / focus -> amber border (light + dark)
+========================================================= */
+html body .form-group input,
+html body .form-group select,
+html body .form-group textarea {
+  border-color: var(--bk-border);
+}
+
+html[data-theme="dark"] body .form-group input,
+html[data-theme="dark"] body .form-group select,
+html[data-theme="dark"] body .form-group textarea {
+  border-color: var(--bk-border);
+}
+
+html body .form-group input:focus,
+html body .form-group select:focus,
+html body .form-group textarea:focus,
+html[data-theme="dark"] body .form-group input:focus,
+html[data-theme="dark"] body .form-group select:focus,
+html[data-theme="dark"] body .form-group textarea:focus {
+  border-color: var(--bk-line);
+}
+
+
+/* =========================================================
+   THEME / RTL BUTTONS - SAME LOOK AS THE HEADER BUTTONS
+   (copied from the other pages: normal + hover colours)
+========================================================= */
+html body .theme-toggle,
+html body .rtl-toggle {
+  background: #ffffff;
+  border: 1px solid #dee1e9;
+  color: #1d222d;
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+
+html body .theme-toggle:hover,
+html body .rtl-toggle:hover {
+  color: #2563eb;
+  border-color: #2563eb;
+  background: #ffffff;
+}
+
+html[data-theme="dark"] body .theme-toggle,
+html[data-theme="dark"] body .rtl-toggle {
+  background: #1e212a;
+  border-color: #363b48;
+  color: #edf0f7;
+}
+
+html[data-theme="dark"] body .theme-toggle:hover,
+html[data-theme="dark"] body .rtl-toggle:hover {
+  color: #477bec;
+  border-color: #477bec;
+  background: #1e212a;
+}
+
+/* logo image: same zoom + shift as the header logo */
+html body .booking-logo {
+  --logo-zoom: 1.2;
+  --logo-shift-x: -1.8%;
+}
+
+/* =========================================================
+   BOOKING BRAND - SAME LOGO + TITLE AS HEADER / FOOTER
+   (values come from --ab-* in responsive.css; fallback = desktop)
+   ========================================================= */
+
+html body .booking-brand {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: var(--ab-gap, 12px) !important;
+  width: fit-content !important;
+  padding: 0 !important;
+}
+
+html body .booking-brand .booking-logo {
+  width: var(--ab-logo, 44px) !important;
+  height: var(--ab-logo, 44px) !important;
+  min-width: var(--ab-logo, 44px) !important;
+  flex: 0 0 var(--ab-logo, 44px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+}
+
+html body .booking-brand .booking-brand-name {
+  font-family: inherit !important;
+  font-size: var(--ab-title, 27px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -1px !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}

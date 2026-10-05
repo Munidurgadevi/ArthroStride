@@ -1,0 +1,2756 @@
+:root {
+    --rs-header-h: 68px;
+    --rs-gutter: 24px;
+    --rs-tap: 44px;
+}
+
+/* ---------- Global safety net ---------- */
+html {
+    /* Scroll-reveal animations start 70px off to the side; on a phone that
+       would widen the page. Clip at the viewport (body is left as-is so
+       the sticky header keeps working). */
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* notch / rounded-corner safe areas (S8+ infinity display, iPad) */
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+    max-width: 100%;
+}
+
+img,
+video {
+    height: auto;
+}
+
+a,
+button,
+label,
+summary,
+[role="button"] {
+    touch-action: manipulation;
+}
+
+/* Long words / URLs / emails never push the page wider than the screen */
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+td,
+th {
+    overflow-wrap: break-word;
+}
+
+/* Inputs: 16px stops iOS Safari from auto-zooming on focus */
+@media (hover: none) and (pointer: coarse) {
+
+    input:not([type="checkbox"]):not([type="radio"]),
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* Any wide table scrolls inside its own box instead of the page */
+.cmp,
+.in-tablewrap,
+.table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ---------- Header: mobile menu button + menu CTA (hidden on desktop) ---------- */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    padding: 12px 11px;
+    border: 1px solid #dee1e9;
+    border-radius: 8px;
+    background: #eef1f7;
+    color: #1d222d;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform .25s ease, opacity .2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-toggle:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 3px;
+}
+
+.nav-drawer-cta {
+    display: none;
+}
+
+/* =========================================================
+   <= 1100px  compact desktop / iPad Mini landscape
+========================================================= */
+@media (max-width: 1100px) {
+    .main-navigation {
+        gap: 18px;
+    }
+
+    .header-actions {
+        gap: 8px;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 36px 28px;
+    }
+
+    .footer-container> :first-child {
+        grid-column: auto;
+    }
+
+    .why-arthro-grid,
+    .claims-grid,
+    .bs-grid,
+    .acc-grid,
+    .mx-tour {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-hero-wrap {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+}
+
+/* =========================================================
+   <= 960px  iPad Mini portrait (744/768) + phone landscape
+========================================================= */
+@media (max-width: 960px) {
+    :root {
+        --rs-gutter: 20px;
+    }
+
+    /* ----- header (same pattern as the reference app: 72px bar, logo left,
+             controls + square hamburger right, full-screen menu) ----- */
+    :root {
+        --rs-header-h: 72px;
+    }
+
+    .site-header {
+        height: var(--rs-header-h);
+    }
+
+    .header-container {
+        width: calc(100% - (var(--rs-gutter) * 2));
+        gap: 8px;
+        justify-content: space-between;
+    }
+
+    .header-actions {
+        margin-inline-start: auto;
+        gap: 8px;
+    }
+
+    .header-icon-btn {
+        width: var(--rs-tap);
+        height: var(--rs-tap);
+        flex: 0 0 var(--rs-tap);
+    }
+
+    /* "Visit Booking" moves into the menu (like Login/Register in the reference) */
+    .header-cta {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+    }
+
+    /* Menu = full-screen panel under the header */
+    .main-navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: calc(100vh - var(--rs-header-h) + 1px);
+        height: calc(100dvh - var(--rs-header-h) + 1px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        flex: none;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 8px 0 calc(24px + env(safe-area-inset-bottom, 0px));
+        background: #ffffff;
+        border-top: 1px solid #e6e7ea;
+        box-shadow: none;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        pointer-events: none;
+        transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+        z-index: 1100;
+    }
+
+    .main-navigation.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        pointer-events: auto;
+    }
+
+    /* rows: left aligned, 22px side padding, divider lines */
+    .main-navigation .nav-link,
+    .main-navigation .home-dropdown-toggle,
+    .main-navigation .nav-drawer-cta {
+        width: 100%;
+        height: auto;
+        min-height: 52px;
+        padding: 13px 22px;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.4;
+        justify-content: flex-start;
+        text-align: start;
+        border-bottom: 1px solid #eef0f4;
+        border-radius: 0;
+    }
+
+    .main-navigation .nav-link.active::after {
+        display: none;
+    }
+
+    .main-navigation .home-dropdown {
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+
+    .main-navigation .home-dropdown-toggle {
+        display: flex;
+        align-items: center;
+    }
+
+    .main-navigation .home-dropdown-toggle .home-chevron {
+        margin-inline-start: 8px;
+    }
+
+    /* Home 1 / Home 2 expand like an accordion, indented sub-links */
+    .main-navigation .home-dropdown-menu {
+        position: static;
+        display: none;
+        min-width: 0;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        box-shadow: none;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        padding: 0;
+    }
+
+    .main-navigation .home-dropdown.open .home-dropdown-menu {
+        display: block;
+        transform: none;
+    }
+
+    .main-navigation .home-dropdown.open .home-dropdown-toggle {
+        color: #2563eb;
+    }
+
+    .main-navigation .home-dropdown-link {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        padding: 10px 22px;
+        padding-inline-start: 42px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #5a647b;
+        background: transparent;
+        border-radius: 0;
+        border-bottom: 1px solid #eef0f4;
+    }
+
+    .main-navigation .home-dropdown-link:hover,
+    .main-navigation .home-dropdown-link:focus-visible,
+    .main-navigation .home-dropdown-link.active {
+        background: transparent;
+        color: #2563eb;
+    }
+
+    .main-navigation .nav-drawer-cta {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        color: #2563eb;
+        font-weight: 700;
+        text-decoration: none;
+        border-bottom: 0;
+        background: transparent;
+    }
+
+    /* ----- hero ----- */
+    .hero-section {
+        height: auto;
+        min-height: calc(100svh - var(--rs-header-h));
+        padding-block: 40px;
+    }
+
+    .hero-container,
+    .hero-content {
+        height: auto;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: clamp(34px, 7.2vw, 56px);
+    }
+
+    .hero-buttons,
+    .hero-features {
+        flex-wrap: wrap;
+    }
+
+    .primary-button,
+    .secondary-button {
+        height: 54px;
+        min-width: 0;
+    }
+
+    /* ----- home page grids ----- */
+    .foot-health-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .foot-health-grid>* {
+        grid-column: auto;
+    }
+
+    .product-showcase-grid,
+    .pp-grid,
+    .tgrid,
+    .ft-teams,
+    .about-experts-grid,
+    .pp-trust {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fitting-container,
+    .ft-visit,
+    .pp-info,
+    .pp-video,
+    .about-story,
+    .in-two,
+    .mx-two,
+    .contact-hero-wrap,
+    .premium-hero {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .fitting-badge {
+        min-width: 0;
+    }
+
+    .steps,
+    .ph-stats,
+    .pd-specs,
+    .pd-related>div {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .mx-anat {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    /* Fitting / booking layout: summary drops under the form */
+    .ft-book {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .ft-summary {
+        position: static;
+        width: 100%;
+    }
+
+    .ft-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Contact hours / info tables */
+    .in-table th,
+    .in-table td {
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+
+    /* Products */
+    .pd-panel {
+        grid-template-columns: minmax(0, 1fr);
+        max-height: 92vh;
+        max-height: 92dvh;
+        overflow-y: auto;
+    }
+
+    .pp-news input {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .cmp table {
+        min-width: 720px;
+    }
+
+    /* Footer */
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* about timeline (3-col) -> stacked */
+    .about-timeline-item,
+    .about-timeline-item:nth-child(odd),
+    .about-timeline-item:nth-child(even) {
+        grid-template-columns: 48px minmax(0, 1fr);
+    }
+}
+
+/* iPad Mini / tablets: hero buttons side by side, equal width */
+@media (min-width: 601px) and (max-width: 960px) {
+    .hero-buttons {
+        flex-wrap: nowrap;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .hero-buttons>a {
+        flex: 1 1 0;
+        min-width: 0;
+        justify-content: center;
+        white-space: nowrap;
+        padding-inline: 8px;
+    }
+}
+
+/* =========================================================
+   <= 600px  phones (Galaxy S8+ portrait = 360)
+========================================================= */
+@media (max-width: 600px) {
+    :root {
+        --rs-gutter: 16px;
+    }
+
+    .brand-tagline {
+        display: none;
+    }
+
+    .hero-section {
+        padding-block: 28px 36px;
+    }
+
+    .hero-badge {
+        white-space: normal;
+        max-width: 100%;
+        letter-spacing: 0.06em;
+        font-size: 11px;
+        line-height: 1.4;
+        padding: 8px 14px;
+    }
+
+    .hero-title {
+        font-size: clamp(32px, 9.4vw, 42px);
+    }
+
+    .hero-description {
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .hero-buttons .primary-button,
+    .hero-buttons .secondary-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-features {
+        gap: 12px 18px;
+    }
+
+    .hero-feature {
+        flex: 1 1 calc(50% - 18px);
+        min-width: 0;
+        font-size: 14px;
+    }
+
+    /* Every multi-column grid becomes a single column */
+    .foot-health-grid,
+    .why-arthro-grid,
+    .product-showcase-grid,
+    .claims-grid,
+    .footer-container,
+    .pp-grid,
+    .pp-trust,
+    .tgrid,
+    .bs-grid,
+    .acc-grid,
+    .steps,
+    .ph-stats,
+    .pd-specs,
+    .pd-info ul,
+    .pd-related>div,
+    .ft-strip,
+    .ft-opts,
+    .ft-fields,
+    .ft-teams,
+    .mx-grid3,
+    .mx-tour,
+    .about-experts-grid,
+    .booking-form,
+    .premium-proof {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .mx-anat {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* Booking calendar keeps 7 columns but tighter */
+    .ft-days,
+    .cal-week,
+    .cal-grid {
+        gap: 4px;
+    }
+
+    .ft-times {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .premium-float-card,
+    .orb-1,
+    .orb-2 {
+        max-width: 80vw;
+    }
+
+    /* Wide buttons never exceed the screen */
+    .visit-primary-button,
+    .visit-secondary-button,
+    .request-btn,
+    .contact-hero-actions a {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .contact-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* Section spacing tuned for a 360px wide screen */
+    section {
+        scroll-margin-top: var(--rs-header-h);
+    }
+
+    .cmp table {
+        min-width: 640px;
+    }
+
+    .pp-toolbar {
+        top: var(--rs-header-h);
+    }
+
+    .pd-panel {
+        border-radius: 16px;
+    }
+
+    .cart-pop>div {
+        max-width: calc(100vw - 24px);
+    }
+}
+
+/* =========================================================
+   <= 400px  small phones
+========================================================= */
+@media (max-width: 400px) {
+    :root {
+        --rs-gutter: 14px;
+    }
+
+    .header-actions {
+        gap: 6px;
+    }
+
+    .header-container {
+        gap: 6px;
+    }
+
+    .hero-feature {
+        flex-basis: 100%;
+    }
+
+    .footer-container {
+        gap: 28px;
+    }
+
+    .ft-days,
+    .cal-week,
+    .cal-grid {
+        gap: 2px;
+    }
+}
+
+/* =========================================================
+   Short landscape screens (S8+ landscape = 740 x 360)
+========================================================= */
+@media (max-height: 480px) and (orientation: landscape) {
+    :root {
+        --rs-header-h: 60px;
+    }
+
+    /* like the reference: header is not pinned on short landscape screens */
+    .site-header {
+        position: relative;
+    }
+
+    .main-navigation .nav-link,
+    .main-navigation .home-dropdown-toggle,
+    .main-navigation .nav-drawer-cta {
+        min-height: 44px;
+        padding-block: 9px;
+    }
+
+    .main-navigation .home-dropdown-link {
+        min-height: 40px;
+        padding-block: 7px;
+    }
+
+    .hero-section {
+        min-height: 0;
+        padding-block: 24px;
+    }
+
+    .main-navigation {
+        max-height: calc(100vh - var(--rs-header-h));
+        max-height: calc(100dvh - var(--rs-header-h));
+    }
+}
+
+
+/* ---------- Touch refinements (phones + tablets) ---------- */
+@media (max-width: 600px) {
+    .visit-arthro-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .footer-bottom-container {
+        flex-wrap: wrap;
+        gap: 10px 20px;
+    }
+}
+
+/* 44px minimum tap area for footer + in-page text links on touch screens */
+@media (hover: none) and (pointer: coarse) {
+
+    .footer-column li a,
+    .footer-column>a,
+    .footer-bottom-container a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+    }
+
+    .home-dropdown-link {
+        min-height: 44px;
+    }
+}
+
+/* Hover-only effects must not "stick" on touch screens */
+@media (hover: none) {
+    .header-cta:hover {
+        transform: none;
+    }
+}
+
+/* Respect users who ask for less motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .main-navigation,
+    .home-dropdown-menu {
+        transition: none;
+    }
+}
+
+/* ---------- Final viewport-fit corrections ---------- */
+@media (max-width: 1100px) {
+
+    /* Do not reserve desktop scrollbar space on touch-sized layouts. */
+    html {
+        scrollbar-gutter: auto;
+    }
+}
+
+@media (max-width: 960px) {
+
+    .ft-steps,
+    .ft-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px 20px;
+    }
+
+    .footer-brand,
+    .footer-container> :first-child {
+        grid-column: auto;
+    }
+
+    .footer-column,
+    .footer-brand,
+    .footer-contact,
+    .footer-description {
+        min-width: 0;
+    }
+
+    .footer-contact p {
+        overflow-wrap: anywhere;
+    }
+
+    .footer-column>a {
+        min-height: 36px;
+        margin-bottom: 3px;
+        line-height: 1.35;
+    }
+
+    .footer-contact p {
+        margin-bottom: 9px;
+    }
+}
+
+@media (max-width: 600px) {
+    html:root body .booking-section {
+        padding: 80px 16px 48px;
+    }
+
+    .booking-container {
+        width: 100%;
+    }
+
+    html body .booking-brand {
+        --brand-logo-size: 48px;
+        --brand-name-size: clamp(26px, 8vw, 32px);
+        gap: 12px;
+        margin-bottom: 32px;
+    }
+
+    .booking-intro {
+        margin-bottom: 32px;
+    }
+
+    .booking-intro h2 {
+        font-size: clamp(22px, 6vw, 25px);
+        letter-spacing: -1px;
+        line-height: 1.2;
+    }
+
+    .booking-intro p {
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .booking-form {
+        gap: 16px;
+    }
+
+    .booking-form>*,
+    .form-group {
+        min-width: 0;
+    }
+
+    .form-submit {
+        margin-top: 4px;
+    }
+
+    .request-btn {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .ft-steps,
+    .ft-cards {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .footer-container {
+        width: calc(100% - 32px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 16px;
+    }
+
+    html:root body .footer-container {
+        padding: 36px 0 28px;
+    }
+
+    .footer-brand,
+    .footer-container> :first-child {
+        grid-column: 1 / -1;
+    }
+
+    .footer-description {
+        max-width: 100%;
+        margin: 14px 0;
+    }
+
+    .footer-column h3 {
+        margin-bottom: 14px;
+    }
+
+    .footer-contact p {
+        align-items: flex-start;
+        line-height: 1.55;
+    }
+
+    .footer-contact-icon {
+        flex: 0 0 22px;
+    }
+
+    .footer-book-button {
+        max-width: 100%;
+        padding-inline: 12px;
+        white-space: normal;
+    }
+
+    .footer-bottom-container {
+        width: calc(100% - 32px);
+        min-height: 0;
+        padding: 16px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .footer-legal {
+        flex-wrap: wrap;
+        gap: 8px 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer-container {
+        width: calc(100% - 28px);
+        gap: 18px 12px;
+    }
+
+    html:root body .footer-container {
+        padding: 32px 0 24px;
+    }
+
+    .footer-contact p {
+        font-size: 11px;
+    }
+}
+
+/* ---------- Footer: desktop and NextHub wide layouts ---------- */
+@media (min-width: 1101px) {
+
+    .footer-container,
+    .footer-bottom-container {
+        width: calc(100% - clamp(48px, 8vw, 160px));
+        max-width: 1720px;
+    }
+
+    .footer-container {
+        grid-template-columns:
+            minmax(0, 1.55fr) repeat(3, minmax(0, .88fr)) minmax(0, 1.1fr);
+        gap: clamp(20px, 2.2vw, 40px);
+        padding: 36px 0 28px;
+    }
+
+    .footer-column h3 {
+        margin-bottom: 16px;
+    }
+
+    .footer-column>a {
+        margin-bottom: 7px;
+        line-height: 1.45;
+    }
+
+    .footer-contact p {
+        margin-bottom: 9px;
+        line-height: 1.45;
+    }
+
+    .footer-bottom-container {
+        min-height: 58px;
+        gap: 20px;
+    }
+
+    .footer-legal {
+        gap: 20px;
+    }
+}
+
+/* Keep desktop footer links easy to tap without adding desktop-sized gaps. */
+@media (min-width: 1101px) and (hover: none) and (pointer: coarse) {
+    .footer-column>a {
+        min-height: 40px;
+        margin-bottom: 0;
+        line-height: 1.4;
+    }
+}
+
+/* =========================================================
+   Dark mode for the menu / toggle
+========================================================= */
+:root[data-theme="dark"] .nav-toggle {
+    background: #1b2130;
+    border-color: #2c3548;
+    color: #e8ecf5;
+}
+
+@media (max-width: 960px) {
+    :root[data-theme="dark"] .main-navigation {
+        background: #141a26;
+        border-top-color: #2a3346;
+    }
+
+    :root[data-theme="dark"] .main-navigation .nav-link,
+    :root[data-theme="dark"] .main-navigation .home-dropdown-toggle {
+        color: #e8ecf5;
+        border-bottom-color: #232b3c;
+    }
+
+    :root[data-theme="dark"] .main-navigation .nav-link.active,
+    :root[data-theme="dark"] .main-navigation .home-dropdown.open .home-dropdown-toggle,
+    :root[data-theme="dark"] .main-navigation .home-dropdown-toggle.active {
+        color: #7aa7ff;
+    }
+
+    :root[data-theme="dark"] .main-navigation .home-dropdown-link {
+        color: #aab4c8;
+        border-bottom-color: #232b3c;
+    }
+
+    :root[data-theme="dark"] .main-navigation .home-dropdown-link.active,
+    :root[data-theme="dark"] .main-navigation .home-dropdown-link:hover {
+        color: #7aa7ff;
+    }
+
+    :root[data-theme="dark"] .main-navigation .nav-drawer-cta {
+        color: #7aa7ff;
+    }
+}
+
+/* =========================================================
+   FINAL FOOTER SPACING - ALL DEVICES
+   ========================================================= */
+
+.footer-container {
+    row-gap: 18px !important;
+}
+
+.footer-column>a,
+.footer-column li a {
+    min-height: 0 !important;
+    margin-bottom: 5px !important;
+    padding: 0 !important;
+    line-height: 1.35 !important;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px !important;
+}
+
+.footer-contact p {
+    margin-bottom: 6px !important;
+    line-height: 1.35 !important;
+}
+
+/* NextHub + Desktop + 1920x1080 */
+@media (min-width: 1101px) {
+    .footer-container {
+        gap: 24px !important;
+        padding-top: 28px !important;
+        padding-bottom: 22px !important;
+    }
+
+    .footer-column>a,
+    .footer-column li a {
+        margin-bottom: 4px !important;
+    }
+}
+
+/* iPad Mini */
+@media (min-width: 601px) and (max-width: 1100px) {
+    .footer-container {
+        gap: 20px !important;
+    }
+
+    .footer-column>a,
+    .footer-column li a {
+        margin-bottom: 4px !important;
+    }
+}
+
+/* Samsung Galaxy S8+ */
+@media (max-width: 600px) {
+    .footer-container {
+        gap: 16px 14px !important;
+        padding-top: 28px !important;
+        padding-bottom: 20px !important;
+    }
+
+    .footer-column>a,
+    .footer-column li a {
+        min-height: 0 !important;
+        margin-bottom: 3px !important;
+        line-height: 1.3 !important;
+    }
+
+    .footer-column h3 {
+        margin-bottom: 8px !important;
+    }
+
+    .footer-contact p {
+        margin-bottom: 5px !important;
+    }
+}
+
+/* 1920 × 1080 */
+@media (min-width: 1600px) {
+    .footer-container {
+        width: calc(100% - 100px) !important;
+        max-width: 1800px !important;
+        gap: 28px !important;
+    }
+
+    .footer-column>a,
+    .footer-column li a {
+        margin-bottom: 4px !important;
+        line-height: 1.35 !important;
+    }
+}
+
+/* =========================================================
+   HEADER + FOOTER — SAME LEFT ALIGNMENT
+   Logo & title must start at exactly the same position
+   ========================================================= */
+
+.header-container,
+.footer-container,
+.footer-bottom-container {
+    box-sizing: border-box;
+}
+
+/* ---------------- DESKTOP ---------------- */
+
+@media (min-width: 961px) {
+
+    .header-container,
+    .footer-container,
+    .footer-bottom-container {
+        width: calc(100% - 64px) !important;
+        max-width: none !important;
+
+        margin-left: 32px !important;
+        margin-right: 32px !important;
+
+        box-sizing: border-box !important;
+    }
+}
+
+
+/* ---------------- TABLET ---------------- */
+
+@media (min-width: 601px) and (max-width: 960px) {
+
+    .header-container,
+    .footer-container,
+    .footer-bottom-container {
+        width: calc(100% - 40px) !important;
+
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+
+        box-sizing: border-box !important;
+    }
+}
+
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 600px) {
+
+    .header-container,
+    .footer-container,
+    .footer-bottom-container {
+        width: calc(100% - 32px) !important;
+
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+
+        box-sizing: border-box !important;
+    }
+}
+
+/* =========================================================
+   BRAND (LOGO + TITLE) - HEADER and FOOTER SHARE ONE SET OF VALUES
+   Change the numbers below and BOTH header and footer update together.
+   ========================================================= */
+
+:root {
+    --brand-logo-size: 44px;
+    --brand-name-size: 27px;
+    --brand-gap: 12px;
+}
+
+@media (max-width: 600px) {
+    :root {
+        --brand-logo-size: 40px;
+        --brand-name-size: 22px;
+        --brand-gap: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    :root {
+        --brand-logo-size: 36px;
+        --brand-name-size: 19px;
+        --brand-gap: 8px;
+    }
+}
+
+/* row: logo on the left, title on the right, vertically centred */
+html body .header-container .brand,
+html body .footer-brand .footer-brand-link {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: var(--brand-gap) !important;
+    width: fit-content !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-decoration: none !important;
+}
+
+/* logo: same circle, same size */
+html body .header-container .brand-logo,
+html body .footer-brand .footer-brand-logo {
+    width: var(--brand-logo-size) !important;
+    height: var(--brand-logo-size) !important;
+    min-width: var(--brand-logo-size) !important;
+    flex: 0 0 var(--brand-logo-size) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+}
+
+/* title wrapper: no extra spacing so it centres exactly with the logo */
+html body .header-container .brand-text,
+html body .footer-brand .footer-brand-text {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* title: same font, size, weight, spacing */
+html body .header-container .brand-name,
+html body .footer-brand .footer-brand-name {
+    font-family: inherit !important;
+    font-size: var(--brand-name-size) !important;
+    font-weight: 800 !important;
+    letter-spacing: -1px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* =========================================================
+   FOOTER ALIGNMENT
+   - every column heading is centred on the same line as the logo/title
+   - the description and every column's first link start on the same line
+   ========================================================= */
+
+html body .footer-container {
+    align-items: start !important;
+    column-gap: 40px;
+}
+
+html body .footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+html body .footer-description {
+    margin: 14px 0 18px !important;
+    line-height: 1.7 !important;
+}
+
+html body .footer-column h3 {
+    margin: 0 0 14px !important;
+    line-height: 1.3 !important;
+}
+
+html body .footer-column>a {
+    margin: 0 0 10px !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+}
+
+html body .footer-contact p {
+    margin: 0 0 10px !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    align-items: center !important;
+}
+
+html body .footer-contact-icon {
+    width: 20px !important;
+    min-width: 20px !important;
+    flex: 0 0 20px !important;
+    margin: 0 10px 0 0 !important;
+    justify-content: center !important;
+}
+
+html[dir="rtl"] body .footer-contact-icon {
+    margin: 0 0 0 10px !important;
+}
+
+@media (min-width: 961px) {
+    html body .footer-column>h3 {
+        min-height: var(--brand-logo-size);
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 960px) {
+    html body .footer-column>h3 {
+        min-height: 0;
+        margin-bottom: 12px !important;
+    }
+}
+
+
+/* Footer CTA button */
+html body .footer-book-button {
+    min-height: 52px !important;
+    padding: 0 28px !important;
+    margin-top: 14px !important;
+    gap: 10px !important;
+    font-size: 16px !important;
+    border-radius: 10px !important;
+    white-space: nowrap !important;
+}
+
+html body .footer-book-button span {
+    font-size: 20px !important;
+}
+
+/* Phones: contact column takes the full row so the email never wraps mid-word */
+@media (max-width: 600px) {
+    html body .footer-container>.footer-contact {
+        grid-column: 1 / -1;
+    }
+
+    html body .footer-contact p {
+        overflow-wrap: anywhere;
+    }
+
+    html body .footer-book-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   FOOTER LAYOUT – FINAL (all devices)
+   - brand block on top, the 4 columns sit side by side below it
+     so Quick Links / Our Footwear / Information / Get In Touch
+     titles are always on one horizontal line
+   - phones: 2 x 2 grid (titles aligned per row)
+   - tighter gaps on desktop
+   ========================================================= */
+
+/* ---- desktop / large screens (>= 1101px) ---- */
+@media (min-width: 1101px) {
+    html:root:root body .site-footer .footer-container {
+        grid-template-columns: minmax(260px, 1.25fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(210px, 1.15fr) !important;
+        column-gap: clamp(24px, 2.6vw, 48px) !important;
+        row-gap: 0 !important;
+        padding-top: 40px !important;
+        padding-bottom: 28px !important;
+    }
+}
+
+/* ---- tablets (601px - 1100px): 2 columns x 3 rows
+       row1: brand | Quick Links, row2: Our Footwear | Information, row3: Get In Touch ---- */
+@media (min-width: 601px) and (max-width: 1100px) {
+    html:root:root body .site-footer .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        column-gap: 40px !important;
+        row-gap: 24px !important;
+        padding-top: 40px !important;
+        padding-bottom: 28px !important;
+    }
+
+    html:root:root body .site-footer .footer-container>.footer-brand,
+    html:root:root body .site-footer .footer-container>.footer-contact {
+        grid-column: auto !important;
+    }
+
+    /* order (2 columns):
+       row1: Brand        | Our Footwear
+       row2: Quick Links  | Get In Touch
+       row3: Information  | (empty)  */
+    html:root:root body .site-footer .footer-container> :nth-child(1) {
+        order: 1;
+    }
+
+    /* brand */
+    html:root:root body .site-footer .footer-container> :nth-child(3) {
+        order: 2;
+    }
+
+    /* Our Footwear */
+    html:root:root body .site-footer .footer-container> :nth-child(2) {
+        order: 3;
+    }
+
+    /* Quick Links */
+    html:root:root body .site-footer .footer-container> :nth-child(5) {
+        order: 4;
+    }
+
+    /* Get In Touch */
+    html:root:root body .site-footer .footer-container> :nth-child(4) {
+        order: 5;
+    }
+
+    /* Information */
+
+    html:root:root body .site-footer .footer-description {
+        max-width: 100%;
+    }
+}
+
+/* ---- phones (<= 600px): 2 x 2 ---- */
+@media (max-width: 600px) {
+    html:root:root body .site-footer .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        column-gap: 18px !important;
+        row-gap: 26px !important;
+    }
+
+    html:root:root body .site-footer .footer-container>.footer-brand {
+        grid-column: 1 / -1 !important;
+    }
+
+    html:root:root body .site-footer .footer-container>.footer-contact {
+        grid-column: auto !important;
+    }
+}
+
+/* ---- all sizes: column details ---- */
+html:root:root body .site-footer .footer-column h3 {
+    min-height: 0 !important;
+    margin: 0 0 14px !important;
+}
+
+/* desktop: column titles sit on the SAME horizontal line as the logo + brand name */
+@media (min-width: 601px) {
+    html:root:root body .site-footer .footer-column h3 {
+        display: flex !important;
+        align-items: center !important;
+        min-height: var(--brand-logo-size, 44px) !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+html:root:root body .site-footer .footer-column>a,
+html:root:root body .site-footer .footer-column li a {
+    margin-bottom: 8px !important;
+}
+
+html:root:root body .site-footer .footer-contact p {
+    margin-bottom: 8px !important;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* button had 36px extra bottom space -> removed; keep inside the column */
+html:root:root body .site-footer .footer-book-button {
+    margin-bottom: 0 !important;
+    max-width: 100%;
+}
+
+@media (max-width: 1100px) {
+    html:root:root body .site-footer .footer-book-button {
+        padding: 0 16px !important;
+        font-size: 14px !important;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* breathing space between contact lines and the button */
+html:root:root body .site-footer .footer-book-button {
+    margin-top: 16px !important;
+}
+
+/* narrow screens: slightly tighter contact rows so the e-mail fits */
+@media (max-width: 1100px) {
+    html:root:root body .site-footer .footer-contact p {
+        font-size: 12.5px !important;
+    }
+
+    html:root:root body .site-footer .footer-contact-icon {
+        width: 16px !important;
+        min-width: 16px !important;
+        flex: 0 0 16px !important;
+        margin: 0 7px 0 0 !important;
+    }
+}
+
+/* =========================================================
+   FIX: right-side blank space on phones (Galaxy S8+ 360px)
+   The scroll-reveal animations (anRevealLeft / anRevealRight in
+   animations.css) slide elements in from +/-70px sideways. That pushed
+   .fitting-content to x=406 on a 360px screen, so mobile Chrome shrank
+   the page to fit and left an empty strip on the right.
+   On tablets/phones the reveal now slides UP instead of sideways, so
+   nothing can ever leave the screen horizontally.
+========================================================= */
+@media (max-width: 960px) {
+    @keyframes anRevealLeft {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    @keyframes anRevealRight {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+}
+
+/* Safety net on every screen size: clip (not scroll) any stray overflow.
+   `clip` does not create a scroll container, so the sticky header still works. */
+html,
+body {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+main {
+    overflow-x: clip;
+}
+
+
+/* =========================================================
+   HOME 2 - "Walking pain-free, in their words" review cards
+   Phones (Galaxy S8+ 360px): ONE card per row, full width.
+   Forced with !important so no other rule can squeeze them
+   into 3 narrow columns.
+========================================================= */
+@media (max-width: 600px) {
+
+    html body .ph-grid,
+    html body .ph-grid.ph-cols-3 {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 18px !important;
+        width: 100%;
+    }
+
+    html body .ph-quote {
+        width: 100%;
+        min-width: 0;
+        padding: 26px 22px !important;
+        border-radius: 22px;
+    }
+
+    html body .ph-quote blockquote {
+        font-size: 16px;
+        line-height: 1.6;
+        overflow-wrap: break-word;
+    }
+
+    html body .ph-quote .stars {
+        letter-spacing: 2px;
+    }
+}
+
+
+/* =========================================================
+   FITTING PAGE HERO - phones & tablet portrait
+   Same look as desktop: photo is the hero BACKGROUND and the text sits
+   on top of it. Desktop puts the photo on the right with a diagonal
+   cut; on a phone there is no room for that, so the photo fills the
+   whole hero and a top-to-bottom wash keeps the text readable while the
+   photo shows through more and more towards the bottom.
+========================================================= */
+@media (max-width: 960px) {
+    html:root:root:root:root body .fitting-hero.ft-hero {
+        height: auto !important;
+        min-height: max(calc(100svh - var(--rs-header-h)), 720px) !important;
+        padding: 36px 0 48px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: stretch !important;
+    }
+
+    html:root:root:root:root body .fitting-hero .ft-in {
+        width: calc(100% - (var(--rs-gutter) * 2)) !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin: 0 auto !important;
+        position: relative;
+        z-index: 2 !important;
+    }
+
+    /* photo = full-hero background (no clip, no fade-out animation) */
+    html:root:root:root:root:root body .fitting-hero::before {
+        content: "" !important;
+        position: absolute !important;
+        inset: 0 !important;
+        z-index: 0 !important;
+        clip-path: none !important;
+        animation: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+        background-size: cover !important;
+        background-position: 72% 60% !important;
+        background-repeat: no-repeat !important;
+    }
+
+    /* light mode wash: solid at the top (text), clear photo at the bottom */
+    html:root:root:root:root:root:not([data-theme="dark"]) body .fitting-hero::before {
+        background-image:
+            linear-gradient(180deg,
+                rgba(238, 242, 251, .95) 0%,
+                rgba(238, 242, 251, .82) 38%,
+                rgba(238, 242, 251, .42) 66%,
+                rgba(238, 242, 251, .04) 100%),
+            url("https://i.ibb.co/60Tj40ps/Chat-GPT-Image-Sep-29-2026-08-51-51-AM.png") !important;
+    }
+
+    /* dark mode wash */
+    html:root:root:root:root:root[data-theme="dark"] body .fitting-hero::before {
+        background-image:
+            linear-gradient(180deg,
+                rgba(13, 18, 30, .94) 0%,
+                rgba(13, 18, 30, .82) 38%,
+                rgba(13, 18, 30, .42) 66%,
+                rgba(13, 18, 30, .06) 100%),
+            url("https://i.ibb.co/60Tj40ps/Chat-GPT-Image-Sep-29-2026-08-51-51-AM.png") !important;
+    }
+
+    .fitting-hero::after {
+        display: none !important;
+    }
+}
+
+
+/* =========================================================
+   FITTING PAGE - "Your Fitting in 4 Steps" cards
+   Phones & tablet portrait: IMAGE first, TEXT below it.
+   (An old 900px rule forced text-first with !important.)
+========================================================= */
+@media (max-width: 960px) {
+    html:root:root body .tl li .tl-i {
+        order: 0 !important;
+    }
+
+    html:root:root body .tl li .tl-t {
+        order: 1 !important;
+        text-align: left !important;
+        justify-self: stretch !important;
+    }
+}
+
+
+/* =========================================================
+   ABOUT PAGE - "Meet the care team" (3 doctor cards)
+   iPad Mini (744 / 768 portrait, 1024 / 1133 landscape):
+   all 3 cards in ONE row. Phones (<=600px) keep one card per row.
+========================================================= */
+@media (min-width: 601px) and (max-width: 1100px) {
+    html:root body .about-experts-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        align-items: stretch;
+    }
+
+    html:root body .about-expert-card {
+        min-height: 0;
+        border-radius: 18px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    html:root body .about-doctor-image-wrap {
+        height: clamp(170px, 24vw, 250px);
+    }
+
+    html:root body .about-doctor-badge {
+        left: 10px;
+        bottom: 10px;
+        padding: 5px 8px;
+        font-size: 8px;
+        letter-spacing: .8px;
+    }
+
+    html:root body .about-expert-number {
+        top: 12px;
+        right: 12px;
+        font-size: 12px;
+    }
+
+    html:root body .about-expert-content {
+        flex: 1;
+        padding: 16px 14px 18px;
+    }
+
+    html:root body .about-doctor-role {
+        font-size: 8.5px;
+        letter-spacing: .9px;
+        line-height: 1.4;
+    }
+
+    html:root body .about-expert-content h3 {
+        font-size: 17px;
+        line-height: 1.25;
+    }
+
+    html:root body .about-expert-content p {
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    html:root body .about-expert-tags {
+        gap: 5px;
+    }
+
+    html:root body .about-expert-tags span {
+        padding: 4px 8px;
+        font-size: 9.5px;
+    }
+}
+
+/* wide tablet (iPad Mini landscape): a bit more breathing room */
+@media (min-width: 961px) and (max-width: 1100px) {
+    html:root body .about-experts-grid {
+        gap: 18px;
+    }
+
+    html:root body .about-expert-content {
+        padding: 20px 18px 22px;
+    }
+
+    html:root body .about-expert-content h3 {
+        font-size: 19px;
+    }
+
+    html:root body .about-expert-content p {
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   PRODUCTS PAGE - "Complete Your Foot Care" (4 accessory cards)
+   iPad Mini and other tablets (601 - 1100px): always 2 x 2.
+   Forced with !important so no other rule can make it 3 + 1.
+   Phones (<=600px) are handled by the 1-column rule above/below.
+========================================================= */
+@media (min-width: 601px) and (max-width: 1100px) {
+    html:root:root body .acc-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 20px !important;
+        max-width: 680px !important;
+        margin-inline: auto !important;
+    }
+
+    html:root:root body .acc-grid .acc {
+        min-width: 0;
+    }
+}
+
+
+/* =========================================================
+   FITTING PAGE - "Meet Your Fitters" (3 round portraits)
+   iPad Mini / tablets (601 - 1100px): all 3 in ONE row, separated by
+   thin vertical lines (same as desktop). Phones (<=600px): stacked.
+========================================================= */
+@media (min-width: 601px) and (max-width: 1100px) {
+    html:root body .rs {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: start;
+    }
+
+    html:root body .rs-p {
+        min-width: 0;
+        padding: 6px 14px;
+        border-top: 0;
+        border-left: 1px solid #c6cddd;
+    }
+
+    html:root body .rs-p:first-child {
+        border: 0;
+    }
+
+    html:root body .rs-ph {
+        width: clamp(120px, 19vw, 170px);
+        height: clamp(120px, 19vw, 170px);
+        margin-bottom: 20px;
+        outline-offset: 6px;
+    }
+
+    html:root body .rs-p h3 {
+        font-size: clamp(17px, 2.5vw, 22px);
+        line-height: 1.25;
+    }
+
+    html:root body .rs-p>span {
+        font-size: 10px;
+        letter-spacing: 1px;
+        line-height: 1.4;
+    }
+
+    html:root body .rs-p p {
+        font-size: 13.5px;
+        line-height: 1.6;
+    }
+}
+
+/* =========================================================
+   SPACING FIX (Galaxy S8+ / iPad Mini / Nest Hub / 1920x1080)
+   Paste at the very END of responsive.css
+========================================================= */
+
+/* ---------- 1920x1080 and other large screens ---------- */
+@media (min-width: 1600px) {
+
+    .foot-health-section,
+    .why-arthro-section,
+    .product-showcase-section,
+    .fitting-section,
+    .claims-section,
+    .offers-section,
+    .pm-section,
+    .coverage-types-section,
+    .coverage-intelligence-section {
+        padding-block: 84px 92px;
+    }
+
+    .ph-section {
+        padding-block: 80px;
+    }
+
+    .booking-section {
+        padding-block: 80px 72px;
+    }
+
+    .coverage-types-section .ft-head {
+        margin-bottom: 44px;
+    }
+}
+
+/* ---------- Nest Hub (1024x600), Nest Hub Max (1280x800),
+              iPad Mini landscape (1024x768 / 1133x744) ---------- */
+@media (min-width: 961px) and (max-width: 1400px) and (max-height: 820px) {
+
+    .foot-health-section,
+    .why-arthro-section,
+    .product-showcase-section,
+    .fitting-section,
+    .claims-section,
+    .offers-section,
+    .pm-section,
+    .coverage-types-section,
+    .coverage-intelligence-section {
+        padding-block: 60px 68px;
+    }
+
+    .ph-section {
+        padding-block: 56px;
+    }
+
+    .booking-section {
+        padding-block: 56px 52px;
+    }
+
+    .coverage-types-section .ft-head {
+        margin-bottom: 32px;
+    }
+
+    .hero-section,
+    .premium-hero,
+    .contact-hero-new,
+    .booking-hero {
+        min-height: 0;
+        padding-block: 40px;
+    }
+
+    .fitting-hero,
+    .coverage-hero,
+    .contact-hero,
+    html:root:root body :is(.fitting-hero, .coverage-hero) {
+        min-height: 400px !important;
+    }
+
+    .visit-arthro-section,
+    .visit-arthro-overlay {
+        min-height: 0;
+    }
+
+    .visit-arthro-overlay {
+        padding-block: 48px;
+    }
+}
+
+/* ---------- iPad Mini portrait (744 / 768) ---------- */
+@media (min-width: 601px) and (max-width: 960px) {
+
+    .foot-health-section,
+    .why-arthro-section,
+    .product-showcase-section,
+    .fitting-section,
+    .claims-section,
+    .offers-section,
+    .pm-section,
+    .coverage-types-section,
+    .coverage-intelligence-section {
+        padding-block: 56px 64px;
+    }
+
+    .ph-section {
+        padding-block: 52px;
+    }
+
+    .booking-section {
+        padding-block: 52px 48px;
+    }
+
+    .coverage-types-section .ft-head {
+        margin-bottom: 28px;
+    }
+
+    .hero-section,
+    .premium-hero,
+    .contact-hero-new,
+    .booking-hero {
+        min-height: 0;
+    }
+
+    .fitting-hero,
+    .coverage-hero,
+    .contact-hero,
+    html:root:root body :is(.fitting-hero, .coverage-hero) {
+        min-height: 0 !important;
+    }
+
+    .visit-arthro-section,
+    .visit-arthro-overlay {
+        min-height: 0;
+    }
+
+    .visit-arthro-overlay {
+        padding-block: 44px;
+    }
+}
+
+/* ---------- Galaxy S8+ portrait (360x740) and small phones ---------- */
+@media (max-width: 600px) {
+
+    .foot-health-section,
+    .why-arthro-section,
+    .product-showcase-section,
+    .fitting-section,
+    .claims-section,
+    .offers-section,
+    .pm-section,
+    .coverage-types-section,
+    .coverage-intelligence-section {
+        padding-block: 40px 48px;
+    }
+
+    .ph-section {
+        padding-block: 40px;
+    }
+
+    .booking-section {
+        padding-block: 40px 36px;
+    }
+
+    .coverage-types-section .ft-head {
+        margin-bottom: 22px;
+    }
+
+    .hero-section,
+    .premium-hero,
+    .contact-hero-new,
+    .booking-hero {
+        min-height: 0;
+    }
+
+    .fitting-hero,
+    .coverage-hero,
+    .contact-hero,
+    html:root:root body :is(.fitting-hero, .coverage-hero) {
+        min-height: 0 !important;
+    }
+
+    .visit-arthro-section,
+    .visit-arthro-overlay {
+        min-height: 0;
+    }
+
+    .visit-arthro-overlay {
+        padding-block: 36px;
+    }
+}
+
+/* ---------- Galaxy S8+ landscape (740x360), any short landscape phone ---------- */
+@media (max-height: 480px) and (orientation: landscape) {
+
+    .foot-health-section,
+    .why-arthro-section,
+    .product-showcase-section,
+    .fitting-section,
+    .claims-section,
+    .offers-section,
+    .pm-section,
+    .coverage-types-section,
+    .coverage-intelligence-section {
+        padding-block: 32px 36px;
+    }
+
+    .ph-section {
+        padding-block: 32px;
+    }
+
+    .booking-section {
+        padding-block: 32px;
+    }
+
+    .visit-arthro-overlay {
+        padding-block: 28px;
+    }
+
+    .fitting-hero,
+    .coverage-hero,
+    .contact-hero,
+    html:root:root body :is(.fitting-hero, .coverage-hero) {
+        min-height: 0 !important;
+    }
+}
+
+/* =========================================================
+   PRODUCT CARD TEXT — iPad Mini (601px–960px)
+   Rating in one row, price + old price in one row,
+   "% OFF" under price, button full width below
+========================================================= */
+@media (min-width: 601px) and (max-width: 960px) {
+
+    html:root body .pp-card .pp-body {
+        padding: 14px 14px 16px;
+    }
+
+    /* ★★★★★ 4.9 (124 reviews) — one row */
+    html:root body .pp-card .product-rating {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 8px;
+        white-space: nowrap;
+    }
+
+    html:root body .pp-card .product-rating>span {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        flex-shrink: 0;
+        gap: 1px;
+        letter-spacing: 0;
+    }
+
+    html:root body .pp-card .product-rating svg {
+        width: 12px;
+        height: 12px;
+        flex-shrink: 0;
+    }
+
+    html:root body .pp-card .product-rating strong {
+        font-size: 12px;
+    }
+
+    html:root body .pp-card .product-rating small {
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    /* Title + description */
+    html:root body .pp-card .pp-body h3 {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+    html:root body .pp-card .pp-body p {
+        font-size: 13px;
+        line-height: 1.45;
+    }
+
+    html:root body .pp-card .pp-stock {
+        font-size: 11.5px;
+    }
+
+    /* ₹ 6,999  ₹ 8,200  (one row)  +  15% OFF (next row) */
+    html:root body .pp-card .pp-price {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2px 8px;
+    }
+
+    html:root body .pp-card .pp-price strong,
+    html:root body .pp-card .pp-price del {
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+
+    html:root body .pp-card .pp-price strong {
+        font-size: 18px;
+    }
+
+    html:root body .pp-card .pp-price del {
+        font-size: 12px;
+    }
+
+    html:root body .pp-card .pp-price svg {
+        width: 13px;
+        height: 13px;
+        flex-shrink: 0;
+    }
+
+    html:root body .pp-card .pp-price .off {
+        flex-basis: 100%;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    /* Price on top, button below (no side-by-side squeeze) */
+    html:root body .pp-card .product-bottom {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    html:root body .pp-card .product-button {
+        width: 100%;
+        min-height: 40px;
+        padding: 0 12px;
+        font-size: 13px;
+    }
+}
+
+/* =========================================================
+   COVERAGE PAGE — "Ways You May Be Covered" cards
+   Give the cards the same side gutter as the heading
+   (Galaxy S8+ / iPad Mini / anything up to 1100px)
+========================================================= */
+@media (max-width: 1100px) {
+    html:root:root body .coverage-types-section>.coverage-types-grid {
+        width: calc(100% - 48px);
+        max-width: 100%;
+        margin-inline: auto;
+    }
+
+    html:root:root body .coverage-types-section>.coverage-types-head {
+        margin-bottom: 32px;
+    }
+}
+
+/* Galaxy S8+ portrait (360) and small phones */
+@media (max-width: 600px) {
+    html:root:root body .coverage-types-section>.coverage-types-grid {
+        gap: 18px;
+    }
+
+    html:root:root body .coverage-types-section>.coverage-types-head {
+        margin-bottom: 24px;
+    }
+}
+
+/* =========================================================
+   HOME 2 HERO IMAGE — fill the whole frame
+   iPad Mini portrait (744 / 768) and phones (<= 900px)
+========================================================= */
+@media (max-width: 900px) {
+    html:root:root body .premium-image-frame .hero-stage {
+        height: 100%;
+    }
+
+    html:root:root body .premium-image-frame .hero-stage img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 72% 50%;
+    }
+
+    /* intro animation shards use the same crop, so the animation ends on the same picture */
+    html:root:root body .hero-shards i {
+        background-size: cover;
+        background-position: 72% 50%;
+    }
+}
+
+/* =========================================================
+   FITTING PAGE — iPad Mini (601px–960px)
+   Left: Your Appointment (tall)   Right: What to Bring + Need Help
+   Bottom: photo banner (full width)
+========================================================= */
+@media (min-width: 601px) and (max-width: 960px) {
+    html:root:root body #book .ft-side {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto auto auto;
+        gap: 20px;
+        align-items: stretch;
+    }
+
+    /* Your Appointment = left column, spans two rows */
+    html:root:root body #book .ft-side>.ft-summary:not(.ft-info) {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        height: auto;
+    }
+
+    /* What to Bring = right column, top */
+    html:root:root body #book .ft-side>.ft-info:not(.ft-help) {
+        grid-column: 2;
+        grid-row: 1;
+        height: auto;
+    }
+
+    /* Need Help? = right column, below */
+    html:root:root body #book .ft-side>.ft-help {
+        grid-column: 2;
+        grid-row: 2;
+        height: auto;
+    }
+
+    /* Photo = full-width banner under all three */
+    html:root:root body #book .ft-side>.ft-photo {
+        grid-column: 1 / -1;
+        grid-row: 3;
+        width: 100%;
+        height: 240px;
+        min-height: 0;
+    }
+
+    html:root:root body #book .ft-side>.ft-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 35%;
+    }
+}
+
+/* =========================================================
+   COVERAGE CARDS — fan layout on iPad Mini (601px–1100px)
+   4 cards in one row, outer cards lower, small tilt
+========================================================= */
+@media (min-width: 601px) and (max-width: 1100px) {
+    html:root:root body .coverage-types-section>.coverage-types-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        align-items: start;
+        height: auto;
+        padding-bottom: 24px;
+    }
+
+    html:root:root body .coverage-types-section>.coverage-types-grid .coverage-type {
+        width: 100%;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 14px 14px 16px !important;
+        margin-top: 0;
+    }
+
+    /* outer cards lower, inner cards higher (the fan shape) */
+    html:root:root body .coverage-types-section>.coverage-types-grid .coverage-type-1,
+    html:root:root body .coverage-types-section>.coverage-types-grid .coverage-type-4 {
+        margin-top: 48px;
+    }
+
+    html:root:root body .coverage-types-section>.coverage-types-grid .coverage-type-1 {
+        transform: rotate(-5deg);
+    }
+
+    html:root:root body .coverage-types-section>.coverage-types-grid .coverage-type-2 {
+        transform: rotate(-2deg);
+    }
+
+    html:root:root body .coverage-types-section>.coverage-types-grid .coverage-type-3 {
+        transform: rotate(2deg);
+    }
+
+    html:root:root body .coverage-types-section>.coverage-types-grid .coverage-type-4 {
+        transform: rotate(5deg);
+    }
+
+    /* RTL: mirrored tilt */
+    html[dir="rtl"] body .coverage-types-section>.coverage-types-grid .coverage-type-1 {
+        transform: rotate(5deg);
+    }
+
+    html[dir="rtl"] body .coverage-types-section>.coverage-types-grid .coverage-type-2 {
+        transform: rotate(2deg);
+    }
+
+    html[dir="rtl"] body .coverage-types-section>.coverage-types-grid .coverage-type-3 {
+        transform: rotate(-2deg);
+    }
+
+    html[dir="rtl"] body .coverage-types-section>.coverage-types-grid .coverage-type-4 {
+        transform: rotate(-5deg);
+    }
+
+    html:root:root body .coverage-types-section>.coverage-types-grid .coverage-type:hover {
+        transform: translateY(-8px) rotate(0deg) scale(1.02);
+    }
+
+    /* compact content so it fits the narrow cards */
+    html:root:root body .coverage-types-grid .coverage-type-media {
+        height: clamp(90px, 13vw, 130px);
+        margin-bottom: 10px;
+        border-radius: 14px;
+    }
+
+    html:root:root body .coverage-types-grid .coverage-type-label {
+        margin-bottom: 8px;
+        font-size: 8px;
+    }
+
+    html:root:root body .coverage-types-grid .coverage-type-body h3 {
+        margin: 0 0 8px;
+        font-size: clamp(18px, 2.6vw, 26px);
+        line-height: 1.08;
+    }
+
+    html:root:root body .coverage-types-grid .coverage-type-body p {
+        max-width: none;
+        font-size: clamp(11.5px, 1.55vw, 13px);
+        line-height: 1.5;
+    }
+
+    html:root:root body .coverage-types-grid .coverage-type-footer {
+        margin-top: 14px !important;
+        padding-top: 12px;
+        font-size: 7px;
+        gap: 6px;
+    }
+
+    html:root:root body .coverage-types-grid .coverage-type-arrow {
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+        font-size: 13px;
+    }
+}
+
+/* =========================================================
+   COVERAGE CARDS — exact Nest Hub layout, scaled (601px–1100px)
+   Same positions, same tilt, same look. Everything scales with
+   the screen width through --u (1 design px at 1232px wide).
+========================================================= */
+@media (min-width: 601px) and (max-width: 1100px) {
+
+    html:root:root:root body .coverage-types-section>.coverage-types-grid {
+        --u: calc((100vw - 48px) / 1232);
+        display: block;
+        position: relative;
+        width: calc(100% - 48px);
+        margin-inline: auto;
+        height: calc(600 * var(--u) + 20px);
+        padding: 0;
+    }
+
+    /* ---------- card base ---------- */
+    html:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type {
+        position: absolute;
+        width: calc(300 * var(--u));
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0;
+        padding: calc(22 * var(--u)) calc(22 * var(--u)) calc(24 * var(--u)) !important;
+        justify-content: flex-start !important;
+        inset: auto;
+    }
+
+    /* ---------- positions + tilt (same as Nest Hub) ---------- */
+    html:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-1 {
+        left: 1%;
+        right: auto;
+        top: calc(100 * var(--u));
+        transform: rotate(-7deg);
+    }
+
+    html:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-2 {
+        left: 25%;
+        right: auto;
+        top: calc(10 * var(--u));
+        transform: rotate(-2deg);
+    }
+
+    html:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-3 {
+        right: 25%;
+        left: auto;
+        top: calc(10 * var(--u));
+        transform: rotate(2deg);
+    }
+
+    html:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-4 {
+        right: 1%;
+        left: auto;
+        top: calc(100 * var(--u));
+        transform: rotate(7deg);
+    }
+
+    /* RTL mirror */
+    html[dir="rtl"]:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-1 {
+        right: 1%;
+        left: auto;
+        transform: rotate(7deg);
+    }
+
+    html[dir="rtl"]:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-2 {
+        right: 25%;
+        left: auto;
+        transform: rotate(2deg);
+    }
+
+    html[dir="rtl"]:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-3 {
+        left: 25%;
+        right: auto;
+        transform: rotate(-2deg);
+    }
+
+    html[dir="rtl"]:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-4 {
+        left: 1%;
+        right: auto;
+        transform: rotate(-7deg);
+    }
+
+    html:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type:hover {
+        transform: translateY(-14px) rotate(0deg) scale(1.045);
+    }
+
+    /* ---------- card content (scaled, with readable minimums) ---------- */
+    html:root:root:root body .coverage-types-grid .coverage-type-media {
+        height: calc(150 * var(--u));
+        margin-bottom: calc(14 * var(--u));
+        border-radius: calc(18 * var(--u));
+    }
+
+    html:root:root:root body .coverage-types-grid .coverage-type-body {
+        padding-top: calc(8 * var(--u)) !important;
+    }
+
+    html:root:root:root body .coverage-types-grid .coverage-type-label {
+        margin-bottom: calc(13 * var(--u));
+        font-size: max(8px, calc(9 * var(--u)));
+    }
+
+    html:root:root:root body .coverage-types-grid .coverage-type-body h3 {
+        margin: 0 0 calc(12 * var(--u));
+        font-size: max(17px, calc(31 * var(--u)));
+        line-height: 1.02;
+    }
+
+    html:root:root:root body .coverage-types-grid .coverage-type-body p {
+        max-width: none;
+        font-size: max(10.5px, calc(13 * var(--u)));
+        line-height: 1.55;
+    }
+
+    html:root:root:root body .coverage-types-grid .coverage-type-footer {
+        margin-top: calc(22 * var(--u)) !important;
+        padding-top: calc(16 * var(--u));
+        font-size: max(7px, calc(8 * var(--u)));
+    }
+
+    html:root:root:root body .coverage-types-grid .coverage-type-arrow {
+        width: max(28px, calc(42 * var(--u)));
+        height: max(28px, calc(42 * var(--u)));
+        flex-shrink: 0;
+        font-size: 14px;
+    }
+}
+
+/* =========================================================
+   COVERAGE CARDS — Galaxy S8+ (360px) and small phones (<= 600px)
+   Same look as desktop: ONE row, 4 columns, fan layout
+   (outer cards lower, tilted -7 / -2 / +2 / +7 deg).
+   Everything scales with --u (1 design px at 1232px wide).
+   Phone version shows image + title + arrow (text is too small
+   to read at this size, so label / description are hidden).
+========================================================= */
+@media (max-width: 600px) {
+
+    html:root:root:root body .coverage-types-section>.coverage-types-grid {
+        --u: calc((100vw - 16px) / 1232);
+        display: block;
+        position: relative;
+        width: calc(100% - 16px);
+        max-width: none;
+        margin-inline: auto;
+        height: calc(470 * var(--u) + 24px);
+        padding: 0;
+        gap: 0;
+    }
+
+    /* ---------- card base ---------- */
+    html:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type {
+        position: absolute;
+        width: calc(300 * var(--u));
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0;
+        padding: calc(20 * var(--u)) calc(18 * var(--u)) calc(20 * var(--u)) !important;
+        justify-content: flex-start !important;
+        inset: auto;
+        border-radius: calc(26 * var(--u));
+        box-shadow: 0 8px 20px rgba(20, 30, 40, .10);
+    }
+
+    /* ---------- positions + tilt (same as desktop) ---------- */
+    html:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-1 {
+        left: 1%;
+        right: auto;
+        top: calc(100 * var(--u));
+        transform: rotate(-7deg);
+    }
+
+    html:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-2 {
+        left: 25%;
+        right: auto;
+        top: calc(10 * var(--u));
+        transform: rotate(-2deg);
+    }
+
+    html:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-3 {
+        right: 25%;
+        left: auto;
+        top: calc(10 * var(--u));
+        transform: rotate(2deg);
+    }
+
+    html:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-4 {
+        right: 1%;
+        left: auto;
+        top: calc(100 * var(--u));
+        transform: rotate(7deg);
+    }
+
+    /* RTL mirror */
+    html[dir="rtl"]:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-1 {
+        right: 1%;
+        left: auto;
+        transform: rotate(7deg);
+    }
+
+    html[dir="rtl"]:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-2 {
+        right: 25%;
+        left: auto;
+        transform: rotate(2deg);
+    }
+
+    html[dir="rtl"]:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-3 {
+        left: 25%;
+        right: auto;
+        transform: rotate(-2deg);
+    }
+
+    html[dir="rtl"]:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type-4 {
+        left: 1%;
+        right: auto;
+        transform: rotate(-7deg);
+    }
+
+    html:root:root:root body .coverage-types-section>.coverage-types-grid>.coverage-type:hover {
+        transform: translateY(-6px) rotate(0deg) scale(1.06);
+    }
+
+    /* ---------- card content ---------- */
+    html:root:root:root body .coverage-types-grid .coverage-type-media {
+        height: calc(190 * var(--u));
+        margin-bottom: calc(12 * var(--u));
+        border-radius: calc(18 * var(--u));
+    }
+
+    html:root:root:root body .coverage-types-grid .coverage-type-body {
+        padding-top: 2px !important;
+    }
+
+    /* label + description are unreadable at this size */
+    html:root:root:root body .coverage-types-grid .coverage-type-label,
+    html:root:root:root body .coverage-types-grid .coverage-type-body p {
+        display: none;
+    }
+
+    html:root:root:root body .coverage-types-grid .coverage-type-body h3 {
+        margin: 0;
+        font-size: 9.5px;
+        line-height: 1.12;
+        letter-spacing: -.02em;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+    }
+
+    /* footer: only the round arrow button, pushed to the end */
+    html:root:root:root body .coverage-types-grid .coverage-type-footer {
+        justify-content: flex-end;
+        margin-top: calc(14 * var(--u)) !important;
+        padding-top: calc(10 * var(--u));
+    }
+
+    html:root:root:root body .coverage-types-grid .coverage-type-footer>span:first-child {
+        display: none;
+    }
+
+    html:root:root:root body .coverage-types-grid .coverage-type-arrow {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        font-size: 10px;
+    }
+
+    html:root:root:root body .coverage-types-section>.coverage-types-head {
+        margin-bottom: 20px;
+    }
+}
+/* =========================================================
+   COVERAGE CARDS — show label + description on Galaxy S8+ (360px)
+   Card positions / tilt / width unchanged. Only text is shown.
+   Add at the very END of responsive.css
+========================================================= */
+@media (min-width: 340px) and (max-width: 380px) {
+
+    /* extra room so the taller cards don't overlap the next section */
+    html:root:root:root body .coverage-types-section>.coverage-types-grid {
+        height: calc(470 * var(--u) + 24px + 72px);
+    }
+
+    /* show label + description again */
+    html:root:root:root body .coverage-types-grid .coverage-type-label,
+    html:root:root:root body .coverage-types-grid .coverage-type-body p {
+        display: block;
+        max-width: none;
+        overflow-wrap: anywhere;
+        opacity: .85;
+    }
+
+    html:root:root:root body .coverage-types-grid .coverage-type-label {
+        margin: 0 0 3px;
+        font-size: 5px;
+        line-height: 1.2;
+        letter-spacing: .06em;
+    }
+
+    html:root:root:root body .coverage-types-grid .coverage-type-body h3 {
+        margin: 0 0 4px;
+    }
+
+    html:root:root:root body .coverage-types-grid .coverage-type-body p {
+        margin: 0;
+        font-size: 6.5px;
+        line-height: 1.35;
+    }
+}
+/* =========================================================
+   GALAXY S8+ — HERO FEATURE POINTS COMPACT SPACING
+========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    html:root:root body .hero-features {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 4px !important;
+        margin-top: 12px !important;
+        margin-bottom: 0 !important;
+    }
+
+    html:root:root body .hero-feature {
+        flex: 0 0 auto !important;
+        width: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 5px 0 !important;
+        font-size: 14px !important;
+        line-height: 1.2 !important;
+    }
+
+    html:root:root body .hero-feature svg,
+    html:root:root body .hero-feature i {
+        flex-shrink: 0 !important;
+    }
+}
+/* =========================================================
+   HOME 2 - GALAXY S8+
+   FIX PH-STATS LARGE EMPTY SPACING
+========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    /* The whole two-column section */
+    html body .ph-section.ph-alt .ph-split {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 18px !important;
+        align-items: stretch !important;
+    }
+
+    /* 4 points area */
+    html body .ph-section.ph-alt .ph-list {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        gap: 8px !important;
+    }
+
+    /* IMPORTANT: stats/cards container */
+    html body .ph-section.ph-alt .ph-stats {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+
+        gap: 10px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        width: 100% !important;
+        min-height: 0 !important;
+        height: auto !important;
+
+        align-content: start !important;
+        justify-content: start !important;
+    }
+
+    /* Each 12,000 / 40 / 98 / 10 card */
+    html body .ph-section.ph-alt .ph-stats > div {
+        margin: 0 !important;
+        padding: 18px 16px !important;
+
+        min-height: 0 !important;
+        height: auto !important;
+
+        transform: none !important;
+    }
+
+    /* Number */
+    html body .ph-section.ph-alt .ph-stats > div b {
+        display: block !important;
+        margin: 0 0 3px !important;
+        line-height: 1.1 !important;
+    }
+
+    /* Label */
+    html body .ph-section.ph-alt .ph-stats > div span {
+        display: block !important;
+        margin: 0 !important;
+        line-height: 1.25 !important;
+    }
+}
+@media screen and (max-width: 600px) {
+
+    html body .premium-text-link {
+        display: inline-flex !important;
+        margin-top: 12px !important;
+    }
+
+}
