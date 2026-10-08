@@ -2747,3 +2747,19 @@ html:not([data-theme="dark"]) body .premium-home .ph-stats > div strong {
    color: #000 !important;
    -webkit-text-fill-color: #000 !important;
 }
+html body .home-dropdown-toggle.nav-link.active::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 12px !important;
+    width: auto !important;
+    height: 3px !important;
+    display: block !important;
+    background: #2563eb !important;
+    border-radius: 5px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    pointer-events: none !important;
+}
