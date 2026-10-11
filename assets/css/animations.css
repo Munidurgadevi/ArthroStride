@@ -1,19 +1,10 @@
-/* =========================================================
-   ANIMATIONS - PURE CSS (no HTML / JS changes)
-   Works on every page. Paste this at the END of the css file.
-   - scroll reveal (cards, titles, images, split layouts, timeline)
-   - page-load entrance (header, hero)
-   - card hover lift + amber glow
-   - button pulse + arrow motion
-   - smooth light/dark theme change
-   - respects "reduce motion" settings
-========================================================= */
+/* Pure CSS animations for all pages */
 
 html {
     scroll-behavior: smooth;
 }
 
-/* ---------- KEYFRAMES ---------- */
+/* Keyframes for the reveal animations */
 @keyframes anRevealUp {
     from {
         opacity: 0;
@@ -86,18 +77,6 @@ html {
     }
 }
 
-@keyframes anHeaderIn {
-    from {
-        opacity: 0;
-        transform: translateY(-26px);
-    }
-
-    to {
-        opacity: 1;
-        transform: none;
-    }
-}
-
 @keyframes anFloat {
 
     0%,
@@ -121,7 +100,7 @@ html {
     }
 }
 
-/* ---------- PAGE LOAD: header + hero ---------- */
+/* Page load animation for header and hero */
 
 html body :is(.hero-section, .premium-hero, .ft-hero, .pp-hero, .about-hero, .coverage-hero, .fitting-hero) :is(h1, .hero-label, .hero-badge) {
     animation: anHeroIn .9s cubic-bezier(.2, .7, .2, 1) .10s both;
@@ -139,7 +118,7 @@ html body :is(.hero-section, .premium-hero, .ft-hero, .pp-hero, .about-hero, .co
     animation: anHeroIn .9s cubic-bezier(.2, .7, .2, 1) .62s both;
 }
 
-/* booking page: form fades in group by group */
+/* Booking form fade-in */
 html body .booking-page :is(.booking-brand, .booking-intro) {
     animation: anHeroIn .8s cubic-bezier(.2, .7, .2, 1) backwards;
 }
@@ -188,10 +167,10 @@ html body .booking-page .form-submit {
     animation: anHeroIn .7s cubic-bezier(.2, .7, .2, 1) .85s backwards;
 }
 
-/* ---------- SCROLL REVEAL (Chrome / Edge) ---------- */
+/* Scroll reveal for Chrome and Edge */
 @supports (animation-timeline: view()) {
 
-    /* cards rise in */
+    /* Cards rise in */
     html body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card, .claims-cta,
         .pp-card, .mx-card, .mx-feat, .step, .acc, .bs, .cmp, .tcard,
         .ft-card, .ft-step, .ft-team, .ft-summary, .mx-tour figure,
@@ -201,7 +180,7 @@ html body .booking-page .form-submit {
         animation-range: entry 0% entry 55%;
     }
 
-    /* stagger across a row */
+    /* Stagger delay across a row */
     html body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card, .claims-cta,
         .pp-card, .mx-card, .mx-feat, .step, .acc, .bs, .cmp, .tcard,
         .ft-card, .ft-step, .ft-team, .ft-summary, .mx-tour figure,
@@ -216,7 +195,7 @@ html body .booking-page .form-submit {
         animation-range: entry 16% entry 71%;
     }
 
-    /* titles */
+    /* Section titles reveal */
     html body :is(.ft-head, .mx-head, .pp-sec-head, .pp-cat-head, .ph-head,
         :is(.foot-health-section, .why-arthro-section, .product-showcase-section,
             .fitting-section, .claims-section) h2) {
@@ -225,7 +204,7 @@ html body .booking-page .form-submit {
         animation-range: entry 0% entry 50%;
     }
 
-    /* images settle (no hover zoom is used) */
+    /* Images settle in */
     html body :is(.product-image img, .foot-health-image img, .pp-thumb img, .mx-img img,
         .mx-tour img, .ft-photo img, .about-doctor-image, .acc-img img) {
         animation: anImgSettle ease-out backwards;
@@ -233,7 +212,7 @@ html body .booking-page .form-submit {
         animation-range: entry 0% entry 80%;
     }
 
-    /* two-column layouts: left side from left, right side from right */
+    /* Two-column layouts slide in from the sides */
     html body :is(.mx-two, .about-story, .in-two, .ph-split, .fitting-container)> :first-child {
         animation: anRevealLeft ease-out backwards;
         animation-timeline: view();
@@ -246,7 +225,7 @@ html body .booking-page .form-submit {
         animation-range: entry 0% entry 60%;
     }
 
-    /* About timeline: cards from the sides, year bubble pops */
+    /* About timeline cards and year bubble */
     html body .about-timeline-item:nth-child(odd) .about-timeline-card {
         animation: anRevealLeft ease-out backwards;
         animation-timeline: view();
@@ -265,7 +244,7 @@ html body .booking-page .form-submit {
         animation-range: entry 10% entry 60%;
     }
 
-    /* footer columns */
+    /* Footer columns reveal */
     html body :is(.footer-column, .footer-brand-block) {
         animation: anRevealUp ease-out backwards;
         animation-timeline: view();
@@ -273,7 +252,7 @@ html body .booking-page .form-submit {
     }
 }
 
-/* ---------- CARD HOVER: lift + amber glow ---------- */
+/* Card hover lift and glow */
 html body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card, .claims-cta,
     .pp-card, .mx-card, .mx-feat, .step, .acc, .bs, .cmp, .tcard,
     .ft-card, .ft-step, .ft-team, .ft-summary, .mx-tour figure,
@@ -296,7 +275,7 @@ html[data-theme="dark"] body :is(.foot-health-card, .why-arthro-card, .product-c
     box-shadow: 0 20px 44px rgba(251, 191, 36, .16);
 }
 
-/* icons wiggle when the card is hovered */
+/* Icon wiggle on card hover */
 html body :is(.why-arthro-icon, .mx-ic, .step i, .about-expert-icon, .ph-card > i,
     .ph-step > i, .fitting-badge-icon) {
     transition: transform .35s cubic-bezier(.2, .7, .2, 1);
@@ -310,7 +289,7 @@ html body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card, 
     transform: translateY(-4px) rotate(-6deg) scale(1.08);
 }
 
-/* list rows slide a little on hover */
+/* List rows slide on hover */
 html body :is(.mx-list li, .in-list li, .mx-links li) {
     transition: transform .25s ease;
 }
@@ -323,7 +302,7 @@ html[dir="rtl"] body :is(.mx-list li, .in-list li, .mx-links li):hover {
     transform: translateX(-5px);
 }
 
-/* ---------- BUTTONS: pulse + arrow motion ---------- */
+/* Button pulse and arrow motion */
 html body :is(.header-cta, .primary-button, .premium-primary, .request-btn) {
     animation: anPulseBlue 2.8s ease-out infinite;
 }
@@ -350,18 +329,18 @@ html[dir="rtl"] body :is(.header-cta, .primary-button, .product-button, .fitting
     transform: translateX(-6px);
 }
 
-/* ---------- FLOATING BADGES ---------- */
+/* Floating badges */
 html body :is(.fitting-badge, .about-doctor-badge) {
     animation: anFloat 4.5s ease-in-out infinite;
 }
 
-/* ---------- SMOOTH LIGHT / DARK SWITCH ---------- */
+/* Smooth light and dark switch */
 html body,
 html body :is(header, footer, main, section) {
     transition: background-color .4s ease, color .4s ease, border-color .4s ease;
 }
 
-/* ---------- REDUCED MOTION ---------- */
+/* Reduced motion setting */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -375,17 +354,7 @@ html body :is(header, footer, main, section) {
     }
 }
 
-/* =========================================================
-   HERO SECTION ANIMATIONS - one unique intro per page
-   (pure CSS - only transform / opacity / filter / clip-path,
-    so no text, colour or layout is changed)
-   HOME      : focus-pull + Ken-Burns zoom + spring buttons
-   ABOUT     : cinematic curtain wipe + slow image pan
-   PRODUCTS  : 3D flip-up text + zoom-out image
-   COVERAGE  : stamp-impact title + drawing frame + side buttons
-   CONTACT   : split reveal - text from left, photo card from right
-   (header, footer and scroll animations are NOT touched here)
-========================================================= */
+/* Hero intro animations, one per page */
 
 html {
     --hd: 1;
@@ -395,9 +364,7 @@ html[dir="rtl"] {
     --hd: -1;
 }
 
-/* =========================================================
-   1) HOME  -  "Focus Pull"
-========================================================= */
+/* Home hero focus pull */
 @keyframes hxHomeBg {
     0% {
         transform: scale(1.32);
@@ -596,9 +563,7 @@ html body .hero-section.hx-home.hx-home .hero-feature p {
     animation: none;
 }
 
-/* =========================================================
-   2) ABOUT  -  "Cinematic Curtain"
-========================================================= */
+/* About hero curtain */
 @keyframes hxAboutCurtain {
     from {
         clip-path: inset(0 100% 0 0);
@@ -692,9 +657,7 @@ html body .ft-hero.about-hero.about-hero .ft-hero-btns {
     animation: hxAboutRise .8s cubic-bezier(.2, .8, .2, 1) 1.6s backwards;
 }
 
-/* =========================================================
-   3) PRODUCTS  -  "3D Flip-Up"
-========================================================= */
+/* Products hero flip-up */
 @keyframes hxProdBg {
     from {
         transform: scale(1.4) rotate(-2.5deg);
@@ -775,9 +738,7 @@ html body .pp-hero.pp-hero p {
     animation: hxProdText 1s cubic-bezier(.2, .8, .2, 1) 1.15s backwards;
 }
 
-/* =========================================================
-   4) COVERAGE  -  "Stamp Impact"
-========================================================= */
+/* Coverage hero stamp */
 @keyframes hxCovFrame {
     0% {
         clip-path: inset(50% 50% 50% 50% round 34px);
@@ -920,9 +881,7 @@ html body .ft-hero.coverage-hero.coverage-hero .ft-hero-btns .secondary-button {
     animation: hxCovBtnR .9s cubic-bezier(.2, .8, .2, 1) 2.2s backwards;
 }
 
-/* =========================================================
-   5) CONTACT  -  "Split Reveal"
-========================================================= */
+/* Contact hero split reveal */
 @keyframes hxConLeft {
     from {
         opacity: 0;

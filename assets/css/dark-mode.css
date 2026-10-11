@@ -1,9 +1,4 @@
-/* =========================================================
-   BRAND TITLE COLOURS  (Royal Blue + Amber)
-   h2-h6 headings use the brand colours in both modes.
-   (h1 is handled separately below: black in light, white in dark.)
-   Loaded last on every page, so it wins over page CSS.
-========================================================= */
+/* Heading colours, blue and amber (h2 to h6) */
 @import url("animations.css");
 
 :root {
@@ -14,7 +9,7 @@
     --title-on-dark-2: #fbbf24;
 }
 
-/* ---------- LIGHT MODE ---------- */
+/* Light mode */
 html body h2,
 html body .brand-name,
 html body .booking-brand-name {
@@ -36,7 +31,7 @@ html body .booking-brand-name span {
     color: var(--title-accent) !important;
 }
 
-/* ---------- DARK MODE ---------- */
+/* Dark mode */
 html:root[data-theme="dark"] body h2,
 html:root[data-theme="dark"] body .brand-name,
 html:root[data-theme="dark"] body .booking-brand-name {
@@ -55,11 +50,7 @@ html:root[data-theme="dark"] body .booking-brand-name span {
     color: var(--title-on-dark-2) !important;
 }
 
-/* =========================================================
-   H1 RULE (all pages)
-   Light mode -> black   |   Dark mode -> white
-   Applies to every <h1> and anything inside it (span, em, br...)
-========================================================= */
+/* H1 colour, black in light and white in dark */
 :root {
     --h1-light: #000000;
     --h1-dark: #ffffff;
@@ -80,8 +71,7 @@ html:root[data-theme="dark"] body h1 :is(span, em, strong, b) {
     -webkit-text-fill-color: var(--h1-dark) !important;
 }
 
-/* Exception: hero banners that sit on a dark photo in BOTH modes.
-   Black text would be invisible there, so h1 stays white. */
+/* H1 stays white on dark photo heroes */
 html body :is(.hero-section, .ft-hero, .pp-hero, .about-hero, .coverage-hero, .fitting-hero) h1,
 html body :is(.hero-section, .ft-hero, .pp-hero, .about-hero, .coverage-hero, .fitting-hero) h1 :is(span, em, strong, b),
 html:root[data-theme="dark"] body :is(.hero-section, .ft-hero, .pp-hero, .about-hero, .coverage-hero, .fitting-hero) h1,
@@ -90,7 +80,7 @@ html:root[data-theme="dark"] body :is(.hero-section, .ft-hero, .pp-hero, .about-
     -webkit-text-fill-color: #ffffff !important;
 }
 
-/* Footer: light surface in light mode, dark surface in dark mode */
+/* Footer headings */
 html body .site-footer h3,
 html body .site-footer h4 {
     color: #363b48 !important;
@@ -109,7 +99,7 @@ html:root[data-theme="dark"] body .footer-brand-name {
     color: var(--title-on-dark-1) !important;
 }
 
-/* Visit banner sits on a dark photo in BOTH modes */
+/* Visit banner text on dark photo */
 html body .visit-arthro-section h2,
 html:root[data-theme="dark"] body .visit-arthro-section h2 {
     color: #93c5fd !important;
@@ -120,8 +110,7 @@ html:root[data-theme="dark"] body .visit-arthro-section h2 span {
     color: #fbbf24 !important;
 }
 
-
-/* ===== BUTTON HOVER: blue -> amber (light + dark) ===== */
+/* Button hover, blue to amber */
 :root {
     --btn-hover-bg: #b45309;
     --btn-hover-text: #ffffff;
@@ -153,8 +142,7 @@ html:root[data-theme="dark"] body :is(.header-cta, .primary-button, .product-but
     color: var(--btn-hover-text-dark) !important;
 }
 
-
-/* ===== EXTRA BUTTONS: blue -> amber (same format) ===== */
+/* Extra buttons hover, blue to amber */
 html:root body :is(.pm-btn, .pp-info .pp-faq-cta, .main-navigation .nav-drawer-cta) {
     background: #2563eb !important;
     border-color: #2563eb !important;
@@ -181,7 +169,7 @@ html:root[data-theme="dark"] body :is(.pm-btn, .pp-info .pp-faq-cta, .main-navig
     color: var(--btn-hover-text-dark) !important;
 }
 
-/* THE PRESSURE LAB buttons = same behaviour as "Visit Booking" (header-cta) */
+/* Pressure Lab buttons (.pm-btn) */
 html:root body .pm-actions .pm-btn {
     justify-content: center;
     font-weight: 700;
@@ -193,7 +181,7 @@ html:root body .pm-actions .pm-btn:hover {
     transform: translateY(-1px);
 }
 
-/* mobile menu CTA ni button laga chupinchadaniki */
+/* Mobile menu CTA button (.nav-drawer-cta) */
 html:root body .main-navigation .nav-drawer-cta {
     justify-content: center;
     width: fit-content;
@@ -202,7 +190,7 @@ html:root body .main-navigation .nav-drawer-cta {
     border-radius: 999px;
 }
 
-/* Fitting calendar icon: booking page tho same amber hover */
+/* Fitting calendar icon hover (.ft-calendar-btn) */
 html:root body .ft-calendar-btn:hover {
     background: rgba(180, 83, 9, .12);
     color: #b45309;
@@ -213,22 +201,11 @@ html:root[data-theme="dark"] body .ft-calendar-btn:hover {
     color: #fbbf24;
 }
 
-/* =========================================================
-   HOME 1 (index.html) SECTION HEADINGS
-   Light mode -> black   |   Dark mode -> white
-   - Footwear Designed Around Your Needs      (.foot-health-section)
-   - Why ArthroStride Stands Apart            (.why-arthro-section)
-   - Comfort, Designed for Every Step         (.product-showcase-section)
-   - Find the Fit That Feels Right            (.fitting-section)
-   - Support Beyond the Store                 (.claims-section)
-   - Have questions about your coverage...    (.claims-cta h3)
-   Includes the coloured <span> words inside each heading.
-========================================================= */
+/* Home 1 section headings */
 html body :is(.foot-health-section, .why-arthro-section, .product-showcase-section,
     .fitting-section, .claims-section) h2,
 html body :is(.foot-health-section, .why-arthro-section, .product-showcase-section,
-    .fitting-section, .claims-section) h2 :is(span, em, strong, b),
-html body .claims-cta h3 {
+    .fitting-section, .claims-section) h2 :is(span, em, strong, b) {
     color: var(--h1-light) !important;
     -webkit-text-fill-color: var(--h1-light) !important;
     background: none !important;
@@ -239,33 +216,27 @@ html body .claims-cta h3 {
 html:root[data-theme="dark"] body :is(.foot-health-section, .why-arthro-section, .product-showcase-section,
     .fitting-section, .claims-section) h2,
 html:root[data-theme="dark"] body :is(.foot-health-section, .why-arthro-section, .product-showcase-section,
-    .fitting-section, .claims-section) h2 :is(span, em, strong, b),
-html:root[data-theme="dark"] body .claims-cta h3 {
+    .fitting-section, .claims-section) h2 :is(span, em, strong, b) {
     color: var(--h1-dark) !important;
     -webkit-text-fill-color: var(--h1-dark) !important;
 }
 
-
-/* =========================================================
-   HOME 1 - FOOT HEALTH CARDS (compact, centred, 3 cols x 2 rows)
-   Smaller width + height, image shows more of the picture
-   (less zoom / less crop), whole grid centred in the section.
-========================================================= */
+/* Home 1 foot health cards (.foot-health-card) */
 html body .foot-health-grid {
     width: 100%;
     max-width: 1020px;
-    /* smaller overall width */
+    /* Card width */
     margin: 0 auto;
-    /* centred in the middle */
+    /* Centered grid */
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    /* 3 columns -> 6 cards = 2 rows */
+    /* Three columns, two rows */
     gap: 22px;
     justify-content: center;
 }
 
 html body .foot-health-card {
     min-height: 0;
-    /* no forced tall card */
+    /* No forced card height */
     padding: 18px;
     border-radius: 16px;
 }
@@ -274,7 +245,7 @@ html body .foot-health-card .foot-health-image {
     width: calc(100% + 36px);
     height: auto;
     aspect-ratio: 3 / 2;
-    /* shorter image, shows more of the photo */
+    /* Shorter card image */
     margin: -18px -18px 18px;
     border-radius: 15px 15px 0 0;
 }
@@ -284,7 +255,7 @@ html body .foot-health-card .foot-health-image img {
     object-position: center;
 }
 
-/* hover zoom off so the image never looks cropped/zoomed */
+/* No hover zoom on card image */
 html body .foot-health-card:hover .foot-health-image img {
     transform: none;
 }
@@ -326,15 +297,9 @@ html body .health-card-link::after {
     }
 }
 
+/* Home 1 other cards, compact and centred */
 
-/* =========================================================
-   HOME 1 - ALL OTHER CARDS (same compact + centred treatment)
-   - Why ArthroStride cards   (.why-arthro-card)    2 x 2
-   - Product cards            (.product-card)       3 x 2
-   - Claims step cards        (.claims-card)        4 in a row
-========================================================= */
-
-/* ---------- WHY ARTHROSTRIDE (left: heading + vertical cards | right: visual) ---------- */
+/* Why ArthroStride layout (.why-arthro-split) */
 html body .why-arthro-container.why-arthro-split {
     display: flex;
     align-items: flex-start;
@@ -375,7 +340,7 @@ html body .why-arthro-content .why-arthro-heading p {
     line-height: 1.6;
 }
 
-/* cards: stacked vertically with flex */
+/* Stacked cards (.why-arthro-grid) */
 html body .why-arthro-grid {
     display: flex;
     flex-direction: column;
@@ -384,7 +349,7 @@ html body .why-arthro-grid {
     margin: 0;
 }
 
-/* each card: icon on the left, text on the right */
+/* Card with icon left and text right */
 html body .why-arthro-card {
     display: grid;
     grid-template-columns: 46px minmax(0, 1fr);
@@ -420,7 +385,7 @@ html body .why-arthro-card p {
     margin: 0;
 }
 
-/* right visual */
+/* Right visual (.why-arthro-visual) */
 html body .why-arthro-visual {
     position: sticky;
     top: 100px;
@@ -518,42 +483,7 @@ html:root[data-theme="dark"] body .why-arthro-tag span {
     }
 }
 
-/* ---------- PRODUCT CARDS (6 cards -> 3 x 2) ---------- */
-html body .product-showcase-grid {
-    max-width: 1020px;
-    margin: 0 auto;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-}
-
-html body .product-card {
-    border-radius: 16px;
-}
-
-html body .product-showcase-section .product-image {
-    height: auto;
-    aspect-ratio: 3 / 2;
-}
-
-html body .product-card:hover .product-image img {
-    transform: none;
-}
-
-html body .product-content {
-    padding: 18px 18px 20px;
-}
-
-html body .product-card h3 {
-    font-size: 18px;
-    margin-bottom: 9px;
-}
-
-html body .product-card p {
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-/* ---------- CLAIMS STEP CARDS (4 in a row) ---------- */
+/* Claims step cards, 4 in a row */
 html body .claims-grid {
     max-width: 1100px;
     margin: 0 auto;
@@ -577,13 +507,8 @@ html body .claims-card p {
     line-height: 1.6;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* Responsive */
 @media (max-width: 900px) {
-    html body .product-showcase-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        max-width: 680px;
-    }
-
     html body .claims-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         max-width: 680px;
@@ -593,59 +518,47 @@ html body .claims-card p {
 @media (max-width: 560px) {
 
     html body .why-arthro-grid,
-    html body .product-showcase-grid,
     html body .claims-grid {
         grid-template-columns: 1fr;
         max-width: 380px;
     }
 }
 
-/* =========================================================
-   CARD TITLES ONLY
-   Light mode -> black   |   Dark mode -> white
-   Section headings (h2 / outside cards) are NOT affected.
-========================================================= */
+/* Card titles colour */
 
-/* ---------- LIGHT MODE ---------- */
+/* Light mode */
 html body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card) h3,
 html body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card) h3 :is(span, em, strong, b) {
     color: var(--h1-light) !important;
     -webkit-text-fill-color: var(--h1-light) !important;
 }
 
-/* ---------- DARK MODE ---------- */
+/* Dark mode */
 html:root[data-theme="dark"] body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card) h3,
 html:root[data-theme="dark"] body :is(.foot-health-card, .why-arthro-card, .product-card, .claims-card) h3 :is(span, em, strong, b) {
     color: var(--h1-dark) !important;
     -webkit-text-fill-color: var(--h1-dark) !important;
 }
 
-/* =========================================================
-   FITTING FEATURE TITLES
-   Light mode -> black   |   Dark mode -> white
-========================================================= */
+/* Fitting feature titles colour */
 
-/* ---------- LIGHT MODE ---------- */
+/* Light mode */
 html body .fitting-feature h3,
 html body .fitting-feature h3 :is(span, em, strong, b) {
     color: var(--h1-light) !important;
     -webkit-text-fill-color: var(--h1-light) !important;
 }
 
-/* ---------- DARK MODE ---------- */
+/* Dark mode */
 html:root[data-theme="dark"] body .fitting-feature h3,
 html:root[data-theme="dark"] body .fitting-feature h3 :is(span, em, strong, b) {
     color: var(--h1-dark) !important;
     -webkit-text-fill-color: var(--h1-dark) !important;
 }
 
-/* =========================================================
-   ABOUT PAGE TITLES
-   Light mode -> black   |   Dark mode -> white
-   (hero h1 is handled separately, footer is excluded)
-========================================================= */
+/* About page titles colour */
 
-/* ---------- LIGHT MODE ---------- */
+/* Light mode */
 html body :is(.about-hero)~* :is(h2, h3, h4),
 html body main :is(h2, h3, h4),
 html body main :is(h2, h3, h4) :is(span, em, strong, b) {
@@ -653,7 +566,7 @@ html body main :is(h2, h3, h4) :is(span, em, strong, b) {
     -webkit-text-fill-color: var(--h1-light) !important;
 }
 
-/* ---------- DARK MODE ---------- */
+/* Dark mode */
 html:root[data-theme="dark"] body :is(.about-hero)~* :is(h2, h3, h4),
 html:root[data-theme="dark"] body main :is(h2, h3, h4),
 html:root[data-theme="dark"] body main :is(h2, h3, h4) :is(span, em, strong, b) {
@@ -661,20 +574,16 @@ html:root[data-theme="dark"] body main :is(h2, h3, h4) :is(span, em, strong, b) 
     -webkit-text-fill-color: var(--h1-dark) !important;
 }
 
-/* keep the dark-photo banners readable (Visit banner etc.) */
+/* Keep dark photo banners readable */
 html body main .visit-arthro-section :is(h2, h3, h4),
 html:root[data-theme="dark"] body main .visit-arthro-section :is(h2, h3, h4) {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
 }
 
-/* =========================================================
-   PRODUCTS PAGE - "Know What Your Feet Need" cards
-   Title + body text stay black / white (already set).
-   Small headings + link get colour.
-========================================================= */
+/* Products page cards, small headings and links */
 
-/* "Look for" -> blue / light blue */
+/* Look for heading, blue */
 html:root body main .mx-card.mx-card h4:first-of-type {
     color: #2563eb !important;
     -webkit-text-fill-color: #2563eb !important;
@@ -685,7 +594,7 @@ html:root[data-theme="dark"] body main .mx-card.mx-card h4:first-of-type {
     -webkit-text-fill-color: #60a5fa !important;
 }
 
-/* "Better to avoid" -> amber */
+/* Better to avoid heading, amber */
 html:root body main .mx-card.mx-card h4:last-of-type {
     color: #b45309 !important;
     -webkit-text-fill-color: #b45309 !important;
@@ -696,7 +605,7 @@ html:root[data-theme="dark"] body main .mx-card.mx-card h4:last-of-type {
     -webkit-text-fill-color: #fbbf24 !important;
 }
 
-/* "Shop ..." link -> blue / light blue, amber on hover */
+/* Shop link, blue with amber hover */
 html:root body main .mx-card.mx-card .mx-link {
     color: #2563eb !important;
 }
@@ -713,14 +622,9 @@ html:root[data-theme="dark"] body main .mx-card.mx-card .mx-link:hover {
     color: #fbbf24 !important;
 }
 
-/* =========================================================
-   PRODUCTS PAGE - COMPACT, CENTRED CARDS
-   Know What Your Feet Need, all 6 categories, Three Steps,
-   Complete Your Foot Care, What Makes a Shoe Supportive,
-   Find a Pair in Your Range
-========================================================= */
+/* Products page compact cards */
 
-/* ---------- Section spacing ---------- */
+/* Section spacing (.pp-sec) */
 html:root body .pp-sec {
     padding-top: 64px;
     padding-bottom: 64px;
@@ -730,7 +634,7 @@ html:root body .pp-sec-head {
     margin-bottom: 34px;
 }
 
-/* ---------- Know What Your Feet Need + Find a Pair in Your Range ---------- */
+/* Know What Your Feet Need grid (.mx-grid3) */
 html:root body .mx-grid3 {
     max-width: 1020px;
     margin: 0 auto;
@@ -756,8 +660,7 @@ html:root body .mx-card h3 {
 }
 
 html:root body .mx-card p,
-html:root body .mx-card .mx-list li,
-html:root body .mx-links li {
+html:root body .mx-card .mx-list li {
     font-size: 14px;
     line-height: 1.55;
 }
@@ -767,10 +670,10 @@ html:root body .mx-card h4 {
     margin: 14px 0 6px;
 }
 
-/* ---------- 6 product categories (Plantar Fasciitis ... Heel & Cushioning) ---------- */
+/* Product categories (.pp-cat) */
 html:root body .pp-cat {
     max-width: 1020px;
-    /* heading + cards line up */
+    /* Heading and cards alignment */
     padding: 44px 0 10px;
 }
 
@@ -798,7 +701,7 @@ html:root body .pp-card:hover {
 html:root body .pp-thumb {
     height: auto;
     aspect-ratio: 4 / 3;
-    /* shows more of the shoe, less zoom */
+    /* Card image zoom */
 }
 
 html:root body .pp-card:hover .pp-thumb img {
@@ -827,7 +730,7 @@ html:root body .pp-badge {
     font-size: 11px;
 }
 
-/* ---------- Three Steps to the Right Pair ---------- */
+/* Three steps (.steps) */
 html:root body .steps {
     max-width: 1020px;
     gap: 22px;
@@ -856,7 +759,7 @@ html:root body .step p {
     line-height: 1.6;
 }
 
-/* ---------- Complete Your Foot Care ---------- */
+/* Foot care accessories (.acc-grid) */
 html:root body .acc-grid {
     max-width: 1100px;
     margin: 0 auto;
@@ -882,7 +785,7 @@ html:root body .acc p {
     min-height: 44px;
 }
 
-/* ---------- What Makes a Shoe Supportive (5 items, centred) ---------- */
+/* Shoe anatomy (.mx-anat) */
 html:root body .mx-anat {
     display: flex;
     flex-wrap: wrap;
@@ -916,7 +819,7 @@ html:root body .mx-feat p {
     line-height: 1.55;
 }
 
-/* ---------- Responsive ---------- */
+/* Responsive */
 @media (max-width: 900px) {
 
     html:root body .mx-grid3,
@@ -955,58 +858,47 @@ html:root body .mx-feat p {
     }
 }
 
-/* =========================================================
-   PRODUCT CARDS - REMOVE EXTRA EMPTY SPACE
-   (Home 1 / Home 2 / Products page)
-   Description no longer reserves a fixed tall height.
-   Cards in a row stay equal height, price row sits at the bottom.
-========================================================= */
+/* Product cards without extra empty space */
 
-/* remove the fixed min-height on descriptions */
-html:root body .product-card p,
+/* No fixed description height */
+
 html:root body .pp-body p {
     min-height: 0;
 }
 
-/* cards stretch equally, content stacks top to bottom */
-html:root body .product-card,
+/* Cards stretch equally */
+
 html:root body .pp-card {
     display: flex;
     flex-direction: column;
 }
 
-html:root body .product-card .product-content,
 html:root body .pp-card .pp-body {
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
-/* price + button row always pinned to the bottom, tight gap above */
-html:root body .product-card .product-bottom,
+/* Price and button row pinned to bottom */
+
 html:root body .pp-card .product-bottom {
     margin-top: auto;
     padding-top: 16px;
 }
 
-/* small gap between description and the row above the price */
-html:root body .product-card p,
+/* Small gap above price row */
+
 html:root body .pp-body p {
     margin-bottom: 16px;
 }
 
-/* =========================================================
-   SECTION SPACING - ALL PAGES
-   Home 1, Home 2, About, Products, Fitting, Coverage,
-   Contact, Booking. Hero banners are NOT touched.
-   Change --section-space to make it tighter or looser.
-========================================================= */
+/* Section spacing for all pages */
 
 :root {
     --section-space: 56px;
 }
 
-/* About / Contact / Fitting / Coverage / Products */
+/* About, Contact, Fitting, Coverage, Products */
 html:root body .ft-sec,
 html:root body .mx-sec,
 html:root body .pp-sec {
@@ -1021,19 +913,19 @@ html:root body :is(.foot-health-section, .why-arthro-section,
     padding-bottom: var(--section-space);
 }
 
-/* Home 2 (keeps its left/right padding) */
+/* Home 2 */
 html:root body .ph-section {
     padding-top: var(--section-space);
     padding-bottom: var(--section-space);
 }
 
-/* Booking page form section */
+/* Booking form section */
 html:root body .booking-section {
     padding-top: 56px;
     padding-bottom: 56px;
 }
 
-/* gap between a section title and its content */
+/* Gap between section title and content */
 html:root body .ft-head,
 html:root body .mx-head,
 html:root body .pp-sec-head {
@@ -1044,13 +936,13 @@ html:root body .ph-head {
     margin-bottom: 36px;
 }
 
-/* footer */
+/* Footer */
 html:root body .footer-container {
     padding-top: 44px;
     padding-bottom: 36px;
 }
 
-/* mobile: even tighter */
+/* Mobile spacing */
 @media (max-width: 700px) {
     :root {
         --section-space: 40px;
@@ -1062,24 +954,19 @@ html:root body .footer-container {
     }
 }
 
-/* =========================================================
-   CARD BORDERS  ->  brand amber (instead of blue)
-   Light mode -> brown / amber   |   Dark mode -> amber
-   Same colours as the card / section titles.
-   Change the two values below to change it everywhere.
-========================================================= */
+/* Card borders, brand amber */
 
 :root {
     --card-line: #b45309;
-    /* light mode: brown-amber */
+    /* Light mode border */
 }
 
 :root[data-theme="dark"] {
     --card-line: #fbbf24;
-    /* dark mode: amber */
+    /* Dark mode border */
 }
 
-/* ---------- Home 1 ---------- */
+/* Home 1 */
 html body :is(.foot-health-card, .why-arthro-card,
     .product-showcase-section .product-card, .claims-card, .claims-cta),
 html body :is(.foot-health-card, .why-arthro-card,
@@ -1087,12 +974,12 @@ html body :is(.foot-health-card, .why-arthro-card,
     border-color: var(--card-line) !important;
 }
 
-/* ---------- Home 2 ---------- */
+/* Home 2 */
 html body .premium-home :is(.ph-card, .ph-stats div, .ph-quote) {
     border-color: var(--card-line) !important;
 }
 
-/* ---------- Products / Fitting / Coverage / Contact / About ---------- */
+/* Products, Fitting, Coverage, Contact, About */
 html body :is(.bs, .mx-card, .pp-card, .step, .cmp, .acc, .mx-feat, .tcard,
     .ft-step, .ft-card, .ft-team, .ft-summary, .mx-chips span,
     .mx-tour figure),
@@ -1102,20 +989,13 @@ html body :is(.bs, .mx-card, .pp-card, .step, .cmp, .acc, .mx-feat, .tcard,
     border-color: var(--card-line) !important;
 }
 
-/* ---------- About page cards ---------- */
+/* About page cards */
 html body :is(.about-expert-card, .about-timeline-card, .about-panel),
 html body :is(.about-expert-card, .about-timeline-card, .about-panel):hover {
     border-color: var(--card-line) !important;
 }
 
-/* =========================================================
-   LOGO - FULL EMBLEM, CENTRED INSIDE THE CIRCLE
-   Header + footer logo on every page.
-   Tune if needed:
-     --logo-zoom    : 1.2 fills the circle; lower = smaller emblem
-     --logo-shift-x : moves the emblem left (-) / right (+)
-     --logo-shift-y : moves the emblem up (-) / down (+)
-========================================================= */
+/* Header and footer logo, full emblem in circle */
 html body :is(.brand-logo, .footer-brand-logo) {
     --logo-zoom: 1.2;
     --logo-shift-x: -1.8%;
@@ -1138,7 +1018,7 @@ html body :is(.brand-logo, .footer-brand-logo) img {
     --hero-accent-dark: #fbbf24;
 }
 
-/* shared look (both modes): gradient / box / shadow anni remove */
+/* Hero title shared look */
 html:root:root:root body :is(.hero-section, .ft-hero, .pp-hero) h1 :is(span, em),
 html:root:root:root body .premium-hero h1 em {
     background: none !important;
@@ -1150,20 +1030,20 @@ html:root:root:root body .premium-hero h1 em {
     animation: none !important;
 }
 
-/* LIGHT MODE: #b45309 */
+/* Hero title, light mode */
 html:root:root:root:not([data-theme="dark"]) body :is(.hero-section, .ft-hero, .pp-hero) h1 :is(span, em),
 html:root:root:root:not([data-theme="dark"]) body .premium-hero h1 em {
     color: var(--hero-accent-light) !important;
     -webkit-text-fill-color: var(--hero-accent-light) !important;
 }
 
-/* contact h1: black on light hero */
+/* Contact hero title, light mode */
 html:root:root:not([data-theme="dark"]) body .contact-hero h1 {
     color: #000000 !important;
     -webkit-text-fill-color: #000000 !important;
 }
 
-/* DARK MODE: #fbbf24 */
+/* Hero title, dark mode */
 html:root:root:root[data-theme="dark"] body :is(.hero-section, .ft-hero, .pp-hero) h1 :is(span, em),
 html:root:root:root[data-theme="dark"] body .premium-hero h1 em {
     color: var(--hero-accent-dark) !important;
@@ -1178,13 +1058,13 @@ html:root:root:root[data-theme="dark"] body .premium-hero h1 em {
     --hero-light-sub: #1f2937;
 }
 
-/* ---- 1) backgrounds ---- */
-/* index */
+/* Hero backgrounds */
+/* Index hero */
 html:root:root:root:not([data-theme="dark"]) body .hero-section.hx-home::after {
     background: linear-gradient(180deg, var(--hero-wash-top) 0%, var(--hero-wash-bottom) 100%) !important;
 }
 
-/* about + products */
+/* About and Products hero */
 html:root:root:root:not([data-theme="dark"]) .about-hero {
     --about-hero-gradient: linear-gradient(180deg, var(--hero-wash-top) 0%, var(--hero-wash-bottom) 100%);
 }
@@ -1193,7 +1073,7 @@ html:root:root:root:not([data-theme="dark"]) .pp-hero {
     --pp-hero-gradient: linear-gradient(180deg, var(--hero-wash-top) 0%, var(--hero-wash-bottom) 100%);
 }
 
-/* fitting */
+/* Fitting hero */
 html:root:root:root:not([data-theme="dark"]) body .fitting-hero {
     background: var(--hero-light-bg) !important;
 }
@@ -1204,7 +1084,7 @@ html:root:root:root:not([data-theme="dark"]) body .fitting-hero::before {
         url("https://i.ibb.co/60Tj40ps/Chat-GPT-Image-Sep-29-2026-08-51-51-AM.png") !important;
 }
 
-/* coverage */
+/* Coverage hero */
 html:root:root:root:not([data-theme="dark"]) body .coverage-hero {
     background: var(--hero-light-bg) !important;
 }
@@ -1219,7 +1099,7 @@ html:root:root:root:not([data-theme="dark"]) body .coverage-hero::after {
     border-color: rgba(0, 0, 0, .14) !important;
 }
 
-/* ---- 2) text colours (light mode) ---- */
+/* Hero text colours, light mode */
 html:root:root:root:not([data-theme="dark"]) body :is(.hero-section.hx-home, .about-hero, .pp-hero, .fitting-hero, .coverage-hero) h1 {
     color: var(--hero-light-text) !important;
     -webkit-text-fill-color: var(--hero-light-text) !important;
@@ -1251,7 +1131,7 @@ html:root:root body .pp-hero .pp-hero-in {
     margin-right: auto;
 }
 
-/* title */
+/* Hero title */
 html:root:root body :is(.about-hero .ft-in, .pp-hero .pp-hero-in) h1 {
     max-width: 900px;
     margin-left: auto;
@@ -1259,14 +1139,14 @@ html:root:root body :is(.about-hero .ft-in, .pp-hero .pp-hero-in) h1 {
     text-align: center;
 }
 
-/* paragraph */
+/* Hero paragraph */
 html:root:root body :is(.about-hero .ft-in, .pp-hero .pp-hero-in) p {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 
-/* badge + buttons */
+/* Hero badge and buttons */
 html:root:root body :is(.about-hero .ft-in, .pp-hero .pp-hero-in) .hero-badge {
     display: inline-block;
 }
@@ -1319,14 +1199,12 @@ html:root:root body .acc-img img {
     display: block;
 }
 
-/* =========================================================
-   PRODUCTS PAGE - TIGHTER SPACE INSIDE CARDS
-========================================================= */
+/* Products page tighter card spacing */
 
-/* ---------- product cards (Plantar Fasciitis, Diabetic ... ) ---------- */
+/* Product cards (.pp-thumb) */
 html:root body .pp-thumb {
     aspect-ratio: 16 / 10;
-    /* image a little shorter */
+    /* Shorter image */
 }
 
 html:root body .pp-body {
@@ -1350,7 +1228,7 @@ html:root body .pp-body p {
 
 html:root body .pp-stock {
     margin: 8px 0 12px;
-    /* gap above the divider line */
+    /* Gap above divider line */
 }
 
 html:root body .pp-body .product-bottom {
@@ -1358,7 +1236,7 @@ html:root body .pp-body .product-bottom {
     padding-top: 12px;
 }
 
-/* ---------- accessories cards (Orthotic Insole, Socks, Gel Cups, Care Kit) ---------- */
+/* Accessories cards (.acc) */
 html:root body .acc {
     display: flex;
     flex-direction: column;
@@ -1377,7 +1255,7 @@ html:root body .acc h3 {
 
 html:root body .acc p {
     min-height: 0;
-    /* no fixed tall space */
+    /* No fixed height */
     padding: 3px 6px 0;
     margin-bottom: 8px;
     line-height: 1.5;
@@ -1385,15 +1263,13 @@ html:root body .acc p {
 
 html:root body .acc-b {
     margin-top: auto;
-    /* price row stays at the bottom */
+    /* Price row at the bottom */
     padding: 10px 6px 0;
 }
 
-/* =========================================================
-   PRESSURE LAB — LIGHT / DARK MODE FIX
-========================================================= */
+/* Pressure Lab light and dark fix */
 
-/* ---------- LIGHT MODE ---------- */
+/* Light mode */
 :root:not([data-theme="dark"]) .pm-section {
     color: #161922;
     background:
@@ -1471,8 +1347,7 @@ html:root body .acc-b {
         inset 0 0 70px rgba(37, 99, 235, .06);
 }
 
-
-/* ---------- DARK MODE ---------- */
+/* Dark mode */
 :root[data-theme="dark"] .pm-section {
     color: #ffffff;
     background:
@@ -1544,20 +1419,13 @@ html:root body .acc-b {
         inset 0 0 80px rgba(37, 99, 235, .12);
 }
 
-/* =========================================================
-   HEADING ACCENT RULE (same as hero): solid colour, no gradient
-   light = #b45309 | dark = #fbbf24
-   Applies to: Footwear Designed Around Your Needs, Why ArthroStride
-   Stands Apart, Every step hits your feet like a hammer, Find the Fit
-   That Feels Right, Offers for Healthier Steps, Support Beyond the
-   Store
-========================================================= */
+/* Section title accent colour (h2 span) */
 :root {
     --h2-accent-light: #b45309;
     --h2-accent-dark: #fbbf24;
 }
 
-/* shared look (both modes): remove gradient / clip */
+/* Shared heading look */
 html:root:root:root body :is(.foot-health-section, .why-arthro-section, .fitting-section, .offers-section, .claims-section) h2 span,
 html:root:root:root body .pm-copy h2 em {
     background: none !important;
@@ -1569,25 +1437,23 @@ html:root:root:root body .pm-copy h2 em {
     animation: none !important;
 }
 
-/* LIGHT MODE */
+/* Light mode */
 html:root:root:root:not([data-theme="dark"]) body :is(.foot-health-section, .why-arthro-section, .fitting-section, .offers-section, .claims-section) h2 span,
 html:root:root:root:not([data-theme="dark"]) body .pm-copy h2 em {
     color: var(--h2-accent-light) !important;
     -webkit-text-fill-color: var(--h2-accent-light) !important;
 }
 
-/* DARK MODE */
+/* Dark mode */
 html:root:root:root[data-theme="dark"] body :is(.foot-health-section, .why-arthro-section, .fitting-section, .offers-section, .claims-section) h2 span,
 html:root:root:root[data-theme="dark"] body .pm-copy h2 em {
     color: var(--h2-accent-dark) !important;
     -webkit-text-fill-color: var(--h2-accent-dark) !important;
 }
 
-/* =========================================================
-   LIGHT / DARK FIXES - contrast + missing theme rules
-========================================================= */
+/* Light and dark contrast fixes */
 
-/* ---- DARK: blue text too dark on dark surfaces -> lighter blue ---- */
+/* Dark mode: lighter blue text */
 html:root[data-theme="dark"] body :is(.section-label, .fitting-label, .claims-label, .product-category,
     .about-doctor-role, .premium-kicker, .premium-text-link span,
     .premium-float-card > span, .about-timeline-card > span,
@@ -1596,13 +1462,13 @@ html:root[data-theme="dark"] body :is(.section-label, .fitting-label, .claims-la
     color: #7aa7ff !important;
 }
 
-/* DARK: number badges (white text) need a deeper blue */
+/* Dark mode: deeper blue number badges */
 html:root[data-theme="dark"] body :is(.rxg-badge, .rxg-step-no) {
     background: #1a54d0 !important;
     color: #ffffff !important;
 }
 
-/* DARK: product stock / old price */
+/* Dark mode: stock and old price */
 html:root[data-theme="dark"] body :is(.pp-stock, em.off) {
     color: #fbbf24 !important;
 }
@@ -1611,7 +1477,7 @@ html:root[data-theme="dark"] body del {
     color: #aab2c0 !important;
 }
 
-/* ---- LIGHT: faint grey / amber text -> readable ---- */
+/* Light mode: readable stock and old price */
 html:root:not([data-theme="dark"]) body :is(.pp-stock, em.off) {
     color: #b45309 !important;
 }
@@ -1624,8 +1490,7 @@ html:root:not([data-theme="dark"]) body .pp-news p {
     color: #4b5563 !important;
 }
 
-/* LIGHT: About "Contact Us" button was white text on grey.
-   Same outline format as the other blue buttons, amber on hover. */
+/* Light mode: About Contact Us button */
 html:root:not([data-theme="dark"]) body .about-cta .secondary-button {
     background: transparent !important;
     color: #2563eb !important;
@@ -1638,13 +1503,13 @@ html:root:not([data-theme="dark"]) body .about-cta .secondary-button:hover {
     color: var(--btn-hover-text) !important;
 }
 
-/* DARK: products FAQ / Size Guide label (products.css had a darker blue with higher specificity) */
+/* Dark mode: products FAQ label */
 html:root:root:root[data-theme="dark"] body.products-page .pp-info .section-label {
     color: #7aa7ff !important;
     -webkit-text-fill-color: #7aa7ff !important;
 }
 
-/* LIGHT: small grey / amber helper text */
+/* Light mode: small helper text */
 html:root:not([data-theme="dark"]) body :is(.tcard small, .ft-summary small, .ft-time small) {
     color: #5e6575 !important;
 }
@@ -1659,7 +1524,7 @@ html:root:not([data-theme="dark"]) body .ft-opt em {
     color: #1d4ed8 !important;
 }
 
-/* About expert numbers (01 / 02 / 03) a bit stronger in both modes */
+/* About expert numbers */
 html:root:not([data-theme="dark"]) body .about-expert-number {
     color: #6b7280 !important;
 }
@@ -1668,20 +1533,17 @@ html:root[data-theme="dark"] body .about-expert-number {
     color: #9aa3b5 !important;
 }
 
-/* LIGHT: amber step numbers in Fitting nav / FAQ summary */
+/* Light mode: amber step numbers */
 html:root:not([data-theme="dark"]) body :is(.wf-nav label b, .c3 summary b) {
     color: #b45309 !important;
 }
 
-/* DARK: same normal blue for every blue button */
+/* Dark mode: blue buttons */
 html:root[data-theme="dark"] body :is(.footer-book-button, .ft-submit) {
     background: #1a54d0;
 }
 
-/* =========================================================
-   HOME HERO "Find Your Fit": amber outline (same as Call / Browse buttons
-   on the other pages) - light + dark
-========================================================= */
+/* Home hero Find Your Fit button, amber outline */
 html:root:root:root:root:not([data-theme="dark"]) body .hero-section.hx-home .hero-buttons .secondary-button {
     background: rgba(255, 255, 255, .65) !important;
     color: #b45309 !important;
@@ -1716,10 +1578,7 @@ html:root:root:root:root[data-theme="dark"] body .hero-section.hx-home .hero-but
     box-shadow: 0 14px 30px rgba(251, 191, 36, .28);
 }
 
-/* =========================================================
-   HOME: "Explore Footwear" (Pressure Lab) + "Contact Us" (Visit section)
-   = same amber outline format as the hero "Find Your Fit" button
-========================================================= */
+/* Home Explore Footwear and Contact Us buttons, amber outline */
 html:root:root:root:root:not([data-theme="dark"]) body :is(.pm-actions .pm-btn:not(.pm-btn-main), .visit-arthro-buttons .visit-secondary-button) {
     background: rgba(255, 255, 255, .65) !important;
     color: #b45309 !important;
@@ -1758,9 +1617,7 @@ html:root:root:root:root[data-theme="dark"] body :is(.pm-actions .pm-btn:not(.pm
     box-shadow: 0 14px 30px rgba(251, 191, 36, .28);
 }
 
-/* =========================================================
-   HOME HERO "Find Your Fit": amber outline
-========================================================= */
+/* Home hero Find Your Fit button */
 html:root:root:root:root:not([data-theme="dark"]) body .hero-section.hx-home .hero-buttons .secondary-button {
     background: rgba(255, 255, 255, .65) !important;
     color: #b45309 !important;
@@ -1795,9 +1652,7 @@ html:root:root:root:root[data-theme="dark"] body .hero-section.hx-home .hero-but
     box-shadow: 0 14px 30px rgba(251, 191, 36, .28);
 }
 
-/* =========================================================
-   HOME: "Explore Footwear" (Pressure Lab) + "Contact Us" (Visit section)
-========================================================= */
+/* Home Explore Footwear and Contact Us buttons */
 html:root:root:root:root:not([data-theme="dark"]) body :is(.pm-actions .pm-btn:not(.pm-btn-main), .visit-arthro-buttons .visit-secondary-button) {
     background: rgba(255, 255, 255, .65) !important;
     color: #b45309 !important;

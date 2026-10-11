@@ -25,13 +25,6 @@ main>:not(footer) :is(a, button, summary, input, select, textarea):focus-visible
     color: #161922
 }
 
-.in-tablewrap {
-    overflow-x: auto;
-    background: #ffffff;
-    border: 1px solid #dfe2e9;
-    border-radius: 16px
-}
-
 .in-table {
     width: 100%;
     border-collapse: collapse
@@ -70,13 +63,6 @@ main>:not(footer) :is(a, button, summary, input, select, textarea):focus-visible
     color: #161922
 }
 
-.in-note {
-    margin-top: 16px;
-    color: #5a647b;
-    font-size: 15px;
-    line-height: 1.7
-}
-
 .in-list {
     list-style: none;
     display: grid;
@@ -107,57 +93,7 @@ main>:not(footer) :is(a, button, summary, input, select, textarea):focus-visible
     justify-content: center
 }
 
-/* checklist with live CSS counter */
-.in-checklist {
-    counter-reset: done;
-    padding: 26px;
-    background: #ffffff;
-    border: 1px solid #dfe2e9;
-    border-radius: 20px
-}
-
-.in-ck {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 4px;
-    border-bottom: 1px solid #e8ebf1;
-    font-size: 16px;
-    font-weight: 600;
-    color: #1d222d;
-    cursor: pointer
-}
-
-.in-ck input {
-    width: 24px;
-    height: 24px;
-    accent-color: #2563eb;
-    flex: 0 0 24px
-}
-
-.in-ck input:checked {
-    counter-increment: done
-}
-
-.in-ck:has(input:checked) span {
-    color: #b06d07;
-    text-decoration: line-through
-}
-
-.in-count {
-    margin-top: 18px;
-    padding: 14px 18px;
-    border-radius: 12px;
-    background: #e2ebfd;
-    color: #1d222d;
-    font-size: 16px
-}
-
-.in-num::after {
-    content: counter(done);
-    color: #2563eb;
-    font-size: 22px
-}
+/* Checklist with counter (.in-checklist) */
 
 .in-form {
     max-width: 900px;
@@ -183,14 +119,7 @@ main>:not(footer) :is(a, button, summary, input, select, textarea):focus-visible
     font-size: 16px
 }
 
-
-
-
-/* =========================================================
-   HEADING ACCENT RULE (same as hero / index / home-2 / about / products / fitting): solid colour, no gradient
-   light = #b45309 | dark = #fbbf24
-   Applies to the Coverage page section titles (h2 span)
-========================================================= */
+/* Section title accent colour (h2 span) */
 html:root:root:root body.coverage-page main h2 span {
     background: none !important;
     background-image: none !important;
@@ -199,13 +128,13 @@ html:root:root:root body.coverage-page main h2 span {
     text-shadow: none !important;
 }
 
-/* LIGHT MODE */
+/* Light mode */
 html:root:root:root:not([data-theme="dark"]) body.coverage-page main h2 span {
     color: #b45309 !important;
     -webkit-text-fill-color: #b45309 !important;
 }
 
-/* DARK MODE */
+/* Dark mode */
 html:root:root:root[data-theme="dark"] body.coverage-page main h2 span {
     color: #fbbf24 !important;
     -webkit-text-fill-color: #fbbf24 !important;

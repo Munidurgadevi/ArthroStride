@@ -5,18 +5,15 @@
     box-sizing: border-box;
 }
 
-
 html {
     width: 100%;
     min-height: 100%;
 
     scroll-behavior: smooth;
 
-    /* Reserve scrollbar space on every page so the header and footer
-       sit at exactly the same horizontal position on all pages */
+    /* Reserve scrollbar space on all pages */
     scrollbar-gutter: stable;
 }
-
 
 body {
     width: 100%;
@@ -32,10 +29,7 @@ body {
     background: #ffffff;
 }
 
-
-/* =========================================================
-   HEADER
-========================================================= */
+/* Header (.site-header) */
 
 .site-header {
     width: 100%;
@@ -71,10 +65,7 @@ body {
     gap: 16px;
 }
 
-
-/* =========================================================
-   BRAND
-========================================================= */
+/* Brand (.brand) */
 
 .brand {
     display: flex;
@@ -90,10 +81,7 @@ body {
     color: #161922;
 }
 
-
-/* =========================================================
-   LOGO CIRCLE
-========================================================= */
+/* Logo circle (.brand-logo) */
 
 .brand-logo {
     width: 38px;
@@ -117,7 +105,6 @@ body {
     justify-content: center;
 }
 
-
 .brand-logo img {
     width: 100%;
 
@@ -132,10 +119,7 @@ body {
     border-radius: 50%;
 }
 
-
-/* =========================================================
-   BRAND TEXT
-========================================================= */
+/* Brand text (.brand-text) */
 
 .brand-text {
     display: flex;
@@ -146,7 +130,6 @@ body {
 
     gap: 5px;
 }
-
 
 .brand-name {
     font-size: 22px;
@@ -162,30 +145,11 @@ body {
     color: #161922;
 }
 
-
 .brand-name span {
     color: #2563eb;
 }
 
-
-.brand-tagline {
-    font-size: 11px;
-
-    line-height: 1;
-
-    font-weight: 700;
-
-    letter-spacing: 1.5px;
-
-    white-space: nowrap;
-
-    color: #5e6575;
-}
-
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* Navigation (.main-navigation) */
 
 .main-navigation {
     height: 100%;
@@ -202,7 +166,6 @@ body {
 
     gap: 26px;
 }
-
 
 .nav-link {
     height: 100%;
@@ -227,18 +190,15 @@ body {
         color 0.2s ease;
 }
 
-
 .nav-link:hover {
     color: #2563eb;
 }
-
 
 .nav-link.active {
     color: #2563eb;
 }
 
-
-/* Active Navigation Line */
+/* Active nav line (.nav-link.active) */
 
 .nav-link.active::after {
     content: "";
@@ -258,10 +218,7 @@ body {
     background: #2563eb;
 }
 
-
-/* =========================================================
-   HEADER ACTIONS
-========================================================= */
+/* Header actions (.header-actions) */
 
 .header-actions {
     display: flex;
@@ -273,10 +230,7 @@ body {
     flex-shrink: 0;
 }
 
-
-/* =========================================================
-   DARK MODE + RTL BUTTON
-========================================================= */
+/* Theme and RTL button (.header-icon-btn) */
 
 .header-icon-btn {
     width: 38px;
@@ -309,13 +263,11 @@ body {
         background 0.2s ease;
 }
 
-
 .header-icon-btn:hover {
     color: #2563eb;
 
     border-color: #2563eb;
 }
-
 
 .header-icon-btn svg {
     width: 18px;
@@ -323,10 +275,7 @@ body {
     height: 18px;
 }
 
-
-/* =========================================================
-   VISIT BOOKING BUTTON
-========================================================= */
+/* Visit Booking button (.header-cta) */
 
 .header-cta {
     height: 38px;
@@ -364,7 +313,6 @@ body {
         box-shadow 0.2s ease;
 }
 
-
 .header-cta:hover {
     background: #184ec2;
 
@@ -374,10 +322,7 @@ body {
         0 9px 22px rgba(37, 99, 235, 0.25);
 }
 
-
-/* =========================================================
-   HERO SECTION
-========================================================= */
+/* Hero section (.hero-section) */
 
 .hero-section {
     width: 100%;
@@ -400,7 +345,6 @@ body {
     overflow: hidden;
 }
 
-
 /* Hero background image */
 
 .hero-section::before {
@@ -417,10 +361,9 @@ body {
 
     background-position: center;
 
-    /* Keep the image above the section background in both themes */
+    /* Image above section background */
     z-index: 0;
 }
-
 
 /* Hero overlay */
 
@@ -442,18 +385,14 @@ body {
     z-index: 1;
 }
 
-
-/* Keep all hero content above the image and overlay */
+/* Hero content above image */
 
 .hero-container {
     position: relative;
     z-index: 2;
 }
 
-
-/* =========================================================
-   HERO CONTAINER
-========================================================= */
+/* Hero container (.hero-container) */
 
 .hero-container {
     width: calc(100% - 48px);
@@ -463,10 +402,7 @@ body {
     margin: 0 auto;
 }
 
-
-/* =========================================================
-   HERO CONTENT
-========================================================= */
+/* Hero content (.hero-content) */
 
 .hero-content {
     width: 760px;
@@ -478,10 +414,7 @@ body {
     color: #ffffff;
 }
 
-
-/* =========================================================
-   HERO BADGE
-========================================================= */
+/* Hero badge (.hero-badge) */
 
 .hero-badge {
     width: fit-content;
@@ -512,17 +445,13 @@ body {
     letter-spacing: 1.5px;
 }
 
-
 .hero-badge-icon {
     font-size: 15px;
 
     color: #628fef;
 }
 
-
-/* =========================================================
-   HERO TITLE
-========================================================= */
+/* Hero title (.hero-title) */
 
 .hero-title {
     margin: 0;
@@ -537,7 +466,6 @@ body {
 
     color: #ffffff;
 }
-
 
 .hero-title span {
     display: block;
@@ -554,10 +482,7 @@ body {
     background-clip: text;
 }
 
-
-/* =========================================================
-   HERO DESCRIPTION
-========================================================= */
+/* Hero description (.hero-description) */
 
 .hero-description {
     max-width: 700px;
@@ -571,10 +496,7 @@ body {
     color: #f1f3f6;
 }
 
-
-/* =========================================================
-   HERO BUTTONS
-========================================================= */
+/* Hero buttons (.hero-buttons) */
 
 .hero-buttons {
     display: flex;
@@ -585,7 +507,6 @@ body {
 
     margin-top: 38px;
 }
-
 
 .primary-button,
 .secondary-button {
@@ -616,7 +537,6 @@ body {
         background 0.2s ease;
 }
 
-
 .primary-button {
     background: #2563eb;
 
@@ -626,13 +546,11 @@ body {
         0 10px 25px rgba(37, 99, 235, 0.25);
 }
 
-
 .primary-button:hover {
     background: #184ec2;
 
     transform: translateY(-2px);
 }
-
 
 .secondary-button {
     background: rgba(20, 23, 31, 0.25);
@@ -642,17 +560,13 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
-
 .secondary-button:hover {
     background: rgba(255, 255, 255, 0.10);
 
     transform: translateY(-2px);
 }
 
-
-/* =========================================================
-   HERO FEATURES
-========================================================= */
+/* Hero features (.hero-features) */
 
 .hero-features {
     margin-top: 48px;
@@ -668,7 +582,6 @@ body {
     gap: 50px;
 }
 
-
 .hero-feature {
     display: flex;
 
@@ -677,7 +590,6 @@ body {
     gap: 12px;
 }
 
-
 .hero-feature span {
     color: #f5970a;
 
@@ -685,7 +597,6 @@ body {
 
     font-weight: 700;
 }
-
 
 .hero-feature p {
     margin: 0;
@@ -697,9 +608,7 @@ body {
     color: #f3f5fa;
 }
 
-/* =========================================================
-   TARGETED FOOT HEALTH
-========================================================= */
+/* Foot health section (.foot-health-section) */
 
 .foot-health-section {
     width: 100%;
@@ -713,8 +622,7 @@ body {
     margin: 0 auto;
 }
 
-
-/* SECTION HEADING */
+/* Section heading (.foot-health-heading) */
 
 .foot-health-heading {
     max-width: 780px;
@@ -761,10 +669,7 @@ body {
     line-height: 1.75;
 }
 
-
-/* =========================================================
-   CARD GRID
-========================================================= */
+/* Card grid (.foot-health-grid) */
 
 .foot-health-grid {
     display: grid;
@@ -774,9 +679,7 @@ body {
     gap: 24px;
 }
 
-/* =========================================================
-   FOOT HEALTH CARD GRID
-========================================================= */
+/* Card grid (.foot-health-grid) */
 
 .foot-health-grid {
     width: 100%;
@@ -788,8 +691,7 @@ body {
     gap: 24px;
 }
 
-
-/* All cards same size */
+/* Equal card size */
 
 .foot-health-card {
     width: 100%;
@@ -814,9 +716,7 @@ body {
         box-shadow 0.25s ease;
 }
 
-/* =========================================================
-   CARD
-========================================================= */
+/* Card (.foot-health-card) */
 
 .foot-health-card {
     min-height: 430px;
@@ -842,8 +742,7 @@ body {
         box-shadow 0.25s ease;
 }
 
-
-/* CARD HOVER */
+/* Card hover */
 
 .foot-health-card:hover {
     transform: translateY(-5px);
@@ -854,10 +753,7 @@ body {
         0 18px 40px rgba(28, 36, 55, 0.10);
 }
 
-
-/* =========================================================
-   CARD IMAGE
-========================================================= */
+/* Card image (.foot-health-image) */
 
 .foot-health-image {
     width: 100%;
@@ -888,10 +784,7 @@ body {
     transform: scale(1.03);
 }
 
-
-/* =========================================================
-   CARD CONTENT
-========================================================= */
+/* Card title */
 
 .foot-health-card h3 {
     margin: 0 0 14px;
@@ -920,10 +813,7 @@ body {
     line-height: 1.7;
 }
 
-
-/* =========================================================
-   CARD LINK
-========================================================= */
+/* Card link (.health-card-link) */
 
 .health-card-link {
     margin-top: auto;
@@ -953,9 +843,7 @@ body {
     transform: translateX(5px);
 }
 
-/* =========================================================
-   WHY ARTHROSTRIDE
-========================================================= */
+/* Why ArthroStride section (.why-arthro-section) */
 
 .why-arthro-section {
     width: 100%;
@@ -971,10 +859,7 @@ body {
     margin: 0 auto;
 }
 
-
-/* =========================================================
-   SECTION HEADING
-========================================================= */
+/* Section heading (.why-arthro-heading) */
 
 .why-arthro-heading {
     max-width: 850px;
@@ -1021,10 +906,7 @@ body {
     line-height: 1.7;
 }
 
-
-/* =========================================================
-   FEATURE GRID
-========================================================= */
+/* Feature grid (.why-arthro-grid) */
 
 .why-arthro-grid {
     width: 100%;
@@ -1037,10 +919,7 @@ body {
     gap: 36px;
 }
 
-
-/* =========================================================
-   FEATURE CARD
-========================================================= */
+/* Feature card (.why-arthro-card) */
 
 .why-arthro-card {
     min-height: 405px;
@@ -1078,7 +957,7 @@ html:root[data-theme="dark"] body .why-arthro-card:hover {
     border-color: #477bec;
 }
 
-/* Why ArthroStride cards: accent border (light + dark) */
+/* Accent border on cards */
 html:root body .why-arthro-card,
 html:root body .why-arthro-card:hover {
     border-color: #2563eb;
@@ -1089,9 +968,7 @@ html:root[data-theme="dark"] body .why-arthro-card:hover {
     border-color: #477bec;
 }
 
-/* =========================================================
-   WHY ARTHROSTRIDE - 2x2 GRID, COLOURED LEFT BORDER, FILL ON CLICK
-========================================================= */
+/* 2 x 2 grid with coloured left border */
 
 .why-arthro-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1108,21 +985,18 @@ html:root[data-theme="dark"] body .why-arthro-card:hover {
     cursor: pointer;
 }
 
-
 html:root[data-theme] body .why-arthro-card,
 html:root[data-theme] body .why-arthro-card:hover {
     border-inline-start: 6px solid var(--card-color);
 }
 
-
-
-/* text/icon fill kinda kakunda paina undali */
+/* Card content above the fill */
 .why-arthro-card>* {
     position: relative;
     z-index: 1;
 }
 
-/* icon konchem chinnadi, empty space taggutundi */
+/* Smaller icon */
 .why-arthro-icon {
     width: 60px;
     height: 60px;
@@ -1139,10 +1013,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     outline-offset: 3px;
 }
 
-
-/* =========================================================
-   ICON
-========================================================= */
+/* Icon (.why-arthro-icon) */
 
 .why-arthro-icon {
     width: 72px;
@@ -1174,10 +1045,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     display: block;
 }
 
-
-/* =========================================================
-   CARD TEXT
-========================================================= */
+/* Card title */
 
 .why-arthro-card h3 {
     margin: 0 0 16px;
@@ -1202,170 +1070,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     line-height: 1.8;
 }
 
-
-/* =========================================================
-   CLINICAL HERITAGE & CRAFT
-========================================================= */
-
-.product-showcase-section {
-    width: 100%;
-
-    padding: 110px 0 120px;
-
-    background: #ffffff;
-}
-
-.product-showcase-container {
-    width: calc(100% - 48px);
-
-    max-width: 1380px;
-
-    margin: 0 auto;
-}
-
-
-/* =========================================================
-   SECTION HEADING
-========================================================= */
-
-.product-showcase-heading {
-    max-width: 820px;
-
-    margin: 0 auto 65px;
-
-    text-align: center;
-}
-
-.product-section-label {
-    display: inline-block;
-
-    margin-bottom: 20px;
-
-    color: #2563eb;
-
-    font-size: 13px;
-
-    font-weight: 800;
-
-    letter-spacing: 2px;
-}
-
-.product-showcase-heading h2 {
-    margin: 0;
-
-    color: #161922;
-
-    font-size: clamp(40px, 4vw, 54px);
-
-    line-height: 1.1;
-
-    font-weight: 800;
-
-    letter-spacing: -1.8px;
-}
-
-.product-showcase-heading h2 span {
-    color: #0d0f15;
-}
-
-.product-showcase-heading p {
-    max-width: 760px;
-
-    margin: 23px auto 0;
-
-    color: #5e6575;
-
-    font-size: 17px;
-
-    line-height: 1.75;
-}
-
-
-/* =========================================================
-   PRODUCT GRID
-========================================================= */
-
-.product-showcase-grid {
-    width: 100%;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 28px;
-}
-
-
-/* =========================================================
-   PRODUCT CARD
-========================================================= */
-
-.product-card {
-    width: 100%;
-
-    overflow: hidden;
-
-    background: #ffffff;
-
-    border: 1px solid #dee3ee;
-
-    border-radius: 22px;
-
-    box-shadow:
-        0 7px 25px rgba(28, 36, 55, 0.055);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
-}
-
-.product-card:hover {
-    transform: translateY(-6px);
-
-    border-color: rgba(37, 99, 235, 0.35);
-
-    box-shadow:
-        0 18px 40px rgba(28, 36, 55, 0.11);
-}
-
-
-/* =========================================================
-   PRODUCT IMAGE
-========================================================= */
-
-.product-image {
-    width: 100%;
-
-    height: 285px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background: #f1f3f8;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-
-    object-position: center;
-
-    transition: transform 0.35s ease;
-}
-
-.product-card:hover .product-image img {
-    transform: scale(1.04);
-}
-
-
-/* CATEGORY BADGE */
+/* Category badge (.product-category) */
 
 .product-category {
     position: absolute;
@@ -1391,17 +1096,7 @@ html:root[data-theme] body .why-arthro-card:hover {
         0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
-
-/* =========================================================
-   PRODUCT CONTENT
-========================================================= */
-
-.product-content {
-    padding: 25px 25px 27px;
-}
-
-
-/* RATING */
+/* Rating (.product-rating) */
 
 .product-rating {
     display: flex;
@@ -1421,7 +1116,6 @@ html:root[data-theme] body .why-arthro-card:hover {
     letter-spacing: 1px;
 }
 
-
 .product-rating strong {
     color: #1d222d;
 
@@ -1434,42 +1128,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     font-size: 13px;
 }
 
-
-/* PRODUCT TITLE */
-
-.product-card h3 {
-    margin: 0 0 13px;
-
-    color: #161922;
-
-    font-size: 22px;
-
-    line-height: 1.3;
-
-    font-weight: 800;
-
-    letter-spacing: -0.4px;
-}
-
-
-/* DESCRIPTION */
-
-.product-card p {
-    margin: 0;
-
-    min-height: 108px;
-
-    color: #616a7f;
-
-    font-size: 14.5px;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   PRODUCT BOTTOM
-========================================================= */
+/* Price and button row (.product-bottom) */
 
 .product-bottom {
     margin-top: 24px;
@@ -1487,8 +1146,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     gap: 15px;
 }
 
-
-/* PRICE */
+/* Price (.product-price) */
 
 .product-price {
     display: flex;
@@ -1514,8 +1172,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     font-weight: 800;
 }
 
-
-/* VIEW DETAILS BUTTON */
+/* View details button (.product-button) */
 
 .product-button {
     min-height: 44px;
@@ -1561,60 +1218,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     line-height: 1;
 }
 
-
-/* =========================================================
-   VIEW ALL
-========================================================= */
-
-.product-showcase-action {
-    margin-top: 50px;
-
-    text-align: center;
-}
-
-.view-all-products {
-    min-height: 50px;
-
-    padding: 0 25px;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 9px;
-
-    border: 1px solid #2563eb;
-
-    border-radius: 26px;
-
-    color: #2563eb;
-
-    background: #ffffff;
-
-    text-decoration: none;
-
-    font-size: 14px;
-
-    font-weight: 750;
-
-    transition:
-        background 0.2s ease,
-        color 0.2s ease;
-}
-
-.view-all-products:hover {
-    background: #2563eb;
-
-    color: #ffffff;
-}
-
-.view-all-products span {
-    font-size: 18px;
-}
-
-
+/* View all link (.product-showcase-action) */
 
 .fitting-section {
     width: 100%;
@@ -1641,10 +1245,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     align-items: center;
 }
 
-
-/* =========================================================
-   IMAGE AREA
-========================================================= */
+/* Fitting image area (.fitting-visual) */
 
 .fitting-visual {
     width: 100%;
@@ -1674,10 +1275,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     object-position: center;
 }
 
-
-/* =========================================================
-   IMAGE BADGE
-========================================================= */
+/* Image badge (.fitting-badge) */
 
 .fitting-badge {
     position: absolute;
@@ -1748,10 +1346,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     line-height: 1.4;
 }
 
-
-/* =========================================================
-   CONTENT
-========================================================= */
+/* Fitting content (.fitting-content) */
 
 .fitting-content {
     width: 100%;
@@ -1803,10 +1398,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     line-height: 1.75;
 }
 
-
-/* =========================================================
-   FEATURES
-========================================================= */
+/* Fitting features (.fitting-feature) */
 
 .fitting-feature {
     display: grid;
@@ -1863,10 +1455,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     line-height: 1.65;
 }
 
-
-/* =========================================================
-   BUTTON
-========================================================= */
+/* Fitting button (.fitting-button) */
 
 .fitting-button {
     min-height: 56px;
@@ -1912,10 +1501,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     font-size: 19px;
 }
 
-
-/* =========================================================
-   MEDICAL CLAIMS & GUIDANCE
-========================================================= */
+/* Claims section (.claims-section) */
 
 .claims-section {
     width: 100%;
@@ -1933,10 +1519,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     margin: 0 auto;
 }
 
-
-/* =========================================================
-   SECTION HEADING
-========================================================= */
+/* Section heading (.claims-heading) */
 
 .claims-heading {
     max-width: 850px;
@@ -1986,10 +1569,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     line-height: 1.75;
 }
 
-
-/* =========================================================
-   CLAIMS GRID
-========================================================= */
+/* Claims grid (.claims-grid) */
 
 .claims-grid {
     width: 100%;
@@ -2002,10 +1582,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     gap: 32px;
 }
 
-
-/* =========================================================
-   CLAIM CARD
-========================================================= */
+/* Claim card (.claims-card) */
 
 .claims-card {
     min-height: 335px;
@@ -2036,10 +1613,7 @@ html:root[data-theme] body .why-arthro-card:hover {
         0 15px 32px rgba(28, 36, 55, 0.09);
 }
 
-
-/* =========================================================
-   NUMBER
-========================================================= */
+/* Claim number (.claims-number) */
 
 .claims-number {
     margin-bottom: 20px;
@@ -2055,10 +1629,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     letter-spacing: -1px;
 }
 
-
-/* =========================================================
-   CARD CONTENT
-========================================================= */
+/* Claim card title */
 
 .claims-card h3 {
     margin: 0 0 14px;
@@ -2082,10 +1653,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     line-height: 1.75;
 }
 
-
-/* =========================================================
-   VISIT ARTHROSTRIDE CTA
-========================================================= */
+/* Visit section (.visit-arthro-section) */
 
 .visit-arthro-section {
     width: 100%;
@@ -2113,10 +1681,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     background-repeat: no-repeat;
 }
 
-
-/* =========================================================
-   OVERLAY
-========================================================= */
+/* Overlay (.visit-arthro-overlay) */
 
 .visit-arthro-overlay {
     width: 100%;
@@ -2130,10 +1695,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     padding: 80px 24px;
 }
 
-
-/* =========================================================
-   CONTENT
-========================================================= */
+/* Content (.visit-arthro-content) */
 
 .visit-arthro-content {
     width: 100%;
@@ -2185,10 +1747,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     line-height: 1.75;
 }
 
-
-/* =========================================================
-   BUTTONS
-========================================================= */
+/* Buttons (.visit-arthro-buttons) */
 
 .visit-arthro-buttons {
     margin-top: 38px;
@@ -2201,8 +1760,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     gap: 22px;
 }
 
-
-/* PRIMARY */
+/* Primary button (.visit-primary-button) */
 
 .visit-primary-button {
     min-width: 0px;
@@ -2248,8 +1806,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     font-size: 18px;
 }
 
-
-/* SECONDARY */
+/* Secondary button (.visit-secondary-button) */
 
 .visit-secondary-button {
     min-width: 0px;
@@ -2297,9 +1854,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     font-size: 18px;
 }
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* Footer (.site-footer) */
 
 .site-footer {
     width: 100%;
@@ -2309,10 +1864,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     color: #ffffff;
 }
 
-
-/* =========================================================
-   FOOTER MAIN CONTAINER
-========================================================= */
+/* Footer container (.footer-container) */
 
 .footer-container {
     width: calc(100% - 48px);
@@ -2332,16 +1884,13 @@ html:root[data-theme] body .why-arthro-card:hover {
     align-items: start;
 }
 
-
-/* =========================================================
-   BRAND
-========================================================= */
+/* Footer brand (.footer-brand) */
 .footer-brand {
     min-width: 0;
     align-self: start;
 }
 
-/* Logo + Title horizontal */
+/* Logo and title in a row */
 .footer-brand-link {
     width: fit-content;
 
@@ -2356,8 +1905,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     color: #ffffff;
 }
 
-
-/* Logo */
+/* Logo (.footer-brand-logo) */
 
 .footer-brand-logo {
     width: 48px;
@@ -2393,7 +1941,6 @@ html:root[data-theme] body .why-arthro-card:hover {
     border-radius: 50%;
 }
 
-
 /* Brand text */
 
 .footer-brand-text {
@@ -2406,8 +1953,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     gap: 5px;
 }
 
-
-/* Same brand title style as Header */
+/* Brand title, same as header */
 
 .brand-name,
 .footer-brand-name {
@@ -2431,7 +1977,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     color: #2563eb;
 }
 
-/* Footer title - white for readability on dark background */
+/* Footer title, white */
 .footer-brand-name {
     color: #ffffff;
 }
@@ -2440,25 +1986,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     color: #2563eb;
 }
 
-
-/* Same tagline style as Header */
-
-.footer-brand-tagline {
-    font-size: 11px;
-
-    line-height: 1;
-
-    font-weight: 700;
-
-    letter-spacing: 1.5px;
-
-    white-space: nowrap;
-
-    color: #949cad;
-}
-
-
-/* Description */
+/* Description (.footer-description) */
 
 .footer-description {
     max-width: 310px;
@@ -2472,10 +2000,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     line-height: 1.75;
 }
 
-
-/* =========================================================
-   SOCIAL ICONS
-========================================================= */
+/* Social icons (.footer-socials) */
 
 .footer-socials {
     display: flex;
@@ -2530,10 +2055,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     fill: currentColor;
 }
 
-
-/* =========================================================
-   FOOTER COLUMNS
-========================================================= */
+/* Footer columns (.footer-column) */
 
 .footer-column {
     display: flex;
@@ -2575,10 +2097,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     color: #ffffff;
 }
 
-
-/* =========================================================
-   CONTACT
-========================================================= */
+/* Contact lines */
 
 .footer-contact p {
     margin: 0 0 13px;
@@ -2620,10 +2139,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     fill: currentColor;
 }
 
-
-/* =========================================================
-   BOOK CONSULTATION BUTTON
-========================================================= */
+/* Book consultation button (.footer-book-button) */
 
 .footer-book-button {
     min-height: 42px;
@@ -2667,10 +2183,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     font-size: 15px;
 }
 
-
-/* =========================================================
-   FOOTER BOTTOM
-========================================================= */
+/* Footer bottom (.footer-bottom) */
 
 .footer-bottom {
     width: 100%;
@@ -2708,8 +2221,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     color: #2563eb;
 }
 
-
-/* Privacy + Terms */
+/* Privacy and terms links (.footer-legal) */
 
 .footer-legal {
     display: flex;
@@ -2733,10 +2245,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     color: #ffffff;
 }
 
-
-/* =========================================================
-   HOME DROPDOWN
-========================================================= */
+/* Home dropdown (.home-dropdown) */
 .home-dropdown {
     height: 100%;
     position: relative;
@@ -2818,20 +2327,14 @@ html:root[data-theme] body .why-arthro-card:hover {
     outline: none;
 }
 
-/* =========================================================
-   IMAGE DISPLAY / CLARITY
-   Show the complete source image inside cards instead of
-   cropping it with object-fit: cover.
-========================================================= */
+/* Show full images in cards */
 .foot-health-image img,
-.product-image img,
 .pp-thumb img,
 .pd-img img,
 .bs-img img,
 .acc-img img,
 .rel img,
-.ft-photo img,
-.mx-tour img {
+.ft-photo img {
     width: 100%;
     height: 100%;
     display: block;
@@ -2842,44 +2345,25 @@ html:root[data-theme] body .why-arthro-card:hover {
 }
 
 .foot-health-image,
-.product-image,
 .pp-thumb,
 .pd-img,
 .bs-img,
 .acc-img,
-.ft-photo,
-.mx-tour {
+.ft-photo {
     background: #f5f7fb;
 }
 
-/* Keep image wrappers from hiding the full image. */
+/* Image wrappers show the full image */
 .foot-health-image,
-.product-image,
 .pp-thumb,
 .pd-img,
 .bs-img,
 .acc-img,
-.ft-photo,
-.mx-tour {
+.ft-photo {
     overflow: hidden;
 }
 
-/* Distinct Home 2 hero treatment; no other page functionality is changed. */
-.hero-two {
-    background:
-        linear-gradient(90deg,
-            rgba(9, 12, 20, 0.91) 0%,
-            rgba(9, 12, 20, 0.68) 48%,
-            rgba(9, 12, 20, 0.28) 100%);
-}
-
-.hero-two::before {
-    background-image: url("https://i.ibb.co/wNphRFtR/Chat-GPT-Image-Sep-27-2026-10-57-47-PM.png");
-    background-size: cover;
-    background-position: center;
-}
-
-/* Dark-mode dropdown and image surfaces. */
+/* Dark mode dropdown and image surfaces */
 :root[data-theme="dark"] body .home-dropdown-menu {
     background: #1e212a;
     border-color: #363b48;
@@ -2898,20 +2382,16 @@ html:root[data-theme] body .why-arthro-card:hover {
 }
 
 :root[data-theme="dark"] body .foot-health-image img,
-:root[data-theme="dark"] body .product-image img,
 :root[data-theme="dark"] body .pp-thumb img,
 :root[data-theme="dark"] body .pd-img img,
 :root[data-theme="dark"] body .bs-img img,
 :root[data-theme="dark"] body .acc-img img,
 :root[data-theme="dark"] body .rel img,
-:root[data-theme="dark"] body .ft-photo img,
-:root[data-theme="dark"] body .mx-tour img {
+:root[data-theme="dark"] body .ft-photo img {
     background: #1e212a;
 }
 
-/* =========================================================
-   LOGO: PERFECT CIRCLE + ZOOMED IMAGE (all pages)
-========================================================= */
+/* Round logo with zoomed image */
 
 .brand-logo,
 .footer-brand-logo,
@@ -2939,10 +2419,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     gap: 0;
 }
 
-
-/* =========================================================
-   FOOTER: WHITE IN LIGHT MODE, DARK IN DARK MODE
-========================================================= */
+/* Footer colour, light and dark */
 
 .site-footer {
     background: #ffffff;
@@ -2979,7 +2456,7 @@ html:root[data-theme] body .why-arthro-card:hover {
     color: #2563eb;
 }
 
-/* Dark mode keeps the original dark footer */
+/* Dark footer in dark mode */
 :root[data-theme="dark"] body .site-footer,
 html[data-theme="dark"] .site-footer {
     background: #0e1320;
@@ -3017,7 +2494,7 @@ html[data-theme="dark"] .footer-column>a:hover {
     color: #ffffff;
 }
 
-/* ===== Foot health cards: blue border + full-card click ===== */
+/* Foot health card border and full click area */
 .foot-health-card {
     position: relative;
     border: 1px solid #2563eb;
@@ -3027,7 +2504,7 @@ html[data-theme="dark"] .footer-column>a:hover {
     border-color: #2563eb;
 }
 
-/* Explore Collection link ni card motham stretch chestundi */
+/* Link covers the whole card */
 .health-card-link::after {
     content: "";
     position: absolute;
@@ -3035,13 +2512,13 @@ html[data-theme="dark"] .footer-column>a:hover {
     border-radius: 20px;
 }
 
-/* Keyboard tab chesinappudu outline */
+/* Keyboard focus outline */
 .foot-health-card:focus-within {
     outline: 2px solid #2563eb;
     outline-offset: 3px;
 }
 
-/* ---- Foot health cards: image touches card edges, fills fully ---- */
+/* Card image fills the card */
 .foot-health-card .foot-health-image {
     width: calc(100% + 48px);
     height: 280px;
@@ -3057,44 +2534,22 @@ html[data-theme="dark"] .footer-column>a:hover {
     object-position: center;
 }
 
-/* =========================================================
-   ACCENT BORDER - PRODUCT SHOWCASE, CLAIMS CARDS, CLAIMS CTA
-========================================================= */
+/* Accent borders on showcase and claims cards */
 
 :root {
     --accent-border: #2563eb;
-    /* light mode */
+    /* Light mode */
 }
 
 :root[data-theme="dark"] {
     --accent-border: #477bec;
 }
 
-html:root[data-theme] body .product-showcase-section .product-card,
 html:root[data-theme] body .claims-card {
     border: 1px solid var(--accent-border);
 }
 
-/* =========================================================
-   HOME PRODUCT CARDS - IMAGE FILLS TOP (NO EMPTY BAND)
-========================================================= */
-
-.product-showcase-section .product-image {
-    height: auto;
-    aspect-ratio: 3 / 2;
-}
-
-html:root body .product-showcase-section .product-image img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover !important;
-}
-
-/* =========================================================
-   VISIT ARTHROSTRIDE - KEEP BACKGROUND IMAGE IN DARK MODE
-========================================================= */
+/* Visit section background in dark mode */
 
 html:root[data-theme="dark"] body .visit-arthro-section {
     background-image:
@@ -3108,9 +2563,7 @@ html:root[data-theme="dark"] body .visit-arthro-section {
     background-repeat: no-repeat;
 }
 
-/* =========================================================
-   HERO SECTION - ALWAYS EXACTLY FILLS THE VISIBLE SCREEN
-========================================================= */
+/* Hero fills the visible screen */
 
 .hero-section {
     height: calc(100svh - 68px);
@@ -3156,17 +2609,15 @@ html:root[data-theme="dark"] body .visit-arthro-section {
     padding-top: clamp(10px, 2vh, 28px);
 }
 
-/* Home cards: "Explore Collection" link + arrow = white in dark mode */
+/* Explore Collection link, white in dark mode */
 :root[data-theme="dark"] .health-card-link,
 :root[data-theme="dark"] .health-card-link span,
 :root[data-theme="dark"] body .foot-health-card .health-card-link {
     color: #ffffff !important;
 }
 
-/* =========================================================
-   1. HOME  –  centered stage over the photo
-========================================================= */
-/* Base colour + photo opacity (LIGHT MODE) */
+/* Home hero, centered over photo */
+/* Base colour and photo opacity, light */
 html:root body .hx-home.hx-home.hx-home {
     --hx-home-img-op: .62;
     --hx-home-shade: rgba(23, 37, 84, .30);
@@ -3174,7 +2625,7 @@ html:root body .hx-home.hx-home.hx-home {
     background: #172554 !important;
 }
 
-/* Base colour + photo opacity (DARK MODE) */
+/* Base colour and photo opacity, dark */
 html:root[data-theme="dark"] body .hx-home.hx-home.hx-home {
     --hx-home-img-op: .40;
     --hx-home-shade: rgba(5, 7, 12, .38);
@@ -3182,12 +2633,12 @@ html:root[data-theme="dark"] body .hx-home.hx-home.hx-home {
     background: #05070c !important;
 }
 
-/* The photo itself – opacity applied here */
+/* Hero photo opacity */
 html:root body .hx-home.hx-home.hx-home::before {
     opacity: var(--hx-home-img-op);
 }
 
-/* Soft centre shade so the text stays readable, photo stays visible */
+/* Centre shade for readable text */
 html:root body .hx-home.hx-home.hx-home::after {
     background: radial-gradient(ellipse at center, var(--hx-home-shade) 0%, var(--hx-home-shade-edge) 100%) !important;
 }
@@ -3261,7 +2712,7 @@ html:root body .hx-home.hx-home.hx-home .hero-feature p {
     font-size: 15px;
 }
 
-/* ---- Home hero: responsive ---- */
+/* Home hero on small screens */
 @media (max-width: 720px) {
     html:root body .hx-home.hx-home.hx-home .hero-features {
         grid-template-columns: 1fr;
@@ -3278,7 +2729,7 @@ html:root body .hx-home.hx-home.hx-home .hero-feature p {
     }
 }
 
-/* Prescription image card */
+/* Prescription image card (.ph-panel) */
 .ph-panel.reveal {
     background-image: url("https://i.ibb.co/tp6Qcsjn/Chat-GPT-Image-Oct-1-2026-09-30-59-AM.png");
     background-size: cover;
@@ -3292,11 +2743,11 @@ html:root body .hx-home.hx-home.hx-home .hero-feature p {
     overflow: hidden;
     border-radius: 30px;
 
-    /* Remove old card styling */
+    /* Remove old card style */
     display: block;
 }
 
-/* Hide old content inside the image card */
+/* Hide old card content */
 .ph-panel.reveal i,
 .ph-panel.reveal h3,
 .ph-panel.reveal p {
@@ -3310,10 +2761,7 @@ body {
     overflow-x: clip;
 }
 
-/* =========================================================
-   THE PRESSURE LAB (replaces "Comfort, Designed for Every Step")
-   Pure HTML + CSS. Radio buttons switch the heat map.
-========================================================= */
+/* Pressure Lab heat map (.pm-stage) */
 @property --pm-n {
     syntax: "<integer>";
     inherits: false;
@@ -3603,7 +3051,7 @@ body {
     background: #1c5be3;
 }
 
-/* ---------- stage + foot ---------- */
+/* Stage and foot */
 .pm-stage {
     position: relative;
     display: flex;
@@ -3702,7 +3150,7 @@ body {
     opacity: 1;
 }
 
-/* ---------- hover hotspots ---------- */
+/* Hover hotspots (.pm-spot) */
 .pm-spot {
     position: absolute;
     width: 0;
@@ -3804,9 +3252,7 @@ body {
     }
 }
 
-/* =========================================================
-   OFFERS & SAVINGS (above Medical Claims & Guidance)
-========================================================= */
+/* Offers section (.offers-section) */
 
 .offers-section {
     --ofr-bg: #ffffff;
@@ -3889,7 +3335,7 @@ body {
     align-items: stretch;
 }
 
-/* ---------- Feature (welcome) offer ---------- */
+/* Feature offer (.ofr-feature) */
 .ofr-feature {
     display: flex;
     flex-direction: column;
@@ -3965,7 +3411,7 @@ body {
     outline-offset: 3px;
 }
 
-/* ---------- Ticket offers ---------- */
+/* Ticket offers (.ofr-list) */
 .ofr-list {
     display: grid;
     gap: 20px;
@@ -4095,8 +3541,7 @@ body {
     }
 }
 
-
-/* ---------- Heading colours (win over the global brand-colour !important rules) ---------- */
+/* Offers heading colours */
 html:root body .offers-section .ofr-heading h2,
 html:root body .offers-section .ofr-feature h3,
 html:root body .offers-section .ofr-body h3 {
@@ -4133,11 +3578,7 @@ html:root[data-theme="dark"] body .offers-section .ofr-body h3 {
     font-size: 20px;
 }
 
-/* =========================================================
-   WHY ARTHROSTRIDE VIDEO - HEIGHT MATCHES LEFT CONTENT
-   (video stretches from the top of the heading down to the
-   bottom of the "Quality Materials" card)
-========================================================= */
+/* Why ArthroStride video height */
 
 @media (min-width: 961px) {
     html:root:root body .why-arthro-container.why-arthro-split {
@@ -4169,7 +3610,7 @@ html:root[data-theme="dark"] body .offers-section .ofr-body h3 {
     }
 }
 
-/* tablet / mobile: keep a normal 16:10 video */
+/* Tablet and mobile video ratio */
 @media (max-width: 960px) {
     .why-arthro-visual {
         height: auto !important;
@@ -4188,7 +3629,7 @@ html:root[data-theme="dark"] body .offers-section .ofr-body h3 {
     }
 }
 
-/* large screens: slightly wider video column, height still auto */
+/* Wide screen video column */
 @media (min-width: 1700px) {
     html:root:root body .why-arthro-container.why-arthro-split {
         max-width: 1260px;

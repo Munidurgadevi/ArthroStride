@@ -20,7 +20,7 @@ html[data-theme="dark"] .premium-home {
    --ph-line: #323640;
 }
 
-/* ---------- HERO ---------- */
+/* Hero (.premium-hero) */
 .premium-hero {
    position: relative;
    max-width: 1320px;
@@ -237,7 +237,7 @@ html[data-theme="dark"] .premium-home {
    line-height: 1.5
 }
 
-/* hero visual */
+/* Hero visual (.premium-hero-visual) */
 .premium-hero-visual {
    min-height: 560px;
    display: flex;
@@ -383,7 +383,7 @@ html[data-theme="dark"] .premium-home {
    color: var(--ph-muted)
 }
 
-/* ---------- MARQUEE ---------- */
+/* Marquee (.ph-marquee) */
 .ph-marquee {
    border-block: 1px solid var(--ph-line);
    background: var(--ph-alt);
@@ -419,7 +419,7 @@ html[data-theme="dark"] .premium-home {
    }
 }
 
-/* ---------- SECTIONS ---------- */
+/* Sections (.ph-section) */
 .ph-section {
    padding: 100px 5%;
    max-width: 1320px;
@@ -478,82 +478,7 @@ html[data-theme="dark"] .premium-home {
    grid-template-columns: repeat(3, minmax(28px, 2fr));
 }
 
-.ph-card {
-   position: relative;
-   display: block;
-   padding: 34px 30px;
-   background: var(--ph-card);
-   border: 1px solid var(--ph-line);
-   border-radius: 24px;
-   text-decoration: none;
-   color: inherit;
-   overflow: hidden;
-   transition: transform .3s, box-shadow .3s, border-color .3s
-}
-
-.ph-card::before {
-   content: "";
-   position: absolute;
-   inset: auto 0 0 0;
-   height: 4px;
-   background: linear-gradient(90deg, #1c5be3, #f5970a);
-   transform: scaleX(0);
-   transform-origin: left;
-   transition: transform .35s
-}
-
-.ph-card:hover {
-   transform: translateY(-8px);
-   border-color: rgba(28, 91, 227, .5);
-   box-shadow: 0 24px 50px rgba(28, 91, 227, .16)
-}
-
-.ph-card:hover::before {
-   transform: scaleX(1)
-}
-
-.ph-card>i {
-   display: grid;
-   place-items: center;
-   width: 54px;
-   height: 54px;
-   border-radius: 16px;
-   background: rgba(28, 91, 227, .12);
-   color: var(--ph-blue);
-   font-size: 22px;
-   margin-bottom: 22px;
-   transition: transform .3s
-}
-
-.ph-card:hover>i {
-   transform: rotate(-8deg) scale(1.1)
-}
-
-.ph-card h3 {
-   margin: 0 0 10px;
-   font-size: 21px;
-   color: var(--ph-navy)
-}
-
-.ph-card p {
-   margin: 0 0 20px;
-   color: var(--ph-muted);
-   line-height: 1.7;
-   font-size: 15px
-}
-
-/* View Collection */
-.ph-card em {
-   font-style: normal;
-   color: #161922;
-   font-weight: 700;
-   font-size: 14px;
-}
-
-/* Dark Mode */
-html[data-theme="dark"] .premium-home .ph-card em {
-   color: #f8f9fc;
-}
+/* Dark mode */
 
 .ph-split {
    display: grid;
@@ -804,7 +729,7 @@ html[data-theme="dark"] .premium-home .ph-card em {
    box-shadow: 0 14px 30px rgba(0, 0, 0, .2);
 }
 
-/* ---------- SCROLL REVEAL ---------- */
+/* Scroll reveal (.reveal) */
 .js-anim .reveal {
    opacity: 0;
    transform: translateY(34px);
@@ -816,12 +741,11 @@ html[data-theme="dark"] .premium-home .ph-card em {
    transform: none
 }
 
-.ph-card.reveal.in,
 .ph-quote.reveal.in {
    transition: opacity .8s, transform .3s, box-shadow .3s, border-color .3s
 }
 
-/* ---------- FOOTER / DARK / RTL ---------- */
+/* Footer, dark and RTL */
 .site-footer {
    position: relative;
    z-index: 2
@@ -868,7 +792,7 @@ html[dir="rtl"] .premium-text-link:hover span {
    transform: translateX(-5px)
 }
 
-/* ---------- RESPONSIVE + REDUCED MOTION ---------- */
+/* Responsive and reduced motion */
 @media (max-width:900px) {
    .premium-hero {
       grid-template-columns: 1fr;
@@ -914,29 +838,24 @@ html[dir="rtl"] .premium-text-link:hover span {
    }
 }
 
-/* =========================================================
-   BLUE BORDER - SHOP BY CONDITION, STATS, TESTIMONIALS
-========================================================= */
+/* Blue borders on cards */
 
 .premium-home {
    --ph-card-border: #1c5be3;
-   /* light mode */
+   /* Light mode */
 }
 
 html[data-theme="dark"] .premium-home {
    --ph-card-border: #477bec;
-   /* dark mode */
+   /* Dark mode */
 }
 
-html:root[data-theme] body .premium-home .ph-card,
 html:root[data-theme] body .premium-home .ph-stats div,
 html:root[data-theme] body .premium-home .ph-quote {
    border-color: var(--ph-card-border);
 }
 
-/* =========================================================
-   HOME-2 HERO - ALWAYS EXACTLY FILLS THE VISIBLE SCREEN
-========================================================= */
+/* Hero fills the visible screen */
 
 .premium-hero {
    height: calc(100svh - 68px);
@@ -1015,15 +934,9 @@ html[data-theme="dark"] .footer-column h3 {
    color: #f8f9fc !important;
 }
 
-/* =========================================================
-   HOME 2 - TITLES, BUTTON HOVER, CARD BORDERS
-   Same rules as the other pages, written for the .ph-* / .premium-* classes.
-   Light mode -> black titles   |   Dark mode -> white titles
-   Button hover: light -> brown-amber, dark -> amber
-   Card border:  light -> brown-amber, dark -> amber
-========================================================= */
+/* Titles, button hover and card borders */
 
-/* ---------- SECTION TITLES (h2) - not the blue CTA band ---------- */
+/* Section titles (h2) */
 html body .ph-section:not(.ph-cta) h2,
 html body .ph-section:not(.ph-cta) h2 :is(span, em, strong, b) {
    color: #000000 !important;
@@ -1037,7 +950,7 @@ html[data-theme="dark"] body .ph-section:not(.ph-cta) h2 :is(span, em, strong, b
    -webkit-text-fill-color: #ffffff !important;
 }
 
-/* ---------- CARD / STEP / PANEL TITLES (h3) ---------- */
+/* Card titles (h3) */
 html body :is(.ph-card, .ph-step, .ph-panel, .ph-quote) h3,
 html body :is(.ph-card, .ph-step, .ph-panel, .ph-quote) h3 :is(span, em, strong, b) {
    color: #000000 !important;
@@ -1050,7 +963,7 @@ html[data-theme="dark"] body :is(.ph-card, .ph-step, .ph-panel, .ph-quote) h3 :i
    -webkit-text-fill-color: #ffffff !important;
 }
 
-/* ---------- BUTTON HOVER: blue -> amber ---------- */
+/* Button hover, blue to amber */
 html body :is(.premium-primary, .ph-cta-btn, .ph-cta-link) {
    transition: background .2s ease, color .2s ease, transform .25s, box-shadow .25s;
 }
@@ -1069,7 +982,7 @@ html[data-theme="dark"] body :is(.premium-primary, .ph-cta-btn, .ph-cta-link):ho
    box-shadow: 0 14px 30px rgba(251, 191, 36, .28) !important;
 }
 
-/* ---------- CARD BORDERS: blue -> amber ---------- */
+/* Card borders, blue to amber */
 html body .premium-home :is(.ph-card, .ph-stats div, .ph-quote),
 html body .premium-home :is(.ph-card, .ph-stats div, .ph-quote):hover {
    border-color: #b45309 !important;
@@ -1080,43 +993,7 @@ html[data-theme="dark"] body .premium-home :is(.ph-card, .ph-stats div, .ph-quot
    border-color: #fbbf24 !important;
 }
 
-.ph-image-panel {
-   background-image: url("https://i.ibb.co/tp6Qcsjn/Chat-GPT-Image-Oct-1-2026-09-30-59-AM.png");
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
-
-   min-height: 315px;
-   border-radius: 30px;
-   overflow: hidden;
-}
-
-.ph-image-panel {
-   background-image: url("https://i.ibb.co/tp6Qcsjn/Chat-GPT-Image-Oct-1-2026-09-30-59-AM.png");
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
-
-   min-height: 315px;
-   border-radius: 30px;
-   overflow: hidden;
-}
-
-/* Dark Mode */
-[data-theme="dark"] .ph-image-panel {
-   filter: brightness(0.85) contrast(1.05);
-}
-
-[data-theme="dark"] .ph-image-panel {
-   filter: none;
-}
-
-/* =========================================================
-   HOME-2 HERO - SHATTER SHOE INTRO ANIMATION
-   Pure CSS (no JavaScript). Plays once on page load:
-   shoe shards pull together -> full colour shoe.
-   Timeline (after --t0): shards 0.1-3.2s | final image 3.3s
-========================================================= */
+/* Hero shoe intro animation */
 .premium-image-frame {
    --t0: .5s;
 }
@@ -1128,7 +1005,7 @@ html[data-theme="dark"] body .premium-home :is(.ph-card, .ph-stats div, .ph-quot
    animation: zoom 9s 4.2s ease-in-out infinite alternate;
 }
 
-/* final, full colour image - fades in once the shards have joined */
+/* Final shoe image fade-in */
 .premium-image-frame .hero-stage img {
    position: relative;
    z-index: 1;
@@ -1145,7 +1022,7 @@ html[data-theme="dark"] body .premium-home :is(.ph-card, .ph-stats div, .ph-quot
    }
 }
 
-/* ---------- shards (the shoe split into 6 pieces) ---------- */
+/* Shoe shards (.hero-shards) */
 .hero-shards {
    position: absolute;
    inset: 0;
@@ -1228,14 +1105,12 @@ html[data-theme="dark"] body .premium-home :is(.ph-card, .ph-stats div, .ph-quot
    }
 }
 
-/* glass shine should sweep only after the intro is done */
+/* Shine sweep after intro */
 .premium-image-frame .shine {
    animation-delay: 4.6s;
 }
 
-/* =========================================================
-   PRESSURE MAP (replaces "Shop by foot condition")
-========================================================= */
+/* Pressure map (.fp-section) */
 .fp-section {
    --fp-accent: #b45309;
 }
@@ -1409,9 +1284,7 @@ html[dir="rtl"] .fp-line {
    }
 }
 
-/* =========================================================
-   BEST SELLERS (above the pressure map)
-========================================================= */
+/* Best sellers (.bsl-section) */
 .bsl-section {
    --bsl-accent: #b45309;
    --bsl-tint: rgba(180, 83, 9, .10);
@@ -1702,10 +1575,7 @@ html[data-theme="dark"] .bsl-badge {
    }
 }
 
-
-/* =========================================================
-   STAR COLOUR - same in light and dark mode
-========================================================= */
+/* Star colour */
 html body .premium-home :is(.stars, .hero-badge i, .bsl-rate span, .bsl-star),
 html:root[data-theme="dark"] body .premium-home :is(.stars, .hero-badge i, .bsl-rate span, .bsl-star),
 html body .hero-badge i,
@@ -1714,11 +1584,7 @@ html:root[data-theme="dark"] body .hero-badge i {
    -webkit-text-fill-color: #c67c23 !important;
 }
 
-/* =========================================================
-   HEADING ACCENT RULE (same as hero / index): solid colour, no gradient
-   light = #b45309 | dark = #fbbf24
-   Applies to the section titles of Home 2 (not the blue CTA band)
-========================================================= */
+/* Section title accent colour (h2 span) */
 html:root:root:root body .ph-section:not(.ph-cta) h2 span {
    background: none !important;
    background-image: none !important;
@@ -1727,22 +1593,19 @@ html:root:root:root body .ph-section:not(.ph-cta) h2 span {
    text-shadow: none !important;
 }
 
-/* LIGHT MODE */
+/* Light mode */
 html:root:root:root:not([data-theme="dark"]) body .ph-section:not(.ph-cta) h2 span {
    color: #b45309 !important;
    -webkit-text-fill-color: #b45309 !important;
 }
 
-/* DARK MODE */
+/* Dark mode */
 html:root:root:root[data-theme="dark"] body .ph-section:not(.ph-cta) h2 span {
    color: #fbbf24 !important;
    -webkit-text-fill-color: #fbbf24 !important;
 }
 
-/* =========================================================
-   VISIT BOOKING BUTTON (Best sellers + Pressure map)
-   Outlined pill, works in light and dark mode
-========================================================= */
+/* Visit Booking button (.ph-book-btn) */
 .ph-book-btn {
    display: inline-flex;
    align-items: center;
@@ -1785,9 +1648,7 @@ html[data-theme="dark"] .ph-book-btn:focus-visible {
    outline-offset: 3px;
 }
 
-/* =========================================================
-   PRESSURE MAP: light / dark theme colours
-========================================================= */
+/* Pressure map colours (.fp-stage) */
 .fp-stage {
    --fp-bg-o: #fbeee8;
    --fp-bg-a: #e8f6f0;
@@ -1848,7 +1709,7 @@ html[data-theme="dark"] .fp-stage {
    border: 2px solid var(--fp-divider);
 }
 
-/* bars + side panel */
+/* Bars and side panel */
 .fp-track {
    background: rgba(29, 36, 52, .10);
 }
@@ -1857,11 +1718,7 @@ html[data-theme="dark"] .fp-track {
    background: rgba(255, 255, 255, .10);
 }
 
-
-/* =========================================================
-   "Find Your Fit" + "Learn how it works" -> solid blue buttons
-   Normal: blue | Hover: amber (light mode) / yellow (dark mode)
-========================================================= */
+/* Hero blue buttons */
 html body .premium-text-link {
    display: inline-flex;
    align-items: center;
@@ -1884,7 +1741,7 @@ html body .premium-text-link span {
    transition: transform .25s;
 }
 
-/* LIGHT hover: amber */
+/* Light mode hover, amber */
 html body .premium-text-link:hover,
 html body .premium-text-link:focus-visible {
    background: #b45309;
@@ -1897,12 +1754,12 @@ html body .premium-text-link:hover span {
    transform: translateX(5px);
 }
 
-/* keep arrow the same colour as the text in dark mode */
+/* Arrow colour in dark mode */
 html:root:root[data-theme="dark"] body .premium-text-link span {
    color: currentColor !important;
 }
 
-/* DARK hover: yellow */
+/* Dark mode hover, yellow */
 html[data-theme="dark"] body .premium-text-link:hover,
 html[data-theme="dark"] body .premium-text-link:focus-visible {
    background: #fbbf24;
@@ -1914,26 +1771,18 @@ html[dir="rtl"] body .premium-text-link:hover span {
    transform: translateX(-5px);
 }
 
-
-/* =========================================================
-   HOME-2 HERO BUTTONS = same format as Contact / Coverage / Fitting hero
-   Explore Footwear : solid blue (with pulse ring)
-   Find Your Fit    : amber outline + amber text
-   Hover / focus / click (both):
-     light -> amber #b45309, white text
-     dark  -> yellow #fbbf24, dark text #1a1200
-========================================================= */
+/* Hero buttons, same as other pages */
 html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-link) {
    transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 
-/* secondary keeps the same total height as the primary (border = 1.5px) */
+/* Same height as primary button */
 html:root:root:root body .premium-actions .premium-text-link {
    padding: calc(clamp(10px, 1.6vh, 15px) - 1.5px) calc(clamp(16px, 2vw, 26px) - 1.5px) !important;
    animation: none !important;
 }
 
-/* ---- light : normal ---- */
+/* Light: normal */
 html:root:root:root:not([data-theme="dark"]) body .premium-actions .premium-primary {
    background: #2563eb !important;
    border: 0 !important;
@@ -1948,7 +1797,7 @@ html:root:root:root:not([data-theme="dark"]) body .premium-actions .premium-text
    box-shadow: none !important;
 }
 
-/* ---- dark : normal ---- */
+/* Dark: normal */
 html:root:root:root[data-theme="dark"] body .premium-actions .premium-primary {
    background: #1a54d0 !important;
    border: 0 !important;
@@ -1963,7 +1812,7 @@ html:root:root:root[data-theme="dark"] body .premium-actions .premium-text-link 
    box-shadow: none !important;
 }
 
-/* ---- light : hover / focus / click ---- */
+/* Light: hover and focus */
 html:root:root:root:not([data-theme="dark"]) body .premium-actions :is(.premium-primary, .premium-text-link):is(:hover, :focus, :focus-visible, :active) {
    background: #b45309 !important;
    border-color: #b45309 !important;
@@ -1974,7 +1823,7 @@ html:root:root:root:not([data-theme="dark"]) body .premium-actions :is(.premium-
    outline: none;
 }
 
-/* ---- dark : hover / focus / click ---- */
+/* Dark: hover and focus */
 html:root:root:root[data-theme="dark"] body .premium-actions :is(.premium-primary, .premium-text-link):is(:hover, :focus, :focus-visible, :active) {
    background: #fbbf24 !important;
    border-color: #fbbf24 !important;
@@ -1985,20 +1834,13 @@ html:root:root:root[data-theme="dark"] body .premium-actions :is(.premium-primar
    outline: none;
 }
 
-/* arrows follow the text colour */
+/* Arrow follows text colour */
 html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-link) span {
    color: currentColor !important;
    -webkit-text-fill-color: currentColor !important;
 }
 
-/* =========================================================
-   HOME-2 HERO IMAGE - MOBILE / TABLET (<= 900px)
-   Phones (e.g. Galaxy S8+ 360 x 740): the hero frame was a fixed
-   400px tall while the picture is landscape, so there was an empty
-   band above/below it. Now the frame takes the picture's own shape
-   (no blank space, nothing cropped) and the shatter intro still
-   lines up because the shards use the same box.
-========================================================= */
+/* Hero image on mobile and tablet */
 @media (max-width: 900px) {
    .premium-hero-visual {
       --hv-h: auto;
@@ -2023,7 +1865,7 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       object-fit: contain;
    }
 
-   /* the two small cards sit on the frame edge, never covering the whole picture */
+   /* Floating cards on frame edge (.premium-float-card) */
    .premium-float-card {
       left: 10px;
       bottom: 12px;
@@ -2044,15 +1886,7 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
    }
 }
 
-/* =========================================================
-   HOME-2 HERO IMAGE - DESKTOP / LAPTOP (> 900px)
-   The landscape photo was "contained" inside a taller frame, which
-   left empty light-blue bands above and below it. Now the photo
-   fills the whole frame. The shoe is on the right, so the crop
-   keeps the right side and trims the soft blurred left edge.
-   The shatter-intro shards use the same fit, so the animation
-   still ends exactly on the final picture.
-========================================================= */
+/* Hero image on desktop */
 @media (min-width: 901px) {
    .premium-image-frame .hero-stage img {
       width: 100%;
@@ -2066,14 +1900,11 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
    }
 }
 
-/* =========================================================
-   HOME 2 - MOBILE 2D HERO LAYOUT
-   Samsung Galaxy S8+ 360x740
-========================================================= */
+/* Mobile hero layout */
 
 @media (max-width: 767px) {
 
-   /* Main Home 2 hero */
+   /* Main hero */
    body:has(.premium-home) .premium-hero {
       width: 100%;
       max-width: 100%;
@@ -2086,10 +1917,7 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
 
       display: grid;
 
-      /*
-         * Keep the content and image balanced.
-         * The image remains part of the same visual composition.
-         */
+      /* Content and image balance */
       grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
 
       gap: 14px;
@@ -2099,10 +1927,7 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       overflow: hidden;
    }
 
-
-   /* -----------------------------------------------------
-       LEFT CONTENT
-    ----------------------------------------------------- */
+   /* Left content (.premium-hero-copy) */
 
    body:has(.premium-home) .premium-hero-copy {
       width: 100%;
@@ -2114,8 +1939,7 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       z-index: 3;
    }
 
-
-   /* Small blue label */
+   /* Small blue label (.premium-kicker) */
    body:has(.premium-home) .premium-kicker {
       display: inline-flex;
 
@@ -2131,8 +1955,7 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       gap: 5px;
    }
 
-
-   /* Main heading */
+   /* Main heading (h1) */
    body:has(.premium-home) .premium-hero h1 {
       margin: 12px 0 12px;
 
@@ -2147,7 +1970,6 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       overflow-wrap: normal;
       word-break: normal;
    }
-
 
    /* Description */
    body:has(.premium-home) .premium-hero-copy>p {
@@ -2164,10 +1986,7 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       word-break: normal;
    }
 
-
-   /* -----------------------------------------------------
-       BUTTONS
-    ----------------------------------------------------- */
+   /* Buttons (.premium-actions) */
 
    body:has(.premium-home) .premium-actions {
       width: 100%;
@@ -2182,7 +2001,6 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
 
       margin-top: 16px;
    }
-
 
    body:has(.premium-home) .premium-primary,
    body:has(.premium-home) .premium-text-link {
@@ -2199,10 +2017,7 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       white-space: nowrap;
    }
 
-
-   /* -----------------------------------------------------
-       01 / 02 / 03 PROOF
-    ----------------------------------------------------- */
+   /* Proof numbers (.premium-proof) */
 
    body:has(.premium-home) .premium-proof {
       width: 100%;
@@ -2218,7 +2033,6 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       padding-top: 12px;
    }
 
-
    body:has(.premium-home) .premium-proof div {
       display: flex;
 
@@ -2231,13 +2045,11 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       min-width: 0;
    }
 
-
    body:has(.premium-home) .premium-proof strong {
       flex: 0 0 auto;
 
       font-size: 9px;
    }
-
 
    body:has(.premium-home) .premium-proof span {
       font-size: 10px;
@@ -2247,10 +2059,7 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       white-space: normal;
    }
 
-
-   /* -----------------------------------------------------
-       RIGHT IMAGE
-    ----------------------------------------------------- */
+   /* Right image (.premium-hero-visual) */
 
    body:has(.premium-home) .premium-hero-visual {
       width: 100%;
@@ -2270,7 +2079,6 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       z-index: 2;
    }
 
-
    body:has(.premium-home) .premium-image-frame {
       width: 100%;
 
@@ -2283,7 +2091,6 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       overflow: hidden;
    }
 
-
    body:has(.premium-home) .premium-image-frame img {
       width: 100%;
       height: 100%;
@@ -2293,10 +2100,7 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       object-position: center;
    }
 
-
-   /* -----------------------------------------------------
-       FLOATING CARD
-    ----------------------------------------------------- */
+   /* Floating card (.premium-float-card) */
 
    body:has(.premium-home) .premium-float-card {
       left: -8px;
@@ -2312,11 +2116,9 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       border-radius: 13px;
    }
 
-
    body:has(.premium-home) .premium-float-card span {
       font-size: 8px;
    }
-
 
    body:has(.premium-home) .premium-float-card p {
       margin-top: 4px;
@@ -2326,10 +2128,7 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       line-height: 1.35;
    }
 
-
-   /* -----------------------------------------------------
-       RATING BADGE
-    ----------------------------------------------------- */
+   /* Rating badge (.hero-badge) */
 
    body:has(.premium-home) .hero-badge {
       top: 12px;
@@ -2345,25 +2144,19 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       font-size: 9px;
    }
 
-
    body:has(.premium-home) .hero-badge b {
       font-size: 11px;
    }
-
 
    body:has(.premium-home) .hero-badge small {
       font-size: 7px;
    }
 
-
    body:has(.premium-home) .hero-badge i {
       font-size: 8px;
    }
 
-
-   /* -----------------------------------------------------
-       DECORATIVE RING
-    ----------------------------------------------------- */
+   /* Decorative ring (.hero-ring) */
 
    body:has(.premium-home) .hero-ring {
       width: 115%;
@@ -2373,8 +2166,7 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       pointer-events: none;
    }
 
-
-   /* Keep decorative orbs inside viewport */
+   /* Keep orbs inside the screen (.orb-1) */
    body:has(.premium-home) .orb-1 {
       width: 180px;
       height: 180px;
@@ -2382,7 +2174,6 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       right: -70px;
       top: -40px;
    }
-
 
    body:has(.premium-home) .orb-2 {
       width: 150px;
@@ -2393,13 +2184,9 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
    }
 }
 
-
-/* =========================================================
-   SAMSUNG GALAXY S8+ — 360 x 740
-========================================================= */
+/* Small phones, 380px */
 
 @media (max-width: 380px) {
-
    body:has(.premium-home) .premium-hero {
       min-height: calc(100svh - 68px);
 
@@ -2411,13 +2198,11 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       gap: 10px;
    }
 
-
    body:has(.premium-home) .premium-kicker {
       font-size: 8px;
 
       padding: 5px 8px;
    }
-
 
    body:has(.premium-home) .premium-hero h1 {
       font-size: 25px;
@@ -2429,20 +2214,17 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       margin: 10px 0;
    }
 
-
    body:has(.premium-home) .premium-hero-copy>p {
       font-size: 10.5px;
 
       line-height: 1.5;
    }
 
-
    body:has(.premium-home) .premium-actions {
       margin-top: 13px;
 
       gap: 7px;
    }
-
 
    body:has(.premium-home) .premium-primary,
    body:has(.premium-home) .premium-text-link {
@@ -2453,7 +2235,6 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       font-size: 10px;
    }
 
-
    body:has(.premium-home) .premium-proof {
       margin-top: 14px;
 
@@ -2462,23 +2243,19 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       gap: 6px;
    }
 
-
    body:has(.premium-home) .premium-proof span {
       font-size: 9px;
    }
 
-
    body:has(.premium-home) .premium-hero-visual {
       height: 290px;
    }
-
 
    body:has(.premium-home) .premium-image-frame {
       height: 290px;
 
       border-radius: 19px;
    }
-
 
    body:has(.premium-home) .premium-float-card {
       left: -4px;
@@ -2490,18 +2267,15 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       padding: 8px 9px;
    }
 
-
    body:has(.premium-home) .premium-float-card span {
       font-size: 7px;
    }
-
 
    body:has(.premium-home) .premium-float-card p {
       font-size: 8px;
 
       line-height: 1.3;
    }
-
 
    body:has(.premium-home) .hero-badge {
       top: 8px;
@@ -2511,24 +2285,18 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       padding: 6px 7px;
    }
 
-
    body:has(.premium-home) .hero-badge b {
       font-size: 10px;
    }
-
 
    body:has(.premium-home) .hero-badge small {
       font-size: 6.5px;
    }
 }
 
-
-/* =========================================================
-   TABLET / iPAD MINI
-========================================================= */
+/* Tablet */
 
 @media (min-width: 768px) and (max-width: 900px) {
-
    body:has(.premium-home) .premium-hero {
       min-height: 650px;
 
@@ -2540,43 +2308,23 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       gap: 35px;
    }
 
-
    body:has(.premium-home) .premium-hero h1 {
       font-size: clamp(38px, 6vw, 56px);
    }
 
-
    body:has(.premium-home) .premium-hero-visual {
       height: 430px;
    }
-
 
    body:has(.premium-home) .premium-image-frame {
       height: 430px;
    }
 }
 
-/* =========================================================
-   HOME 2 - PH STATS CARDS
-   MOBILE / SAMSUNG GALAXY S8+ FIX
-   ---------------------------------------------------------
-   Goal:
-   - Cards separate ga display avvali
-   - Equal width
-   - Equal height
-   - Proper 16px spacing
-   - No unwanted margins
-   - No overlapping / sticking cards
-   - Desktop / iPad layout disturb kakudadhu
-========================================================= */
+/* Stats cards on mobile (.ph-stats) */
 
-
-/* ---------------------------------------------------------
-   TABLET / iPAD MINI
-   601px - 960px
---------------------------------------------------------- */
+/* Tablet, 601px to 960px */
 @media (min-width: 601px) and (max-width: 960px) {
-
    body .premium-home .ph-stats {
       display: grid !important;
       grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -2597,14 +2345,10 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
    }
 }
 
-
-/* ---------------------------------------------------------
-   MOBILE
-   Samsung Galaxy S8+ / 360px and similar phones
---------------------------------------------------------- */
+/* Mobile, up to 600px */
 @media (max-width: 600px) {
 
-   /* Main stats container */
+   /* Stats container (.ph-stats) */
    body .premium-home .ph-stats {
       display: flex !important;
 
@@ -2623,8 +2367,7 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       box-sizing: border-box !important;
    }
 
-
-   /* Every individual stat card */
+   /* Stat card */
    body .premium-home .ph-stats>div {
       display: flex !important;
 
@@ -2649,8 +2392,7 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       overflow: hidden !important;
    }
 
-
-   /* Number / main value */
+   /* Stat number */
    body .premium-home .ph-stats>div strong,
    body .premium-home .ph-stats>div b {
       display: block !important;
@@ -2663,8 +2405,7 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       font-size: 24px !important;
    }
 
-
-   /* Description text */
+   /* Stat description */
    body .premium-home .ph-stats>div span,
    body .premium-home .ph-stats>div small,
    body .premium-home .ph-stats>div p {
@@ -2681,13 +2422,8 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
    }
 }
 
-
-/* ---------------------------------------------------------
-   VERY SMALL PHONES
-   320px - 380px
---------------------------------------------------------- */
+/* Very small phones */
 @media (max-width: 380px) {
-
    body .premium-home .ph-stats {
       gap: 14px !important;
    }
@@ -2715,13 +2451,8 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
    }
 }
 
-
-/* ---------------------------------------------------------
-   SAFETY RESET
-   Prevent old grid/flex rules from creating spacing
---------------------------------------------------------- */
+/* Safety reset for old spacing */
 @media (max-width: 600px) {
-
    body .premium-home .ph-stats>* {
       grid-column: auto !important;
       grid-row: auto !important;
@@ -2741,30 +2472,33 @@ html:root:root:root body .premium-actions :is(.premium-primary, .premium-text-li
       box-sizing: border-box !important;
    }
 }
-/* Stats numbers: black in light mode (dark mode unchanged) */
-html:not([data-theme="dark"]) body .premium-home .ph-stats > div b,
-html:not([data-theme="dark"]) body .premium-home .ph-stats > div strong {
+
+/* Stats numbers, black in light mode */
+html:not([data-theme="dark"]) body .premium-home .ph-stats>div b,
+html:not([data-theme="dark"]) body .premium-home .ph-stats>div strong {
    color: #000 !important;
    -webkit-text-fill-color: #000 !important;
-}/* HOME 2 - ACTIVE HOME NAVIGATION */
+}
+
+/* Active Home navigation */
 
 html body .home-dropdown-toggle.nav-link {
-    color: #2563eb !important;
+   color: #2563eb !important;
 }
 
 html body .home-dropdown-toggle.nav-link::after {
-    content: "" !important;
-    position: absolute !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 12px !important;
-    width: auto !important;
-    height: 3px !important;
-    display: block !important;
-    background: #2563eb !important;
-    border-radius: 5px !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    pointer-events: none !important;
+   content: "" !important;
+   position: absolute !important;
+   left: 0 !important;
+   right: 0 !important;
+   bottom: 12px !important;
+   width: auto !important;
+   height: 3px !important;
+   display: block !important;
+   background: #2563eb !important;
+   border-radius: 5px !important;
+   opacity: 1 !important;
+   visibility: visible !important;
+   transform: none !important;
+   pointer-events: none !important;
 }

@@ -1,4 +1,4 @@
-/* Ways to Reach Us cards : no blue border */
+/* Ways to Reach Us card border (.ft-card) */
 html:root[data-theme] body.contact-page .ft-cards .ft-card {
     border: 1px solid #d7dae1;
     outline: none !important;
@@ -17,7 +17,7 @@ html:root[data-theme="dark"] body.contact-page .ft-cards .ft-card:hover {
     border-color: rgba(255, 255, 255, .45);
 }
 
-/* Call / Email / WhatsApp links */
+/* Contact links (.ft-card a) */
 html:root body.contact-page .ft-cards .ft-card a {
     color: #000000 !important;
 }
@@ -26,7 +26,7 @@ html:root[data-theme="dark"] body.contact-page .ft-cards .ft-card a {
     color: #ffffff !important;
 }
 
-/* Shop Products / Book Now / Learn More */
+/* Card links (.mx-link) */
 html:root body.contact-page .mx-card .mx-link {
     color: #000000 !important;
 }
@@ -35,32 +35,7 @@ html:root[data-theme="dark"] body.contact-page .mx-card .mx-link {
     color: #ffffff !important;
 }
 
-/* Inside the Store photo cards : no blue-ish border */
-html:root[data-theme] body.contact-page .mx-tour figure {
-    border: 1px solid #bcc0c9;
-    /* light mode : grey */
-}
-
-html:root[data-theme="dark"] body.contact-page .mx-tour figure {
-    border: 1px solid rgba(255, 255, 255, .22);
-    /* dark mode : soft white */
-}
-
-html:root[data-theme] body.contact-page .mx-tour figure {
-    border: 1px solid #2563eb;
-    /* light mode blue */
-}
-
-html:root[data-theme="dark"] body.contact-page .mx-tour figure {
-    border: 1px solid #477bec;
-    /* dark mode blue */
-}
-
-/* =========================================================
-   CONTACT HERO — DISTINCT VISUAL LAYOUT
-   Image-led right panel + clean editorial left content.
-   This override is Contact-page only.
-========================================================= */
+/* Contact hero layout (.contact-hero-new) */
 .contact-hero-new {
     position: relative;
     overflow: hidden;
@@ -343,12 +318,12 @@ html:root[data-theme="light"] .contact-mini-info b {
     }
 }
 
-/* Remove Contact page bottom stats card */
+/* Hide bottom stats strip */
 .contact-page>main>.ft-strip {
     display: none !important;
 }
 
-/* LIGHT MODE */
+/* Light mode */
 html:root[data-theme="light"] .contact-hero-new .contact-kicker {
     color: #1951ca;
     background: rgba(245, 151, 10, .10);
@@ -374,7 +349,7 @@ html:root[data-theme="light"] .contact-mini-info b {
     color: #151d31;
 }
 
-/* LIGHT MODE IMAGE */
+/* Light mode image */
 html:root[data-theme="light"] .contact-image-frame {
     border-color: rgba(19, 27, 46, .20);
     box-shadow: 0 24px 60px rgba(28, 59, 125, .18);
@@ -396,7 +371,7 @@ html:root[data-theme="light"] .contact-image-tag small {
     color: #586073;
 }
 
-/* DARK MODE */
+/* Dark mode */
 html:root[data-theme="dark"] .contact-hero-new .contact-hero-copy>p {
     color: #dadfeb !important;
 }
@@ -405,9 +380,7 @@ html:root[data-theme="dark"] .contact-image-frame {
     border-color: rgba(128, 163, 240, .28);
 }
 
-/* =========================================================
-   CONTACT HERO - PROFESSIONAL IMAGE POSITION
-========================================================= */
+/* Contact hero image position (.contact-hero-wrap) */
 
 .contact-hero-wrap {
     width: min(1420px, calc(100% - 80px));
@@ -420,13 +393,13 @@ html:root[data-theme="dark"] .contact-image-frame {
     gap: 55px;
 }
 
-/* LEFT CONTENT */
+/* Left content (.contact-hero-copy) */
 
 .contact-hero-copy {
     max-width: 620px;
 }
 
-/* RIGHT IMAGE AREA */
+/* Right image area (.contact-hero-visual) */
 
 .contact-hero-visual {
     width: 100%;
@@ -440,7 +413,7 @@ html:root[data-theme="dark"] .contact-image-frame {
     box-sizing: border-box;
 }
 
-/* IMAGE */
+/* Image frame (.contact-image-frame) */
 
 .contact-image-frame {
     width: 92%;
@@ -474,8 +447,7 @@ html:root[data-theme="dark"] .contact-image-frame {
     transform: scale(1.01);
 }
 
-
-/* SMALL PROFESSIONAL FLOAT */
+/* Image float animation */
 
 @keyframes contactImageFloat {
     from {
@@ -487,8 +459,7 @@ html:root[data-theme="dark"] .contact-image-frame {
     }
 }
 
-
-/* IMAGE LABEL */
+/* Image label (.contact-image-tag) */
 
 .contact-image-tag {
     left: 22px;
@@ -499,10 +470,7 @@ html:root[data-theme="dark"] .contact-image-frame {
     padding: 12px 18px;
 }
 
-
-/* =========================================================
-   DARK MODE
-========================================================= */
+/* Dark mode */
 
 html:root[data-theme="dark"] .contact-image-frame {
     border-color: rgba(125, 162, 242, .22);
@@ -512,10 +480,7 @@ html:root[data-theme="dark"] .contact-image-frame {
         0 0 35px rgba(65, 119, 237, .06);
 }
 
-
-/* =========================================================
-   LIGHT MODE
-========================================================= */
+/* Light mode */
 
 html:root[data-theme="light"] .contact-image-frame {
     border-color: rgba(20, 28, 47, .18);
@@ -525,13 +490,9 @@ html:root[data-theme="light"] .contact-image-frame {
         0 0 25px rgba(28, 91, 227, .05);
 }
 
-
-/* =========================================================
-   LAPTOP
-========================================================= */
+/* Laptop */
 
 @media (max-width: 1200px) {
-
     .contact-hero-wrap {
         width: calc(100% - 55px);
         gap: 35px;
@@ -547,13 +508,9 @@ html:root[data-theme="light"] .contact-image-frame {
     }
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
+/* Tablet */
 
 @media (max-width: 900px) {
-
     .contact-hero-wrap {
         width: calc(100% - 40px);
 
@@ -572,13 +529,9 @@ html:root[data-theme="light"] .contact-image-frame {
     }
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
+/* Mobile */
 
 @media (max-width: 600px) {
-
     .contact-hero-wrap {
         width: calc(100% - 30px);
     }
@@ -593,9 +546,7 @@ html:root[data-theme="light"] .contact-image-frame {
     }
 }
 
-/* =========================================================
-   CONTACT HERO - FINAL SCREEN FIT
-========================================================= */
+/* Hero fits the screen (.contact-hero-new) */
 
 .contact-hero-new {
     width: 100%;
@@ -611,8 +562,7 @@ html:root[data-theme="light"] .contact-image-frame {
     align-items: center;
 }
 
-
-/* MAIN HERO */
+/* Main hero (.contact-hero-wrap) */
 
 .contact-hero-wrap {
     width: min(1400px, 100%);
@@ -628,24 +578,19 @@ html:root[data-theme="light"] .contact-image-frame {
     gap: 48px;
 }
 
-
-/* =========================================================
-   LEFT CONTENT
-========================================================= */
+/* Left content (.contact-hero-copy) */
 
 .contact-hero-copy {
     max-width: 620px;
 }
 
-
-/* KICKER */
+/* Kicker label (.contact-kicker) */
 
 .contact-kicker {
     margin-bottom: 17px !important;
 }
 
-
-/* HEADING */
+/* Heading (h1) */
 
 .contact-hero-new h1 {
     font-size: clamp(43px, 4.2vw, 62px) !important;
@@ -656,8 +601,7 @@ html:root[data-theme="light"] .contact-image-frame {
     margin: 0 0 17px !important;
 }
 
-
-/* DESCRIPTION */
+/* Description text */
 
 .contact-hero-new .contact-hero-copy>p {
     max-width: 570px;
@@ -668,10 +612,7 @@ html:root[data-theme="light"] .contact-image-frame {
     margin: 0 0 20px !important;
 }
 
-
-/* =========================================================
-   BUTTONS
-========================================================= */
+/* Buttons (.contact-hero-actions) */
 
 .contact-hero-actions {
     gap: 12px !important;
@@ -685,10 +626,7 @@ html:root[data-theme="light"] .contact-image-frame {
     padding: 0 25px !important;
 }
 
-
-/* =========================================================
-   STORE / HOURS
-========================================================= */
+/* Store hours info (.contact-mini-info) */
 
 .contact-mini-info {
     padding-top: 13px !important;
@@ -698,10 +636,7 @@ html:root[data-theme="light"] .contact-image-frame {
     font-size: 13px !important;
 }
 
-
-/* =========================================================
-   RIGHT IMAGE
-========================================================= */
+/* Right image (.contact-hero-visual) */
 
 .contact-hero-visual {
     width: 100%;
@@ -716,7 +651,6 @@ html:root[data-theme="light"] .contact-image-frame {
     justify-content: center;
 }
 
-
 .contact-image-frame {
     width: 88% !important;
     height: 100% !important;
@@ -730,8 +664,7 @@ html:root[data-theme="light"] .contact-image-frame {
     transform: none;
 }
 
-
-/* IMAGE */
+/* Image */
 
 .contact-image-frame img {
     width: 100%;
@@ -744,8 +677,7 @@ html:root[data-theme="light"] .contact-image-frame {
     transform: scale(1.01);
 }
 
-
-/* IMAGE LABEL */
+/* Image label (.contact-image-tag) */
 
 .contact-image-tag {
     left: 18px !important;
@@ -756,13 +688,9 @@ html:root[data-theme="light"] .contact-image-frame {
     border-radius: 12px !important;
 }
 
-
-/* =========================================================
-   DESKTOP HEIGHT FIX
-========================================================= */
+/* Desktop short height fix */
 
 @media (min-width: 1100px) and (max-height: 850px) {
-
     .contact-hero-new {
         padding-top: 18px !important;
         padding-bottom: 15px !important;
@@ -781,13 +709,9 @@ html:root[data-theme="light"] .contact-image-frame {
     }
 }
 
-
-/* =========================================================
-   SMALL LAPTOP
-========================================================= */
+/* Small laptop */
 
 @media (min-width: 901px) and (max-width: 1200px) {
-
     .contact-hero-new {
         padding-left: 28px !important;
         padding-right: 28px !important;
@@ -806,13 +730,9 @@ html:root[data-theme="light"] .contact-image-frame {
     }
 }
 
-
-/* =========================================================
-   TABLET
-========================================================= */
+/* Tablet */
 
 @media (max-width: 900px) {
-
     .contact-hero-new {
         height: auto !important;
         min-height: 0 !important;
@@ -839,13 +759,9 @@ html:root[data-theme="light"] .contact-image-frame {
     }
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
+/* Mobile */
 
 @media (max-width: 600px) {
-
     .contact-hero-new {
         padding: 28px 16px 35px !important;
     }
@@ -885,12 +801,7 @@ html:root[data-theme="light"] .contact-image-frame {
     }
 }
 
-/* =========================================================
-   CONTACT PAGE UPDATE
-   - no underlines on Ways to Reach Us links
-   - What to Expect step badge
-   - full-width map section
-========================================================= */
+/* Link underlines, step badge and map section */
 html:root body.contact-page .ft-cards .ft-card a,
 html:root body.contact-page .ft-cards .ft-card a:hover {
     text-decoration: none !important;
@@ -936,10 +847,6 @@ html:root body.contact-page .ct-map-card p {
     color: var(--theme-light-muted);
 }
 
-html:root body.contact-page .ct-map-card .ct-map-contact {
-    font-weight: 600;
-}
-
 html:root[data-theme="dark"] body.contact-page .ct-map-card {
     background: var(--theme-dark-card);
     color: var(--theme-dark-text-2);
@@ -969,14 +876,7 @@ html:root[data-theme="dark"] body.contact-page .ct-map-card p {
     }
 }
 
-
-/* =========================================================
-   UNIQUE LAYOUTS (Contact page only)
-   1) Ways to Reach Us  -> one contact bar with dividers
-   2) Quick Help        -> bento tiles (one featured)
-   3) What to Expect    -> connected step timeline
-   Headings use the site's own .mx-head so sizes match every page.
-========================================================= */
+/* Contact layouts: info bar, help tiles and steps */
 html:root body.contact-page {
     --ct-text: #161922;
     --ct-muted: #5e6575;
@@ -995,7 +895,7 @@ html:root[data-theme="dark"] body.contact-page {
     --ct-accent: #6a93ec;
 }
 
-/* keep the global "all headings black/white" rule from breaking our colours */
+/* Keep custom heading colours */
 html:root body.contact-page main :is(.ct-bar, .ct-bento, .ct-steps) h3 {
     color: var(--ct-text) !important;
     -webkit-text-fill-color: var(--ct-text) !important;
@@ -1010,7 +910,7 @@ html:root body.contact-page main :is(.ct-bar, .ct-bento, .ct-steps) p {
     line-height: 1.65;
 }
 
-/* ---------- 1) WAYS TO REACH US ---------- */
+/* Ways to Reach Us bar (.ct-bar) */
 html:root body.contact-page .ct-bar {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1053,37 +953,11 @@ html:root body.contact-page .ct-bar-item p {
     margin-bottom: 20px !important;
 }
 
-html:root body.contact-page .ct-bar-act {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: auto;
-    font-weight: 800;
-    font-size: 15px;
-    overflow-wrap: anywhere;
-    color: var(--ct-accent) !important;
-    text-decoration: none !important;
-}
-
-html:root body.contact-page .ct-bar-act svg {
-    flex: none;
-    transition: transform .2s ease;
-}
-
-html:root body.contact-page .ct-bar-item:hover .ct-bar-act svg {
-    transform: translateX(4px);
-}
-
-html[dir="rtl"] body.contact-page .ct-bar-act svg,
 html[dir="rtl"] body.contact-page .ct-tile-go svg {
     transform: scaleX(-1);
 }
 
-html[dir="rtl"] body.contact-page .ct-bar-item:hover .ct-bar-act svg {
-    transform: scaleX(-1) translateX(4px);
-}
-
-/* ---------- 2) QUICK HELP : BENTO ---------- */
+/* Quick Help tiles (.ct-bento) */
 html:root body.contact-page .ct-bento {
     display: grid;
     grid-template-columns: 1.15fr 1fr;
@@ -1130,7 +1004,7 @@ html:root body.contact-page .ct-tile-go {
     color: var(--ct-accent);
 }
 
-/* featured tile */
+/* Featured tile (.ct-tile-main) */
 html:root body.contact-page .ct-tile-main {
     grid-row: span 2;
     flex-direction: column;
@@ -1168,7 +1042,7 @@ html:root body.contact-page .ct-tile-main .ct-tile-go {
     color: #1d4ed8;
 }
 
-/* ---------- 3) WHAT TO EXPECT : TIMELINE ---------- */
+/* What to Expect steps (.ct-steps) */
 html:root body.contact-page .ct-steps {
     list-style: none;
     margin: 0;
@@ -1215,7 +1089,7 @@ html:root body.contact-page .ct-steps p {
     margin: 0 auto;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* Responsive */
 @media (max-width: 1100px) {
     html:root body.contact-page .ct-bar {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1290,11 +1164,7 @@ html:root body.contact-page .ct-steps p {
     }
 }
 
-/* =========================================================
-   HEADING ACCENT RULE (same as hero / index / home-2 / about / products / fitting / coverage): solid colour, no gradient
-   light = #b45309 | dark = #fbbf24
-   Applies to the Contact page section titles (h2 span)
-========================================================= */
+/* Section title accent colour (h2 span) */
 html:root:root:root body.contact-page main h2 span {
     background: none !important;
     background-image: none !important;
@@ -1303,24 +1173,19 @@ html:root:root:root body.contact-page main h2 span {
     text-shadow: none !important;
 }
 
-/* LIGHT MODE */
+/* Light mode */
 html:root:root:root:not([data-theme="dark"]) body.contact-page main h2 span {
     color: #b45309 !important;
     -webkit-text-fill-color: #b45309 !important;
 }
 
-/* DARK MODE */
+/* Dark mode */
 html:root:root:root[data-theme="dark"] body.contact-page main h2 span {
     color: #fbbf24 !important;
     -webkit-text-fill-color: #fbbf24 !important;
 }
 
-/* =========================================================
-   STORE LOCATION CARD (cleaner layout)
-   - sits on the right so it never covers Google's own
-     "Hyderabad / Open in Maps" box (top-left of the map)
-   - icon rows for address / phone / email, Directions button
-========================================================= */
+/* Store location card (.ct-map-card) */
 html:root:root body.contact-page .ct-map-card {
     inset-inline-start: auto;
     right: clamp(20px, 5vw, 72px);
@@ -1429,7 +1294,7 @@ html:root:root body.contact-page .ct-map-dir:hover {
     color: #ffffff;
 }
 
-/* DARK MODE */
+/* Dark mode */
 html:root:root[data-theme="dark"] body.contact-page .ct-map-list li,
 html:root:root[data-theme="dark"] body.contact-page .ct-map-list li:last-child {
     border-color: var(--theme-dark-border);
@@ -1471,19 +1336,12 @@ html:root:root[data-theme="dark"] body.contact-page .ct-map-dir:hover {
     }
 }
 
-/* =========================================================
-   1) HERO BUTTONS = same format as Coverage / Fitting hero
-      Book a Fitting   : solid blue
-      Send a Message   : amber outline + amber text
-      Hover / focus / click (both):
-        light -> amber #b45309, white text
-        dark  -> amber #fbbf24, dark text #1a1200
-   ========================================================= */
+/* Hero buttons, blue and amber outline */
 html:root:root:root body .contact-hero-new .contact-hero-actions :is(.primary-button, .secondary-button) {
     transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 
-/* ---- light : normal ---- */
+/* light: normal */
 html:root:root:root:not([data-theme="dark"]) body .contact-hero-new .contact-hero-actions .primary-button {
     background: #2563eb !important;
     border: 0 !important;
@@ -1499,7 +1357,7 @@ html:root:root:root:not([data-theme="dark"]) body .contact-hero-new .contact-her
     animation: none !important;
 }
 
-/* ---- dark : normal ---- */
+/* dark: normal */
 html:root:root:root[data-theme="dark"] body .contact-hero-new .contact-hero-actions .primary-button {
     background: #1a54d0 !important;
     border: 0 !important;
@@ -1515,7 +1373,7 @@ html:root:root:root[data-theme="dark"] body .contact-hero-new .contact-hero-acti
     animation: none !important;
 }
 
-/* ---- light : hover / focus / click ---- */
+/* light: hover / focus / click */
 html:root:root:root:not([data-theme="dark"]) body .contact-hero-new .contact-hero-actions :is(.primary-button, .secondary-button):is(:hover, :focus, :focus-visible, :active) {
     background: #b45309 !important;
     border-color: #b45309 !important;
@@ -1526,7 +1384,7 @@ html:root:root:root:not([data-theme="dark"]) body .contact-hero-new .contact-her
     outline: none;
 }
 
-/* ---- dark : hover / focus / click ---- */
+/* dark: hover / focus / click */
 html:root:root:root[data-theme="dark"] body .contact-hero-new .contact-hero-actions :is(.primary-button, .secondary-button):is(:hover, :focus, :focus-visible, :active) {
     background: #fbbf24 !important;
     border-color: #fbbf24 !important;
@@ -1537,10 +1395,7 @@ html:root:root:root[data-theme="dark"] body .contact-hero-new .contact-hero-acti
     outline: none;
 }
 
-
-/* =========================================================
-   2) WAYS TO REACH US : plain text (no link) + no "Get directions"
-   ========================================================= */
+/* Info bar plain text (.ct-bar-text) */
 html:root body.contact-page .ct-bar-text {
     margin-top: auto;
     font-weight: 700;
@@ -1551,11 +1406,8 @@ html:root body.contact-page .ct-bar-text {
     text-decoration: none;
 }
 
-
-/* =========================================================
-   3) QUICK HELP / Find What You Need Faster : light + dark
-   ========================================================= */
-/* ---- light ---- */
+/* Quick Help tiles, light and dark */
+/* light */
 html:root:not([data-theme="dark"]) body.contact-page .ct-help-sec .mx-head h2 {
     color: #161922 !important;
     -webkit-text-fill-color: #161922;
@@ -1575,7 +1427,7 @@ html:root:not([data-theme="dark"]) body.contact-page .ct-help-sec .ct-tile:not(.
     color: #b45309;
 }
 
-/* featured tile "Book Now" pill: amber on hover */
+/* Book Now pill hover, amber */
 html:root body.contact-page .ct-help-sec .ct-tile-main .ct-tile-go {
     transition: background .2s ease, color .2s ease;
 }
@@ -1585,7 +1437,7 @@ html:root:not([data-theme="dark"]) body.contact-page .ct-help-sec .ct-tile-main:
     color: #ffffff;
 }
 
-/* ---- dark ---- */
+/* dark */
 html:root[data-theme="dark"] body.contact-page .ct-help-sec {
     background: var(--body-bg, #10131a);
 }
@@ -1643,7 +1495,7 @@ html:root[data-theme="dark"] body.contact-page .ct-help-sec .ct-tile-main:hover 
     color: #1a1200;
 }
 
-/* Ways to Reach Us: remove the gap between description and phone/email */
+/* Remove gap under info text (.ct-bar-item p) */
 html:root body.contact-page .ct-bar-item p {
     margin-bottom: 0 !important;
 }
@@ -1652,10 +1504,7 @@ html:root body.contact-page .ct-bar-text {
     margin-top: 0px;
 }
 
-/* =========================================================
-   7) SEND A MESSAGE FORM : a little bigger (still fits screen)
-      add AFTER section 6; only overrides sizes
-   ========================================================= */
+/* Send message form size */
 html:root body.contact-page #message .in-h2 {
     font-size: clamp(30px, 2.8vw, 38px);
 }
@@ -1699,7 +1548,7 @@ html:root body.contact-page #message .ft-submit {
     font-size: 16px;
 }
 
-/* short laptop screens (height <= 700px): bigger than before, still one screen */
+/* Short laptop screens */
 @media (min-width: 901px) and (max-height: 700px) {
     html:root body.contact-page #message {
         padding-top: 22px;
@@ -1746,13 +1595,7 @@ html:root body.contact-page #message .ft-submit {
     }
 }
 
-/* =========================================================
-   8) FIND WHAT YOU NEED FASTER : blue "Fitting appointment" card
-      Rich blue gradient + soft amber glow
-      light : #1e3a8a -> #1d4ed8 -> #3b82f6   dark : #0a1640 -> #12379a -> #1a54d0
-      "Book Now" pill keeps amber hover
-        (light #b45309 + white | dark #fbbf24 + #1a1200)
-   ========================================================= */
+/* Blue appointment card (.ct-tile-main) */
 html:root:root:root:not([data-theme="dark"]) body.contact-page .ct-help-sec .ct-tile-main {
     background:
         radial-gradient(circle at 88% 12%, rgba(251, 191, 36, .30) 0, rgba(251, 191, 36, 0) 42%),
@@ -1769,7 +1612,7 @@ html:root:root:root[data-theme="dark"] body.contact-page .ct-help-sec .ct-tile-m
     box-shadow: 0 18px 40px rgba(0, 0, 0, .55) !important;
 }
 
-/* text + icon on the blue card (both modes) */
+/* Text and icon on the blue card */
 html:root:root:root body.contact-page main .ct-help-sec .ct-tile-main h3 {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
@@ -1784,7 +1627,7 @@ html:root:root:root body.contact-page .ct-help-sec .ct-tile-main .ct-tile-ic {
     color: #ffffff !important;
 }
 
-/* Book Now pill : white, text = card blue */
+/* Book Now pill colours */
 html:root:root:root:not([data-theme="dark"]) body.contact-page .ct-help-sec .ct-tile-main .ct-tile-go {
     background: #ffffff;
     color: #2563eb;
@@ -1795,7 +1638,7 @@ html:root:root:root[data-theme="dark"] body.contact-page .ct-help-sec .ct-tile-m
     color: #1a54d0;
 }
 
-/* hover on the card / pill : amber like every other button */
+/* Card and pill hover, amber */
 html:root:root:root:not([data-theme="dark"]) body.contact-page .ct-help-sec .ct-tile-main:hover .ct-tile-go {
     background: #b45309;
     color: #ffffff;
@@ -1806,14 +1649,7 @@ html:root:root:root[data-theme="dark"] body.contact-page .ct-help-sec .ct-tile-m
     color: #1a1200;
 }
 
-/* =========================================================
-   9) YOUR VISIT, STEP BY STEP : gradient number circles
-      light : blue -> blue -> amber corner   (#1d4ed8 / #2563eb / #d97706)
-      dark  : blue -> blue -> amber corner   (#1a54d0 / #2f6be8 / #f59e0b)
-      numbers shown as 01 / 02 / 03, white, centred in the blue part
-      hover : lift + amber ring (gradient stays, number stays readable)
-      add AFTER sections 5 (overrides the solid-colour circle)
-   ========================================================= */
+/* Step number circles with gradient */
 html:root:root:root body.contact-page .ct-steps {
     counter-reset: ctstep;
 }
@@ -1830,7 +1666,7 @@ html:root:root:root body.contact-page .ct-steps .ct-step-dot {
     width: 64px;
     height: 64px;
     font-size: 0 !important;
-    /* hides the plain 1 / 2 / 3 text */
+    /* Hide plain step numbers */
     line-height: 1;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
@@ -1857,7 +1693,7 @@ html:root:root:root[data-theme="dark"] body.contact-page .ct-steps .ct-step-dot 
     box-shadow: 0 0 0 8px #232d49, 0 10px 22px rgba(0, 0, 0, .4) !important;
 }
 
-/* hover : lift + amber ring (replaces the old solid-amber hover) */
+/* Step hover, lift and amber ring */
 html:root:root:root:not([data-theme="dark"]) body.contact-page .ct-steps li:hover .ct-step-dot {
     background-color: #2563eb !important;
     background-image: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #d97706 100%) !important;
@@ -1882,19 +1718,12 @@ html:root:root:root[data-theme="dark"] body.contact-page .ct-steps li:hover .ct-
     -webkit-text-fill-color: #ffffff;
 }
 
-/* =========================================================
-   MAP SECTION BUTTONS = same format as hero buttons
-   Book a Visit : solid blue
-   Directions   : amber outline + amber text (dark: yellow)
-   Hover / focus / click (both):
-     light -> amber #b45309, white text
-     dark  -> yellow #fbbf24, dark text #1a1200
-========================================================= */
+/* Map section buttons, same as hero buttons */
 html:root:root:root body.contact-page .ct-map-actions :is(.primary-button, .ct-map-dir) {
     transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 
-/* ---- light : normal ---- */
+/* light: normal */
 html:root:root:root:not([data-theme="dark"]) body.contact-page .ct-map-actions .primary-button {
     background: #2563eb !important;
     border: 0 !important;
@@ -1910,7 +1739,7 @@ html:root:root:root:not([data-theme="dark"]) body.contact-page .ct-map-actions .
     animation: none !important;
 }
 
-/* ---- dark : normal ---- */
+/* dark: normal */
 html:root:root:root[data-theme="dark"] body.contact-page .ct-map-actions .primary-button {
     background: #1a54d0 !important;
     border: 0 !important;
@@ -1926,7 +1755,7 @@ html:root:root:root[data-theme="dark"] body.contact-page .ct-map-actions .ct-map
     animation: none !important;
 }
 
-/* ---- light : hover / focus / click ---- */
+/* light: hover / focus / click */
 html:root:root:root:not([data-theme="dark"]) body.contact-page .ct-map-actions :is(.primary-button, .ct-map-dir):is(:hover, :focus, :focus-visible, :active) {
     background: #b45309 !important;
     border-color: #b45309 !important;
@@ -1937,7 +1766,7 @@ html:root:root:root:not([data-theme="dark"]) body.contact-page .ct-map-actions :
     outline: none;
 }
 
-/* ---- dark : hover / focus / click ---- */
+/* dark: hover / focus / click */
 html:root:root:root[data-theme="dark"] body.contact-page .ct-map-actions :is(.primary-button, .ct-map-dir):is(:hover, :focus, :focus-visible, :active) {
     background: #fbbf24 !important;
     border-color: #fbbf24 !important;

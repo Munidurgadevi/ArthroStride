@@ -1,8 +1,4 @@
-/* =========================================================
-   ABOUT PAGE
-   Reuses the shared .ft-* / hero / footer styles; only the
-   story block and CTA row are specific to this page.
-========================================================= */
+/* About story block and CTA row (.about-story) */
 
 .about-story {
     display: grid;
@@ -83,15 +79,13 @@
     color: var(--theme-dark-text-2, #dcdfe7);
 }
 
-/* RTL */
+/* Rtl */
 :root[dir="rtl"] .about-panel ul {
     padding-left: 0;
     padding-right: 20px;
 }
 
-/* =========================================================
-   ABOUT HERO - BACKGROUND IMAGE (LIGHT + DARK)
-========================================================= */
+/* About hero background image (.about-hero) */
 
 .about-hero {
     position: relative;
@@ -120,11 +114,7 @@
     z-index: 1;
 }
 
-
-/* =========================================================
-   ABOUT PAGE - FOOT-CARE EXPERTS
-   Additive styles: existing page styles remain unchanged.
-========================================================= */
+/* Experts section (.about-experts-section) */
 
 .about-experts-section {
     position: relative;
@@ -172,18 +162,6 @@
     transform: scale(1.35);
 }
 
-.about-expert-icon {
-    width: 54px;
-    height: 54px;
-    display: grid;
-    place-items: center;
-    border-radius: 16px;
-    color: #1c5be3;
-    background: #e8effd;
-    font-size: 23px;
-    margin-bottom: 18px;
-}
-
 .about-expert-number {
     position: absolute;
     top: 22px;
@@ -206,22 +184,7 @@
     line-height: 1.7;
 }
 
-.about-expert-tag {
-    display: inline-flex;
-    align-items: center;
-    min-height: 30px;
-    padding: 5px 11px;
-    border-radius: 999px;
-    background: #ecf2fe;
-    color: #1b57d7;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: .4px;
-}
-
-/* =========================================================
-   ABOUT PAGE - DOCTOR / CARE TEAM CARDS
-========================================================= */
+/* Doctor and care team cards (.about-expert-card) */
 
 .about-expert-card {
     padding: 0;
@@ -331,9 +294,7 @@
     }
 }
 
-/* =========================================================
-   ABOUT PAGE - HISTORY TIMELINE
-========================================================= */
+/* History timeline (.about-history-section) */
 
 .about-history-section {
     position: relative;
@@ -458,16 +419,6 @@
     color: var(--theme-dark-muted, #acb2bf);
 }
 
-:root[data-theme="dark"] .about-expert-icon {
-    color: #759cf0;
-    background: rgba(63, 119, 239, .13);
-}
-
-:root[data-theme="dark"] .about-expert-tag {
-    color: #7ea2f1;
-    background: rgba(63, 119, 239, .12);
-}
-
 :root[data-theme="dark"] .about-expert-number {
     color: #767e90;
 }
@@ -481,7 +432,7 @@
     background: linear-gradient(to bottom, #638ce6, rgba(99, 140, 230, .12));
 }
 
-/* RTL */
+/* Rtl */
 :root[dir="rtl"] .about-expert-number {
     right: auto;
     left: 24px;
@@ -625,11 +576,7 @@
             rgba(6, 9, 15, 0.28) 100%);
 }
 
-/* =========================================================
-   HEADING ACCENT RULE (same as hero / index / home-2): solid colour, no gradient
-   light = #b45309 | dark = #fbbf24
-   Applies to the About page section titles (h2 span)
-========================================================= */
+/* Section title accent colour (h2 span) */
 html:root:root:root body.about-page main h2 span {
     background: none !important;
     background-image: none !important;
@@ -638,21 +585,19 @@ html:root:root:root body.about-page main h2 span {
     text-shadow: none !important;
 }
 
-/* LIGHT MODE */
+/* Light mode */
 html:root:root:root:not([data-theme="dark"]) body.about-page main h2 span {
     color: #b45309 !important;
     -webkit-text-fill-color: #b45309 !important;
 }
 
-/* DARK MODE */
+/* Dark mode */
 html:root:root:root[data-theme="dark"] body.about-page main h2 span {
     color: #fbbf24 !important;
     -webkit-text-fill-color: #fbbf24 !important;
 }
 
-/* =========================================================
-   BROWSE PRODUCTS + CONTACT US BUTTONS (about hero + bottom CTA): amber outline, light + dark
-========================================================= */
+/* Hero and CTA buttons, amber outline */
 html:root:root:root:not([data-theme="dark"]) body.about-page :is(.about-hero .ft-hero-btns, .about-cta) .secondary-button {
     background: rgba(255, 255, 255, .65) !important;
     color: #b45309 !important;
@@ -686,9 +631,10 @@ html:root:root:root[data-theme="dark"] body.about-page :is(.about-hero .ft-hero-
     border-color: #fbbf24 !important;
     box-shadow: 0 14px 30px rgba(251, 191, 36, .28);
 }
-/* About page "Where We Stand Today" strip: black headings in light mode (dark mode unchanged) */
+
+/* Stand Today strip headings, black in light mode */
 html:not([data-theme="dark"]) body .ft-sec .ft-strip div b,
 html:not([data-theme="dark"]) body .ft-sec .ft-strip div strong {
-   color: #000 !important;
-   -webkit-text-fill-color: #000 !important;
+    color: #000 !important;
+    -webkit-text-fill-color: #000 !important;
 }

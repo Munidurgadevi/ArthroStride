@@ -1,7 +1,4 @@
-/* =========================================================
-   PRODUCTS PAGE  (pure CSS – click product = :target panel)
-   Loads after style.css and reuses its colours & components
-========================================================= */
+/* Products page, hero and layout (.pp-hero) */
 .pp-hero {
     padding: 90px 0 80px;
     background: linear-gradient(90deg, #090c14 0%, rgba(9, 12, 20, .9) 55%, #151e32 100%);
@@ -36,29 +33,6 @@
     font-size: 18px;
     line-height: 1.7;
     color: #e3e7f0
-}
-
-.pp-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 34px
-}
-
-.pp-chip {
-    padding: 11px 20px;
-    border: 1px solid rgba(255, 255, 255, .3);
-    border-radius: 30px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 700;
-    transition: background .2s, border-color .2s
-}
-
-.pp-chip:hover {
-    background: #2563eb;
-    border-color: #2563eb
 }
 
 .pp-wrap {
@@ -99,7 +73,7 @@
     gap: 28px
 }
 
-/* product card (extends .product-card look from home) */
+/* Product card (.pp-card) */
 .pp-card {
     overflow: hidden;
     background: #ffffff;
@@ -167,7 +141,7 @@
     line-height: 1.7
 }
 
-/* ===== product detail panel: opens when its id is the URL target ===== */
+/* Product detail panel (.pd) */
 .pd {
     display: none;
     position: fixed;
@@ -246,27 +220,6 @@ body:has(.pd:target) {
     background: linear-gradient(135deg, #e3ebfc, #f7f0e5)
 }
 
-.pd-video {
-    border-radius: 18px;
-    overflow: hidden;
-    background: #0e1320
-}
-
-.pd-video video {
-    width: 100%;
-    aspect-ratio: 16/9;
-    display: block;
-    background: #0e1320
-}
-
-.pd-video small {
-    display: block;
-    padding: 9px 14px;
-    color: #a4acbd;
-    font-size: 12px;
-    font-weight: 600
-}
-
 .pd-info {
     min-width: 0;
     padding-top: 6px
@@ -339,32 +292,6 @@ body:has(.pd:target) {
     justify-content: center
 }
 
-.pd-specs {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 28px
-}
-
-.pd-specs div {
-    padding: 14px 16px;
-    background: #f1f4fa;
-    border-radius: 14px
-}
-
-.pd-specs dt {
-    color: #7e8492;
-    font-size: 12px;
-    font-weight: 700
-}
-
-.pd-specs dd {
-    margin-top: 4px;
-    color: #161922;
-    font-size: 15px;
-    font-weight: 800
-}
-
 .pd-actions {
     display: flex;
     align-items: center;
@@ -411,42 +338,7 @@ body:has(.pd:target) {
     }
 }
 
-.pp-trust {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    width: calc(100% - 48px);
-    max-width: 1380px;
-    margin: -36px auto 0;
-    position: relative;
-    z-index: 2;
-    background: #ffffff;
-    border: 1px solid #dee3ee;
-    border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(28, 36, 55, .09)
-}
-
-.pp-trust div {
-    padding: 22px 24px;
-    border-right: 1px solid #e8ebf1
-}
-
-.pp-trust div:last-child {
-    border: 0
-}
-
-.pp-trust strong {
-    display: block;
-    color: #2563eb;
-    font-size: 15px;
-    margin-bottom: 4px
-}
-
-.pp-trust span {
-    color: #616a7f;
-    font-size: 13px
-}
-
-/* filter (radio + :has, no JS) */
+/* Filter without JS (.pp-shop) */
 .pp-shop>input {
     position: absolute;
     opacity: 0;
@@ -522,7 +414,7 @@ body:has(.pd:target) {
     display: none
 }
 
-/* card extras */
+/* Card extras */
 .pp-card {
     position: relative
 }
@@ -625,7 +517,7 @@ del {
     font-weight: 800
 }
 
-/* detail extras */
+/* Detail extras (.pd-price) */
 .pd-price {
     display: flex;
     flex-wrap: wrap;
@@ -891,7 +783,7 @@ del {
     display: block
 }
 
-/* bottom sections */
+/* Bottom sections (.pp-info) */
 .pp-info {
     width: calc(100% - 48px);
     max-width: 1380px;
@@ -1048,11 +940,7 @@ del {
     background: #184ec2
 }
 
-
-
-
-
-/* ===== EXTRA SECTIONS ===== */
+/* Extra sections (.pp-sec) */
 .pp-sec {
     width: 100%;
     padding: 90px max(24px, calc((100% - 1380px)/2))
@@ -1289,18 +1177,16 @@ del {
     font-size: 19px
 }
 
-/* =========================================================
-   PRODUCTS PAGE - BLUE CARD BORDERS (LIGHT + DARK)
-========================================================= */
+/* Blue card borders */
 
 :root {
     --pp-card-border: #2563eb;
-    /* light mode */
+    /* Light mode */
 }
 
 :root[data-theme="dark"] {
     --pp-card-border: #477bec;
-    /* dark mode */
+    /* Dark mode */
 }
 
 html:root[data-theme] body :is(.bs, .mx-card, .pp-card, .step, .cmp, .acc,
@@ -1308,9 +1194,7 @@ html:root[data-theme] body :is(.bs, .mx-card, .pp-card, .step, .cmp, .acc,
     border: 1px solid var(--pp-card-border);
 }
 
-/* =========================================================
-   PRODUCTS PAGE - IMAGES FILL THEIR FRAME (NO EMPTY BANDS)
-========================================================= */
+/* Images fill their frame */
 
 html:root body :is(.bs-img, .pp-thumb) {
     height: auto;
@@ -1331,9 +1215,7 @@ html:root body :is(.bs-img, .pp-thumb, .acc-img) img {
     object-fit: cover !important;
 }
 
-/* =========================================================
-   PRODUCTS HERO - BACKGROUND IMAGE (LIGHT + DARK)
-========================================================= */
+/* Hero background image (.pp-hero) */
 
 .pp-hero {
     position: relative;
@@ -1362,9 +1244,8 @@ html:root body :is(.bs-img, .pp-thumb, .acc-img) img {
     z-index: 1;
 }
 
-/* LIGHT MODE : black */
+/* Light mode: black */
 html:root body .bs-b>span,
-html:root body .mx-links b,
 html:root body .mx-card h3,
 html:root body .mx-card p,
 html:root body .mx-card .mx-list li,
@@ -1372,9 +1253,8 @@ html:root body .mx-card .mx-avoid {
     color: #000000 !important;
 }
 
-/* DARK MODE : white */
+/* Dark mode: white */
 html:root[data-theme="dark"] body .bs-b>span,
-html:root[data-theme="dark"] body .mx-links b,
 html:root[data-theme="dark"] body .mx-card h3,
 html:root[data-theme="dark"] body .mx-card p,
 html:root[data-theme="dark"] body .mx-card .mx-list li,
@@ -1383,7 +1263,6 @@ html:root[data-theme="dark"] body .mx-card .mx-avoid {
 }
 
 html:root body .bs-b>span svg,
-html:root body .mx-links b svg,
 html:root body .mx-card h3 svg {
     fill: currentColor;
 }
@@ -1398,12 +1277,12 @@ html:root body .mx-card h3 svg {
     margin-bottom: 22px;
 }
 
-/* LIGHT MODE : black */
+/* Light mode: black */
 html:root body .mx-card .mx-link {
     color: #000000 !important;
 }
 
-/* DARK MODE : white */
+/* Dark mode: white */
 html:root[data-theme="dark"] body .mx-card .mx-link {
     color: #ffffff !important;
 }
@@ -1411,7 +1290,7 @@ html:root[data-theme="dark"] body .mx-card .mx-link {
 .pp-hero {
     --pp-hero-img: url("https://i.ibb.co/zHT2m3Wq/Chat-GPT-Image-Sep-29-2026-08-47-54-AM.png");
 
-    /* LIGHT MODE (Home hero laage) */
+    /* Light mode hero */
     --pp-hero-gradient:
         linear-gradient(0deg,
             rgba(17, 23, 39, 0.55) 0%,
@@ -1443,7 +1322,7 @@ html:root[data-theme="dark"] body .mx-card .mx-link {
     z-index: 1;
 }
 
-/* DARK MODE (Home hero dark laage) */
+/* Dark mode hero */
 :root[data-theme="dark"] .pp-hero {
     --pp-hero-gradient:
         linear-gradient(0deg,
@@ -1464,7 +1343,7 @@ html:root[data-theme="dark"] body .mx-card h4:first-of-type {
     color: #60a5fa !important;
 }
 
-/* "Better to avoid" -> amber (light) / bright amber (dark) */
+/* Better to avoid heading, amber */
 html:root body .mx-card h4:last-of-type {
     color: #b45309 !important;
 }
@@ -1473,7 +1352,7 @@ html:root[data-theme="dark"] body .mx-card h4:last-of-type {
     color: #fbbf24 !important;
 }
 
-/* "Shop ..." link -> blue (light) / light blue (dark), amber on hover */
+/* Shop link, blue with amber hover */
 html:root body .mx-card .mx-link {
     color: #2563eb !important;
 }
@@ -1490,56 +1369,15 @@ html:root[data-theme="dark"] body .mx-card .mx-link:hover {
     color: #fbbf24 !important;
 }
 
-/* =========================================================
-   PRODUCTS PAGE - UPDATE: filter bar, offers, anatomy, size guide + FAQ
-========================================================= */
+/* Filter bar, offers, anatomy, size guide and FAQ */
 
-/* Filter chips centred (label "Shop by condition" removed) */
+/* Centered filter chips */
 html:root body .pp-tool-in,
 html:root body .pp-chips-row {
     justify-content: center;
 }
 
-/* Offer line inside every category (plain text, no cards) */
-html:root body .pp-offer-line {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 6px 0;
-    margin: 0 0 28px;
-    padding: 0;
-    font-size: 14px;
-    color: #5e6575;
-}
-
-html:root body .pp-offer-line span+span::before {
-    content: "•";
-    margin: 0 12px;
-    color: #2563eb;
-}
-
-html:root body .pp-offer-line b {
-    color: #2563eb;
-    font-weight: 800;
-}
-
-html:root body .pp-offer-line span:first-child b {
-    color: #c2410c;
-}
-
-html:root[data-theme="dark"] body .pp-offer-line {
-    color: var(--theme-dark-muted);
-}
-
-html:root[data-theme="dark"] body .pp-offer-line b {
-    color: #8aaaf2;
-}
-
-html:root[data-theme="dark"] body .pp-offer-line span:first-child b {
-    color: #fb923c;
-}
-
-/* Shoe anatomy: 6 cards = clean 3 x 2 grid */
+/* Shoe anatomy, 3 x 2 grid (.mx-anat) */
 html:root body .mx-anat {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1563,7 +1401,7 @@ html:root body .mx-anat .mx-feat {
     }
 }
 
-/* Size guide + FAQ */
+/* Size guide and FAQ (.pp-info) */
 html:root body .pp-info {
     align-items: start;
     gap: 32px;
@@ -1650,7 +1488,7 @@ html:root[data-theme="dark"] body .pp-info .pp-tip {
     color: #aebff0;
 }
 
-/* FAQ accordion: custom +/- icon, no default triangle */
+/* FAQ accordion icon */
 html:root body .pp-info details {
     padding: 0;
     margin-bottom: 12px;
@@ -1734,7 +1572,7 @@ html:root body .pp-info .pp-faq-cta {
     }
 }
 
-/* Hero fills the whole screen */
+/* Hero fills the screen */
 html:root body .pp-hero {
     min-height: calc(100svh - 100px);
     display: flex;
@@ -1746,7 +1584,7 @@ html:root body .pp-hero .pp-hero-in {
     width: calc(100% - 48px);
 }
 
-/* Less empty space at start / end of sections */
+/* Less empty section space */
 html:root body .pp-sec,
 html:root body .pp-video {
     padding-top: 56px;
@@ -1780,16 +1618,14 @@ html:root body .pp-toolbar {
     margin-top: 0;
 }
 
-/* =========================================================
-   UPDATE 3: category offer cards, compact size guide + FAQ, hero fit
-========================================================= */
+/* Offer cards, compact size guide and hero fit */
 
-/* Sticky filter bar fully opaque in light mode */
+/* Opaque sticky filter bar (.pp-toolbar) */
 html:root:not([data-theme="dark"]) body .pp-toolbar {
     background: #ffffff;
 }
 
-/* Size guide + FAQ: lighter, compact, fits one screen (no big boxes) */
+/* Compact size guide and FAQ */
 html:root body .pp-info {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
     gap: 56px;
@@ -1852,14 +1688,12 @@ html:root body .pp-info .pp-faq-cta {
     }
 }
 
-/* Hero: JS in products.html sets exact height; this is the fallback */
+/* Hero height fallback */
 html:root body .pp-hero {
     min-height: calc(100vh - 82px);
 }
 
-/* =========================================================
-   UPDATE 4: SIZE GUIDE + FAQ  -  bold dark "wow" band
-========================================================= */
+/* Size guide and FAQ dark band */
 main {
     overflow-x: clip;
 }
@@ -1873,7 +1707,7 @@ html:root body .pp-info {
     align-items: start;
 }
 
-/* full-width gradient band with glowing blobs */
+/* Gradient band (.pp-info::before) */
 html:root body .pp-info::before {
     content: "";
     position: absolute;
@@ -1906,7 +1740,7 @@ html:root[data-theme="dark"] body .pp-info p {
     color: #b9c3dc;
 }
 
-/* ruler under the size-guide heading */
+/* Ruler under heading */
 html:root body .pp-info-card:first-child h2::after,
 html:root[data-theme="dark"] body .pp-info-card:first-child h2::after {
     content: "";
@@ -1918,7 +1752,7 @@ html:root[data-theme="dark"] body .pp-info-card:first-child h2::after {
         repeating-linear-gradient(90deg, rgba(255, 255, 255, .45) 0 1px, transparent 1px 10px) left bottom / 100% 8px no-repeat;
 }
 
-/* glass table */
+/* Glass table */
 html:root body .pp-info table,
 html:root[data-theme="dark"] body .pp-info table {
     background: rgba(255, 255, 255, .06);
@@ -1970,7 +1804,7 @@ html:root[data-theme="dark"] body .pp-info .pp-tip {
     color: #ffe2b8;
 }
 
-/* FAQ glass accordion with glowing open state */
+/* Glass FAQ accordion */
 html:root body .pp-info details,
 html:root[data-theme="dark"] body .pp-info details {
     background: rgba(255, 255, 255, .06);
@@ -2017,7 +1851,7 @@ html:root[data-theme="dark"] body .pp-info details p {
     color: #c6cfe6;
 }
 
-/* CTA */
+/* CTA (.pp-faq-cta) */
 html:root body .pp-info .pp-faq-cta,
 html:root[data-theme="dark"] body .pp-info .pp-faq-cta {
     display: inline-flex;
@@ -2047,11 +1881,9 @@ html:root[data-theme="dark"] body .pp-info .pp-faq-cta:hover {
     }
 }
 
-/* =========================================================
-   UPDATE 5: separate LIGHT and DARK looks + headings forced
-========================================================= */
+/* Light and dark looks */
 
-/* ---------- DARK mode (headings forced white) ---------- */
+/* Dark mode, white headings */
 html:root[data-theme="dark"] body .pp-info .pp-info-card h2,
 html:root[data-theme="dark"] body .pp-info th,
 html:root[data-theme="dark"] body .pp-info summary {
@@ -2062,7 +1894,7 @@ html:root[data-theme="dark"] body .pp-info td:first-child {
     color: #ffb347 !important;
 }
 
-/* ---------- LIGHT mode ---------- */
+/* Light mode */
 html:root:not([data-theme="dark"]) body .pp-info::before {
     background:
         radial-gradient(520px 320px at 10% 10%, rgba(37, 99, 235, .14), transparent 70%),
@@ -2157,11 +1989,7 @@ html:root:not([data-theme="dark"]) body .pp-info details p {
     color: #5e6575;
 }
 
-/* =========================================================
-   HEADING ACCENT RULE (same as hero / index / home-2 / about): solid colour, no gradient
-   light = #b45309 | dark = #fbbf24
-   Applies to the Products page section titles (h2 span)
-========================================================= */
+/* Section title accent colour (h2 span) */
 html:root:root:root body.products-page :is(.pp-sec-head, .mx-head, .pv-text, .pp-info-card, .pp-reviews) h2 span {
     background: none !important;
     background-image: none !important;
@@ -2170,28 +1998,25 @@ html:root:root:root body.products-page :is(.pp-sec-head, .mx-head, .pv-text, .pp
     text-shadow: none !important;
 }
 
-/* LIGHT MODE */
+/* Light mode */
 html:root:root:root:not([data-theme="dark"]) body.products-page :is(.pp-sec-head, .mx-head, .pv-text, .pp-info-card, .pp-reviews) h2 span {
     color: #b45309 !important;
     -webkit-text-fill-color: #b45309 !important;
 }
 
-/* DARK MODE */
+/* Dark mode */
 html:root:root:root[data-theme="dark"] body.products-page :is(.pp-sec-head, .mx-head, .pv-text, .pp-info-card, .pp-reviews) h2 span {
     color: #fbbf24 !important;
     -webkit-text-fill-color: #fbbf24 !important;
 }
 
-/* SIZE GUIDE + FAQ labels -> #2563eb (light + dark) */
+/* Size guide and FAQ labels, blue */
 html:root:root:root body.products-page .pp-info .section-label {
     color: #2563eb !important;
     -webkit-text-fill-color: #2563eb !important;
 }
 
-/* =========================================================
-   FILTER CHIPS (All / Plantar Fasciitis / ...): same look as the
-   home-2 "Best sellers" chips. Amber in light, yellow in dark.
-========================================================= */
+/* Filter chips, same as home-2 chips */
 html:root:root body .pp-chips-row label {
     padding: 10px 20px;
     font-size: 14.5px;
@@ -2221,7 +2046,7 @@ html:root:root body #f-5:checked~.pp-toolbar label[for=f-5] {
     color: #ffffff;
 }
 
-/* dark mode */
+/* Dark mode */
 html:root:root[data-theme="dark"] body .pp-chips-row label {
     background: #1c1f28;
     border-color: #323640;

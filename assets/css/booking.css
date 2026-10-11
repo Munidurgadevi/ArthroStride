@@ -35,7 +35,6 @@ body {
   gap: 10px;
 }
 
-
 .theme-toggle,
 .rtl-toggle {
   width: 54px;
@@ -63,11 +62,9 @@ body {
   font-weight: 700;
 }
 
-
 .theme-toggle {
   font-size: 20px;
 }
-
 
 .theme-toggle:hover,
 .rtl-toggle:hover {
@@ -76,52 +73,7 @@ body {
   color: #1c5be3;
 }
 
-
-.booking-hero {
-  width: 100%;
-
-  min-height: 530px;
-
-  padding: 120px 30px 90px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  text-align: center;
-
-  background:
-    radial-gradient(circle at 95% 5%,
-      rgba(28, 91, 227, 0.13),
-      transparent 260px),
-    linear-gradient(135deg,
-      #ffffff,
-      #f1f5fd);
-
-  border-bottom: 1px solid #e0e5f0;
-}
-
-
-.booking-hero-inner {
-  width: 100%;
-
-  max-width: 950px;
-
-  margin: 0 auto;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-}
-
-
-/* ================================
-   BRAND
-================================ */
+/* Brand logo and name (.booking-brand) */
 
 .booking-brand {
   display: flex;
@@ -133,7 +85,6 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-
 
 .booking-logo {
   width: 76px;
@@ -154,7 +105,6 @@ body {
   overflow: hidden;
 }
 
-
 .booking-logo img {
   width: 100%;
   height: 100%;
@@ -168,7 +118,6 @@ body {
   display: block;
 }
 
-
 .booking-brand-name {
   color: #1d2434;
 
@@ -179,63 +128,11 @@ body {
   letter-spacing: -1px;
 }
 
-
 .booking-brand-name span {
   color: #1c5be3;
 }
 
-
-/* ================================
-   BOOK A VISIT
-   PLAIN TEXT
-================================ */
-
-.booking-title {
-  margin: 0;
-
-  color: #1d2434;
-
-  font-size: 30px;
-
-  font-weight: 800;
-
-  line-height: 1.05;
-
-  letter-spacing: -3px;
-
-  text-align: center;
-
-  cursor: default;
-}
-
-
-.booking-title:hover,
-.booking-title:focus,
-.booking-title:active {
-  color: #1d2434;
-
-  text-decoration: none;
-}
-
-
-.booking-hero-text {
-  max-width: 760px;
-
-  margin: 28px auto 0;
-
-  color: #677084;
-
-  font-size: 20px;
-
-  line-height: 1.7;
-
-  text-align: center;
-}
-
-
-/* ================================
-   FORM SECTION
-================================ */
+/* Form section (.booking-section) */
 
 .booking-section {
   width: 100%;
@@ -245,7 +142,6 @@ body {
   background: #ffffff;
 }
 
-
 .booking-container {
   width: 100%;
 
@@ -254,10 +150,7 @@ body {
   margin: 0 auto;
 }
 
-
-/* ================================
-   INTRO
-================================ */
+/* Intro text (.booking-intro) */
 
 .booking-intro {
   width: 100%;
@@ -268,7 +161,6 @@ body {
 
   text-align: center;
 }
-
 
 .booking-label {
   display: block;
@@ -284,7 +176,6 @@ body {
   letter-spacing: 2px;
 }
 
-
 .booking-intro h2 {
   margin: 0 0 18px;
 
@@ -296,7 +187,6 @@ body {
 
   letter-spacing: -1.5px;
 }
-
 
 .booking-intro p {
   max-width: 680px;
@@ -310,10 +200,7 @@ body {
   line-height: 1.75;
 }
 
-
-/* ================================
-   FORM
-================================ */
+/* Form (.booking-form) */
 
 .booking-form {
   width: 100%;
@@ -330,16 +217,13 @@ body {
   gap: 28px;
 }
 
-
 .form-group {
   width: 100%;
 }
 
-
 .form-group.full-width {
   grid-column: 1 / -1;
 }
-
 
 .form-group label {
   display: block;
@@ -352,7 +236,6 @@ body {
 
   font-weight: 500;
 }
-
 
 .form-group input,
 .form-group select,
@@ -374,14 +257,12 @@ body {
   outline: none;
 }
 
-
 .form-group input,
 .form-group select {
   height: 66px;
 
   padding: 0 20px;
 }
-
 
 .form-group textarea {
   min-height: 165px;
@@ -393,12 +274,10 @@ body {
   line-height: 1.6;
 }
 
-
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: #8a91a2;
 }
-
 
 .form-group input:focus,
 .form-group select:focus,
@@ -409,17 +288,13 @@ body {
     0 0 0 3px rgba(28, 91, 227, 0.10);
 }
 
-
-/* ================================
-   DATE
-================================ */
+/* Date input (.date-input-wrapper) */
 
 .date-input-wrapper {
   position: relative;
 
   width: 100%;
 }
-
 
 .date-input-wrapper input[type="date"] {
   width: 100%;
@@ -433,7 +308,6 @@ body {
   -moz-appearance: none;
 }
 
-
 .date-input-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
 
@@ -446,20 +320,15 @@ body {
   pointer-events: none;
 }
 
-
 .date-input-wrapper input[type="date"]::-webkit-inner-spin-button {
   display: none;
 }
-
 
 .date-input-wrapper input[type="date"]::-webkit-clear-button {
   display: none;
 }
 
-
-/* ================================
-   CUSTOM CALENDAR
-================================ */
+/* Calendar button (.calendar-btn) */
 
 .calendar-btn {
   position: absolute;
@@ -490,17 +359,13 @@ body {
   cursor: pointer;
 }
 
-
 .calendar-btn:hover {
   background: rgba(28, 91, 227, 0.10);
 
   color: #1c5be3;
 }
 
-
-/* ================================
-   SUBMIT
-================================ */
+/* Submit button (.form-submit) */
 
 .form-submit {
   grid-column: 1 / -1;
@@ -511,7 +376,6 @@ body {
 
   margin-top: 10px;
 }
-
 
 .request-btn {
   min-width: 230px;
@@ -544,15 +408,11 @@ body {
   cursor: pointer;
 }
 
-
 .request-btn:hover {
   background: #1a56d6;
 }
 
-
-/* ================================
-   DARK MODE
-================================ */
+/* Dark mode */
 
 html[data-theme="dark"] body {
   background: #0c0f17;
@@ -560,29 +420,13 @@ html[data-theme="dark"] body {
   color: #f4f6fb;
 }
 
-
-html[data-theme="dark"] .booking-hero {
-  background:
-    radial-gradient(circle at 95% 5%,
-      rgba(85, 133, 237, 0.15),
-      transparent 260px),
-    linear-gradient(135deg,
-      #10141d,
-      #161a24);
-
-  border-color: #303541;
-}
-
-
 html[data-theme="dark"] .booking-brand-name {
   color: #ffffff;
 }
 
-
 html[data-theme="dark"] .booking-brand-name span {
   color: #638fef;
 }
-
 
 html[data-theme="dark"] .booking-logo {
   background: #1a1f2b;
@@ -590,43 +434,21 @@ html[data-theme="dark"] .booking-logo {
   border-color: #3c424f;
 }
 
-
-html[data-theme="dark"] .booking-title {
-  color: #ffffff;
-}
-
-
-html[data-theme="dark"] .booking-title:hover,
-html[data-theme="dark"] .booking-title:focus,
-html[data-theme="dark"] .booking-title:active {
-  color: #ffffff;
-}
-
-
-html[data-theme="dark"] .booking-hero-text {
-  color: #bbc0cc;
-}
-
-
 html[data-theme="dark"] .booking-section {
   background: #12161f;
 }
-
 
 html[data-theme="dark"] .booking-intro h2 {
   color: #ffffff;
 }
 
-
 html[data-theme="dark"] .booking-intro p {
   color: #b2b8c6;
 }
 
-
 html[data-theme="dark"] .form-group label {
   color: #ffffff;
 }
-
 
 html[data-theme="dark"] .form-group input,
 
@@ -640,13 +462,11 @@ html[data-theme="dark"] .form-group textarea {
   color: #ffffff;
 }
 
-
 html[data-theme="dark"] .form-group input::placeholder,
 
 html[data-theme="dark"] .form-group textarea::placeholder {
   color: #8a90a0;
 }
-
 
 html[data-theme="dark"] .theme-toggle,
 html[data-theme="dark"] .rtl-toggle {
@@ -657,15 +477,11 @@ html[data-theme="dark"] .rtl-toggle {
   color: #ffffff;
 }
 
-
 html[data-theme="dark"] .calendar-btn {
   color: #638fef;
 }
 
-
-/* ================================
-   RTL
-================================ */
+/* Rtl */
 
 html[dir="rtl"] .page-controls {
   right: auto;
@@ -673,16 +489,13 @@ html[dir="rtl"] .page-controls {
   left: 32px;
 }
 
-
 html[dir="rtl"] .booking-form {
   direction: rtl;
 }
 
-
 html[dir="rtl"] .form-group {
   text-align: right;
 }
-
 
 html[dir="rtl"] .date-input-wrapper input[type="date"] {
   padding-right: 20px;
@@ -690,19 +503,17 @@ html[dir="rtl"] .date-input-wrapper input[type="date"] {
   padding-left: 60px;
 }
 
-
 html[dir="rtl"] .calendar-btn {
   right: auto;
 
   left: 15px;
 }
 
-
 html[dir="rtl"] .request-btn i {
   transform: rotate(180deg);
 }
 
-/* Theme-matched logo: blend into the booking page surface. */
+/* Logo blends into the page (.booking-logo) */
 .booking-logo {
   background: transparent !important;
   border-color: transparent !important;
@@ -738,7 +549,7 @@ html[dir="rtl"] .request-btn i {
   gap: 18px;
 }
 
-/* ===== BUTTON HOVER: blue -> amber ===== */
+/* Submit button hover, blue to amber */
 .request-btn {
   transition: background .2s ease, color .2s ease;
 }
@@ -753,11 +564,7 @@ html[data-theme="dark"] .request-btn:hover {
   color: #1a1200;
 }
 
-
-/* =========================================================
-   BOOKING PAGE - MATCH MAIN SITE THEME
-   Brand colours, toggle icons, form fields, borders
-========================================================= */
+/* Booking page theme colours */
 
 html {
   --bk-line: #b45309;
@@ -766,7 +573,7 @@ html {
   --bk-field-bg: #ffffff;
   --bk-placeholder: #8a91a2;
   --bk-border: #d3d8e2;
-  /* normal border (not focused) */
+  /* Field border, normal */
 }
 
 html[data-theme="dark"] {
@@ -776,10 +583,10 @@ html[data-theme="dark"] {
   --bk-field-bg: #1e212a;
   --bk-placeholder: #8d94a3;
   --bk-border: #3c424f;
-  /* normal border (not focused) */
+  /* Field border, normal */
 }
 
-/* ---------- page background ---------- */
+/* page background */
 html body {
   background: #ffffff;
   color: var(--bk-text);
@@ -793,7 +600,7 @@ html body .booking-section {
   background: transparent;
 }
 
-/* ---------- brand name: Arthro = blue, Stride = amber ---------- */
+/* brand name: Arthro = blue, Stride = amber */
 html body .booking-brand-name {
   color: #2563eb !important;
 }
@@ -810,7 +617,7 @@ html[data-theme="dark"] body .booking-brand-name span {
   color: #fbbf24 !important;
 }
 
-/* ---------- headings / text ---------- */
+/* Headings and text */
 html body .booking-intro h2 {
   color: var(--bk-text);
 }
@@ -832,7 +639,7 @@ html body .form-group label {
   font-weight: 600;
 }
 
-/* ---------- theme / RTL buttons ---------- */
+/* Theme and RTL buttons */
 html body .theme-toggle,
 html body .rtl-toggle {
   background: #ffffff;
@@ -859,7 +666,7 @@ html[data-theme="dark"] body .rtl-toggle:hover {
   color: #fbbf24;
 }
 
-/* moon in light mode, sun in dark mode (own icon, ignores old one) */
+/* Theme toggle icons */
 html body .theme-toggle>* {
   display: none !important;
 }
@@ -885,7 +692,7 @@ html[data-theme="dark"] body .theme-toggle::before {
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='4' fill='none' stroke='black' stroke-width='1.8'/%3E%3Cpath d='M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
-/* ---------- form fields (light + dark) ---------- */
+/* Form fields */
 html body .form-group input,
 html body .form-group select,
 html body .form-group textarea {
@@ -928,7 +735,7 @@ html body .form-group input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px var(--bk-field-bg) inset;
 }
 
-/* calendar icon */
+/* Calendar icon (.calendar-btn) */
 html body .calendar-btn {
   color: #b45309;
 }
@@ -945,7 +752,7 @@ html[data-theme="dark"] body .calendar-btn:hover {
   background: rgba(251, 191, 36, .14);
 }
 
-/* submit button */
+/* Submit button (.request-btn) */
 html body .request-btn {
   background: #2563eb;
 }
@@ -965,14 +772,7 @@ html[data-theme="dark"] body .request-btn:hover {
   color: #1a1200;
 }
 
-
-/* =========================================================
-   BOOKING LOGO - full emblem, centred inside the circle
-   Tune if needed:
-     --logo-zoom    : 1.2 fills the circle; lower = smaller emblem
-     --logo-shift-x : moves the emblem left (-) / right (+)
-     --logo-shift-y : moves the emblem up (-) / down (+)
-========================================================= */
+/* Booking logo size and position */
 html body .booking-logo {
   --logo-zoom: 1;
   --logo-shift-x: 0%;
@@ -999,15 +799,10 @@ html body .booking-logo img {
   transform-origin: center;
 }
 
-
-/* =========================================================
-   THEME / RTL BUTTONS
-   - scroll away with the page (not fixed on screen)
-   - smaller size
-========================================================= */
+/* Theme and RTL buttons scroll with the page */
 html body .page-controls {
   position: absolute;
-  /* was fixed */
+  /* Not fixed to the screen */
   top: 20px;
   right: 28px;
   gap: 12px;
@@ -1017,7 +812,7 @@ html body .page-controls {
 html body .theme-toggle,
 html body .rtl-toggle {
   width: 38px;
-  /* same as the header buttons on every other page */
+  /* Same size as header buttons */
   height: 38px;
   flex: 0 0 38px;
   padding: 0;
@@ -1047,12 +842,7 @@ html[dir="rtl"] body .page-controls {
   }
 }
 
-
-/* =========================================================
-   FIELD BORDERS
-   Normal  -> neutral grey (light + dark)
-   Click / focus -> amber border (light + dark)
-========================================================= */
+/* Field borders, grey normal and amber on focus */
 html body .form-group input,
 html body .form-group select,
 html body .form-group textarea {
@@ -1074,11 +864,7 @@ html[data-theme="dark"] body .form-group textarea:focus {
   border-color: var(--bk-line);
 }
 
-
-/* =========================================================
-   THEME / RTL BUTTONS - SAME LOOK AS THE HEADER BUTTONS
-   (copied from the other pages: normal + hover colours)
-========================================================= */
+/* Theme and RTL buttons, same as header */
 html body .theme-toggle,
 html body .rtl-toggle {
   background: #ffffff;
@@ -1108,16 +894,13 @@ html[data-theme="dark"] body .rtl-toggle:hover {
   background: #1e212a;
 }
 
-/* logo image: same zoom + shift as the header logo */
+/* Logo zoom and shift, same as header */
 html body .booking-logo {
   --logo-zoom: 1.2;
   --logo-shift-x: -1.8%;
 }
 
-/* =========================================================
-   BOOKING BRAND - SAME LOGO + TITLE AS HEADER / FOOTER
-   (values come from --ab-* in responsive.css; fallback = desktop)
-   ========================================================= */
+/* Booking brand, same as header and footer */
 
 html body .booking-brand {
   display: flex !important;

@@ -1,15 +1,8 @@
-/* =========================================================
-   RTL EXTENSION
-   Booking-specific RTL rules are scoped in booking.css.
-   Global RTL rules remain in theme.css.
-========================================================= */
+/* RTL extension rules */
 
-/* =========================================================
-   FITTING PAGE - "Meet Your Fitters" + FAQ in RTL
-   (physical left/right values mirrored when dir="rtl")
-========================================================= */
+/* Fitting page fitters and FAQ in RTL */
 
-/* fitter columns: vertical divider sits on the correct side */
+/* Fitter column divider side */
 @media (min-width: 601px) {
     html[dir="rtl"]:root:root body .rs-p {
         border-left: 0;
@@ -21,7 +14,7 @@
     }
 }
 
-/* FAQ: "+" icon goes to the far end, answer text indents from the right */
+/* FAQ icon and answer indent in RTL */
 html[dir="rtl"]:root:root body .fq-list summary i {
     margin-left: 0;
     margin-right: auto;
@@ -31,11 +24,51 @@ html[dir="rtl"]:root:root body .fq-list details p {
     padding: 0 66px 24px 24px;
 }
 
-/* English sentences keep their full-stop / question mark at the end in RTL */
+/* Keep English punctuation at the end in RTL */
 html[dir="rtl"] body :is(.rs-p p, .fq-side h2, .fq-side p, .fq-list details p) {
     unicode-bidi: plaintext;
 }
 
 html[dir="rtl"] body :is(.fq-side h2, .fq-side p, .fq-list details p) {
     text-align: right;
+}
+
+/* Customer Stories cards in RTL and LTR */
+
+/* LTR default for Customer Stories cards */
+html[dir="ltr"]:root:root body .pp-reviews .tgrid {
+    direction: ltr;
+    text-align: left;
+}
+
+/* RTL cards flow right to left */
+html[dir="rtl"]:root:root body .pp-reviews .tgrid {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"]:root:root body .pp-reviews .tcard {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Each text line sets its own direction */
+html[dir="rtl"]:root:root body .pp-reviews .tcard :is(p, b, small) {
+    unicode-bidi: plaintext;
+    text-align: right;
+}
+
+html[dir="rtl"]:root:root body .pp-reviews .tcard small {
+    display: block;
+}
+
+/* Stars sit on the right in RTL */
+html[dir="rtl"]:root:root body .pp-reviews .tcard .product-rating {
+    direction: rtl;
+    justify-content: flex-start;
+}
+
+html[dir="rtl"]:root:root body .pp-reviews .tcard .product-rating>span {
+    direction: ltr;
+    display: inline-flex;
 }

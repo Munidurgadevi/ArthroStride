@@ -1,7 +1,4 @@
-/* =========================================================
-   ARTHROSTRIDE THEME / RTL CONTROL LAYER
-   HTML + CSS only. No JavaScript required.
-========================================================= */
+/* Theme and RTL variables */
 
 :root {
     --theme-light-bg: #ffffff;
@@ -29,12 +26,12 @@
     --theme-dark-heading: #f1f4fc;
     --theme-dark-faint: #757c8b;
     --theme-dark-btn: #1a54d0;
-    /* white text on this = 4.5:1 contrast */
+    /* Dark button hover colour */
     --theme-dark-btn-hover: #1c5be3;
     --theme-dark-shadow: 0 14px 32px rgba(0, 0, 0, .35);
 }
 
-/* CSS-only controls */
+/* CSS-only theme controls */
 .theme-control-input {
     position: absolute;
     width: 1px;
@@ -79,11 +76,7 @@
     display: inline;
 }
 
-/* =========================================================
-   DARK MODE
-   Light mode is untouched. These rules apply only after the
-   theme checkbox is checked.
-========================================================= */
+/* Dark mode base styles */
 
 :root[data-theme="dark"] body {
     background: var(--theme-dark-bg);
@@ -102,10 +95,6 @@
     color: var(--theme-dark-text);
 }
 
-:root[data-theme="dark"] body .brand-tagline {
-    color: var(--theme-dark-muted);
-}
-
 :root[data-theme="dark"] body .brand-logo,
 :root[data-theme="dark"] body .header-icon-btn {
     background: var(--theme-dark-card);
@@ -116,7 +105,6 @@
 :root[data-theme="dark"] body .nav-link.active,
 :root[data-theme="dark"] body .brand-name span,
 :root[data-theme="dark"] body .section-label,
-:root[data-theme="dark"] body .product-section-label,
 :root[data-theme="dark"] body .claims-label,
 :root[data-theme="dark"] body .fitting-label,
 :root[data-theme="dark"] body .why-arthro-label,
@@ -129,7 +117,7 @@
     border-color: var(--theme-dark-accent);
 }
 
-/* Keep hero photography and its original dark treatment intact. */
+/* Hero photo stays unchanged */
 :root[data-theme="dark"] body .hero-section::after {
     background:
         linear-gradient(0deg, rgba(6, 9, 15, 0.75) 0%, rgba(6, 9, 15, 0) 40%),
@@ -149,11 +137,10 @@
     -webkit-text-fill-color: transparent;
 }
 
-/* Section surfaces */
+/* Section backgrounds */
 :root[data-theme="dark"] body .foot-health-section,
 :root[data-theme="dark"] body .fitting-section,
 :root[data-theme="dark"] body .why-arthro-section,
-:root[data-theme="dark"] body .product-showcase-section,
 :root[data-theme="dark"] body .claims-section,
 :root[data-theme="dark"] body .visit-arthro-section,
 :root[data-theme="dark"] body .site-footer {
@@ -165,23 +152,17 @@
     background: var(--theme-dark-soft-2);
 }
 
-/* Cards / panels across the template */
+/* Cards and panels */
 :root[data-theme="dark"] body .foot-health-card,
 :root[data-theme="dark"] body .why-arthro-card,
-:root[data-theme="dark"] body .product-card,
 :root[data-theme="dark"] body .claims-card,
-:root[data-theme="dark"] body .claims-cta,
 :root[data-theme="dark"] body .fitting-badge,
 :root[data-theme="dark"] body .ft-card,
-:root[data-theme="dark"] body .ft-team,
 :root[data-theme="dark"] body .ft-summary,
-:root[data-theme="dark"] body .ft-faq,
 :root[data-theme="dark"] body .ft-strip,
 :root[data-theme="dark"] body .in-flat,
 :root[data-theme="dark"] body .in-form,
-:root[data-theme="dark"] body .in-note,
 :root[data-theme="dark"] body .mx-card,
-:root[data-theme="dark"] body .mx-paper,
 :root[data-theme="dark"] body .pp-card,
 :root[data-theme="dark"] body .pd-panel,
 :root[data-theme="dark"] body .rel,
@@ -196,42 +177,35 @@
 
 :root[data-theme="dark"] body .foot-health-card h3,
 :root[data-theme="dark"] body .why-arthro-card h3,
-:root[data-theme="dark"] body .product-card h3,
 :root[data-theme="dark"] body .claims-card h3,
-:root[data-theme="dark"] body .claims-cta h3,
 :root[data-theme="dark"] body .fitting-content h2,
 :root[data-theme="dark"] body .fitting-feature h3,
 :root[data-theme="dark"] body .foot-health-heading h2,
 :root[data-theme="dark"] body .why-arthro-heading h2,
-:root[data-theme="dark"] body .product-showcase-heading h2,
 :root[data-theme="dark"] body .claims-heading h2 {
     color: var(--theme-dark-text);
 }
 
 :root[data-theme="dark"] body .foot-health-card p,
 :root[data-theme="dark"] body .why-arthro-card p,
-:root[data-theme="dark"] body .product-card p,
 :root[data-theme="dark"] body .claims-card p,
-:root[data-theme="dark"] body .claims-cta p,
 :root[data-theme="dark"] body .fitting-intro,
 :root[data-theme="dark"] body .fitting-feature p,
 :root[data-theme="dark"] body .foot-health-heading p,
 :root[data-theme="dark"] body .why-arthro-heading p,
-:root[data-theme="dark"] body .product-showcase-heading p,
 :root[data-theme="dark"] body .claims-heading p,
 :root[data-theme="dark"] body .fitting-badge span,
 :root[data-theme="dark"] body .fitting-badge strong {
     color: var(--theme-dark-muted);
 }
 
-/* Images / image holders */
+/* Images and image holders */
 :root[data-theme="dark"] body .foot-health-image,
-:root[data-theme="dark"] body .product-image,
 :root[data-theme="dark"] body .fitting-visual {
     background: #21252e;
 }
 
-/* Common forms, tables and controls */
+/* Forms, tables and controls */
 :root[data-theme="dark"] body input,
 :root[data-theme="dark"] body textarea,
 :root[data-theme="dark"] body select,
@@ -258,7 +232,7 @@
     color: var(--theme-dark-muted);
 }
 
-/* Accent controls keep their original identity, only slightly lifted for dark surfaces. */
+/* Accent controls in dark mode */
 :root[data-theme="dark"] body .header-cta,
 :root[data-theme="dark"] body .primary-button,
 :root[data-theme="dark"] body .fitting-button,
@@ -277,22 +251,18 @@
 }
 
 :root[data-theme="dark"] body .secondary-button,
-:root[data-theme="dark"] body .view-all-products,
 :root[data-theme="dark"] body .visit-secondary-button {
     background: transparent;
     color: var(--theme-dark-text);
     border-color: #575f72;
 }
 
-:root[data-theme="dark"] body .view-all-products:hover,
 :root[data-theme="dark"] body .secondary-button:hover,
 :root[data-theme="dark"] body .visit-secondary-button:hover {
     background: rgba(255, 255, 255, .08);
 }
 
-/* =========================================================
-   CSS-ONLY RTL
-========================================================= */
+/* RTL base styles */
 
 :root[dir="rtl"] body {
     direction: rtl;
@@ -342,31 +312,20 @@
     transform: rotate(180deg) translateX(5px);
 }
 
-/* Preserve centered sections while reversing directional flow. */
+/* Centered sections in RTL */
 :root[dir="rtl"] body .foot-health-heading,
 :root[dir="rtl"] body .why-arthro-heading,
-:root[dir="rtl"] body .product-showcase-heading,
-:root[dir="rtl"] body .claims-heading,
-:root[dir="rtl"] body .claims-cta,
-:root[dir="rtl"] body .product-showcase-action {
+:root[dir="rtl"] body .claims-heading {
     text-align: center;
 }
 
-
-
-
-/* =========================================================
-   DARK MODE - FULL COVERAGE (all pages)
-   Applies when <html data-theme="dark">. The mode is saved in
-   localStorage by assets/js/main.js, so every page opens in the
-   same mode. Light mode is not touched by anything below.
-========================================================= */
+/* Dark mode for all pages */
 
 :root[data-theme="dark"] {
     color-scheme: dark;
 }
 
-/* ---- Text ------------------------------------------------ */
+/* Text colours */
 :root[data-theme="dark"] main :is(h1, h2, h3, h4, h5, h6, strong, b, summary, legend, dt, th, label, figcaption) {
     color: var(--theme-dark-heading);
 }
@@ -383,13 +342,12 @@
     color: var(--theme-dark-accent);
 }
 
-/* Hero / photo areas keep their own light-on-dark text */
-:root[data-theme="dark"] .hero-section :is(h1, h2, p, strong, li, small, span),
-:root[data-theme="dark"] .hero-two :is(h1, h2, p, strong, li, small) {
+/* Hero text colours */
+:root[data-theme="dark"] .hero-section :is(h1, h2, p, strong, li, small, span) {
     color: #ffffff;
 }
 
-/* ---- Alternate section backgrounds ------------------------ */
+/* Alternate section backgrounds */
 :root[data-theme="dark"] body :is(.pp-alt, .mx-alt, .ft-alt, .pp-sec, .mx-sec, .ft-sec, .pp-reviews, .in-sec, .ct-sec) {
     background: var(--theme-dark-soft);
 }
@@ -398,7 +356,7 @@
     background: var(--theme-dark-soft-2);
 }
 
-/* ---- Cards, panels, tiles --------------------------------- */
+/* Cards, panels and tiles */
 :root[data-theme="dark"] body :is(.pp-trust, .pp-toolbar, .pp-wrap, .bs, .step, .cmp, .acc, .mx-feat,
     .ft-step, .ft-form, .ft-cal, .in-tablewrap, .in-checklist, .in-count,
     details, figure, .mx-tour, .wish, .footer-brand-logo, .fitting-badge-icon) {
@@ -420,12 +378,6 @@
     color: var(--theme-dark-accent);
 }
 
-:root[data-theme="dark"] body .cal-off,
-:root[data-theme="dark"] body .cal-nav-off {
-    color: var(--theme-dark-faint);
-    background: transparent;
-}
-
 :root[data-theme="dark"] body .ph-cta-btn {
     background: var(--theme-dark-btn);
     color: #ffffff;
@@ -444,29 +396,28 @@
     background: var(--theme-dark-card-2);
 }
 
-/* FAQ / accordions */
+/* FAQ accordions */
 :root[data-theme="dark"] body details[open]>summary {
     color: var(--theme-dark-accent);
 }
 
-/* Footer logo tile + dropdown SVG */
+/* Footer logo and dropdown icon */
 :root[data-theme="dark"] .home-chevron svg {
     fill: currentColor;
 }
 
-/* Focus rings visible on dark surfaces */
+/* Focus rings */
 :root[data-theme="dark"] :is(a, button, input, select, textarea, summary):focus-visible {
     outline: 2px solid var(--theme-dark-accent);
     outline-offset: 2px;
 }
 
-/* Soft shadows instead of light ones */
+/* Soft shadows */
 :root[data-theme="dark"] body :is(.product-card, .pp-card, .pd-panel, .tcard, .ft-card, .mx-card) {
     box-shadow: var(--theme-dark-shadow);
 }
 
-
-/* ---- Dark mode: selectable options, calendar, chips, strips ---- */
+/* Options, calendar, chips and strips */
 :root[data-theme="dark"] body :is(.ft-strip div, .pp-trust div) {
     background: var(--theme-dark-card);
     border-color: var(--theme-dark-border);
@@ -481,7 +432,7 @@
     color: var(--theme-dark-muted);
 }
 
-/* option / time / day tiles */
+/* Option, time and day tiles */
 :root[data-theme="dark"] body :is(.ft-opt, .ft-time, .ft-day) span {
     background: var(--theme-dark-card-2);
     border-color: var(--theme-dark-border);
@@ -515,98 +466,18 @@
     color: var(--theme-dark-text);
 }
 
-:root[data-theme="dark"] body .ft-time input:checked+span,
-:root[data-theme="dark"] body .ft-day input:checked+span * {
+:root[data-theme="dark"] body .ft-time input:checked+span {
     color: var(--theme-dark-accent);
 }
 
-/* calendar */
-:root[data-theme="dark"] body .cal-day span {
-    background: var(--theme-dark-soft);
-    color: var(--theme-dark-text);
-}
-
-:root[data-theme="dark"] body .cal-day:hover span {
-    background: rgba(71, 123, 236, .18);
-    border-color: var(--theme-dark-accent);
-}
-
-:root[data-theme="dark"] body .ft-form .cal-day input:checked+span {
-    background: var(--theme-dark-btn);
-    border-color: var(--theme-dark-btn);
-    color: #ffffff;
-}
-
-:root[data-theme="dark"] body .cal-today {
-    color: var(--theme-dark-accent);
-    border-color: var(--theme-dark-accent);
-}
-
-:root[data-theme="dark"] body .cal-legend {
-    border-color: var(--theme-dark-border);
-    color: var(--theme-dark-muted);
-}
-
-:root[data-theme="dark"] body .cal-legend span {
-    background: transparent;
-    color: var(--theme-dark-muted);
-}
-
-:root[data-theme="dark"] body .lg-a {
-    background: var(--theme-dark-soft);
-    border: 1px solid var(--theme-dark-border);
-}
-
-:root[data-theme="dark"] body .lg-b {
-    background: var(--theme-dark-btn);
-}
-
-:root[data-theme="dark"] body .lg-c {
-    background: transparent;
-    border: 1px dashed var(--theme-dark-faint);
-}
-
-/* chips, icons, emoji cards, contact strip */
-:root[data-theme="dark"] body .mx-chips span {
-    background: var(--theme-dark-card);
-    border-color: var(--theme-dark-border);
-    color: var(--theme-dark-text);
-}
+/* Chips, icons and contact strip */
 
 :root[data-theme="dark"] body .ft-card span {
     background: var(--theme-dark-card-2);
     color: var(--theme-dark-accent);
 }
 
-:root[data-theme="dark"] body .ft-visit .ft-ph {
-    color: var(--theme-dark-text-2) !important;
-}
-
-/* prescription sample paper + question list */
-:root[data-theme="dark"] body .mx-paper {
-    background: var(--theme-dark-card);
-}
-
-:root[data-theme="dark"] body .mx-p-h {
-    color: var(--theme-dark-heading);
-}
-
-:root[data-theme="dark"] body .mx-p-r {
-    color: var(--theme-dark-text-2);
-}
-
-:root[data-theme="dark"] body .mx-p-s,
-:root[data-theme="dark"] body .mx-p-h span {
-    color: var(--theme-dark-muted);
-}
-
-:root[data-theme="dark"] body .mx-qs li {
-    background: var(--theme-dark-card);
-    border-color: var(--theme-dark-border);
-    color: var(--theme-dark-text-2);
-}
-
-/* Small "(2E / 4E)" style spans inside headings */
+/* Small spans inside headings */
 :root[data-theme="dark"] main h3 span,
 :root[data-theme="dark"] main h2 span:not(.section-label) {
     color: var(--theme-dark-text);
@@ -622,11 +493,7 @@
     min-height: clamp(560px, calc(100svh - 68px), 665px);
 }
 
-/* =========================================================
-   THEME-MATCHED BRAND LOGOS
-   The logo itself changes with the active theme. The circular
-   holder blends into the header/footer instead of looking pasted on.
-========================================================= */
+/* Brand logos for each theme */
 .brand-logo,
 .footer-brand-logo,
 .booking-logo {
