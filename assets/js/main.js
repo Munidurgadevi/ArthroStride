@@ -194,15 +194,6 @@ function initSmoothScroll() {
 
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-      const nav = document.querySelector('.nav-links');
-      const ham = document.querySelector('.hamburger');
-      if (nav && nav.classList.contains('active') && ham) {
-        nav.classList.remove('active');
-        ham.setAttribute('aria-expanded', 'false');
-        const icon = ham.querySelector('i');
-        if (icon) icon.className = 'fa-solid fa-bars';
-      }
     });
   });
 }
