@@ -406,14 +406,13 @@ function initActiveNav() {
   const links = document.querySelectorAll('.main-navigation .nav-link');
   if (!links.length) return;
 
-  // Works with both /home-2.html (local) and /home-2 (Netlify clean URLs)
   const fileOf = (path) => {
-    const name = path.split('/').filter(Boolean).pop() || 'index';
-    return name.toLowerCase().replace(/\.html?$/, '') || 'index';
+    const name = path.split('/').filter(Boolean).pop() || 'index.html';
+    return name.toLowerCase();
   };
 
   const current = fileOf(window.location.pathname);
-  const isHome = current === 'index' || current === 'home-2';
+  const isHome = current === 'index.html' || current === 'home-2.html';
 
   links.forEach((link) => {
     let match = false;
