@@ -3645,3 +3645,23 @@ html:root[data-theme="dark"] body .offers-section .ofr-body h3 {
         width: 540px;
     }
 }
+
+/* ---- Moved from inline styles in index.html ---- */
+.pm-w-24 { --w: 24%; }
+.pm-w-28 { --w: 28%; }
+.pm-w-30 { --w: 30%; }
+.pm-w-60 { --w: 60%; }
+.pm-w-62 { --w: 62%; }
+.pm-w-66 { --w: 66%; }
+.pm-w-88 { --w: 88%; }
+.pm-w-92 { --w: 92%; }
+.pm-w-94 { --w: 94%; }
+
+.pm-layer-a { --beat: .9s; }
+.pm-layer-b { --beat: 2s; }
+.pm-layer-c { --beat: 4.2s; }
+
+.pm-spot-heel { left: 49%; top: 86%; }
+.pm-spot-arch { left: 33%; top: 58%; }
+.pm-spot-ball { left: 50%; top: 32%; }
+.pm-spot-toes { left: 42%; top: 9%; }

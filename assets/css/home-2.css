@@ -2502,3 +2502,50 @@ html body .home-dropdown-toggle.nav-link::after {
    transform: none !important;
    pointer-events: none !important;
 }
+
+/* ---- Moved from inline styles in home-2.html ---- */
+.premium-image-frame .hero-stage {
+   --hero-shoe: url('https://i.ibb.co/sdRPLGwQ/Chat-GPT-Image-Sep-28-2026-02-50-13-PM.png');
+}
+
+.hero-shards i:nth-child(1) {
+   --tx: -16%;
+   --ty: -12%;
+   --r: -7deg;
+   --n: 0;
+}
+
+.hero-shards i:nth-child(2) {
+   --tx: 2%;
+   --ty: -22%;
+   --r: 5deg;
+   --n: 1;
+}
+
+.hero-shards i:nth-child(3) {
+   --tx: 18%;
+   --ty: -14%;
+   --r: 8deg;
+   --n: 2;
+}
+
+.hero-shards i:nth-child(4) {
+   --tx: 20%;
+   --ty: 14%;
+   --r: -6deg;
+   --n: 3;
+}
+
+.hero-shards i:nth-child(5) {
+   --tx: 2%;
+   --ty: 22%;
+   --r: 6deg;
+   --n: 4;
+}
+
+.hero-shards i:nth-child(6) {
+   --tx: -18%;
+   --ty: 15%;
+   --r: -8deg;
+   --n: 5;
+}
